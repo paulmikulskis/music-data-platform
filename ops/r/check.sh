@@ -28,16 +28,8 @@ step='3 analysis template'
 "${run[@]}" "$image" bash -ec 'mkdir -p "$HOME/library"; export R_LIBS_USER="$HOME/library"; R CMD INSTALL --library="$HOME/library" r/mdpr >/dev/null; Rscript ops/r/check-template.R'
 echo "PASS $step"
 step='4 changed analyses'
-python3 - <<'PY'
-import os
-import subprocess
-from pathlib import Path
-base = os.environ.get('MDP_R_BASE') or subprocess.check_output(['git', 'merge-base', 'HEAD', 'main'], text=True).strip()
-changed = subprocess.check_output(['git', 'diff', '--name-only', '-z', base]).decode().split('\0')
-changed += subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', '-z']).decode().split('\0')
-folders = sorted({'/'.join(Path(p).parts[:3]) for p in changed if p.startswith('analyses/') and len(Path(p).parts) > 3 and Path('/'.join(Path(p).parts[:3])).is_dir()})
-Path('/tmp/mdp-w-r/analyses.txt').write_text('\n'.join(folders))
-PY
+python3 -m unittest discover -s ops/r -p test_changed_analyses.py
+python3 ops/r/changed_analyses.py > /tmp/mdp-w-r/analyses.txt
 "${run[@]}" "$image" bash -ec 'mkdir -p "$HOME/library"; export R_LIBS_USER="$HOME/library"; R CMD INSTALL --library="$HOME/library" r/mdpr >/dev/null; while IFS= read -r path || [[ -n "$path" ]]; do Rscript ops/r/check-analysis.R "$path"; done < /tmp/mdp-w-r/analyses.txt'
 echo "PASS $step"
 if [[ $mode == --smoke ]]; then

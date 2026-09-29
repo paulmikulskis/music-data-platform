@@ -91,7 +91,7 @@ export function TeamQuestion({
       {read.state === "ready" && (
         <p className="result-line">
           Up to 5 results · read <LocalTime at={read.value.queried_at} /> ·
-          first seen means the first day in the platform's readings.
+          first seen means the first day in the platform&apos;s readings.
         </p>
       )}
       <div className="question-actions">

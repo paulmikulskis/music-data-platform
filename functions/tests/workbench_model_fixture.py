@@ -16,7 +16,10 @@ def workbench_models(catalog_databases, tmp_path, monkeypatch, request):
     root.mkdir()
     shutil.copytree(REPO / "dbt", root / "dbt", ignore=shutil.ignore_patterns(".venv", "target", "logs", "dbt_packages"))
     for name in (".venv", "dbt_packages"):
-        (root / "dbt" / name).symlink_to(REPO / "dbt" / name, target_is_directory=True)
+        source = REPO / "dbt" / name
+        # A fresh checkout has no package directory when dbt declares no packages.
+        if source.is_dir():
+            (root / "dbt" / name).symlink_to(source, target_is_directory=True)
     for name in ("functions", "ops", "control"):
         (root / name).symlink_to(REPO / name, target_is_directory=True)
     models = root / "dbt/models/test_fixture"

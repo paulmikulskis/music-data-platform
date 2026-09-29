@@ -302,7 +302,7 @@ function WideOverview({ svgRef }: OverviewProps) {
         Music Data Platform
       </text>
       <text x="990" y="34" className="eyebrow-text">
-        the platform's apps
+        the platform&apos;s apps
       </text>
       <g className="draw">
         <rect
@@ -424,7 +424,7 @@ function TallOverview({ svgRef }: OverviewProps) {
         Music Data Platform
       </text>
       <text x="40" y="576" className="eyebrow-text">
-        the platform's apps
+        the platform&apos;s apps
       </text>
       <g className="draw">
         <rect
