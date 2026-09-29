@@ -19,7 +19,7 @@ const tabs = [
   ["Songs", "/songs"],
   ["Sources", "/sources"],
   ["Stack", "/stack"],
-  ["Analyst onboarding", "/team"],
+  ["Analysts", "/team"],
 ];
 const views = [
   ["Rising now", "rising"],

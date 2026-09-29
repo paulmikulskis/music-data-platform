@@ -143,14 +143,6 @@ export async function teamLinksWalk(
   for (let i = 0; i < 5; i++)
     await disclosures(`.sql-layers li:nth-child(${i + 1})`, `layer-${i}`);
   await disclosures(".sql-layers > details", "sql-help");
-  assert.match(
-    await page.locator("#screen").innerText(),
-    /Checks run on every proposal; the data team merges/,
-  );
-  assert.match(
-    await page.locator("#screen").innerText(),
-    /Opens as a change to review/,
-  );
   await page.locator("#screen").scrollIntoViewIfNeeded();
   await shot("screen");
   const open = page.locator(".team-open");

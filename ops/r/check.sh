@@ -61,7 +61,8 @@ SQL
     rm -f control/packages/data-sdk/src/generated/mart_r_smoke.zod.ts
     uv run --project dbt dbt parse --project-dir dbt --profiles-dir dbt/profiles --target ci
     uv run --project functions python ops/label-catalog.py
-    pnpm --dir control --filter @mdp/data-sdk generate
+    # Undo the lift's contract-only generation; this smoke never builds a full catalog.
+    pnpm --dir control --filter @mdp/data-sdk generate --contract-only
     echo 'PASS lift'
   else
     echo 'SKIPPED: R checks not in main (sandbox/lift)'
