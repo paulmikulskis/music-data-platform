@@ -548,7 +548,7 @@
         "Where to start"
       ],
       "destination": {
-        "anchor": "contributing",
+        "anchor": "feedback",
         "path": "CONTRIBUTING.md",
         "repo": "music-data-platform"
       },
@@ -8330,13 +8330,13 @@
     }
   ],
   "input_hashes": {
-    "control/apps/showcase/lib/card-words.json": "bfa01ada81d4c0be63832003b3d4d9eae3541d65b66752a23fa007ed86281d1c",
-    "control/apps/showcase/lib/lineage.generated.json": "8e10cf4f3476608d1b4c1650753a6ee4c2d94396294d6b9a65bcab3ddcd5d6fd",
+    "control/apps/showcase/lib/card-words.json": "9c0e782c4a447c41a5686f5b6f9e41553271d5b514d73627801a3533a6019a5a",
+    "control/apps/showcase/lib/lineage.generated.json": "a5a818cc0c69e94edb9d257ccafc36660dbc9ccc7d42915c4f973d9b65d33851",
     "control/apps/showcase/lib/linked-content-policy.json": "04e3e9c2da3e3af793ac8d2fa18a8fd094ed8c872e5b0f6303e5d0e4049d7839",
     "control/apps/showcase/lib/public-hosts.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "control/apps/showcase/lib/sensitive-patterns.json": "096dc873b1f62bcb1d0086d2f9b43664fdaad0e3a788b3018727481726e9adc3",
     "control/apps/showcase/lib/source-registry.generated.json": "7a198d998ee94cdb384b89b9ee62b9cc1b7f2aac06744c3cb53d04de18bf0d19",
-    "ops/showcase/links/links.json": "242781eac61596cd60f9261c50ba856fd67d0994a7511164e8f943bddff18538",
+    "ops/showcase/links/links.json": "7cdd170ec744efda9ddbf2d87aa65658e991cccb5d3e8435cf04a0c7bb159b86",
     "ops/showcase/links/name-exemptions.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
   "names": "names_not_checked",
