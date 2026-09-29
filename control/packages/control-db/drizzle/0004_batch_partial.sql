@@ -1,0 +1,1 @@
+ALTER TYPE "control"."batch_status" ADD VALUE 'partial' BEFORE 'failed';

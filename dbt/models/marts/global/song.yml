@@ -1,0 +1,370 @@
+version: 2
+models:
+- name: mart_song_aliases
+  description: Fallback links persist across builds and resolve through the current daily song identity.
+    Full refresh retains aliases. Open the song_key to follow the link.
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - alias_key
+  columns:
+  - name: alias_key
+    data_type: text
+    description: Alias key.
+    constraints:
+    - type: not_null
+  - name: song_key
+    data_type: text
+    description: Song key.
+  - name: platform
+    data_type: text
+    description: Platform.
+  - name: platform_track_id
+    data_type: text
+    description: Platform track id.
+  - name: resolved
+    data_type: boolean
+    description: True when a recording is known.
+  - &id001
+    name: learning_eligible
+    data_type: boolean
+    data_tests:
+    - not_null
+  - &id002
+    name: resale_permitted
+    data_type: boolean
+    data_tests:
+    - not_null
+  - &id003
+    name: source_keys
+    data_type: text
+    data_tests:
+    - not_null
+- name: mart_song_day
+  description: Song facts rebuild in full each day from the bound manifest. Missing observations remain
+    null. Billboard facts use the published chart date and movement membership. Open mart_chart_history for matches and unmatched entries.
+  config:
+    pre_hook: '{{ mdp_hash_join_plan() }}'
+    post_hook: '{{ mdp_analyze() }}'
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - song_key
+      - day
+  columns:
+  - name: song_key
+    data_type: text
+    description: Song key.
+    constraints:
+    - type: not_null
+  - name: title_text
+    data_type: text
+    description: Title text.
+  - name: artist_text
+    data_type: text
+    description: Artist text.
+  - name: day
+    data_type: date
+    description: UTC calendar day.
+    constraints:
+    - type: not_null
+  - name: editorial_adds
+    data_type: double precision
+    description: Distinct list entries; add counts one, entered_head counts 0.5; baseline excluded.
+  - name: algorithmic_adds
+    data_type: double precision
+    description: Distinct list entries; add counts one, entered_head counts 0.5; baseline excluded.
+  - name: removes
+    data_type: bigint
+    description: Distinct lists removing the song.
+  - name: playlist_followers
+    data_type: bigint
+    description: Follower exposure as of this day; lists count once.
+  - name: list_count
+    data_type: bigint
+    description: Distinct observed lists.
+  - name: shazam_cities
+    data_type: bigint
+    description: Distinct observed city charts.
+  - name: shazam_countries
+    data_type: bigint
+    description: Distinct observed countries.
+  - name: shazam_charts
+    data_type: bigint
+    description: Distinct observed charts.
+  - name: shazam_new_entries
+    data_type: bigint
+    description: First chart appearances with at least 26 observed days in the 28-day window. Count each
+      song once per chart. Null means no chart has enough history.
+  - name: best_position
+    data_type: integer
+    description: Best observed position on this day.
+  - name: shazam_best_position
+    data_type: integer
+    description: Best observed position on this day.
+  - name: stream_rate
+    data_type: double precision
+    description: Provider daily increment, without read-interval scaling. Only changed nonnegative counters
+      20 to 28 hours apart with no collection gap qualify.
+  - name: playlists_observed
+    data_type: boolean
+    description: A playlist collection or membership is present, including zero events.
+    constraints:
+    - type: not_null
+  - name: shazam_observed
+    data_type: boolean
+    description: Shazam charts are collected on this day, including a song absent from those charts.
+    constraints:
+    - type: not_null
+  - name: streams_observed
+    data_type: boolean
+    description: A counter value is collected on this day, including unchanged counts.
+    constraints:
+    - type: not_null
+  - name: stream_interval_hours
+    data_type: double precision
+    description: Longest contributing counter interval in hours.
+  - name: billboard_position
+    data_type: integer
+    description: Best Hot 100 position for this movement group on the published chart date. Null means no keyed observation.
+  - name: billboard_weeks_on_chart
+    data_type: integer
+    description: Provider weeks on chart for the best-position entry. Open mart_chart_history for the source row.
+  - name: billboard_debut
+    data_type: boolean
+    description: True only for a proven first group week after a complete previous chart. Null means unknown or no keyed observation.
+  - *id001
+  - *id002
+  - *id003
+- name: mart_top_movers
+  description: Movement uses observed history minus one day, up to seven UTC days. Only positive movement
+    in two independent families qualifies for movers; early signals have exactly one. Chart spread is
+    separate and never qualifies a second family. Adds count editorial at 3 and algorithmic at 1, with
+    head entries at half confidence. Reach sums followers of entered lists once per window; new_entries
+    counts editorial and new-music lists only. list_kind, movement's reading of a list in
+    playlist_reach_tiers, sets these weights; owner_class stays the platform's label. Each movement_list
+    scores and ranks only its own rows, and signal lists rank new chart markets first.
+    In new_entries, emerging artists rank first among equal scores. Ties use entered list tier,
+    market count and latest entry time, then a fixed hash of day and song key, never key order. Open
+    evidence for source rows.
+  config:
+    pre_hook: '{{ mdp_hash_join_plan() }}'
+    post_hook: '{{ mdp_analyze() }}'
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - day
+      - movement_list
+      - rank
+  columns:
+  - name: rank
+    data_type: bigint
+    description: Position inside its movement list. Places lists order by chart_spread_gain first; then
+      score, emerging artists first in new_entries, list reach tier, markets, entry time and a fixed hash of
+      day and song key.
+    constraints:
+    - type: not_null
+  - name: day
+    data_type: date
+    description: Bound daily cycle day for the current table.
+    constraints:
+    - type: not_null
+  - name: song_key
+    data_type: text
+    description: Song key.
+  - name: title_text
+    data_type: text
+    description: Title text.
+  - name: artist_text
+    data_type: text
+    description: Artist text.
+  - name: momentum_score
+    data_type: double precision
+    description: Positive weighted sum of cume_dist percentiles inside the song's movement list.
+      Equal values share the fraction at or below them; a singleton gets one. Open score_parts for evidence.
+  - name: score_parts
+    data_type: text
+    description: JSON parts with component, value, weight, percentile and the component's window_days.
+  - name: coverage
+    data_type: text
+    description: Coverage.
+  - name: reason_rule
+    data_type: text
+    description: Reason rule.
+  - name: evidence
+    data_type: text
+    description: Source row locators with captured input builds. cluster_confidence is measured
+      precision, the lowest merge-rule Wilson 95% lower bound; open the cluster audit.
+  - name: ranking_build
+    data_type: text
+    description: Ranking build.
+  - *id001
+  - *id002
+  - *id003
+  - &id004
+    name: window_days
+    data_type: integer
+    description: Comparison window in UTC days; it grows with observed history to seven.
+  - &id005
+    name: chart_spread_gain
+    data_type: bigint
+    description: New country markets on tracked chart lists or Shazam charts. It ranks signal lists first
+      and never joins the two-family score, because it overlaps playlists and Shazam.
+  - &id006
+    name: list_reach_tier
+    data_type: integer
+    description: Best entered list tier; new_entries reads editorial and new-music lists only. One is widest;
+      four is unclassified. See playlist_reach_tiers.
+  - &id007
+    name: market_count
+    data_type: bigint
+    description: Distinct entered country markets; global and unknown are excluded.
+  - &id008
+    name: last_entered_at
+    data_type: timestamp with time zone
+    description: Most recent qualifying entry observation.
+  - &id009
+    name: movement_list
+    data_type: text
+    description: 'new_entries: new songs by emerging, developing or unknown-stage artists. established_entries:
+      new songs by established artists. catalog_entries: catalog waking up. unplaced: unknown age and no new-music
+      list in the window, so no movement view reads it. Lists never mix.'
+    constraints:
+    - type: not_null
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [new_entries, established_entries, catalog_entries, unplaced]
+  - &id010
+    name: age_class
+    data_type: text
+    description: new when the age proxy is this year or last; catalog when older; unknown without a proxy.
+      A proxy, never a release date. Open age_basis for its source.
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [new, catalog, unknown]
+  - &id011
+    name: age_basis
+    data_type: text
+    description: 'isrc_year: the year code in the ISRC, which a reissue can make newer, never older.
+      apple_id_band: the Apple song id range. none: no proxy.'
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [isrc_year, apple_id_band, none]
+  - &id012
+    name: artist_stage
+    data_type: text
+    description: Stage of the song's most established credited artist, from MusicBrainz catalog depth. emerging,
+      developing, established or unknown; artist_stage_thresholds holds the rules. unknown means no linked
+      MusicBrainz artist or no catalog reading yet. Playlist data never sets it.
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [emerging, developing, established, unknown]
+  - &id013
+    name: artist_stage_basis
+    data_type: text
+    description: 'Source of artist_stage. musicbrainz_catalog: release group counts and first release years read
+      from the MusicBrainz mirror. none: artist_stage is unknown.'
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [musicbrainz_catalog, none]
+  - name: cluster_key
+    data_type: text
+    description: Provisional movement group key. Open member_song_keys to inspect the strict keys.
+    constraints:
+    - type: not_null
+  - name: member_song_keys
+    data_type: text
+    description: Sorted JSON array of strict keys scored together. Open evidence for merge methods.
+    constraints:
+    - type: not_null
+
+- name: mart_top_movers_current
+  description: Movement uses observed history minus one day, up to seven UTC days. Only positive movement
+    in two independent families qualifies for movers; early signals have exactly one. Chart spread is
+    separate and never qualifies a second family. Adds count editorial at 3 and algorithmic at 1, with
+    head entries at half confidence. Reach sums followers of entered lists once per window; new_entries
+    counts editorial and new-music lists only. list_kind, movement's reading of a list in
+    playlist_reach_tiers, sets these weights; owner_class stays the platform's label. Each movement_list
+    scores and ranks only its own rows, and signal lists rank new chart markets first.
+    In new_entries, emerging artists rank first among equal scores. Ties use entered list tier,
+    market count and latest entry time, then a fixed hash of day and song key, never key order. Open
+    evidence for source rows.
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - movement_list
+      - rank
+  columns:
+  - name: rank
+    data_type: bigint
+    description: Position inside its movement list. Places lists order by chart_spread_gain first; then
+      score, emerging artists first in new_entries, list reach tier, markets, entry time and a fixed hash of
+      day and song key.
+    constraints:
+    - type: not_null
+  - name: day
+    data_type: date
+    description: Bound daily cycle day for the current table.
+  - name: song_key
+    data_type: text
+    description: Song key.
+  - name: title_text
+    data_type: text
+    description: Title text.
+  - name: artist_text
+    data_type: text
+    description: Artist text.
+  - name: momentum_score
+    data_type: double precision
+    description: Positive weighted sum of cume_dist percentiles inside the song's movement list.
+      Equal values share the fraction at or below them; a singleton gets one. Open score_parts for evidence.
+  - name: score_parts
+    data_type: text
+    description: JSON parts with component, value, weight, percentile and the component's window_days.
+  - name: coverage
+    data_type: text
+    description: Coverage.
+  - name: reason_rule
+    data_type: text
+    description: Reason rule.
+  - name: evidence
+    data_type: text
+    description: Source row locators with captured input builds. cluster_confidence is measured
+      precision, the lowest merge-rule Wilson 95% lower bound; open the cluster audit.
+  - name: ranking_build
+    data_type: text
+    description: Ranking build.
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - *id005
+  - *id006
+  - *id007
+  - *id008
+  - *id009
+  - *id010
+  - *id011
+  - *id012
+  - *id013
+  - name: cluster_key
+    data_type: text
+    description: Provisional movement group key. Open member_song_keys to inspect the strict keys.
+    constraints:
+    - type: not_null
+  - name: member_song_keys
+    data_type: text
+    description: Sorted JSON array of strict keys scored together. Open evidence for merge methods.
+    constraints:
+    - type: not_null

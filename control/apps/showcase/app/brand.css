@@ -1,0 +1,78 @@
+/* Neutral interface palette and typography. */
+:root {
+
+  --bg:        #142026;
+  --bg-raised:   #23343d;
+  --bg-sunken:   #0e171c;
+  --surface:         #1b2a32;
+  --line-strong:       #3c5663;
+  --fg:   #edf4f6;
+  --fg-soft:        #dce8ed;
+  --fg-muted:        #b4c8d0;
+  --muted:      #8da7b2;
+  --line-muted:    #4e6875;
+  --border:    rgba(237, 244, 246, 0.12);
+  --border-soft: rgba(237, 244, 246, 0.06);
+  --border-strong: rgba(52, 54, 64, 0.20);
+
+  --accent-1:   #e8b16d;
+  --accent-2:    #68b9c2;
+  --accent-5: #8da7b2;
+  --accent-3:    #a9c885;
+  --accent-4: #82a8df;
+
+  --bg-gradient:   radial-gradient(ellipse at 30% 30%, #23343d 0%, #142026 55%, #0e171c 100%);
+  --bg-flat:   #142026;
+  --bg-paper:  #edf4f6;
+  --bg-card:   rgba(237, 244, 246, 0.04);
+  --bg-card-hi: rgba(237, 244, 246, 0.07);
+
+  --font-display:  "IBM Plex Sans", system-ui, sans-serif;
+  --font-body:     "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono:     "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --t-display:  80px;
+  --t-title:    48px;
+  --t-headline: 32px;
+  --t-subtitle: 20px;
+  --t-body:     15px;
+  --t-small:    13px;
+  --t-micro:    11px;
+  --t-tag:      10px;
+
+  --lh-display: 1.05;
+  --lh-title:   1.0;
+  --lh-body:    1.55;
+  --lh-small:   1.6;
+
+  --ls-tag:     0.12em;
+  --ls-display: -0.019em;
+
+  --sp-micro:   4px;
+  --sp-base:    8px;
+  --sp-tight:   16px;
+  --sp-comfort: 24px;
+  --sp-breath:  48px;
+  --sp-section: 72px;
+  --sp-page:    120px;
+
+
+  --r-none:  0px;
+  --r-hair:  2px;
+  --r-soft:  4px;
+  --r-pill:  999px;
+
+  --bw-hair:  1px;
+  --bw-rule:  1.5px;
+
+  --shadow-hairline: inset 0 0 0 1px var(--border);
+  --shadow-deep:     0 32px 64px -24px rgba(0,0,0,0.6);
+
+  --ease-default:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-emphasis: cubic-bezier(0.65, 0, 0.35, 1);
+  --d-hover:    150ms;
+  --d-state:    220ms;
+  --d-section:  400ms;
+  --d-stage:    700ms;
+}
+

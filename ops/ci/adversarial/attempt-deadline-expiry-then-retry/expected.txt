@@ -1,0 +1,2 @@
+ASSERT PASS: retry opens a new successful attempt with a fresh later deadline
+ASSERT PASS: retry resumes durable uploaded checkpoints and retains every pre-restart dump

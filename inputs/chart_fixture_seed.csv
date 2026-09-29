@@ -1,0 +1,4 @@
+platform,chart_type,country,city,priority_market
+shazam,top-200,united-states,,US
+shazam,top-50,united-states,boston,US
+shazam,discovery,united-states,,US

@@ -1,0 +1,3 @@
+ASSERT PASS: real dbt retry refused at on-run-start
+ASSERT PASS: partial retry touches no cycles, bindings, or calls
+partial_retry_refused: rerun the full cadence job to preserve the cycle manifest

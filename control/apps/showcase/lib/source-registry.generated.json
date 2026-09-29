@@ -1,0 +1,182 @@
+{
+  "am_playlist": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "am_playlist_weekly": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "apple_song_duration": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_daily_list": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_daily_list_weekly": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_discover": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_discover_weekly": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_fan_playlist": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_fan_playlist_weekly": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_radio": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_radio_weekly": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "bc_tralbum": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "billboard_hot100": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "cycle_close": {
+    "layer": "universal",
+    "external": false,
+    "source": false
+  },
+  "jev_instrument_family": {
+    "layer": "gold",
+    "external": false,
+    "source": false
+  },
+  "kexp_plays": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "lb_fresh_releases": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "lb_popularity": {
+    "layer": "gold",
+    "external": true,
+    "source": true
+  },
+  "lb_similar_artists": {
+    "layer": "gold",
+    "external": true,
+    "source": true
+  },
+  "lb_sitewide": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "mb_artist_catalog": {
+    "layer": "gold",
+    "external": true,
+    "source": true
+  },
+  "mb_resolve": {
+    "layer": "gold",
+    "external": true,
+    "source": true
+  },
+  "mb_spine": {
+    "layer": "universal",
+    "external": true,
+    "source": true
+  },
+  "sc_curator_playlists": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "sc_curator_playlists_weekly": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "sc_hubs": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "sc_playlist": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "sc_playlist_weekly": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "sp_playlist": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "sp_playlist_weekly": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "sp_track_artists": {
+    "layer": "gold",
+    "external": true,
+    "source": true
+  },
+  "sz_chart": {
+    "layer": "bronze",
+    "external": true,
+    "source": true
+  },
+  "targets_export": {
+    "layer": "universal",
+    "external": false,
+    "source": false
+  },
+  "track_isrc_crosswalk": {
+    "layer": "gold",
+    "external": true,
+    "source": true
+  },
+  "wiki_pageviews": {
+    "layer": "gold",
+    "external": true,
+    "source": true
+  },
+  "wiki_sitelinks": {
+    "layer": "gold",
+    "external": true,
+    "source": true
+  }
+}

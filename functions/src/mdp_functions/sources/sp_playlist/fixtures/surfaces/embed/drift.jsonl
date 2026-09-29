@@ -1,0 +1,1 @@
+{"request": {"method": "GET", "url": "https://open.spotify.com/embed/playlist/Synth1531769ee345db9a2", "params": {}}, "response": {"status": 200, "headers": {"etag": "\"fixture-etag\""}, "body": "<html><script id=\"__NEXT_DATA__\">{}</script></html>"}}

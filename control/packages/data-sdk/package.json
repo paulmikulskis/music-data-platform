@@ -1,0 +1,24 @@
+{
+  "name": "@mdp/data-sdk",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "generate": "tsx scripts/catalog-to-zod.ts",
+    "catalog-to-zod": "tsx scripts/catalog-to-zod.ts"
+  },
+  "dependencies": {
+    "@orpc/contract": "catalog:",
+    "@orpc/client": "catalog:",
+    "zod": "catalog:",
+    "yaml": "^2.8.0",
+    "@opentelemetry/api": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}

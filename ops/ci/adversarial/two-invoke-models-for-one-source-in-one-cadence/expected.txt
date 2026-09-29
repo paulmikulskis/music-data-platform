@@ -1,0 +1,3 @@
+duplicate invoke:
+adversarial_invoke_a
+adversarial_invoke_b

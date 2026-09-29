@@ -1,0 +1,58 @@
+# Copy to dbt/profiles/profiles.yml; credentials and local paths come from env.
+music_data_platform:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('MDP_DEV_DB') }}"
+      extensions: [httpfs, parquet, json]
+      threads: 4
+    ci:
+      type: duckdb
+      path: "{{ env_var('MDP_CI_DB', '/tmp/mdp-ci.duckdb') }}"
+      extensions: [httpfs, parquet, json]
+      threads: 4
+    pg_local:
+      type: postgres
+      host: "{{ env_var('MDP_PG_HOST', '127.0.0.1') }}"
+      port: "{{ env_var('MDP_PG_PORT', '5433') | int }}"
+      user: "{{ env_var('MDP_PG_USER', 'dbt_transform') }}"
+      pass: "{{ env_var('MDP_PG_PASSWORD') }}"
+      dbname: "{{ env_var('MDP_PG_DB', 'warehouse') }}"
+      schema: "{{ env_var('MDP_PG_SCHEMA', 'dbt') }}"
+      threads: 4
+      sslmode: require
+      autocommit: false
+    pg:
+      type: postgres
+      host: "{{ env_var('MDP_PG_HOST') }}"
+      port: "{{ env_var('MDP_PG_PORT') | int }}"
+      user: "{{ env_var('MDP_PG_USER') }}"
+      pass: "{{ env_var('MDP_PG_PASSWORD') }}"
+      dbname: "{{ env_var('MDP_PG_DB') }}"
+      schema: "{{ env_var('MDP_PG_SCHEMA') }}"
+      threads: 4
+      sslmode: require
+      autocommit: false
+    workbench:
+      type: postgres
+      host: "{{ env_var('MDP_PG_HOST', '127.0.0.1') }}"
+      port: "{{ env_var('MDP_PG_PORT', '5433') | int }}"
+      user: "{{ env_var('MDP_WB_USER', 'workbench_wh') }}"
+      pass: "{{ env_var('MDP_WB_PASSWORD') }}"
+      dbname: "{{ env_var('MDP_PG_DB', 'warehouse') }}"
+      schema: "{{ var('wb_schema', 'wb_local') }}"
+      threads: 2
+      sslmode: "{{ env_var('MDP_WB_SSLMODE', 'require') }}"
+      autocommit: false
+    # Offline compile only: --no-populate-cache --no-introspect.
+    snowflake:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
+      threads: 4

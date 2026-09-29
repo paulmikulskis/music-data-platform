@@ -1,0 +1,19 @@
+# The two-tenant fixture runs its probe through the real cadence runner.
+selectors:
+  - name: daily_tenant_bronze
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:daily"}
+        - {method: tag, value: "scope:tenant"}
+        - union:
+            - {method: fqn, value: bronze_export__targets_daily_tenant}
+            - {method: fqn, value: bronze_invoke__lifecycle_tenant_probe}
+            - {method: fqn, value: bronze_close__daily_tenant}
+  - name: daily_tenant_transform
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:daily"}
+        - {method: tag, value: "scope:tenant"}
+        - union:
+            - {method: fqn, value: lifecycle_tenant_staging}
+            - {method: fqn, value: lifecycle_tenant_mart}

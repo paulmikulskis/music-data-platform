@@ -1,0 +1,21 @@
+state_id,instrument,expected_family
+instrument_01,violin,strings
+instrument_02,viola,strings
+instrument_03,cello,strings
+instrument_04,double bass,strings
+instrument_05,harp,strings
+instrument_06,flute,woodwind
+instrument_07,piccolo,woodwind
+instrument_08,clarinet,woodwind
+instrument_09,oboe,woodwind
+instrument_10,bassoon,woodwind
+instrument_11,trumpet,brass
+instrument_12,trombone,brass
+instrument_13,French horn,brass
+instrument_14,tuba,brass
+instrument_15,cornet,brass
+instrument_16,timpani,percussion
+instrument_17,snare drum,percussion
+instrument_18,bass drum,percussion
+instrument_19,cymbals,percussion
+instrument_20,triangle,percussion

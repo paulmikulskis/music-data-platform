@@ -1,0 +1,19 @@
+---
+title: "{{topic}}"
+format: html
+params:
+  db: "mdp_local"
+---
+
+```{r}
+source("R/features.R")
+con <- mdpr::mdp_connect(params$db)
+x <- dplyr::collect(features(con))
+DBI::dbDisconnect(con)
+```
+
+Only aggregate counts appear in the report.
+
+```{r}
+barplot(table(x$chart_position), xlab = "Chart position", ylab = "Observations")
+```

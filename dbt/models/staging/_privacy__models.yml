@@ -1,0 +1,151 @@
+version: 2
+models:
+- name: stg_playlist__candidates
+  columns:
+  - name: hint_owner_id
+    description: A keyed pseudonym.
+    meta:
+      privacy: personal
+      representation: pseudonym
+  - name: hint_owner_name
+    description: Null. A private person is never named.
+    meta:
+      privacy: personal
+      representation: omitted
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_lb__sitewide
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_soundcloud__tracks
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_kexp__plays
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_bandcamp__tracks
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_bandcamp__releases
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_lb__fresh_releases
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_wiki__sitelinks
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_lb__popularity
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_wiki__lookups
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_wiki__pageviews
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_lb__similar_artists
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_mb__artist_catalog
+  description: Each MusicBrainz artist's newest catalog lookup from mb_artist_catalog, landed before this cycle
+    closed. status is found, not_found or special_purpose; only found has release groups, in stg_mb__artist_release_groups.
+    Open int_artist_catalog__receipts when an artist has no row.
+  tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - mb_artist_gid
+  columns:
+  - name: status
+    tests:
+    - accepted_values:
+        arguments:
+          values:
+          - found
+          - not_found
+          - special_purpose
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_mb__artist_release_groups
+  description: The release groups each catalog lookup found, one row per kind (primary type and its ;-joined secondary
+    types) with the count and the earliest dated release year. Open int_artist_stage__daily for the stage they set.
+  tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - mb_artist_gid
+        - input_version
+        - config_version
+        - primary_type
+        - secondary_types
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_spotify__track_artists
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_jev__instrument_family
+  columns:
+  - name: _extra
+    description: Null. Free-form payloads stay private.
+    meta:
+      privacy: personal
+      representation: omitted

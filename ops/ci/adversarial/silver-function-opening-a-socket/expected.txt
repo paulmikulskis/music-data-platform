@@ -1,0 +1,2 @@
+PASSED functions/tests/test_enrichment_runtime.py::test_silver_socket_is_failed
+EGRESS status=failed error_class=egress_blocked

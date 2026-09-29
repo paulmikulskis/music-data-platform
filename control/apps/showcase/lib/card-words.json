@@ -1,0 +1,35 @@
+{
+  "banned": [
+    "cycles?",
+    "marts?",
+    "streamlines?",
+    "receipts?",
+    "manifests?",
+    "provenance",
+    "scopes?",
+    "builds?",
+    "cadences?",
+    "dumps?",
+    "run ids?",
+    "tenants?",
+    "schemas?",
+    "pipelines?",
+    "ingestion",
+    "rows?",
+    "keys?"
+  ],
+  "jargon": [
+    "call",
+    "calls",
+    "draft",
+    "tray",
+    "ear",
+    "Holdings",
+    "operator console",
+    "entries",
+    "tend",
+    "Streams",
+    "Editorial"
+  ],
+  "code_frame": "Code at this page's build"
+}

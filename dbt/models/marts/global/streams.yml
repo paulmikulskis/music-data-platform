@@ -1,0 +1,72 @@
+version: 2
+models:
+- name: mart_track_daily_streams
+  description: Spotify tracks on tracked editorial and chart lists, one row per track and UTC day from its
+    first observation, read from the playlist pages' first 30 rows. streams_since_last_update is the
+    difference between consecutive changed values of the cumulative play count, dated by count_changed_at,
+    the first observation of each new value; Spotify refreshes the count on its own schedule, so an interval
+    is not a day. A day with no read is a flagged gap (count_status no_fetch), never interpolated.
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - platform
+      - platform_track_id
+      - day
+  columns:
+  - name: platform
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: platform_track_id
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: day
+    data_type: date
+    constraints:
+    - type: not_null
+  - name: play_count
+    description: The latest cumulative play count read that day; null on a gap.
+    data_type: bigint
+  - name: count_changed_at
+    description: The first observation of the day's value.
+    data_type: timestamp
+  - name: streams_since_last_update
+    description: The day's value minus the previous changed value, labelled "since the last update"; null
+      for a track's first value and on a gap.
+    data_type: bigint
+  - name: previous_count_changed_at
+    data_type: timestamp
+  - name: count_status
+    description: changed (the value first appeared that day), unchanged, no_count (read, no count on the
+      page), or no_fetch (nothing read that day).
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: count_source
+    description: The one surface this track's series reads (playlist_page).
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: observed_at
+    description: The day's latest read; null on a gap.
+    data_type: timestamp
+  - name: _run_ids
+    description: JSON array of the run whose row the day's figure read.
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: learning_eligible
+    data_type: boolean
+    constraints:
+    - type: not_null
+  - name: resale_permitted
+    data_type: boolean
+    constraints:
+    - type: not_null
+  - name: source_keys
+    data_type: text
+    constraints:
+    - type: not_null

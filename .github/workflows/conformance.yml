@@ -1,0 +1,25 @@
+name: conformance
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.12'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: bash ops/ci/jobs/conformance-contracts.sh install
+      # CI uses an exported service document, regenerated from the actual FastAPI app.
+      # No running warehouse or bearer credential is needed to export OpenAPI.
+      - run: bash ops/ci/jobs/conformance-contracts.sh

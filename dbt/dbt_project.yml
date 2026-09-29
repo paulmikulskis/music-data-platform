@@ -1,0 +1,103 @@
+name: music_data_platform
+version: 0.0.1
+config-version: 2
+profile: music_data_platform
+model-paths:
+- models
+analysis-paths:
+- analyses
+test-paths:
+- tests
+seed-paths:
+- seeds
+macro-paths:
+- macros
+snapshot-paths:
+- snapshots
+clean-targets:
+- target
+- dbt_packages
+on-run-start:
+- '{{ mdp_scope_guard() }}'
+- '{{ bootstrap_raw() }}'
+- '{{ mdp_bind_cycle() }}'
+- '{{ mdp_build_table() }}'
+models:
+  music_data_platform:
+    +pre-hook: '{{ mdp_explore_scope() }}'
+    staging:
+      +schema: staging
+      +materialized: view
+      +tags:
+      - bronze
+      global:
+        +tags:
+        - scope:global
+      tenant:
+        +tags:
+        - scope:tenant
+      stg_control__targets_weekly:
+        +tags:
+        - scope:global
+      stg_billboard__chart_entries:
+        +tags:
+        - scope:global
+    intermediate:
+      +post-hook: '{{ mdp_record_build() }}'
+      +schema: intermediate
+      +materialized: ephemeral
+      +tags:
+      - silver
+      tenant:
+        +tags:
+        - scope:tenant
+    marts:
+      +post-hook: '{{ mdp_record_build() }}'
+      global:
+        +schema: marts
+        +materialized: table
+        +tags:
+        - silver
+        - scope:global
+      tenant:
+        +schema: marts
+        +materialized: table
+        +tags:
+        - silver
+        - scope:tenant
+        +meta:
+          tenant_scoped: true
+    bronze:
+      +materialized: table
+      +tags: []
+seeds:
+  music_data_platform:
+    +schema: reference
+    +tags:
+    - scope:global
+    rights_registry:
+      +column_types:
+        learning_eligible: boolean
+        resale_permitted: boolean
+        review_ref: text
+        review_required: boolean
+    source_priority:
+      +column_types:
+        rank: integer
+    identity_confidence_floors:
+      +column_types:
+        floor: double precision
+    chart_caps:
+      +column_types:
+        source_key: text
+        cap: integer
+        note: text
+    lb_similarity_algorithms:
+      +column_types:
+        algorithm: text
+        active: boolean
+        note: text
+    wiki_projects:
+      +column_types:
+        project: text
+        rank: integer

@@ -1,0 +1,37 @@
+/* Holdings and Rights layouts. Loads after style.css. */
+
+/* An unmeasured value that still opens where it came from. */
+button.unmeasured { padding: 0; text-align: left; cursor: help; text-decoration: underline dotted var(--border); text-underline-offset: 4px; }
+
+/* Collection: one bar per day, Monday to Sunday; days not started stay as empty slots. */
+.collection-bars { display: block; height: auto; text-align: left; }
+.collection-bars svg { display: block; width: 100%; height: auto; overflow: visible; }
+.collection-bars .bar { fill: var(--accent-1); opacity: .85; transition: opacity 180ms var(--ease-default); }
+.collection-bars .bar.today { opacity: .5; }
+.collection-bars:hover .bar { opacity: 1; }
+.collection-bars .baseline { stroke: var(--border); stroke-width: 1; }
+.collection-bars .slot { stroke: var(--border); stroke-width: 2; stroke-dasharray: 4 4; }
+.bars-caption { display: block; margin-bottom: 10px; font-size: 11px; color: var(--fg-muted); }
+.bars-days { display: grid; grid-template-columns: repeat(7, 1fr); margin-top: 8px; font-size: 11px; color: var(--muted); text-align: center; }
+.bars-days .today { color: var(--fg-muted); }
+.collection-days { list-style: none; padding: 0; margin: 14px 0 20px; font-size: 13px; }
+.collection-days li { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid var(--border-soft); color: var(--fg-muted); }
+.collection-days strong { font-weight: 400; color: var(--fg); font-variant-numeric: tabular-nums; }
+
+/* Rights: groups open the source list; each source opens its own card. */
+.rights-groups { margin: 4px 0 30px; }
+.rights-groups button { min-height: 44px; }
+.held-sources .rights-source { display: block; min-height: 40px; border: 1px solid var(--border); padding: 9px 12px; font-size: 12px; text-align: left; }
+.held-sources .hover-trigger { display: block; }
+.rights-permits { margin: 18px 0 14px; }
+.rights-permits .metric-inline { margin-right: 18px; color: var(--fg-muted); }
+.rights-pages button { font-size: 12px; color: var(--fg-muted); text-decoration: underline; text-underline-offset: 4px; }
+.sheet .unmeasured { max-width: none; }
+
+/* Places's catalog list is a link target. */
+#catalog { scroll-margin-top: 24px; }
+
+@media (max-width: 700px) {
+  .bars-days span:not(.first):not(.today) { visibility: hidden; }
+  .collection-bars { margin: 18px 0; }
+}

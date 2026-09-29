@@ -1,0 +1,99 @@
+# dbt CI: build the whole project on DuckDB, check served source attribution,
+# then prove the cadence rules:
+#   disjointness  no relation is selected by two cadences (hourly, daily, weekly; bronze and transform combined per cadence)
+#   cadence-tags  every model carries exactly one tag matching ^cadence:(hourly|daily|weekly)$
+# The `ci` target reads MDP_CI_DB (dbt/profiles/profiles.example.yml); nothing here needs a credential.
+name: dbt-ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dbt-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  DBT_ARGS: --project-dir dbt --profiles-dir dbt/profiles --target ci
+
+jobs:
+  build:
+    name: dbt build and cadence checks (duckdb)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - name: sync the dbt project environment
+        run: uv sync --project dbt
+
+      - name: profiles for the ci target
+        run: cp dbt/profiles/profiles.example.yml dbt/profiles/profiles.yml
+
+      - name: dbt build
+        run: DBT_MDP_SCOPE=tenant:fixture MDP_CI_DB=/tmp/mdp-ci.duckdb uv run --project dbt dbt build $DBT_ARGS
+
+      # The manifest validates every served mart's literal _source_keys
+      # against its upstream raw writers and requires a complete final annotation floor.
+      - name: review gate
+        run: |
+          python3 -m unittest discover -s ops/ci -p test_review_gate.py
+          python3 ops/ci/review_gate.py
+          uv run --project dbt python ops/ci/lineage_fixture.py /tmp/mdp-ci.duckdb
+
+      # One sorted set per cadence: the union of its <cadence>_bronze and <cadence>_transform selectors.
+      - name: list cadence selections
+        run: |
+          for c in hourly daily weekly; do
+            {
+              uv run --project dbt dbt ls $DBT_ARGS --selector "${c}_bronze" --quiet
+              uv run --project dbt dbt ls $DBT_ARGS --selector "${c}_transform" --quiet
+            } | sort -u > "/tmp/cadence_${c}.txt"
+            echo "${c}: $(wc -l < "/tmp/cadence_${c}.txt" | tr -d ' ') relations"
+          done
+
+      # No relation may be selected by two cadences: every pair of cadence sets must be disjoint.
+      - name: disjointness
+        run: |
+          fail=0
+          check() {
+            shared="$(comm -12 "/tmp/cadence_$1.txt" "/tmp/cadence_$2.txt")"
+            if [ -n "$shared" ]; then
+              echo "::error title=disjointness::relations selected by both $1 and $2"
+              echo "$shared"
+              fail=1
+            fi
+          }
+          check hourly daily
+          check hourly weekly
+          check daily weekly
+          if [ "$fail" -ne 0 ]; then exit 1; fi
+          echo "disjoint: no relation is selected by two cadences"
+
+      # Every model carries exactly one cadence tag; zero or two-plus is a config error, named per model.
+      - name: cadence-tags
+        run: |
+          uv run --project dbt dbt ls $DBT_ARGS --resource-type model --output json --output-keys "name tags" --quiet > /tmp/models.jsonl
+          echo "models: $(wc -l < /tmp/models.jsonl | tr -d ' ')"
+          bad="$(jq -r 'select(([.tags[]? | select(test("^cadence:(hourly|daily|weekly)$"))] | length) != 1) | "\(.name): tags=\((.tags // []) | join(","))"' /tmp/models.jsonl)"
+          if [ -n "$bad" ]; then
+            echo "::error title=cadence-tags::models with zero or more than one cadence:<hourly|daily|weekly> tag"
+            echo "$bad"
+            exit 1
+          fi
+          echo "cadence-tags: every model carries exactly one cadence tag"
+
+      - name: invoke-models
+        run: ops/ci/lint-dbt.sh ci

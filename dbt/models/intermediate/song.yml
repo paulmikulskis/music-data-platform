@@ -1,0 +1,320 @@
+version: 2
+models:
+- name: int_song_key__daily
+  description: Daily manifest identities include Shazam-only Apple songs. Apple platform names normalize to apple.
+    Open the source track for unresolved keys.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: platform
+    data_type: text
+    description: Platform.
+    constraints:
+    - type: not_null
+  - name: platform_track_id
+    data_type: text
+    description: Platform track id.
+    constraints:
+    - type: not_null
+  - name: song_key
+    data_type: text
+    description: Song key.
+  - name: isrc
+    data_type: text
+    description: Isrc.
+  - name: mb_recording_gid
+    data_type: text
+    description: Mb recording gid.
+  - name: match_method
+    data_type: text
+    description: Match method.
+  - name: title_text
+    data_type: text
+    description: Title text.
+  - name: artist_text
+    data_type: text
+    description: Artist text.
+  - name: source_keys
+    data_type: text
+    description: Source keys.
+  - name: resolved
+    data_type: boolean
+    description: True when a recording is known.
+  - name: confidence
+    data_type: double precision
+    description: Confidence from the recording match.
+  - name: primary_artist_id
+    data_type: text
+    description: Source primary artist id; names never determine identity.
+  - name: primary_artist_key
+    data_type: text
+    description: Unique MusicBrainz artist id or platform artist fallback.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - platform
+        - platform_track_id
+- name: int_song_followers__daily
+  description: Historical exposure collapses variants and occurrences once per list per day. Open mart_playlist_profile
+    for the observed follower count.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: song_key
+    data_type: text
+    description: Song key.
+    constraints:
+    - type: not_null
+  - name: platform
+    data_type: text
+    description: Platform.
+    constraints:
+    - type: not_null
+  - name: playlist_id
+    data_type: text
+    description: Playlist id.
+    constraints:
+    - type: not_null
+  - name: owner_class
+    data_type: text
+    description: Owner class.
+  - name: source_keys
+    data_type: text
+    description: Source keys.
+  - name: day
+    data_type: date
+    description: UTC calendar day.
+    constraints:
+    - type: not_null
+  - name: followers
+    data_type: bigint
+    description: Follower value as of this day.
+  - name: best_position
+    data_type: integer
+    description: Best position among occurrences.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - song_key
+        - day
+        - platform
+        - playlist_id
+- name: int_playlist__track_days
+  description: Playlist occurrence history before recording resolution. Membership, deactivation and followers use
+    the value as of each UTC day. Open mart_playlist_profile for its observations.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: day
+    data_type: date
+    description: Day.
+    constraints:
+    - type: not_null
+  - name: platform
+    data_type: text
+    description: Platform.
+    constraints:
+    - type: not_null
+  - name: playlist_id
+    data_type: text
+    description: Playlist id.
+    constraints:
+    - type: not_null
+  - name: variant
+    data_type: text
+    description: Variant.
+    constraints:
+    - type: not_null
+  - name: stream
+    data_type: text
+    description: Stream.
+    constraints:
+    - type: not_null
+  - name: owner_class
+    data_type: text
+    description: Owner class.
+  - name: occurrence_key
+    data_type: text
+    description: Occurrence key.
+    constraints:
+    - type: not_null
+  - name: interval_id
+    data_type: text
+    description: Interval id.
+    constraints:
+    - type: not_null
+  - name: platform_track_id
+    data_type: text
+    description: Platform track id.
+  - name: best_position
+    data_type: bigint
+    description: Best position.
+  - name: followers
+    data_type: bigint
+    description: Followers.
+  - name: source_keys
+    data_type: text
+    description: Source keys.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - day
+        - platform
+        - playlist_id
+        - variant
+        - stream
+        - occurrence_key
+        - interval_id
+- name: int_song_aliases__daily
+  description: Fallback links persist across builds and resolve through the current daily song identity. Full refresh
+    retains aliases. Open the song_key to follow the link.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: alias_key
+    data_type: text
+    description: Alias key.
+    constraints:
+    - type: not_null
+  - name: song_key
+    data_type: text
+    description: Song key.
+  - name: platform
+    data_type: text
+    description: Platform.
+  - name: platform_track_id
+    data_type: text
+    description: Platform track id.
+  - name: resolved
+    data_type: boolean
+    description: True when a recording is known.
+  - name: source_keys
+    data_type: text
+    data_tests:
+    - not_null
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - alias_key
+- name: int_identity__track_inputs_daily
+  description: One manifest-bound input per track, shared by daily song and playlist identity. Open the source track
+    for its fields.
+  config:
+    contract:
+      enforced: true
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - platform
+        - platform_track_id
+  columns:
+  - name: platform
+    data_type: text
+    description: Platform.
+    constraints:
+    - type: not_null
+  - name: platform_track_id
+    data_type: text
+    description: Platform track id.
+    constraints:
+    - type: not_null
+  - name: title
+    data_type: text
+    description: Title.
+  - name: artist_names
+    data_type: text
+    description: Artist names.
+  - name: platform_artist_ids
+    data_type: text
+    description: Platform artist ids.
+  - name: platform_album_id
+    data_type: text
+    description: Platform album id.
+  - name: album_title
+    data_type: text
+    description: Album title.
+  - name: duration_ms
+    data_type: bigint
+    description: Duration ms.
+  - name: platform_isrc
+    data_type: text
+    description: Platform isrc.
+  - name: curated
+    data_type: boolean
+    description: Curated.
+  - name: first_landed_seq
+    data_type: bigint
+    description: First landed seq.
+  - name: first_observed_at
+    data_type: timestamp with time zone
+    description: First observed at.
+  - name: last_observed_at
+    data_type: timestamp with time zone
+    description: Last observed at.
+  - name: _source_keys
+    data_type: text
+    description: Source keys.
+  - name: fields_hash
+    data_type: text
+    description: Fields hash.
+- name: int_song_windows__daily
+  description: Observed history sets a window of history days minus one, up to seven. Rate windows split rated history
+    into two halves, up to seven each. Open mart_readiness for expected dates.
+- name: int_song_age__daily
+  description: Release age and artist stage for each song key. No table holds release dates, so age comes from
+    proxies, never a date. The oldest ISRC year code wins, then the Apple song id band, else unknown. Stage is the
+    most established credited artist's stage in int_artist_stage__daily. A song with no linked artist, or with any
+    credited artist not yet looked up, is unknown. Open age_basis before making an age claim.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns: [song_key]
+- name: int_song_artists__daily
+  description: Each MusicBrainz artist credited on a song key, from its recording's artist credit and from each
+    platform track's first artist when one MusicBrainz artist carries that artist's URL. Open int_artist_identity to
+    see a platform artist's link.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns: [song_key, mb_artist_gid]
+- name: int_artist_stage__daily
+  description: Each looked-up MusicBrainz artist's stage from its newest catalog lookup, under the rules in
+    artist_stage_thresholds. counted_release_groups holds only the kinds the established group rule counts;
+    release_groups and first_release_year read every kind. not_found and special_purpose artists are unknown.
+    Open stg_mb__artist_release_groups for the kinds behind a count.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns: [mb_artist_gid]
+  columns:
+  - name: artist_stage
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [emerging, developing, established, unknown]
+- name: int_artist_catalog__inputs
+  description: mb_artist_catalog's inputs, one MusicBrainz artist gid per row with the cycle's ISO week in its
+    version. Lineage is the MusicBrainz spine only, so the reading stays learning-eligible. Open
+    int_song_artists__daily for the songs that credit an artist.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns: [mb_artist_gid]
+- name: int_artist_catalog__receipts
+  description: This cycle's mb_artist_catalog invoke receipt, for the operator. A failed or slow lookup skips this
+    model only; its readings reach stg_mb__artist_catalog at the next close. Open the run in the console for its
+    rejects.
+- name: int_song_entries__daily
+  description: Proven list adds, half-confidence head entries and Shazam entries after an observed absence. The
+    first chart observation is a baseline. owner_class stays the platform's label; list_kind is movement's reading
+    from playlist_reach_tiers, which refines only lists the platform labels editorial or chart. A market comes from
+    that seed only. Open the captured evidence row.

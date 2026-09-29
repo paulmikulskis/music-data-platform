@@ -1,0 +1,4 @@
+{
+  "kind": "pytest",
+  "target": "test_hardening.py::test_durable_permit_across_workers"
+}

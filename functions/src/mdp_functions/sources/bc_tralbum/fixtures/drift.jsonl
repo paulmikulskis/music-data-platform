@@ -1,0 +1,1 @@
+{"request": {"method": "GET", "url": "https://synthetic-label.bandcamp.com/sitemap.xml"}, "response": {"status": 200, "headers": {"content-type": "application/xml"}, "body": "<html></html>"}}

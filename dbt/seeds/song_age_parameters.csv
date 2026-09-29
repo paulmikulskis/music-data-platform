@@ -1,0 +1,6 @@
+name,value,measured_on,note
+apple_new_id_min,6000000000,2026-09-25,Lower id bound for the newer band. Remeasure against ISRC years before the next calendar year.
+apple_new_year_min,2025,2026-09-25,Lower year bound of the newer band. Remeasure against ISRC years before the next calendar year.
+apple_catalog_id_max,1800000000,2026-09-25,Exclusive upper id bound for the older band. Remeasure against ISRC years before the next calendar year.
+apple_catalog_year_max,2024,2026-09-25,Upper year bound of the older band. Remeasure against ISRC years before the next calendar year.
+isrc_new_max_years,1,2026-09-25,Calendar years back that count as new. Review this rule with the Apple bands before the next calendar year.

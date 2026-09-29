@@ -1,0 +1,8 @@
+version: 2
+models:
+- name: stg_apple__song_durations
+  description: Latest visible iTunes lookup per Apple song id, including missing results. Open apple_song_duration to collect a tracked id.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns: [apple_song_id]

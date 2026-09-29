@@ -1,0 +1,333 @@
+{
+  "path": "/v1/functions/{source_key}",
+  "url": "/v1/functions/fixture_accounts",
+  "method": "get",
+  "status": 200,
+  "response": {
+    "manifest": {
+      "source_key": "fixture_accounts",
+      "class": "bronze",
+      "reads": [],
+      "writes": [
+        "raw.account_snapshots"
+      ],
+      "cadence": "hourly",
+      "targets_kind": "account",
+      "key": [
+        "platform_account_id",
+        "snapshot_at"
+      ],
+      "schema_mode": "infer",
+      "storage": "heap",
+      "tenant_bound": false,
+      "external": true,
+      "kind": "invoke",
+      "canary": false,
+      "hosts": [],
+      "expect": {},
+      "transport": "direct",
+      "provider": null,
+      "llm_step": null,
+      "output_key": [],
+      "output_keys": {},
+      "model_steps": [],
+      "preprocessing": {},
+      "input_eligibility": {},
+      "input_key": [],
+      "input_version": [],
+      "completion": false,
+      "version": "1",
+      "min_row_coverage": 0.5,
+      "min_target_coverage": 0.9,
+      "blocks_cycle": true,
+      "stale_target_cycles": 2,
+      "time_budget_s": null,
+      "input_order": [],
+      "park_after": null,
+      "scheduled_only": false,
+      "dedupe": "latest",
+      "retain_days": null,
+      "retain_from": null,
+      "code_fingerprint": "91c2ebaa3db7dac9fcf05dfbc4b7b47ba725e4c2460bd400394fc240ee979427"
+    },
+    "last_runs": [
+      {
+        "id": "14e5875f-2d3c-4a29-b0ec-170845df724f",
+        "kind": "invoke",
+        "scope": "global",
+        "streamline_id": "ca57f1f2-156d-426f-9950-f95c5f6b087f",
+        "cycle_id": "43d88ebf-8427-4cc9-b6e4-31c416ee1433",
+        "parent_run_id": null,
+        "trace_id": "b824db8f8da4420c969dfb50a60fa2c0",
+        "status": "succeeded",
+        "coverage": "full",
+        "error_class": null,
+        "error_message": null,
+        "rows_written": "2",
+        "rows_rejected": "0",
+        "cost_cents": "0",
+        "created_at": "2026-09-29T18:02:44.940433Z",
+        "work_key": "[\"fixture_accounts\",\"global\",\"33dcc8ac-3add-45d0-b106-cdbdb38e10cd\",\"c96424ac-5b9a-4f74-9b24-b8c203e5decf\",\"43d88ebf-8427-4cc9-b6e4-31c416ee1433\"]",
+        "target_set_id": "33dcc8ac-3add-45d0-b106-cdbdb38e10cd",
+        "revision_id": "c96424ac-5b9a-4f74-9b24-b8c203e5decf",
+        "tenant_id": null,
+        "warehouse_id": "9776c086-f052-487b-9752-7fb228d698de",
+        "expected_batches": 2,
+        "input_dump_id": null,
+        "updated_at": "2026-09-29T18:02:46.719396+00:00",
+        "config_version": null,
+        "input_relation": null,
+        "resolved_config": {
+          "fixture": true,
+          "target_coverage": {
+            "untargeted": false,
+            "min_target_coverage": 0.9,
+            "stale_target_cycles": 2
+          },
+          "fixture_scenario": "normal",
+          "min_row_coverage": 0.5
+        },
+        "settled_at": "2026-09-29T18:02:46.688540+00:00"
+      }
+    ],
+    "receipts": [
+      [
+        {
+          "error_class": null,
+          "row_coverage": "full",
+          "row_acceptance": 1.0,
+          "row_rejection_share": 0.0,
+          "rows_excluded": "0",
+          "row_exclusions": {},
+          "min_row_coverage": 0.5,
+          "row_coverage_met": true,
+          "min_target_coverage": 0.9,
+          "target_coverage": 1.0,
+          "targets_succeeded": 2,
+          "targets_total": 2,
+          "target_coverage_met": true,
+          "allow_partial": false,
+          "blocks_cycle": true,
+          "run_id": "14e5875f-2d3c-4a29-b0ec-170845df724f",
+          "status": "succeeded",
+          "coverage": "full",
+          "rows_written": "1",
+          "rows_rejected": "0",
+          "dump_id": "7a149e2f-d01b-4f1b-b5e7-df35a384197f",
+          "landed_seq": "1",
+          "trace_url": "local://trace/b824db8f8da4420c969dfb50a60fa2c0",
+          "message": "",
+          "loads": [
+            {
+              "dump_id": "7a149e2f-d01b-4f1b-b5e7-df35a384197f",
+              "status": "loaded",
+              "generation": 1,
+              "rows_inserted": "1"
+            }
+          ]
+        },
+        {
+          "error_class": null,
+          "row_coverage": "full",
+          "row_acceptance": 1.0,
+          "row_rejection_share": 0.0,
+          "rows_excluded": "0",
+          "row_exclusions": {},
+          "min_row_coverage": 0.5,
+          "row_coverage_met": true,
+          "min_target_coverage": 0.9,
+          "target_coverage": 1.0,
+          "targets_succeeded": 2,
+          "targets_total": 2,
+          "target_coverage_met": true,
+          "allow_partial": false,
+          "blocks_cycle": true,
+          "run_id": "14e5875f-2d3c-4a29-b0ec-170845df724f",
+          "status": "succeeded",
+          "coverage": "full",
+          "rows_written": "1",
+          "rows_rejected": "0",
+          "dump_id": "f1bbdd60-b7ec-4262-bbe7-610a0695d9f5",
+          "landed_seq": "2",
+          "trace_url": "local://trace/b824db8f8da4420c969dfb50a60fa2c0",
+          "message": "",
+          "loads": [
+            {
+              "dump_id": "f1bbdd60-b7ec-4262-bbe7-610a0695d9f5",
+              "status": "loaded",
+              "generation": 1,
+              "rows_inserted": "1"
+            }
+          ]
+        }
+      ]
+    ],
+    "output_preview": [
+      {
+        "table": "raw.account_snapshots",
+        "rows": [
+          {
+            "_cycle_id": "43d88ebf-8427-4cc9-b6e4-31c416ee1433",
+            "_dump_id": "f1bbdd60-b7ec-4262-bbe7-610a0695d9f5",
+            "_extra": {},
+            "_ingested_at": "2026-09-29T18:02:46.219224+00:00",
+            "_landed_seq": 2,
+            "_request_id": "d56f38fe-c002-4d66-bacc-a14d6053d95c",
+            "_revision_id": "c96424ac-5b9a-4f74-9b24-b8c203e5decf",
+            "_run_id": "14e5875f-2d3c-4a29-b0ec-170845df724f",
+            "_source_key": "fixture_accounts",
+            "_target_id": "eda405e7-0767-4cf8-943b-de06266d513d",
+            "followers": 100,
+            "following": 10,
+            "handle": "acceptance_account_001",
+            "likes": 50,
+            "platform": "fixture",
+            "platform_account_id": "acceptance-001",
+            "posts": 5,
+            "snapshot_at": "2026-09-29T18:02:46.188027+00:00"
+          },
+          {
+            "_cycle_id": "43d88ebf-8427-4cc9-b6e4-31c416ee1433",
+            "_dump_id": "7a149e2f-d01b-4f1b-b5e7-df35a384197f",
+            "_extra": {},
+            "_ingested_at": "2026-09-29T18:02:45.135452+00:00",
+            "_landed_seq": 1,
+            "_request_id": "cad33fac-e6c4-4cc4-bbc2-ffc7e6d0c635",
+            "_revision_id": "c96424ac-5b9a-4f74-9b24-b8c203e5decf",
+            "_run_id": "14e5875f-2d3c-4a29-b0ec-170845df724f",
+            "_source_key": "fixture_accounts",
+            "_target_id": "2563921c-4686-4b7f-bd6c-87bb3b6f51a7",
+            "followers": 100,
+            "following": 10,
+            "handle": "acceptance_account_002",
+            "likes": 50,
+            "platform": "fixture",
+            "platform_account_id": "acceptance-002",
+            "posts": 5,
+            "snapshot_at": "2026-09-29T18:02:45.121988+00:00"
+          }
+        ],
+        "columns": [
+          {
+            "name": "_cycle_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "_dump_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "_extra",
+            "type": "jsonb",
+            "nullable": true
+          },
+          {
+            "name": "_ingested_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          },
+          {
+            "name": "_landed_seq",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "_request_id",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "_revision_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "_run_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "_source_key",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "_target_id",
+            "type": "uuid",
+            "nullable": true
+          },
+          {
+            "name": "followers",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "following",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "handle",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "likes",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "platform",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "platform_account_id",
+            "type": "text",
+            "nullable": true
+          },
+          {
+            "name": "posts",
+            "type": "bigint",
+            "nullable": true
+          },
+          {
+            "name": "snapshot_at",
+            "type": "timestamp with time zone",
+            "nullable": true
+          }
+        ],
+        "next_cursor": null
+      }
+    ],
+    "rejected_sample": [],
+    "row_counts": [
+      {
+        "at": "2026-09-29T18:02:44.940433+00:00",
+        "rows": "2"
+      }
+    ],
+    "fingerprint_history": [
+      {
+        "columns": {
+          "followers": "bigint",
+          "following": "bigint",
+          "handle": "text",
+          "likes": "bigint",
+          "platform": "text",
+          "platform_account_id": "text",
+          "posts": "bigint",
+          "snapshot_at": "timestamptz"
+        },
+        "table": "raw.account_snapshots",
+        "tables": [
+          "raw.account_snapshots"
+        ],
+        "fingerprint": "290acaa2c8ee0e0814b10c924a85d4b5f1ffb116bb75815b2860496cadd3779d"
+      }
+    ],
+    "log_url": "/functions/fixture_accounts/logs"
+  }
+}

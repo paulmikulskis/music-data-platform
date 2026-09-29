@@ -1,0 +1,4 @@
+{
+  "kind": "pytest",
+  "target": "adversarial_runtime.py::test_cloud_identity_model"
+}

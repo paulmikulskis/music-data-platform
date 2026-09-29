@@ -1,0 +1,125 @@
+name: generated-drift
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  generated-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: evidence-size-tests
+        run: python3 -m unittest discover -s ops/ci -p test_evidence_size.py
+      - name: evidence-size
+        env:
+          EVIDENCE_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          EVIDENCE_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if [ "${{ github.event_name }}" = pull_request ]; then
+            EVIDENCE_BASE=$(git merge-base "$EVIDENCE_BASE" "$EVIDENCE_HEAD")
+          fi
+          python3 ops/ci/evidence_size.py --base "$EVIDENCE_BASE" --head "$EVIDENCE_HEAD"
+      - name: udf-copies-identical
+        run: cmp functions/udf/postgres/mdp_invoke.sql ops/fly/postgres/boot/init/20-mdp-udf.sql
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.12'
+      - name: regenerate-dbt-sources
+        run: uv run --project functions mdp sources export
+      - name: generated-dbt-identical
+        run: git diff --exit-code -- dbt
+      - name: sources-doc-current
+        run: uv run --project functions mdp sources doc --check
+      - name: glossary-order
+        run: python3 ops/ci/check_glossary.py
+      - name: sandbox-policy-current
+        run: uv run --project functions python ops/ci/generate_sandbox_policy.py --check
+      - name: health-policy-current
+        run: uv run --project functions python ops/ci/generate_health_policy.py --check
+      - name: source-registry-current
+        run: uv run --project functions python ops/showcase/source_registry.py --check
+      - name: function-flows-current
+        run: uv run --project functions python ops/showcase/function_flows.py --check
+      - name: analyst-inventory-current
+        run: uv run --project functions python ops/analyst-doc.py --check
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pnpm --dir control install --frozen-lockfile
+      - name: build-catalog-for-sdk
+        env:
+          MDP_CI_DB: /tmp/mdp-sdk-ci.duckdb
+        run: |
+          cp dbt/profiles/profiles.example.yml dbt/profiles/profiles.yml
+          uv run --project dbt dbt deps --project-dir dbt --profiles-dir dbt/profiles --target ci
+          uv run --project dbt dbt seed --project-dir dbt --profiles-dir dbt/profiles --target ci
+          DBT_MDP_SCOPE=tenant:fixture uv run --project dbt dbt build --project-dir dbt --profiles-dir dbt/profiles --target ci
+          uv run --project dbt dbt docs generate --project-dir dbt --profiles-dir dbt/profiles --target ci
+      - name: shared-personal-fields
+        run: uv run --project functions python ops/ci/privacy.py
+      - name: relation-labels-current
+        run: uv run --project functions python ops/label-catalog.py --check
+      - name: regenerate-sdk
+        run: |
+          pnpm --dir control --filter @mdp/data-sdk generate
+          pnpm --dir control mdp scaffold api mart_readiness
+          pnpm --dir control mdp scaffold api mart_chart_history
+          git diff --exit-code -- control/packages/data-sdk/src control/apps/data-api/src/generated
+
+  showcase-artifacts-postgres:
+    runs-on: ubuntu-latest
+    env:
+      MDP_PG_PORT: '5434'
+      MDP_PG_PASSWORD: dbt_transform
+      WITH_PG_LAKE: '0'
+      MDP_SHOWCASE_PERMISSION_OUTPUT: /tmp/showcase-permissions.generated.json
+      MDP_SHOWCASE_QUERY_TEST_URL: postgresql://showcase_wh:showcase_wh@127.0.0.1:5434/warehouse
+      MDP_WORKBENCH_EXAMPLE_TEST_URL: postgresql://workbench_wh:workbench_wh@127.0.0.1:5434/warehouse
+      MDP_ARTIFACT_TEST_ADMIN_URL: postgresql://postgres:postgres@127.0.0.1:5434/warehouse
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.12'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pnpm --dir control install --frozen-lockfile
+      - name: disposable-postgres
+        run: docker compose -f ops/local/docker-compose.yml up -d --build --wait --no-deps mdp-pg-lake
+      - name: initialize-roles-and-migrations
+        run: bash ops/local/init.sh
+      - name: parse-lineage-inputs
+        run: |
+          cp dbt/profiles/profiles.example.yml dbt/profiles/profiles.yml
+          uv run --project dbt dbt parse --project-dir dbt --profiles-dir dbt/profiles --target pg_local
+      - name: lineage-generated-drift
+        run: |
+          uv run --project functions python ops/showcase/lineage/generate.py --check
+          uv run --project functions python ops/showcase/lineage/generate.py
+          git diff --exit-code -- control/apps/showcase/lib/lineage.generated.json
+      - name: projections-under-real-roles
+        run: bash ops/showcase/check-adapters.sh
+      - name: artifact-boundaries
+        run: |
+          uv run --project functions python -m unittest discover -s ops/showcase -p 'test_*.py'
+          pnpm --dir control --filter @mdp/showcase exec vitest run test/lineage.test.ts
+      - name: archived-overlay-and-final-image
+        run: |
+          export MDP_DEPLOY_REVISION=$(git rev-parse HEAD)
+          python3 ops/fly/build-context.py /tmp/showcase-context --showcase
+          docker build --build-arg "MDP_DEPLOY_REVISION=$MDP_DEPLOY_REVISION" -f /tmp/showcase-context/control/apps/showcase/Dockerfile -t showcase-artifacts /tmp/showcase-context
+          bash ops/showcase/check-image.sh showcase-artifacts /tmp/showcase-context
+      - name: remove-disposable-services
+        if: always()
+        run: docker compose -f ops/local/docker-compose.yml down -v

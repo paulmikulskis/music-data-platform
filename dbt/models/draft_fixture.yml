@@ -1,0 +1,196 @@
+version: 2
+unit_tests:
+- name: discovery_entries_distinct_in_window
+  model: mart_arrivals_current
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows
+  given:
+  - input: ref('int_cluster_entries__daily')
+    rows:
+    - song_key: developing-wide
+      day: '2026-09-25'
+      platform: spotify
+      list_id: list-developing-wide
+      list_kind: editorial
+      list_reach_tier: 1
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+    - song_key: emerging-narrow
+      day: '2026-09-25'
+      platform: spotify
+      list_id: list-emerging-narrow
+      list_kind: editorial
+      list_reach_tier: 3
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+    - song_key: catalog-wide
+      day: '2026-09-25'
+      platform: spotify
+      list_id: list-catalog-wide
+      list_kind: editorial
+      list_reach_tier: 1
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+    - song_key: catalog-emerging-narrow
+      day: '2026-09-25'
+      platform: spotify
+      list_id: list-catalog-emerging-narrow
+      list_kind: editorial
+      list_reach_tier: 3
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+    - song_key: developing-wide
+      day: '2026-09-25'
+      platform: shazam
+      list_id: shazam:discovery:de
+      list_kind: chart
+      list_reach_tier: 1
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+    - song_key: developing-wide
+      day: '2026-09-24'
+      platform: shazam
+      list_id: shazam:discovery:de
+      list_kind: chart
+      list_reach_tier: 1
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+    - song_key: developing-wide
+      day: '2026-09-25'
+      platform: shazam
+      list_id: shazam:discovery:gb
+      list_kind: chart
+      list_reach_tier: 1
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+    - song_key: developing-wide
+      day: '2026-09-25'
+      platform: shazam
+      list_id: shazam:top-200:us
+      list_kind: chart
+      list_reach_tier: 1
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+    - song_key: developing-wide
+      day: '2026-09-20'
+      platform: shazam
+      list_id: shazam:discovery:fr
+      list_kind: chart
+      list_reach_tier: 1
+      observed_at: '2026-09-25 12:00:00'
+      market: null
+      locator: '{}'
+      source_keys: '[]'
+  - input: ref('int_song_windows__daily')
+    rows:
+    - day: '2026-09-25'
+      family: playlists
+      window_days: 2
+      rate_window_days: 0
+    - day: '2026-09-25'
+      family: shazam
+      window_days: 2
+      rate_window_days: 0
+  - input: ref('int_song_movement__daily')
+    rows:
+    - song_key: developing-wide
+      day: '2026-09-25'
+      chart_spread_gain: 0
+      movement_list: new_entries
+      artist_stage: developing
+      cluster_key: developing-wide
+      member_song_keys: '["developing-wide"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: emerging-narrow
+      day: '2026-09-25'
+      chart_spread_gain: 0
+      movement_list: new_entries
+      artist_stage: emerging
+      cluster_key: emerging-narrow
+      member_song_keys: '["emerging-narrow"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: catalog-wide
+      day: '2026-09-25'
+      chart_spread_gain: 0
+      movement_list: catalog_entries
+      artist_stage: unknown
+      cluster_key: catalog-wide
+      member_song_keys: '["catalog-wide"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: catalog-emerging-narrow
+      day: '2026-09-25'
+      chart_spread_gain: 0
+      movement_list: catalog_entries
+      artist_stage: emerging
+      cluster_key: catalog-emerging-narrow
+      member_song_keys: '["catalog-emerging-narrow"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('int_song_cluster__daily')
+    rows:
+    - song_key: catalog-emerging-narrow
+      cluster_key: catalog-emerging-narrow
+      member_song_keys: '["catalog-emerging-narrow"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: catalog-wide
+      cluster_key: catalog-wide
+      member_song_keys: '["catalog-wide"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: developing-wide
+      cluster_key: developing-wide
+      member_song_keys: '["developing-wide"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: emerging-narrow
+      cluster_key: emerging-narrow
+      member_song_keys: '["emerging-narrow"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+  expect:
+    rows:
+    - song_key: emerging-narrow
+      movement_list: new_entries
+      discovery_entries: 0
+    - song_key: developing-wide
+      movement_list: new_entries
+      discovery_entries: 2
+    - song_key: catalog-wide
+      movement_list: catalog_entries
+      discovery_entries: 0
+    - song_key: catalog-emerging-narrow
+      movement_list: catalog_entries
+      discovery_entries: 0

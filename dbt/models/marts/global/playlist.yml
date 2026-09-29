@@ -1,0 +1,800 @@
+version: 2
+models:
+- name: mart_playlist_events
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - platform
+      - playlist_id
+      - variant
+      - stream
+      - occurrence_key
+      - interval_id
+      - event_type
+      - observed_at
+  columns:
+  - name: platform
+    description: "Music platform on which the playlist is observed."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: playlist_id
+    description: "Playlist identifier on its platform, which must be joined with platform and variant."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: variant
+    description: "Market or other version of the playlist, kept separate because its contents can differ."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: occurrence_inferred
+    description: "True when repeated copies of an item are distinguished by their observed order rather than a stable platform row identifier."
+    data_type: boolean
+  - name: occurrence_key
+    description: "Identifier for one copy of an item within this playlist variant and stream, allowing the same item to appear more than once."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: interval_id
+    description: "Snapshot identifier that starts one membership island, a run of sightings with no complete observation proving absence between them."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: event_type
+    description: "Evidence label: add and remove bound a playlist change, entered_head and left_head bound a head change, baseline and entry_unknown prove presence only, and move proves a position change between complete observations."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: observed_at
+    description: "UTC time of the observation proving this event, using the absence observation for a removal rather than the unknown exact change time."
+    data_type: timestamp
+    constraints:
+    - type: not_null
+  - name: platform_track_id
+    description: "Track identifier on the platform, null for an item representing a release rather than a track."
+    data_type: text
+  - name: position
+    description: "One-based item position at the event sighting, or the last sighting before a removal."
+    data_type: bigint
+  - name: previous_position
+    description: "One-based position in the previous complete observation at a unique time within this membership island, null when no comparison exists."
+    data_type: bigint
+  - name: entered_after
+    description: "UTC time of the last complete observation proving absence before this membership island, null when the entry has no known lower bound."
+    data_type: timestamp
+  - name: first_observed_at
+    description: "UTC time of the first sighting in this membership island, giving the inclusive upper bound of a bounded entry."
+    data_type: timestamp
+  - name: removed_after
+    description: "UTC time of the last complete sighting before a proven removal, null when the island has no complete presence proof or no later absence."
+    data_type: timestamp
+  - name: removed_by
+    description: "UTC time of the first complete observation proving absence after this membership island, null when no such observation exists."
+    data_type: timestamp
+  - name: is_baseline
+    description: "True when the island begins at the stream's first complete observation at a unique time, which proves presence but cannot date an add."
+    data_type: boolean
+  - name: uncertainty_hours
+    description: "Hours between the two observations bounding this entry, removal or move, null for an entry with no known earlier absence."
+    data_type: double precision
+  - name: snapshot_id
+    description: "Identifier of the observation proving the event, including the absence snapshot for a removal."
+    data_type: text
+  - name: page_match
+    description: "True when the paired playlist page agrees with the observed track at the same position by track identifier or by title and duration within two seconds."
+    data_type: boolean
+  - name: platform_album_id
+    description: "Platform album or release identifier carried by the observed item or supplied by a matching paired page."
+    data_type: text
+  - name: isrc
+    description: "Recording code selected from identity evidence visible to the bound daily cycle, null when none is accepted."
+    data_type: text
+  - name: mb_recording_gid
+    description: "MusicBrainz recording identifier resolved from the bound daily cycle's evidence, null when no recording match is accepted."
+    data_type: text
+  - name: isrc_method
+    description: "Method that selects the ISRC from evidence visible to the bound daily cycle, null when no ISRC is accepted."
+    data_type: text
+  - name: recording_method
+    description: "Method that resolves the recording as of the bound daily close identified by daily_manifest_close_no and as_of, null when no match is accepted at that close."
+    data_type: text
+  - name: confidence
+    description: "Zero-to-one method score for the recording resolved as of daily_manifest_close_no and as_of, null when no recording is accepted at that close."
+    data_type: double precision
+  - name: daily_manifest_close_no
+    description: "Committed global close number of the bound daily cycle whose evidence resolves identity, zero for a legacy close and null when a local build has no mirrored cycle."
+    data_type: bigint
+  - name: as_of
+    description: "UTC close time of the bound daily cycle used for identity, falling back to the event observation time only when a local build has no mirrored close."
+    data_type: timestamp
+  - name: stream
+    description: "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+    data_type: text
+    data_tests:
+    - accepted_values:
+        arguments:
+          values:
+          - head
+          - full
+    constraints:
+    - type: not_null
+  - name: learning_eligible
+    description: "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    description: "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    description: "JSON array of contributing source identifiers used to attach permissions without removing the row."
+    data_type: text
+    data_tests:
+    - not_null
+  - name: item_type
+    description: "Kind of playlist item, distinguishing a track from a release such as an album."
+    data_type: text
+  - name: platform_item_id
+    description: "Platform identifier of the playlist item itself, whether that item is a track or a release."
+    data_type: text
+  - name: featured_track_id
+    description: "Platform identifier of a track featured for a release item, which does not make the whole release a track list membership."
+    data_type: text
+  - name: owner_class
+    description: "Observed owner category, with a configured label filling unknown ownership or refining editorial to chart."
+    data_type: text
+- name: mart_playlist_coverage
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - platform
+      - playlist_id
+      - variant
+      - stream
+      - observed_at
+      - snapshot_id
+  columns:
+  - name: platform
+    description: "Music platform on which the playlist is observed."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: playlist_id
+    description: "Playlist identifier on its platform, which must be joined with platform and variant."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: variant
+    description: "Market or other version of the playlist, kept separate because its contents can differ."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: snapshot_id
+    description: "Identifier of this playlist snapshot within its variant and stream."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: observed_at
+    description: "UTC time when the playlist snapshot is observed, distinct from the cycle close used to measure its age."
+    data_type: timestamp
+    constraints:
+    - type: not_null
+  - name: cycle_id
+    description: "Identifier of the collection cycle that observes this snapshot, which may precede the daily cycle building the mart."
+    data_type: text
+  - name: source_key
+    description: "Collector identifier that produces this snapshot."
+    data_type: text
+  - name: coverage
+    description: "Full means the collected stream passes completeness checks even when a head covers only part of the playlist, while partial or simultaneous snapshots prove presence only."
+    data_type: text
+  - name: observation
+    description: "Content means item rows are fetched, while unchanged reuses matching earlier content whose completeness still determines whether absence can be proved."
+    data_type: text
+  - name: items_observed
+    description: "Number of items the collector reports observing in this snapshot."
+    data_type: bigint
+  - name: items_visible
+    description: "Number of stored item rows attached directly to this snapshot, before reusing content from an unchanged observation."
+    data_type: bigint
+  - name: track_count_reported
+    description: "Playlist size reported by the platform, using the paired page total for a head stream and null when unavailable."
+    data_type: bigint
+  - name: observed_share
+    description: "One for a complete stream, otherwise its effective visible item count divided by the reported playlist size, null when the size is missing or zero."
+    data_type: double precision
+  - name: last_full_at
+    description: "UTC time of the most recent complete snapshot at or before this observation in the same playlist variant and stream."
+    data_type: timestamp
+  - name: as_of
+    description: "UTC close time of the cycle that observes this snapshot, falling back to its observation time when that close is not mirrored locally."
+    data_type: timestamp
+  - name: days_since_full
+    description: "Days from last_full_at to as_of on the collection cycle clock, null when no complete snapshot exists and unchanged by query time."
+    data_type: double precision
+  - name: stream
+    description: "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+    data_type: text
+    data_tests:
+    - accepted_values:
+        arguments:
+          values:
+          - head
+          - full
+    constraints:
+    - type: not_null
+  - name: learning_eligible
+    description: "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    description: "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    description: "JSON array of contributing source identifiers used to attach permissions without removing the row."
+    data_type: text
+    data_tests:
+    - not_null
+- name: mart_playlist_profile
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - platform
+      - playlist_id
+      - variant
+      - stream
+      - observed_at
+      - snapshot_id
+  columns:
+  - name: platform
+    description: "Music platform on which the playlist is observed."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: playlist_id
+    description: "Playlist identifier on its platform, which must be joined with platform and variant."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: variant
+    description: "Market or other version of the playlist, kept separate because its contents can differ."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: observed_at
+    description: "UTC time when this playlist profile is observed."
+    data_type: timestamp
+    constraints:
+    - type: not_null
+  - name: snapshot_id
+    description: "Identifier of the playlist snapshot whose profile is shown."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: title
+    description: "Playlist title from the paired page when available, otherwise from the snapshot."
+    data_type: text
+  - name: description
+    description: "Playlist description retained only when the platform's own account is observed to own the list, otherwise null."
+    data_type: text
+  - name: owner_id
+    description: "Platform account identifier retained only for a list observed to belong to the platform's own account, otherwise null."
+    data_type: text
+  - name: owner_name
+    description: "Public owner name retained only for a list observed to belong to the platform's own account, otherwise null."
+    data_type: text
+  - name: followers
+    description: "Playlist follower count from the paired page when available, otherwise from the snapshot, null when unreported."
+    data_type: bigint
+  - name: follower_change
+    description: "Follower count minus the previous snapshot's count in this playlist variant and stream, null when either count is missing and not a fixed-day change."
+    data_type: bigint
+  - name: track_count_reported
+    description: "Playlist size reported by the platform, using the paired page total for a head stream and null when unavailable."
+    data_type: bigint
+  - name: stream
+    description: "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+    data_type: text
+    data_tests:
+    - accepted_values:
+        arguments:
+          values:
+          - head
+          - full
+    constraints:
+    - type: not_null
+  - name: learning_eligible
+    description: "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    description: "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    description: "JSON array of contributing source identifiers used to attach permissions without removing the row."
+    data_type: text
+    data_tests:
+    - not_null
+  - name: owner_class
+    description: "Observed owner category, with a configured label filling unknown ownership or refining editorial to chart."
+    data_type: text
+- name: mart_editorial_entries
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - platform
+      - playlist_id
+      - variant
+      - stream
+      - occurrence_key
+      - interval_id
+  columns:
+  - name: platform
+    description: "Music platform on which the playlist is observed."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: playlist_id
+    description: "Playlist identifier on its platform, which must be joined with platform and variant."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: variant
+    description: "Market or other version of the playlist, kept separate because its contents can differ."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: occurrence_inferred
+    description: "True when repeated copies of an item are distinguished by their observed order rather than a stable platform row identifier."
+    data_type: boolean
+  - name: occurrence_key
+    description: "Identifier for one copy of an item within this playlist variant and stream, allowing the same item to appear more than once."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: interval_id
+    description: "Snapshot identifier that starts one membership island, a run of sightings with no complete observation proving absence between them."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: event_type
+    description: "Always add, meaning earlier complete absence and later presence bound an entry onto an editorial, algorithmic or chart list, with full-list extent corroborated for head streams."
+    data_type: text
+  - name: observed_at
+    description: "UTC time of the observation proving this event, using the absence observation for a removal rather than the unknown exact change time."
+    data_type: timestamp
+  - name: platform_track_id
+    description: "Track identifier on the platform, null for an item representing a release rather than a track."
+    data_type: text
+  - name: position
+    description: "One-based item position at the event sighting, or the last sighting before a removal."
+    data_type: bigint
+  - name: previous_position
+    description: "One-based position in the previous complete observation at a unique time within this membership island, null when no comparison exists."
+    data_type: bigint
+  - name: entered_after
+    description: "UTC time of the last complete observation proving absence before this membership island, null when the entry has no known lower bound."
+    data_type: timestamp
+  - name: first_observed_at
+    description: "UTC time of the first sighting in this membership island, giving the inclusive upper bound of a bounded entry."
+    data_type: timestamp
+  - name: removed_after
+    description: "UTC time of the last complete sighting before a proven removal, null when the island has no complete presence proof or no later absence."
+    data_type: timestamp
+  - name: removed_by
+    description: "UTC time of the first complete observation proving absence after this membership island, null when no such observation exists."
+    data_type: timestamp
+  - name: is_baseline
+    description: "True when the island begins at the stream's first complete observation at a unique time, which proves presence but cannot date an add."
+    data_type: boolean
+  - name: uncertainty_hours
+    description: "Hours between the two observations bounding this entry, removal or move, null for an entry with no known earlier absence."
+    data_type: double precision
+  - name: snapshot_id
+    description: "Identifier of the observation proving the event, including the absence snapshot for a removal."
+    data_type: text
+  - name: page_match
+    description: "True when the paired playlist page agrees with the observed track at the same position by track identifier or by title and duration within two seconds."
+    data_type: boolean
+  - name: platform_album_id
+    description: "Platform album or release identifier carried by the observed item or supplied by a matching paired page."
+    data_type: text
+  - name: isrc
+    description: "Recording code selected from identity evidence visible to the bound daily cycle, null when none is accepted."
+    data_type: text
+  - name: mb_recording_gid
+    description: "MusicBrainz recording identifier resolved from the bound daily cycle's evidence, null when no recording match is accepted."
+    data_type: text
+  - name: isrc_method
+    description: "Method that selects the ISRC from evidence visible to the bound daily cycle, null when no ISRC is accepted."
+    data_type: text
+  - name: recording_method
+    description: "Method that resolves the recording as of the bound daily close identified by daily_manifest_close_no and as_of, null when no match is accepted at that close."
+    data_type: text
+  - name: confidence
+    description: "Zero-to-one method score for the recording resolved as of daily_manifest_close_no and as_of, null when no recording is accepted at that close."
+    data_type: double precision
+  - name: daily_manifest_close_no
+    description: "Committed global close number of the bound daily cycle whose evidence resolves identity, zero for a legacy close and null when a local build has no mirrored cycle."
+    data_type: bigint
+  - name: as_of
+    description: "UTC close time of the bound daily cycle used for identity, falling back to the event observation time only when a local build has no mirrored close."
+    data_type: timestamp
+  - name: stream
+    description: "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+    data_type: text
+    data_tests:
+    - accepted_values:
+        arguments:
+          values:
+          - head
+          - full
+    constraints:
+    - type: not_null
+  - name: learning_eligible
+    description: "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    description: "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    description: "JSON array of contributing source identifiers used to attach permissions without removing the row."
+    data_type: text
+    data_tests:
+    - not_null
+  - name: item_type
+    description: "Kind of playlist item, distinguishing a track from a release such as an album."
+    data_type: text
+  - name: platform_item_id
+    description: "Platform identifier of the playlist item itself, whether that item is a track or a release."
+    data_type: text
+  - name: featured_track_id
+    description: "Platform identifier of a track featured for a release item, which does not make the whole release a track list membership."
+    data_type: text
+  - name: owner_class
+    description: "Observed owner category, with a configured label filling unknown ownership or refining editorial to chart."
+    data_type: text
+  - name: first_ever_entry
+    description: "True for the earliest bounded add of this item in the available history of this playlist variant and stream, not proof of its first lifetime appearance."
+    data_type: boolean
+- name: mart_editorial_presence
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - platform
+      - playlist_id
+      - variant
+      - stream
+      - occurrence_key
+      - interval_id
+      - event_type
+  columns:
+  - name: platform
+    description: "Music platform on which the playlist is observed."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: playlist_id
+    description: "Playlist identifier on its platform, which must be joined with platform and variant."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: variant
+    description: "Market or other version of the playlist, kept separate because its contents can differ."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: occurrence_inferred
+    description: "True when repeated copies of an item are distinguished by their observed order rather than a stable platform row identifier."
+    data_type: boolean
+  - name: occurrence_key
+    description: "Identifier for one copy of an item within this playlist variant and stream, allowing the same item to appear more than once."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: interval_id
+    description: "Snapshot identifier that starts one membership island, a run of sightings with no complete observation proving absence between them."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: event_type
+    description: "Baseline and entry_unknown prove presence without a dated add, while entered_head bounds entry into the visible head without proving a full-list add."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: observed_at
+    description: "UTC time of the observation proving this event, using the absence observation for a removal rather than the unknown exact change time."
+    data_type: timestamp
+  - name: platform_track_id
+    description: "Track identifier on the platform, null for an item representing a release rather than a track."
+    data_type: text
+  - name: position
+    description: "One-based item position at the event sighting, or the last sighting before a removal."
+    data_type: bigint
+  - name: previous_position
+    description: "One-based position in the previous complete observation at a unique time within this membership island, null when no comparison exists."
+    data_type: bigint
+  - name: entered_after
+    description: "UTC time of the last complete observation proving absence before this membership island, null when the entry has no known lower bound."
+    data_type: timestamp
+  - name: first_observed_at
+    description: "UTC time of the first sighting in this membership island, giving the inclusive upper bound of a bounded entry."
+    data_type: timestamp
+  - name: removed_after
+    description: "UTC time of the last complete sighting before a proven removal, null when the island has no complete presence proof or no later absence."
+    data_type: timestamp
+  - name: removed_by
+    description: "UTC time of the first complete observation proving absence after this membership island, null when no such observation exists."
+    data_type: timestamp
+  - name: is_baseline
+    description: "True when the island begins at the stream's first complete observation at a unique time, which proves presence but cannot date an add."
+    data_type: boolean
+  - name: uncertainty_hours
+    description: "Hours between the two observations bounding this entry, removal or move, null for an entry with no known earlier absence."
+    data_type: double precision
+  - name: snapshot_id
+    description: "Identifier of the observation proving the event, including the absence snapshot for a removal."
+    data_type: text
+  - name: page_match
+    description: "True when the paired playlist page agrees with the observed track at the same position by track identifier or by title and duration within two seconds."
+    data_type: boolean
+  - name: platform_album_id
+    description: "Platform album or release identifier carried by the observed item or supplied by a matching paired page."
+    data_type: text
+  - name: isrc
+    description: "Recording code selected from identity evidence visible to the bound daily cycle, null when none is accepted."
+    data_type: text
+  - name: mb_recording_gid
+    description: "MusicBrainz recording identifier resolved from the bound daily cycle's evidence, null when no recording match is accepted."
+    data_type: text
+  - name: isrc_method
+    description: "Method that selects the ISRC from evidence visible to the bound daily cycle, null when no ISRC is accepted."
+    data_type: text
+  - name: recording_method
+    description: "Method that resolves the recording as of the bound daily close identified by daily_manifest_close_no and as_of, null when no match is accepted at that close."
+    data_type: text
+  - name: confidence
+    description: "Zero-to-one method score for the recording resolved as of daily_manifest_close_no and as_of, null when no recording is accepted at that close."
+    data_type: double precision
+  - name: daily_manifest_close_no
+    description: "Committed global close number of the bound daily cycle whose evidence resolves identity, zero for a legacy close and null when a local build has no mirrored cycle."
+    data_type: bigint
+  - name: as_of
+    description: "UTC close time of the bound daily cycle used for identity, falling back to the event observation time only when a local build has no mirrored close."
+    data_type: timestamp
+  - name: stream
+    description: "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+    data_type: text
+    data_tests:
+    - accepted_values:
+        arguments:
+          values:
+          - head
+          - full
+    constraints:
+    - type: not_null
+  - name: learning_eligible
+    description: "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    description: "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    description: "JSON array of contributing source identifiers used to attach permissions without removing the row."
+    data_type: text
+    data_tests:
+    - not_null
+  - name: item_type
+    description: "Kind of playlist item, distinguishing a track from a release such as an album."
+    data_type: text
+  - name: platform_item_id
+    description: "Platform identifier of the playlist item itself, whether that item is a track or a release."
+    data_type: text
+  - name: featured_track_id
+    description: "Platform identifier of a track featured for a release item, which does not make the whole release a track list membership."
+    data_type: text
+  - name: owner_class
+    description: "Observed owner category, with a configured label filling unknown ownership or refining editorial to chart."
+    data_type: text
+- name: mart_playlist_membership_current
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - platform
+      - playlist_id
+      - variant
+      - occurrence_key
+  columns:
+  - name: platform
+    description: "Music platform on which the playlist is observed."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: playlist_id
+    description: "Playlist identifier on its platform, which must be joined with platform and variant."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: variant
+    description: "Market or other version of the playlist, kept separate because its contents can differ."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: stream
+    description: "Stream selected at the bound daily close, preferring a head confirmed to cover the whole list, then a full stream no older than its collection interval plus one day, then the available head."
+    data_type: text
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values:
+          - head
+          - full
+  - name: occurrence_key
+    description: "Identifier for one copy of an item within this playlist variant and stream, allowing the same item to appear more than once."
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: occurrence_inferred
+    description: "True when repeated copies of an item are distinguished by their observed order rather than a stable platform row identifier."
+    data_type: boolean
+  - name: interval_id
+    description: "Snapshot identifier that starts one membership island, a run of sightings with no complete observation proving absence between them."
+    data_type: text
+  - name: position
+    description: "One-based position at this item's latest sighting within its still-open membership island."
+    data_type: bigint
+  - name: platform_track_id
+    description: "Track identifier on the platform, null for an item representing a release rather than a track."
+    data_type: text
+  - name: item_type
+    description: "Kind of playlist item, distinguishing a track from a release such as an album."
+    data_type: text
+  - name: platform_item_id
+    description: "Platform identifier of the playlist item itself, whether that item is a track or a release."
+    data_type: text
+  - name: featured_track_id
+    description: "Platform identifier of a track featured for a release item, which does not make the whole release a track list membership."
+    data_type: text
+  - name: observed_at
+    description: "UTC time of the selected stream's latest snapshot, which may carry forward an earlier item sighting when no complete absence closes its island."
+    data_type: timestamp
+  - name: coverage
+    description: "Full means the collected stream passes completeness checks even when a head covers only part of the playlist, while partial or simultaneous snapshots prove presence only."
+    data_type: text
+  - name: extent
+    description: "Full means the selected surface covers the whole list, while head_only limits membership claims to its visible beginning regardless of coverage."
+    data_type: text
+  - name: snapshot_id
+    description: "Identifier of the selected stream's latest snapshot, which need not contain a fresh sighting of every carried-forward member."
+    data_type: text
+  - name: learning_eligible
+    description: "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    description: "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    description: "JSON array of contributing source identifiers used to attach permissions without removing the row."
+    data_type: text
+    data_tests:
+    - not_null
+- name: mart_track_playlist_followers
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: day
+    data_type: date
+    data_tests:
+    - not_null
+  - name: platform
+    data_type: text
+    data_tests:
+    - not_null
+  - name: owner_class
+    data_type: text
+    data_tests:
+    - not_null
+  - name: mb_recording_gid
+    data_type: text
+    data_tests:
+    - not_null
+  - name: playlist_followers
+    data_type: bigint
+  - name: list_count
+    data_type: bigint
+    data_tests:
+    - not_null
+  - name: best_position
+    data_type: bigint
+  - name: learning_eligible
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    data_type: text
+    data_tests:
+    - not_null
+- name: mart_track_playlist_followers_by_variant
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: day
+    data_type: date
+    data_tests:
+    - not_null
+  - name: platform
+    data_type: text
+    data_tests:
+    - not_null
+  - name: variant
+    data_type: text
+    data_tests:
+    - not_null
+  - name: owner_class
+    data_type: text
+    data_tests:
+    - not_null
+  - name: mb_recording_gid
+    data_type: text
+    data_tests:
+    - not_null
+  - name: playlist_followers
+    data_type: bigint
+  - name: list_count
+    data_type: bigint
+    data_tests:
+    - not_null
+  - name: best_position
+    data_type: bigint
+  - name: learning_eligible
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    data_type: text
+    data_tests:
+    - not_null

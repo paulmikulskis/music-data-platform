@@ -1,0 +1,28 @@
+{
+  "Warehouse": [
+    {
+      "text": "PostgreSQL 17.",
+      "captured_at": "2026-09-27T00:00:00Z",
+      "evidence": "Synthetic example; see ops/fly/postgres/Dockerfile"
+    }
+  ],
+  "MusicBrainz copy": [
+    {
+      "text": "12 synthetic records at import",
+      "captured_at": "2026-09-23T00:00:00Z",
+      "evidence": "Synthetic example only"
+    },
+    {
+      "text": "1 MB in use on a 1 GB example disk",
+      "captured_at": "2026-09-24T00:00:00Z",
+      "evidence": "Synthetic example only"
+    }
+  ],
+  "Analysts": [
+    {
+      "text": "0 analysts connected.",
+      "captured_at": "2026-09-27T00:00:00Z",
+      "evidence": "Synthetic example only"
+    }
+  ]
+}

@@ -1,0 +1,2299 @@
+{
+  "format": 1,
+  "relations": [
+    {
+      "relation": "marts.mart_arrivals_current",
+      "schema": "marts",
+      "name": "mart_arrivals_current",
+      "access": "select",
+      "grain": [
+        "song_key"
+      ],
+      "columns": [
+        {
+          "name": "song_key",
+          "data_type": "text",
+          "description": "Song link key."
+        },
+        {
+          "name": "rank",
+          "data_type": "bigint",
+          "description": "Position inside its movement list. Places lists order by chart_spread_gain first; new_entries puts emerging artists first; then list reach tier, markets, latest entry and a fixed hash of day and song key."
+        },
+        {
+          "name": "day",
+          "data_type": "date",
+          "description": "Bound UTC day."
+        },
+        {
+          "name": "title_text",
+          "data_type": "text",
+          "description": "Song title."
+        },
+        {
+          "name": "artist_text",
+          "data_type": "text",
+          "description": "Artist credit."
+        },
+        {
+          "name": "markets",
+          "data_type": "text",
+          "description": "JSON array of entered country markets."
+        },
+        {
+          "name": "entered_lists",
+          "data_type": "bigint",
+          "description": "Distinct editorial and chart lists entered."
+        },
+        {
+          "name": "discovery_entries",
+          "data_type": "bigint",
+          "description": "Distinct Shazam Discovery charts entered in the arrival window. Open evidence for the charts."
+        },
+        {
+          "name": "entered_charts",
+          "data_type": "bigint",
+          "description": "Distinct Shazam charts entered."
+        },
+        {
+          "name": "reason_rule",
+          "data_type": "text",
+          "description": "Entry window and next step."
+        },
+        {
+          "name": "evidence",
+          "data_type": "text",
+          "description": "Entry row locators with captured input builds. cluster_confidence is measured precision, the lowest merge-rule Wilson 95% lower bound; open the cluster audit."
+        },
+        {
+          "name": "window_days",
+          "data_type": "integer",
+          "description": "Comparison window in UTC days; it grows with observed history to seven."
+        },
+        {
+          "name": "chart_spread_gain",
+          "data_type": "bigint",
+          "description": "New country markets on tracked chart lists or Shazam charts. It ranks signal lists first and never joins the two-family score, because it overlaps playlists and Shazam."
+        },
+        {
+          "name": "list_reach_tier",
+          "data_type": "integer",
+          "description": "Best entered list tier; new_entries reads editorial and new-music lists only. One is widest; four is unclassified. See playlist_reach_tiers."
+        },
+        {
+          "name": "market_count",
+          "data_type": "bigint",
+          "description": "Distinct entered country markets; global and unknown are excluded."
+        },
+        {
+          "name": "last_entered_at",
+          "data_type": "timestamp with time zone",
+          "description": "Most recent qualifying entry observation."
+        },
+        {
+          "name": "movement_list",
+          "data_type": "text",
+          "description": "new_entries: new songs by emerging, developing or unknown-stage artists. established_entries: new songs by established artists. catalog_entries: catalog waking up. unplaced: unknown age and no new-music list in the window, so no movement view reads it. Lists never mix."
+        },
+        {
+          "name": "age_class",
+          "data_type": "text",
+          "description": "new when the age proxy is this year or last; catalog when older; unknown without a proxy. A proxy, never a release date. Open age_basis for its source."
+        },
+        {
+          "name": "age_basis",
+          "data_type": "text",
+          "description": "isrc_year: the year code in the ISRC, which a reissue can make newer, never older. apple_id_band: the Apple song id range. none: no proxy."
+        },
+        {
+          "name": "artist_stage",
+          "data_type": "text",
+          "description": "Stage of the song's most established credited artist, from MusicBrainz catalog depth. emerging, developing, established or unknown; artist_stage_thresholds holds the rules. unknown means no linked MusicBrainz artist or no catalog reading yet. Playlist data never sets it."
+        },
+        {
+          "name": "artist_stage_basis",
+          "data_type": "text",
+          "description": "Source of artist_stage. musicbrainz_catalog: release group counts and first release years read from the MusicBrainz mirror. none: artist_stage is unknown."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": "Learning permission."
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": "Resale permission."
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": "Contributing source keys."
+        },
+        {
+          "name": "cluster_key",
+          "data_type": "text",
+          "description": "Provisional movement group key. Open member_song_keys to inspect the strict keys."
+        },
+        {
+          "name": "member_song_keys",
+          "data_type": "text",
+          "description": "Sorted JSON array of strict keys scored together. Open evidence for merge methods."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/signals.yml"
+    },
+    {
+      "relation": "marts.mart_chart_history",
+      "schema": "marts",
+      "name": "mart_chart_history",
+      "access": "select",
+      "grain": [
+        "chart_name",
+        "chart_week",
+        "chart_position"
+      ],
+      "columns": [
+        {
+          "name": "chart_name",
+          "data_type": "varchar",
+          "description": ""
+        },
+        {
+          "name": "chart_week",
+          "data_type": "date",
+          "description": ""
+        },
+        {
+          "name": "chart_position",
+          "data_type": "integer",
+          "description": ""
+        },
+        {
+          "name": "track_title",
+          "data_type": "varchar",
+          "description": ""
+        },
+        {
+          "name": "artist_name",
+          "data_type": "varchar",
+          "description": ""
+        },
+        {
+          "name": "song_key",
+          "data_type": "text",
+          "description": "Movement representative when exactly one group matches. Null means unmatched or ambiguous."
+        },
+        {
+          "name": "billboard_match_method",
+          "data_type": "text",
+          "description": "folded, credit_primary, run_together, group, ambiguous, or unmatched. Open billboard_match_rules for enabled methods."
+        },
+        {
+          "name": "confidence",
+          "data_type": "double precision",
+          "description": "Conservative method confidence, capped by movement-group measured precision. Null for an unmatched entry."
+        },
+        {
+          "name": "matched_by_group",
+          "data_type": "boolean",
+          "description": "True when the match relies on a group with several strict song keys."
+        },
+        {
+          "name": "weeks_on_chart",
+          "data_type": "integer",
+          "description": "Provider lifetime weeks on the chart. Null when the source omits it."
+        },
+        {
+          "name": "is_debut",
+          "data_type": "boolean",
+          "description": "First observed group week with provider weeks equal to one and a complete preceding weekly chart. An earlier ambiguous candidate leaves the debut unknown. Open the chart history to inspect prior entries."
+        },
+        {
+          "name": "source_key",
+          "data_type": "varchar",
+          "description": ""
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "_cycle_id",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "_built_by",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/_marts__models.yml"
+    },
+    {
+      "relation": "marts.mart_early_signals_current",
+      "schema": "marts",
+      "name": "mart_early_signals_current",
+      "access": "select",
+      "grain": [
+        "movement_list",
+        "family",
+        "rank"
+      ],
+      "columns": [
+        {
+          "name": "family",
+          "data_type": "text",
+          "description": "Independent family; playlists, shazam or streams."
+        },
+        {
+          "name": "rank",
+          "data_type": "bigint",
+          "description": "Position inside its movement list and family. Places lists order by chart_spread_gain first; then score, emerging artists first in new_entries, list reach tier, markets, entry time and a fixed hash of day and song key."
+        },
+        {
+          "name": "day",
+          "data_type": "date",
+          "description": "Bound daily cycle day in UTC."
+        },
+        {
+          "name": "song_key",
+          "data_type": "text",
+          "description": "Song link key."
+        },
+        {
+          "name": "title_text",
+          "data_type": "text",
+          "description": "Song title from the daily identity."
+        },
+        {
+          "name": "artist_text",
+          "data_type": "text",
+          "description": "Artist credit from the daily identity."
+        },
+        {
+          "name": "component",
+          "data_type": "text",
+          "description": "Existing movement component that supplies value and evidence."
+        },
+        {
+          "name": "value",
+          "data_type": "double precision",
+          "description": "Positive component value; no percentile or second score."
+        },
+        {
+          "name": "reason_rule",
+          "data_type": "text",
+          "description": "One sentence with a next step to inspect the evidence."
+        },
+        {
+          "name": "evidence",
+          "data_type": "text",
+          "description": "Source row locators and their captured input builds. cluster_confidence is measured precision, the lowest merge-rule Wilson 95% lower bound; open the cluster audit."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "window_days",
+          "data_type": "integer",
+          "description": "Elapsed UTC days back to the observed Shazam baseline, or the configured playlist or stream window."
+        },
+        {
+          "name": "chart_spread_gain",
+          "data_type": "bigint",
+          "description": "New country markets on tracked chart lists or Shazam charts. It ranks signal lists first and never joins the two-family score, because it overlaps playlists and Shazam."
+        },
+        {
+          "name": "list_reach_tier",
+          "data_type": "integer",
+          "description": "Best entered list tier; new_entries reads editorial and new-music lists only. One is widest; four is unclassified. See playlist_reach_tiers."
+        },
+        {
+          "name": "market_count",
+          "data_type": "bigint",
+          "description": "Distinct entered country markets; global and unknown are excluded."
+        },
+        {
+          "name": "last_entered_at",
+          "data_type": "timestamp with time zone",
+          "description": "Most recent qualifying entry observation."
+        },
+        {
+          "name": "movement_list",
+          "data_type": "text",
+          "description": "new_entries: new songs by emerging, developing or unknown-stage artists. established_entries: new songs by established artists. catalog_entries: catalog waking up. unplaced: unknown age and no new-music list in the window, so no movement view reads it. Lists never mix."
+        },
+        {
+          "name": "age_class",
+          "data_type": "text",
+          "description": "new when the age proxy is this year or last; catalog when older; unknown without a proxy. A proxy, never a release date. Open age_basis for its source."
+        },
+        {
+          "name": "age_basis",
+          "data_type": "text",
+          "description": "isrc_year: the year code in the ISRC, which a reissue can make newer, never older. apple_id_band: the Apple song id range. none: no proxy."
+        },
+        {
+          "name": "artist_stage",
+          "data_type": "text",
+          "description": "Stage of the song's most established credited artist, from MusicBrainz catalog depth. emerging, developing, established or unknown; artist_stage_thresholds holds the rules. unknown means no linked MusicBrainz artist or no catalog reading yet. Playlist data never sets it."
+        },
+        {
+          "name": "artist_stage_basis",
+          "data_type": "text",
+          "description": "Source of artist_stage. musicbrainz_catalog: release group counts and first release years read from the MusicBrainz mirror. none: artist_stage is unknown."
+        },
+        {
+          "name": "cluster_key",
+          "data_type": "text",
+          "description": "Provisional movement group key. Open member_song_keys to inspect the strict keys."
+        },
+        {
+          "name": "member_song_keys",
+          "data_type": "text",
+          "description": "Sorted JSON array of strict keys scored together. Open evidence for merge methods."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/signals.yml"
+    },
+    {
+      "relation": "marts.mart_editorial_entries",
+      "schema": "marts",
+      "name": "mart_editorial_entries",
+      "access": "select",
+      "grain": [
+        "platform",
+        "playlist_id",
+        "variant",
+        "stream",
+        "occurrence_key",
+        "interval_id"
+      ],
+      "columns": [
+        {
+          "name": "platform",
+          "data_type": "text",
+          "description": "Music platform on which the playlist is observed."
+        },
+        {
+          "name": "playlist_id",
+          "data_type": "text",
+          "description": "Playlist identifier on its platform, which must be joined with platform and variant."
+        },
+        {
+          "name": "variant",
+          "data_type": "text",
+          "description": "Market or other version of the playlist, kept separate because its contents can differ."
+        },
+        {
+          "name": "occurrence_inferred",
+          "data_type": "boolean",
+          "description": "True when repeated copies of an item are distinguished by their observed order rather than a stable platform row identifier."
+        },
+        {
+          "name": "occurrence_key",
+          "data_type": "text",
+          "description": "Identifier for one copy of an item within this playlist variant and stream, allowing the same item to appear more than once."
+        },
+        {
+          "name": "interval_id",
+          "data_type": "text",
+          "description": "Snapshot identifier that starts one membership island, a run of sightings with no complete observation proving absence between them."
+        },
+        {
+          "name": "event_type",
+          "data_type": "text",
+          "description": "Always add, meaning earlier complete absence and later presence bound an entry onto an editorial, algorithmic or chart list, with full-list extent corroborated for head streams."
+        },
+        {
+          "name": "observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time of the observation proving this event, using the absence observation for a removal rather than the unknown exact change time."
+        },
+        {
+          "name": "platform_track_id",
+          "data_type": "text",
+          "description": "Track identifier on the platform, null for an item representing a release rather than a track."
+        },
+        {
+          "name": "position",
+          "data_type": "bigint",
+          "description": "One-based item position at the event sighting, or the last sighting before a removal."
+        },
+        {
+          "name": "previous_position",
+          "data_type": "bigint",
+          "description": "One-based position in the previous complete observation at a unique time within this membership island, null when no comparison exists."
+        },
+        {
+          "name": "entered_after",
+          "data_type": "timestamp",
+          "description": "UTC time of the last complete observation proving absence before this membership island, null when the entry has no known lower bound."
+        },
+        {
+          "name": "first_observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time of the first sighting in this membership island, giving the inclusive upper bound of a bounded entry."
+        },
+        {
+          "name": "removed_after",
+          "data_type": "timestamp",
+          "description": "UTC time of the last complete sighting before a proven removal, null when the island has no complete presence proof or no later absence."
+        },
+        {
+          "name": "removed_by",
+          "data_type": "timestamp",
+          "description": "UTC time of the first complete observation proving absence after this membership island, null when no such observation exists."
+        },
+        {
+          "name": "is_baseline",
+          "data_type": "boolean",
+          "description": "True when the island begins at the stream's first complete observation at a unique time, which proves presence but cannot date an add."
+        },
+        {
+          "name": "uncertainty_hours",
+          "data_type": "double precision",
+          "description": "Hours between the two observations bounding this entry, removal or move, null for an entry with no known earlier absence."
+        },
+        {
+          "name": "snapshot_id",
+          "data_type": "text",
+          "description": "Identifier of the observation proving the event, including the absence snapshot for a removal."
+        },
+        {
+          "name": "page_match",
+          "data_type": "boolean",
+          "description": "True when the paired playlist page agrees with the observed track at the same position by track identifier or by title and duration within two seconds."
+        },
+        {
+          "name": "platform_album_id",
+          "data_type": "text",
+          "description": "Platform album or release identifier carried by the observed item or supplied by a matching paired page."
+        },
+        {
+          "name": "isrc",
+          "data_type": "text",
+          "description": "Recording code selected from identity evidence visible to the bound daily cycle, null when none is accepted."
+        },
+        {
+          "name": "mb_recording_gid",
+          "data_type": "text",
+          "description": "MusicBrainz recording identifier resolved from the bound daily cycle's evidence, null when no recording match is accepted."
+        },
+        {
+          "name": "isrc_method",
+          "data_type": "text",
+          "description": "Method that selects the ISRC from evidence visible to the bound daily cycle, null when no ISRC is accepted."
+        },
+        {
+          "name": "recording_method",
+          "data_type": "text",
+          "description": "Method that resolves the recording as of the bound daily close identified by daily_manifest_close_no and as_of, null when no match is accepted at that close."
+        },
+        {
+          "name": "confidence",
+          "data_type": "double precision",
+          "description": "Zero-to-one method score for the recording resolved as of daily_manifest_close_no and as_of, null when no recording is accepted at that close."
+        },
+        {
+          "name": "daily_manifest_close_no",
+          "data_type": "bigint",
+          "description": "Committed global close number of the bound daily cycle whose evidence resolves identity, zero for a legacy close and null when a local build has no mirrored cycle."
+        },
+        {
+          "name": "as_of",
+          "data_type": "timestamp",
+          "description": "UTC close time of the bound daily cycle used for identity, falling back to the event observation time only when a local build has no mirrored close."
+        },
+        {
+          "name": "stream",
+          "data_type": "text",
+          "description": "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": "JSON array of contributing source identifiers used to attach permissions without removing the row."
+        },
+        {
+          "name": "item_type",
+          "data_type": "text",
+          "description": "Kind of playlist item, distinguishing a track from a release such as an album."
+        },
+        {
+          "name": "platform_item_id",
+          "data_type": "text",
+          "description": "Platform identifier of the playlist item itself, whether that item is a track or a release."
+        },
+        {
+          "name": "featured_track_id",
+          "data_type": "text",
+          "description": "Platform identifier of a track featured for a release item, which does not make the whole release a track list membership."
+        },
+        {
+          "name": "owner_class",
+          "data_type": "text",
+          "description": "Observed owner category, with a configured label filling unknown ownership or refining editorial to chart."
+        },
+        {
+          "name": "first_ever_entry",
+          "data_type": "boolean",
+          "description": "True for the earliest bounded add of this item in the available history of this playlist variant and stream, not proof of its first lifetime appearance."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/playlist.yml"
+    },
+    {
+      "relation": "marts.mart_editorial_presence",
+      "schema": "marts",
+      "name": "mart_editorial_presence",
+      "access": "select",
+      "grain": [
+        "platform",
+        "playlist_id",
+        "variant",
+        "stream",
+        "occurrence_key",
+        "interval_id",
+        "event_type"
+      ],
+      "columns": [
+        {
+          "name": "platform",
+          "data_type": "text",
+          "description": "Music platform on which the playlist is observed."
+        },
+        {
+          "name": "playlist_id",
+          "data_type": "text",
+          "description": "Playlist identifier on its platform, which must be joined with platform and variant."
+        },
+        {
+          "name": "variant",
+          "data_type": "text",
+          "description": "Market or other version of the playlist, kept separate because its contents can differ."
+        },
+        {
+          "name": "occurrence_inferred",
+          "data_type": "boolean",
+          "description": "True when repeated copies of an item are distinguished by their observed order rather than a stable platform row identifier."
+        },
+        {
+          "name": "occurrence_key",
+          "data_type": "text",
+          "description": "Identifier for one copy of an item within this playlist variant and stream, allowing the same item to appear more than once."
+        },
+        {
+          "name": "interval_id",
+          "data_type": "text",
+          "description": "Snapshot identifier that starts one membership island, a run of sightings with no complete observation proving absence between them."
+        },
+        {
+          "name": "event_type",
+          "data_type": "text",
+          "description": "Baseline and entry_unknown prove presence without a dated add, while entered_head bounds entry into the visible head without proving a full-list add."
+        },
+        {
+          "name": "observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time of the observation proving this event, using the absence observation for a removal rather than the unknown exact change time."
+        },
+        {
+          "name": "platform_track_id",
+          "data_type": "text",
+          "description": "Track identifier on the platform, null for an item representing a release rather than a track."
+        },
+        {
+          "name": "position",
+          "data_type": "bigint",
+          "description": "One-based item position at the event sighting, or the last sighting before a removal."
+        },
+        {
+          "name": "previous_position",
+          "data_type": "bigint",
+          "description": "One-based position in the previous complete observation at a unique time within this membership island, null when no comparison exists."
+        },
+        {
+          "name": "entered_after",
+          "data_type": "timestamp",
+          "description": "UTC time of the last complete observation proving absence before this membership island, null when the entry has no known lower bound."
+        },
+        {
+          "name": "first_observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time of the first sighting in this membership island, giving the inclusive upper bound of a bounded entry."
+        },
+        {
+          "name": "removed_after",
+          "data_type": "timestamp",
+          "description": "UTC time of the last complete sighting before a proven removal, null when the island has no complete presence proof or no later absence."
+        },
+        {
+          "name": "removed_by",
+          "data_type": "timestamp",
+          "description": "UTC time of the first complete observation proving absence after this membership island, null when no such observation exists."
+        },
+        {
+          "name": "is_baseline",
+          "data_type": "boolean",
+          "description": "True when the island begins at the stream's first complete observation at a unique time, which proves presence but cannot date an add."
+        },
+        {
+          "name": "uncertainty_hours",
+          "data_type": "double precision",
+          "description": "Hours between the two observations bounding this entry, removal or move, null for an entry with no known earlier absence."
+        },
+        {
+          "name": "snapshot_id",
+          "data_type": "text",
+          "description": "Identifier of the observation proving the event, including the absence snapshot for a removal."
+        },
+        {
+          "name": "page_match",
+          "data_type": "boolean",
+          "description": "True when the paired playlist page agrees with the observed track at the same position by track identifier or by title and duration within two seconds."
+        },
+        {
+          "name": "platform_album_id",
+          "data_type": "text",
+          "description": "Platform album or release identifier carried by the observed item or supplied by a matching paired page."
+        },
+        {
+          "name": "isrc",
+          "data_type": "text",
+          "description": "Recording code selected from identity evidence visible to the bound daily cycle, null when none is accepted."
+        },
+        {
+          "name": "mb_recording_gid",
+          "data_type": "text",
+          "description": "MusicBrainz recording identifier resolved from the bound daily cycle's evidence, null when no recording match is accepted."
+        },
+        {
+          "name": "isrc_method",
+          "data_type": "text",
+          "description": "Method that selects the ISRC from evidence visible to the bound daily cycle, null when no ISRC is accepted."
+        },
+        {
+          "name": "recording_method",
+          "data_type": "text",
+          "description": "Method that resolves the recording as of the bound daily close identified by daily_manifest_close_no and as_of, null when no match is accepted at that close."
+        },
+        {
+          "name": "confidence",
+          "data_type": "double precision",
+          "description": "Zero-to-one method score for the recording resolved as of daily_manifest_close_no and as_of, null when no recording is accepted at that close."
+        },
+        {
+          "name": "daily_manifest_close_no",
+          "data_type": "bigint",
+          "description": "Committed global close number of the bound daily cycle whose evidence resolves identity, zero for a legacy close and null when a local build has no mirrored cycle."
+        },
+        {
+          "name": "as_of",
+          "data_type": "timestamp",
+          "description": "UTC close time of the bound daily cycle used for identity, falling back to the event observation time only when a local build has no mirrored close."
+        },
+        {
+          "name": "stream",
+          "data_type": "text",
+          "description": "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": "JSON array of contributing source identifiers used to attach permissions without removing the row."
+        },
+        {
+          "name": "item_type",
+          "data_type": "text",
+          "description": "Kind of playlist item, distinguishing a track from a release such as an album."
+        },
+        {
+          "name": "platform_item_id",
+          "data_type": "text",
+          "description": "Platform identifier of the playlist item itself, whether that item is a track or a release."
+        },
+        {
+          "name": "featured_track_id",
+          "data_type": "text",
+          "description": "Platform identifier of a track featured for a release item, which does not make the whole release a track list membership."
+        },
+        {
+          "name": "owner_class",
+          "data_type": "text",
+          "description": "Observed owner category, with a configured label filling unknown ownership or refining editorial to chart."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/playlist.yml"
+    },
+    {
+      "relation": "marts.mart_playlist_coverage",
+      "schema": "marts",
+      "name": "mart_playlist_coverage",
+      "access": "select",
+      "grain": [
+        "platform",
+        "playlist_id",
+        "variant",
+        "stream",
+        "observed_at",
+        "snapshot_id"
+      ],
+      "columns": [
+        {
+          "name": "platform",
+          "data_type": "text",
+          "description": "Music platform on which the playlist is observed."
+        },
+        {
+          "name": "playlist_id",
+          "data_type": "text",
+          "description": "Playlist identifier on its platform, which must be joined with platform and variant."
+        },
+        {
+          "name": "variant",
+          "data_type": "text",
+          "description": "Market or other version of the playlist, kept separate because its contents can differ."
+        },
+        {
+          "name": "snapshot_id",
+          "data_type": "text",
+          "description": "Identifier of this playlist snapshot within its variant and stream."
+        },
+        {
+          "name": "observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time when the playlist snapshot is observed, distinct from the cycle close used to measure its age."
+        },
+        {
+          "name": "cycle_id",
+          "data_type": "text",
+          "description": "Identifier of the collection cycle that observes this snapshot, which may precede the daily cycle building the mart."
+        },
+        {
+          "name": "source_key",
+          "data_type": "text",
+          "description": "Collector identifier that produces this snapshot."
+        },
+        {
+          "name": "coverage",
+          "data_type": "text",
+          "description": "Full means the collected stream passes completeness checks even when a head covers only part of the playlist, while partial or simultaneous snapshots prove presence only."
+        },
+        {
+          "name": "observation",
+          "data_type": "text",
+          "description": "Content means item rows are fetched, while unchanged reuses matching earlier content whose completeness still determines whether absence can be proved."
+        },
+        {
+          "name": "items_observed",
+          "data_type": "bigint",
+          "description": "Number of items the collector reports observing in this snapshot."
+        },
+        {
+          "name": "items_visible",
+          "data_type": "bigint",
+          "description": "Number of stored item rows attached directly to this snapshot, before reusing content from an unchanged observation."
+        },
+        {
+          "name": "track_count_reported",
+          "data_type": "bigint",
+          "description": "Playlist size reported by the platform, using the paired page total for a head stream and null when unavailable."
+        },
+        {
+          "name": "observed_share",
+          "data_type": "double precision",
+          "description": "One for a complete stream, otherwise its effective visible item count divided by the reported playlist size, null when the size is missing or zero."
+        },
+        {
+          "name": "last_full_at",
+          "data_type": "timestamp",
+          "description": "UTC time of the most recent complete snapshot at or before this observation in the same playlist variant and stream."
+        },
+        {
+          "name": "as_of",
+          "data_type": "timestamp",
+          "description": "UTC close time of the cycle that observes this snapshot, falling back to its observation time when that close is not mirrored locally."
+        },
+        {
+          "name": "days_since_full",
+          "data_type": "double precision",
+          "description": "Days from last_full_at to as_of on the collection cycle clock, null when no complete snapshot exists and unchanged by query time."
+        },
+        {
+          "name": "stream",
+          "data_type": "text",
+          "description": "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": "JSON array of contributing source identifiers used to attach permissions without removing the row."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/playlist.yml"
+    },
+    {
+      "relation": "marts.mart_playlist_events",
+      "schema": "marts",
+      "name": "mart_playlist_events",
+      "access": "select",
+      "grain": [
+        "platform",
+        "playlist_id",
+        "variant",
+        "stream",
+        "occurrence_key",
+        "interval_id",
+        "event_type",
+        "observed_at"
+      ],
+      "columns": [
+        {
+          "name": "platform",
+          "data_type": "text",
+          "description": "Music platform on which the playlist is observed."
+        },
+        {
+          "name": "playlist_id",
+          "data_type": "text",
+          "description": "Playlist identifier on its platform, which must be joined with platform and variant."
+        },
+        {
+          "name": "variant",
+          "data_type": "text",
+          "description": "Market or other version of the playlist, kept separate because its contents can differ."
+        },
+        {
+          "name": "occurrence_inferred",
+          "data_type": "boolean",
+          "description": "True when repeated copies of an item are distinguished by their observed order rather than a stable platform row identifier."
+        },
+        {
+          "name": "occurrence_key",
+          "data_type": "text",
+          "description": "Identifier for one copy of an item within this playlist variant and stream, allowing the same item to appear more than once."
+        },
+        {
+          "name": "interval_id",
+          "data_type": "text",
+          "description": "Snapshot identifier that starts one membership island, a run of sightings with no complete observation proving absence between them."
+        },
+        {
+          "name": "event_type",
+          "data_type": "text",
+          "description": "Evidence label: add and remove bound a playlist change, entered_head and left_head bound a head change, baseline and entry_unknown prove presence only, and move proves a position change between complete observations."
+        },
+        {
+          "name": "observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time of the observation proving this event, using the absence observation for a removal rather than the unknown exact change time."
+        },
+        {
+          "name": "platform_track_id",
+          "data_type": "text",
+          "description": "Track identifier on the platform, null for an item representing a release rather than a track."
+        },
+        {
+          "name": "position",
+          "data_type": "bigint",
+          "description": "One-based item position at the event sighting, or the last sighting before a removal."
+        },
+        {
+          "name": "previous_position",
+          "data_type": "bigint",
+          "description": "One-based position in the previous complete observation at a unique time within this membership island, null when no comparison exists."
+        },
+        {
+          "name": "entered_after",
+          "data_type": "timestamp",
+          "description": "UTC time of the last complete observation proving absence before this membership island, null when the entry has no known lower bound."
+        },
+        {
+          "name": "first_observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time of the first sighting in this membership island, giving the inclusive upper bound of a bounded entry."
+        },
+        {
+          "name": "removed_after",
+          "data_type": "timestamp",
+          "description": "UTC time of the last complete sighting before a proven removal, null when the island has no complete presence proof or no later absence."
+        },
+        {
+          "name": "removed_by",
+          "data_type": "timestamp",
+          "description": "UTC time of the first complete observation proving absence after this membership island, null when no such observation exists."
+        },
+        {
+          "name": "is_baseline",
+          "data_type": "boolean",
+          "description": "True when the island begins at the stream's first complete observation at a unique time, which proves presence but cannot date an add."
+        },
+        {
+          "name": "uncertainty_hours",
+          "data_type": "double precision",
+          "description": "Hours between the two observations bounding this entry, removal or move, null for an entry with no known earlier absence."
+        },
+        {
+          "name": "snapshot_id",
+          "data_type": "text",
+          "description": "Identifier of the observation proving the event, including the absence snapshot for a removal."
+        },
+        {
+          "name": "page_match",
+          "data_type": "boolean",
+          "description": "True when the paired playlist page agrees with the observed track at the same position by track identifier or by title and duration within two seconds."
+        },
+        {
+          "name": "platform_album_id",
+          "data_type": "text",
+          "description": "Platform album or release identifier carried by the observed item or supplied by a matching paired page."
+        },
+        {
+          "name": "isrc",
+          "data_type": "text",
+          "description": "Recording code selected from identity evidence visible to the bound daily cycle, null when none is accepted."
+        },
+        {
+          "name": "mb_recording_gid",
+          "data_type": "text",
+          "description": "MusicBrainz recording identifier resolved from the bound daily cycle's evidence, null when no recording match is accepted."
+        },
+        {
+          "name": "isrc_method",
+          "data_type": "text",
+          "description": "Method that selects the ISRC from evidence visible to the bound daily cycle, null when no ISRC is accepted."
+        },
+        {
+          "name": "recording_method",
+          "data_type": "text",
+          "description": "Method that resolves the recording as of the bound daily close identified by daily_manifest_close_no and as_of, null when no match is accepted at that close."
+        },
+        {
+          "name": "confidence",
+          "data_type": "double precision",
+          "description": "Zero-to-one method score for the recording resolved as of daily_manifest_close_no and as_of, null when no recording is accepted at that close."
+        },
+        {
+          "name": "daily_manifest_close_no",
+          "data_type": "bigint",
+          "description": "Committed global close number of the bound daily cycle whose evidence resolves identity, zero for a legacy close and null when a local build has no mirrored cycle."
+        },
+        {
+          "name": "as_of",
+          "data_type": "timestamp",
+          "description": "UTC close time of the bound daily cycle used for identity, falling back to the event observation time only when a local build has no mirrored close."
+        },
+        {
+          "name": "stream",
+          "data_type": "text",
+          "description": "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": "JSON array of contributing source identifiers used to attach permissions without removing the row."
+        },
+        {
+          "name": "item_type",
+          "data_type": "text",
+          "description": "Kind of playlist item, distinguishing a track from a release such as an album."
+        },
+        {
+          "name": "platform_item_id",
+          "data_type": "text",
+          "description": "Platform identifier of the playlist item itself, whether that item is a track or a release."
+        },
+        {
+          "name": "featured_track_id",
+          "data_type": "text",
+          "description": "Platform identifier of a track featured for a release item, which does not make the whole release a track list membership."
+        },
+        {
+          "name": "owner_class",
+          "data_type": "text",
+          "description": "Observed owner category, with a configured label filling unknown ownership or refining editorial to chart."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/playlist.yml"
+    },
+    {
+      "relation": "marts.mart_playlist_membership_current",
+      "schema": "marts",
+      "name": "mart_playlist_membership_current",
+      "access": "select",
+      "grain": [
+        "platform",
+        "playlist_id",
+        "variant",
+        "occurrence_key"
+      ],
+      "columns": [
+        {
+          "name": "platform",
+          "data_type": "text",
+          "description": "Music platform on which the playlist is observed."
+        },
+        {
+          "name": "playlist_id",
+          "data_type": "text",
+          "description": "Playlist identifier on its platform, which must be joined with platform and variant."
+        },
+        {
+          "name": "variant",
+          "data_type": "text",
+          "description": "Market or other version of the playlist, kept separate because its contents can differ."
+        },
+        {
+          "name": "stream",
+          "data_type": "text",
+          "description": "Stream selected at the bound daily close, preferring a head confirmed to cover the whole list, then a full stream no older than its collection interval plus one day, then the available head."
+        },
+        {
+          "name": "occurrence_key",
+          "data_type": "text",
+          "description": "Identifier for one copy of an item within this playlist variant and stream, allowing the same item to appear more than once."
+        },
+        {
+          "name": "occurrence_inferred",
+          "data_type": "boolean",
+          "description": "True when repeated copies of an item are distinguished by their observed order rather than a stable platform row identifier."
+        },
+        {
+          "name": "interval_id",
+          "data_type": "text",
+          "description": "Snapshot identifier that starts one membership island, a run of sightings with no complete observation proving absence between them."
+        },
+        {
+          "name": "position",
+          "data_type": "bigint",
+          "description": "One-based position at this item's latest sighting within its still-open membership island."
+        },
+        {
+          "name": "platform_track_id",
+          "data_type": "text",
+          "description": "Track identifier on the platform, null for an item representing a release rather than a track."
+        },
+        {
+          "name": "item_type",
+          "data_type": "text",
+          "description": "Kind of playlist item, distinguishing a track from a release such as an album."
+        },
+        {
+          "name": "platform_item_id",
+          "data_type": "text",
+          "description": "Platform identifier of the playlist item itself, whether that item is a track or a release."
+        },
+        {
+          "name": "featured_track_id",
+          "data_type": "text",
+          "description": "Platform identifier of a track featured for a release item, which does not make the whole release a track list membership."
+        },
+        {
+          "name": "observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time of the selected stream's latest snapshot, which may carry forward an earlier item sighting when no complete absence closes its island."
+        },
+        {
+          "name": "coverage",
+          "data_type": "text",
+          "description": "Full means the collected stream passes completeness checks even when a head covers only part of the playlist, while partial or simultaneous snapshots prove presence only."
+        },
+        {
+          "name": "extent",
+          "data_type": "text",
+          "description": "Full means the selected surface covers the whole list, while head_only limits membership claims to its visible beginning regardless of coverage."
+        },
+        {
+          "name": "snapshot_id",
+          "data_type": "text",
+          "description": "Identifier of the selected stream's latest snapshot, which need not contain a fresh sighting of every carried-forward member."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": "JSON array of contributing source identifiers used to attach permissions without removing the row."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/playlist.yml"
+    },
+    {
+      "relation": "marts.mart_playlist_profile",
+      "schema": "marts",
+      "name": "mart_playlist_profile",
+      "access": "select",
+      "grain": [
+        "platform",
+        "playlist_id",
+        "variant",
+        "stream",
+        "observed_at",
+        "snapshot_id"
+      ],
+      "columns": [
+        {
+          "name": "platform",
+          "data_type": "text",
+          "description": "Music platform on which the playlist is observed."
+        },
+        {
+          "name": "playlist_id",
+          "data_type": "text",
+          "description": "Playlist identifier on its platform, which must be joined with platform and variant."
+        },
+        {
+          "name": "variant",
+          "data_type": "text",
+          "description": "Market or other version of the playlist, kept separate because its contents can differ."
+        },
+        {
+          "name": "observed_at",
+          "data_type": "timestamp",
+          "description": "UTC time when this playlist profile is observed."
+        },
+        {
+          "name": "snapshot_id",
+          "data_type": "text",
+          "description": "Identifier of the playlist snapshot whose profile is shown."
+        },
+        {
+          "name": "title",
+          "data_type": "text",
+          "description": "Playlist title from the paired page when available, otherwise from the snapshot."
+        },
+        {
+          "name": "description",
+          "data_type": "text",
+          "description": "Playlist description retained only when the platform's own account is observed to own the list, otherwise null."
+        },
+        {
+          "name": "owner_id",
+          "data_type": "text",
+          "description": "Platform account identifier retained only for a list observed to belong to the platform's own account, otherwise null."
+        },
+        {
+          "name": "owner_name",
+          "data_type": "text",
+          "description": "Public owner name retained only for a list observed to belong to the platform's own account, otherwise null."
+        },
+        {
+          "name": "followers",
+          "data_type": "bigint",
+          "description": "Playlist follower count from the paired page when available, otherwise from the snapshot, null when unreported."
+        },
+        {
+          "name": "follower_change",
+          "data_type": "bigint",
+          "description": "Follower count minus the previous snapshot's count in this playlist variant and stream, null when either count is missing and not a fixed-day change."
+        },
+        {
+          "name": "track_count_reported",
+          "data_type": "bigint",
+          "description": "Playlist size reported by the platform, using the paired page total for a head stream and null when unavailable."
+        },
+        {
+          "name": "stream",
+          "data_type": "text",
+          "description": "Observation stream, where head covers the visible beginning and full covers the full-list collection surface."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow learning from this row, with unknown permission treated as false."
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": "True only when the contributing source permissions allow resale of this row, with unknown permission treated as false."
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": "JSON array of contributing source identifiers used to attach permissions without removing the row."
+        },
+        {
+          "name": "owner_class",
+          "data_type": "text",
+          "description": "Observed owner category, with a configured label filling unknown ownership or refining editorial to chart."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/playlist.yml"
+    },
+    {
+      "relation": "marts.mart_readiness",
+      "schema": "marts",
+      "name": "mart_readiness",
+      "access": "select",
+      "grain": [
+        "family"
+      ],
+      "columns": [
+        {
+          "name": "family",
+          "data_type": "text",
+          "description": "History family, artist_stage followed by the movement list, or billboard_hot100 for keyed coverage."
+        },
+        {
+          "name": "day",
+          "data_type": "date",
+          "description": "Bound daily cycle day in UTC."
+        },
+        {
+          "name": "history_days",
+          "data_type": "bigint",
+          "description": "Distinct days with observed family data; streams count rated days only."
+        },
+        {
+          "name": "history_needed",
+          "data_type": "text",
+          "description": "Window requirement or Hot 100 keyed coverage in plain words, followed by the evidence next step."
+        },
+        {
+          "name": "first_rank_day",
+          "data_type": "date",
+          "description": "Earliest comparison date: first source day plus one, or first rated stream day plus five. Gaps can delay it."
+        },
+        {
+          "name": "movement_list",
+          "data_type": "text",
+          "description": "Movement list for artist-stage coverage; null for history rows."
+        },
+        {
+          "name": "stage_known_songs",
+          "data_type": "bigint",
+          "description": "Distinct songs with an artist-stage reading in the served current list. Open the list for evidence."
+        },
+        {
+          "name": "list_songs",
+          "data_type": "bigint",
+          "description": "Distinct songs across current movers, early signals and arrivals in this list. Open the list for evidence."
+        },
+        {
+          "name": "chart_week",
+          "data_type": "date",
+          "description": "Latest observed Hot 100 week at or before the bound day; null without a read. Open mart_chart_history."
+        },
+        {
+          "name": "keyed_entries",
+          "data_type": "bigint",
+          "description": "Hot 100 positions with a song key in chart_week; null without a read. Open mart_chart_history."
+        },
+        {
+          "name": "chart_entries",
+          "data_type": "bigint",
+          "description": "Hot 100 positions observed in chart_week, out of 100; null without a read. Open mart_chart_history."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/signals.yml"
+    },
+    {
+      "relation": "marts.mart_search_index",
+      "schema": "marts",
+      "name": "mart_search_index",
+      "access": "select",
+      "grain": [
+        "object_key"
+      ],
+      "columns": [
+        {
+          "name": "object_key",
+          "data_type": "text",
+          "description": "Kind-prefixed object identity, such as song:apple:123."
+        },
+        {
+          "name": "kind",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "display_text",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "context",
+          "data_type": "text",
+          "description": "JSON object with the route identity, platform, display credit and available artwork identity."
+        },
+        {
+          "name": "aliases",
+          "data_type": "text",
+          "description": "JSON array of distinct identity aliases, including every copy of a movement group."
+        },
+        {
+          "name": "last_seen",
+          "data_type": "timestamp",
+          "description": ""
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/_marts__models.yml"
+    },
+    {
+      "relation": "marts.mart_shazam_chart_daily",
+      "schema": "marts",
+      "name": "mart_shazam_chart_daily",
+      "access": "select",
+      "grain": [
+        "chart",
+        "chart_date",
+        "position"
+      ],
+      "columns": [
+        {
+          "name": "chart",
+          "data_type": "text",
+          "description": "shazam:<type>:<country>[:<city>], as the chart's page path names it."
+        },
+        {
+          "name": "chart_type",
+          "data_type": "text",
+          "description": "top-200 (country), top-50 (city) or discovery."
+        },
+        {
+          "name": "country",
+          "data_type": "text",
+          "description": "ISO country code from shazam_markets. Worldwide and unknown markets are null. Open chart for the original slug."
+        },
+        {
+          "name": "city",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "chart_date",
+          "data_type": "date",
+          "description": "The chart's own date, from its CSV."
+        },
+        {
+          "name": "position",
+          "data_type": "integer",
+          "description": "The rank the CSV and the page both print for this row."
+        },
+        {
+          "name": "apple_song_id",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "apple_primary_artist_id",
+          "data_type": "text",
+          "description": "The Apple artist id of the row's one artist link; on a collaboration row, the primary artist only."
+        },
+        {
+          "name": "artist_text",
+          "data_type": "text",
+          "description": "The credit as the CSV prints it. Strict identity does not match names. Open the movement rules for provisional successor matching."
+        },
+        {
+          "name": "title_text",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "multi_artist_credit",
+          "data_type": "boolean",
+          "description": "The printed credit names more than one artist (a comma or an ampersand), so the row's artist id covers only its primary artist."
+        },
+        {
+          "name": "isrc",
+          "data_type": "text",
+          "description": "The page's ISRC where it carries one (the video-highlight songs), else the resolved track identity's."
+        },
+        {
+          "name": "isrc_source",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "mb_recording_gid",
+          "data_type": "text",
+          "description": "The MusicBrainz recording, where the Apple song id resolves in track identity."
+        },
+        {
+          "name": "recording_method",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "confidence",
+          "data_type": "double precision",
+          "description": "Confidence of the selected recording_method on a zero-to-one scale; null when no recording is resolved."
+        },
+        {
+          "name": "observed_at",
+          "data_type": "timestamp",
+          "description": ""
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/shazam.yml"
+    },
+    {
+      "relation": "marts.mart_song_aliases",
+      "schema": "marts",
+      "name": "mart_song_aliases",
+      "access": "select",
+      "grain": [
+        "alias_key"
+      ],
+      "columns": [
+        {
+          "name": "alias_key",
+          "data_type": "text",
+          "description": "Alias key."
+        },
+        {
+          "name": "song_key",
+          "data_type": "text",
+          "description": "Song key."
+        },
+        {
+          "name": "platform",
+          "data_type": "text",
+          "description": "Platform."
+        },
+        {
+          "name": "platform_track_id",
+          "data_type": "text",
+          "description": "Platform track id."
+        },
+        {
+          "name": "resolved",
+          "data_type": "boolean",
+          "description": "True when a recording is known."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/song.yml"
+    },
+    {
+      "relation": "marts.mart_song_cluster_members",
+      "schema": "marts",
+      "name": "mart_song_cluster_members",
+      "access": "select",
+      "grain": [
+        "song_key"
+      ],
+      "columns": [
+        {
+          "name": "song_key",
+          "data_type": "text",
+          "description": "Strict identity key to look up."
+        },
+        {
+          "name": "cluster_key",
+          "data_type": "text",
+          "description": "Current provisional movement group."
+        },
+        {
+          "name": "representative_song_key",
+          "data_type": "text",
+          "description": "Song key carried by the current movement row."
+        },
+        {
+          "name": "cluster_methods",
+          "data_type": "text",
+          "description": "JSON array of the matching rules used by the group."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": "True when every source permits derivative learning."
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": "True when every source permits resale."
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": "JSON array of every source behind the group."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/cluster.yml"
+    },
+    {
+      "relation": "marts.mart_song_day",
+      "schema": "marts",
+      "name": "mart_song_day",
+      "access": "select",
+      "grain": [
+        "song_key",
+        "day"
+      ],
+      "columns": [
+        {
+          "name": "song_key",
+          "data_type": "text",
+          "description": "Song key."
+        },
+        {
+          "name": "title_text",
+          "data_type": "text",
+          "description": "Title text."
+        },
+        {
+          "name": "artist_text",
+          "data_type": "text",
+          "description": "Artist text."
+        },
+        {
+          "name": "day",
+          "data_type": "date",
+          "description": "UTC calendar day."
+        },
+        {
+          "name": "editorial_adds",
+          "data_type": "double precision",
+          "description": "Distinct list entries; add counts one, entered_head counts 0.5; baseline excluded."
+        },
+        {
+          "name": "algorithmic_adds",
+          "data_type": "double precision",
+          "description": "Distinct list entries; add counts one, entered_head counts 0.5; baseline excluded."
+        },
+        {
+          "name": "removes",
+          "data_type": "bigint",
+          "description": "Distinct lists removing the song."
+        },
+        {
+          "name": "playlist_followers",
+          "data_type": "bigint",
+          "description": "Follower exposure as of this day; lists count once."
+        },
+        {
+          "name": "list_count",
+          "data_type": "bigint",
+          "description": "Distinct observed lists."
+        },
+        {
+          "name": "shazam_cities",
+          "data_type": "bigint",
+          "description": "Distinct observed city charts."
+        },
+        {
+          "name": "shazam_countries",
+          "data_type": "bigint",
+          "description": "Distinct observed countries."
+        },
+        {
+          "name": "shazam_charts",
+          "data_type": "bigint",
+          "description": "Distinct observed charts."
+        },
+        {
+          "name": "shazam_new_entries",
+          "data_type": "bigint",
+          "description": "First chart appearances with at least 26 observed days in the 28-day window. Count each song once per chart. Null means no chart has enough history."
+        },
+        {
+          "name": "best_position",
+          "data_type": "integer",
+          "description": "Best observed position on this day."
+        },
+        {
+          "name": "shazam_best_position",
+          "data_type": "integer",
+          "description": "Best observed position on this day."
+        },
+        {
+          "name": "stream_rate",
+          "data_type": "double precision",
+          "description": "Provider daily increment, without read-interval scaling. Only changed nonnegative counters 20 to 28 hours apart with no collection gap qualify."
+        },
+        {
+          "name": "playlists_observed",
+          "data_type": "boolean",
+          "description": "A playlist collection or membership is present, including zero events."
+        },
+        {
+          "name": "shazam_observed",
+          "data_type": "boolean",
+          "description": "Shazam charts are collected on this day, including a song absent from those charts."
+        },
+        {
+          "name": "streams_observed",
+          "data_type": "boolean",
+          "description": "A counter value is collected on this day, including unchanged counts."
+        },
+        {
+          "name": "stream_interval_hours",
+          "data_type": "double precision",
+          "description": "Longest contributing counter interval in hours."
+        },
+        {
+          "name": "billboard_position",
+          "data_type": "integer",
+          "description": "Best Hot 100 position for this movement group on the published chart date. Null means no keyed observation."
+        },
+        {
+          "name": "billboard_weeks_on_chart",
+          "data_type": "integer",
+          "description": "Provider weeks on chart for the best-position entry. Open mart_chart_history for the source row."
+        },
+        {
+          "name": "billboard_debut",
+          "data_type": "boolean",
+          "description": "True only for a proven first group week after a complete previous chart. Null means unknown or no keyed observation."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/song.yml"
+    },
+    {
+      "relation": "marts.mart_top_movers",
+      "schema": "marts",
+      "name": "mart_top_movers",
+      "access": "select",
+      "grain": [
+        "day",
+        "movement_list",
+        "rank"
+      ],
+      "columns": [
+        {
+          "name": "rank",
+          "data_type": "bigint",
+          "description": "Position inside its movement list. Places lists order by chart_spread_gain first; then score, emerging artists first in new_entries, list reach tier, markets, entry time and a fixed hash of day and song key."
+        },
+        {
+          "name": "day",
+          "data_type": "date",
+          "description": "Bound daily cycle day for the current table."
+        },
+        {
+          "name": "song_key",
+          "data_type": "text",
+          "description": "Song key."
+        },
+        {
+          "name": "title_text",
+          "data_type": "text",
+          "description": "Title text."
+        },
+        {
+          "name": "artist_text",
+          "data_type": "text",
+          "description": "Artist text."
+        },
+        {
+          "name": "momentum_score",
+          "data_type": "double precision",
+          "description": "Positive weighted sum of cume_dist percentiles inside the song's movement list. Equal values share the fraction at or below them; a singleton gets one. Open score_parts for evidence."
+        },
+        {
+          "name": "score_parts",
+          "data_type": "text",
+          "description": "JSON parts with component, value, weight, percentile and the component's window_days."
+        },
+        {
+          "name": "coverage",
+          "data_type": "text",
+          "description": "Coverage."
+        },
+        {
+          "name": "reason_rule",
+          "data_type": "text",
+          "description": "Reason rule."
+        },
+        {
+          "name": "evidence",
+          "data_type": "text",
+          "description": "Source row locators with captured input builds. cluster_confidence is measured precision, the lowest merge-rule Wilson 95% lower bound; open the cluster audit."
+        },
+        {
+          "name": "ranking_build",
+          "data_type": "text",
+          "description": "Ranking build."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "window_days",
+          "data_type": "integer",
+          "description": "Comparison window in UTC days; it grows with observed history to seven."
+        },
+        {
+          "name": "chart_spread_gain",
+          "data_type": "bigint",
+          "description": "New country markets on tracked chart lists or Shazam charts. It ranks signal lists first and never joins the two-family score, because it overlaps playlists and Shazam."
+        },
+        {
+          "name": "list_reach_tier",
+          "data_type": "integer",
+          "description": "Best entered list tier; new_entries reads editorial and new-music lists only. One is widest; four is unclassified. See playlist_reach_tiers."
+        },
+        {
+          "name": "market_count",
+          "data_type": "bigint",
+          "description": "Distinct entered country markets; global and unknown are excluded."
+        },
+        {
+          "name": "last_entered_at",
+          "data_type": "timestamp with time zone",
+          "description": "Most recent qualifying entry observation."
+        },
+        {
+          "name": "movement_list",
+          "data_type": "text",
+          "description": "new_entries: new songs by emerging, developing or unknown-stage artists. established_entries: new songs by established artists. catalog_entries: catalog waking up. unplaced: unknown age and no new-music list in the window, so no movement view reads it. Lists never mix."
+        },
+        {
+          "name": "age_class",
+          "data_type": "text",
+          "description": "new when the age proxy is this year or last; catalog when older; unknown without a proxy. A proxy, never a release date. Open age_basis for its source."
+        },
+        {
+          "name": "age_basis",
+          "data_type": "text",
+          "description": "isrc_year: the year code in the ISRC, which a reissue can make newer, never older. apple_id_band: the Apple song id range. none: no proxy."
+        },
+        {
+          "name": "artist_stage",
+          "data_type": "text",
+          "description": "Stage of the song's most established credited artist, from MusicBrainz catalog depth. emerging, developing, established or unknown; artist_stage_thresholds holds the rules. unknown means no linked MusicBrainz artist or no catalog reading yet. Playlist data never sets it."
+        },
+        {
+          "name": "artist_stage_basis",
+          "data_type": "text",
+          "description": "Source of artist_stage. musicbrainz_catalog: release group counts and first release years read from the MusicBrainz mirror. none: artist_stage is unknown."
+        },
+        {
+          "name": "cluster_key",
+          "data_type": "text",
+          "description": "Provisional movement group key. Open member_song_keys to inspect the strict keys."
+        },
+        {
+          "name": "member_song_keys",
+          "data_type": "text",
+          "description": "Sorted JSON array of strict keys scored together. Open evidence for merge methods."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/song.yml"
+    },
+    {
+      "relation": "marts.mart_top_movers_current",
+      "schema": "marts",
+      "name": "mart_top_movers_current",
+      "access": "select",
+      "grain": [
+        "movement_list",
+        "rank"
+      ],
+      "columns": [
+        {
+          "name": "rank",
+          "data_type": "bigint",
+          "description": "Position inside its movement list. Places lists order by chart_spread_gain first; then score, emerging artists first in new_entries, list reach tier, markets, entry time and a fixed hash of day and song key."
+        },
+        {
+          "name": "day",
+          "data_type": "date",
+          "description": "Bound daily cycle day for the current table."
+        },
+        {
+          "name": "song_key",
+          "data_type": "text",
+          "description": "Song key."
+        },
+        {
+          "name": "title_text",
+          "data_type": "text",
+          "description": "Title text."
+        },
+        {
+          "name": "artist_text",
+          "data_type": "text",
+          "description": "Artist text."
+        },
+        {
+          "name": "momentum_score",
+          "data_type": "double precision",
+          "description": "Positive weighted sum of cume_dist percentiles inside the song's movement list. Equal values share the fraction at or below them; a singleton gets one. Open score_parts for evidence."
+        },
+        {
+          "name": "score_parts",
+          "data_type": "text",
+          "description": "JSON parts with component, value, weight, percentile and the component's window_days."
+        },
+        {
+          "name": "coverage",
+          "data_type": "text",
+          "description": "Coverage."
+        },
+        {
+          "name": "reason_rule",
+          "data_type": "text",
+          "description": "Reason rule."
+        },
+        {
+          "name": "evidence",
+          "data_type": "text",
+          "description": "Source row locators with captured input builds. cluster_confidence is measured precision, the lowest merge-rule Wilson 95% lower bound; open the cluster audit."
+        },
+        {
+          "name": "ranking_build",
+          "data_type": "text",
+          "description": "Ranking build."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "window_days",
+          "data_type": "integer",
+          "description": "Comparison window in UTC days; it grows with observed history to seven."
+        },
+        {
+          "name": "chart_spread_gain",
+          "data_type": "bigint",
+          "description": "New country markets on tracked chart lists or Shazam charts. It ranks signal lists first and never joins the two-family score, because it overlaps playlists and Shazam."
+        },
+        {
+          "name": "list_reach_tier",
+          "data_type": "integer",
+          "description": "Best entered list tier; new_entries reads editorial and new-music lists only. One is widest; four is unclassified. See playlist_reach_tiers."
+        },
+        {
+          "name": "market_count",
+          "data_type": "bigint",
+          "description": "Distinct entered country markets; global and unknown are excluded."
+        },
+        {
+          "name": "last_entered_at",
+          "data_type": "timestamp with time zone",
+          "description": "Most recent qualifying entry observation."
+        },
+        {
+          "name": "movement_list",
+          "data_type": "text",
+          "description": "new_entries: new songs by emerging, developing or unknown-stage artists. established_entries: new songs by established artists. catalog_entries: catalog waking up. unplaced: unknown age and no new-music list in the window, so no movement view reads it. Lists never mix."
+        },
+        {
+          "name": "age_class",
+          "data_type": "text",
+          "description": "new when the age proxy is this year or last; catalog when older; unknown without a proxy. A proxy, never a release date. Open age_basis for its source."
+        },
+        {
+          "name": "age_basis",
+          "data_type": "text",
+          "description": "isrc_year: the year code in the ISRC, which a reissue can make newer, never older. apple_id_band: the Apple song id range. none: no proxy."
+        },
+        {
+          "name": "artist_stage",
+          "data_type": "text",
+          "description": "Stage of the song's most established credited artist, from MusicBrainz catalog depth. emerging, developing, established or unknown; artist_stage_thresholds holds the rules. unknown means no linked MusicBrainz artist or no catalog reading yet. Playlist data never sets it."
+        },
+        {
+          "name": "artist_stage_basis",
+          "data_type": "text",
+          "description": "Source of artist_stage. musicbrainz_catalog: release group counts and first release years read from the MusicBrainz mirror. none: artist_stage is unknown."
+        },
+        {
+          "name": "cluster_key",
+          "data_type": "text",
+          "description": "Provisional movement group key. Open member_song_keys to inspect the strict keys."
+        },
+        {
+          "name": "member_song_keys",
+          "data_type": "text",
+          "description": "Sorted JSON array of strict keys scored together. Open evidence for merge methods."
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/song.yml"
+    },
+    {
+      "relation": "marts.mart_track_daily_streams",
+      "schema": "marts",
+      "name": "mart_track_daily_streams",
+      "access": "select",
+      "grain": [
+        "platform",
+        "platform_track_id",
+        "day"
+      ],
+      "columns": [
+        {
+          "name": "platform",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "platform_track_id",
+          "data_type": "text",
+          "description": ""
+        },
+        {
+          "name": "day",
+          "data_type": "date",
+          "description": ""
+        },
+        {
+          "name": "play_count",
+          "data_type": "bigint",
+          "description": "The latest cumulative play count read that day; null on a gap."
+        },
+        {
+          "name": "count_changed_at",
+          "data_type": "timestamp",
+          "description": "The first observation of the day's value."
+        },
+        {
+          "name": "streams_since_last_update",
+          "data_type": "bigint",
+          "description": "The day's value minus the previous changed value, labelled \"since the last update\"; null for a track's first value and on a gap."
+        },
+        {
+          "name": "previous_count_changed_at",
+          "data_type": "timestamp",
+          "description": ""
+        },
+        {
+          "name": "count_status",
+          "data_type": "text",
+          "description": "changed (the value first appeared that day), unchanged, no_count (read, no count on the page), or no_fetch (nothing read that day)."
+        },
+        {
+          "name": "count_source",
+          "data_type": "text",
+          "description": "The one surface this track's series reads (playlist_page)."
+        },
+        {
+          "name": "observed_at",
+          "data_type": "timestamp",
+          "description": "The day's latest read; null on a gap."
+        },
+        {
+          "name": "_run_ids",
+          "data_type": "text",
+          "description": "JSON array of the run whose row the day's figure read."
+        },
+        {
+          "name": "learning_eligible",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "resale_permitted",
+          "data_type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "source_keys",
+          "data_type": "text",
+          "description": ""
+        }
+      ],
+      "rights_columns": [
+        "learning_eligible",
+        "resale_permitted",
+        "source_keys"
+      ],
+      "contract": "dbt/models/marts/global/streams.yml"
+    }
+  ],
+  "sandbox": {
+    "prefix": "sandbox_",
+    "handle_pattern": "^[a-z][a-z0-9_]{0,47}$",
+    "object_pattern": "^[a-z][a-z0-9_]{0,62}$",
+    "connection_limit": 4,
+    "statement_timeout": "30s",
+    "idle_in_transaction_session_timeout": "60s",
+    "temp_file_limit": "256MB",
+    "quota_bytes": 1073741824,
+    "warn_fraction": 0.8,
+    "poll_seconds": 60,
+    "archive_root": "inputs/sandbox-archives",
+    "runtime_roles": [
+      "reader_wh",
+      "showcase_wh",
+      "api_key_reader",
+      "dbt_transform",
+      "loader_wh",
+      "service_read",
+      "functions_rt",
+      "control_rt",
+      "workbench_wh"
+    ],
+    "messages": {
+      "sandbox_account_refused": "This login is not a standard individual analyst or explorer account. Inspect its memberships with psql \\du <login>; use a separate individual login.",
+      "sandbox_acl_alert": "Sandbox grants exceed the allowed sharing scope. Freeze the login and inspect its grants with the operator sandbox status command.",
+      "sandbox_acl_refused": "Sandbox access cannot be delegated or granted to runtime roles. Share SELECT with the allowed human group without WITH GRANT OPTION.",
+      "sandbox_archive_blocked": "Other objects depend on this sandbox. Notify the listed owners and remove or transfer their dependencies, then run archive again.",
+      "sandbox_archive_failed": "Archive failed; the login stays disabled and data is kept. Inspect the archive manifest and rerun archive with a new destination.",
+      "sandbox_frozen": "New objects are blocked while the sandbox is frozen. Delete unused tables, run mdp warehouse sandbox status, and ask the operator to unfreeze a manual hold.",
+      "sandbox_handle_invalid": "A handle uses 1–48 lowercase letters, digits or underscores, starts with a letter, and is not ro. Choose a handle such as demo.",
+      "sandbox_missing": "This login has no owned sandbox. Ask an operator to run ops/fly/postgres/analyst-add.sh <handle>, then reconnect.",
+      "sandbox_object_invalid": "The object name must use lowercase SQL letters, digits and underscores. Choose a name such as chart_draft.",
+      "sandbox_owner_conflict": "This sandbox belongs to another login. Choose another handle, or ask an operator to inspect it with mdp warehouse sandbox status and archive the stale schema before reuse.",
+      "sandbox_quota_warning": "Sandbox storage is at least 80 percent full. Run mdp warehouse sandbox status and remove unused tables before creating more.",
+      "sandbox_snapshot_failed": "The snapshot was not published. Check MDP_ANALYST_URL (in R, reconnect with mdp_connect()), choose a readable schema, and rerun with a new output path.",
+      "sandbox_stamp_denied": "Build stamps need a readable relation. Choose a readable entry in catalog.relations and rerun the snapshot.",
+      "sandbox_status_failed": "Sandbox status is unavailable. Reconnect with MDP_ANALYST_URL or ask an operator to run mdp warehouse sandbox status --all.",
+      "sandbox_view_refused": "A persistent sandbox view or SQL routine can block production schema changes. Save a table with CREATE TABLE sandbox_<handle>.<name> AS SELECT instead, or lift a view over a served mart.",
+      "sandbox_write_failed": "The sandbox write failed. Choose a new name or use overwrite = TRUE in mdp_write() for your own table; for a view, check its columns and save from a served mart.",
+      "workbench_permission_denied": "The workbench role cannot read this relation. Use the safe copy when offered and rerun. Otherwise open Explorer and choose a permitted global input, or ask an operator to restore analyst access.",
+      "workbench_query_failed": "The warehouse could not run this query. Check the relation and column names in the catalog, then rerun.",
+      "workbench_statement_timeout": "This query exceeded the statement timeout. Filter earlier or read fewer rows, then rerun; use a local snapshot for longer analysis."
+    }
+  }
+}

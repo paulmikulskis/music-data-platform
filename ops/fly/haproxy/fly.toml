@@ -1,0 +1,20 @@
+app = "mdp-pg-frontend"
+primary_region = "ewr"
+[build]
+  dockerfile = "Dockerfile"
+[[services]]
+  internal_port = 5432
+  protocol = "tcp"
+  [[services.ports]]
+    port = 5432
+    handlers = ["proxy_proto"]
+    proxy_proto_options = { version = "v2" }
+[checks.listener]
+  type = "tcp"
+  port = 8404
+  interval = "15s"
+  timeout = "2s"
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = "256mb"

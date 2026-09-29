@@ -1,0 +1,7 @@
+{
+  "name": "@mdp/showcase-auth", "private": true, "version": "0.0.0", "type": "module",
+  "exports": {".": "./src/index.ts"},
+  "scripts": {"typecheck": "tsc --noEmit"},
+  "dependencies": {"postgres": "^3.4.8", "zod": "catalog:"},
+  "devDependencies": {"@types/node": "^22.0.0"}
+}

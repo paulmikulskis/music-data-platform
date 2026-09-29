@@ -1,0 +1,28 @@
+{
+  "name": "@mdp/mdp-cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@mdp/data-sdk": "workspace:*",
+    "@mdp/contracts": "workspace:*",
+    "@orpc/client": "catalog:",
+    "zod": "catalog:",
+    "yaml": "^2.8.0",
+    "@orpc/contract": "catalog:",
+    "@mdp/showcase-auth": "workspace:*",
+    "qrcode-terminal": "^0.12.0",
+    "postgres": "^3.4.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/qrcode-terminal": "^0.12.2"
+  }
+}

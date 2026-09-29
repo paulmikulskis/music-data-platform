@@ -1,0 +1,9 @@
+{
+  "columns": {
+    "page": "bigint"
+  },
+  "table": "raw.lifecycle_daily_probe",
+  "tables": [
+    "raw.lifecycle_daily_probe"
+  ]
+}

@@ -1,0 +1,9 @@
+app = "mdp-alloy"
+primary_region = "ewr"
+[build]
+  dockerfile = "Dockerfile"
+# Private networking only; no public services.
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = "512mb"

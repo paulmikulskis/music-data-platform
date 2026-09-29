@@ -1,0 +1,25 @@
+{{ config(materialized='table', tags=['bronze', 'close', 'cadence:daily', 'scope:global']) }}
+-- depends_on: {{ ref('bronze_export__targets_daily') }}
+-- depends_on: {{ ref('bronze_invoke__am_playlist') }}
+-- depends_on: {{ ref('bronze_invoke__am_playlist_weekly') }}
+-- depends_on: {{ ref('bronze_invoke__apple_song_duration') }}
+-- depends_on: {{ ref('bronze_invoke__bc_daily_list') }}
+-- depends_on: {{ ref('bronze_invoke__bc_daily_list_weekly') }}
+-- depends_on: {{ ref('bronze_invoke__bc_discover') }}
+-- depends_on: {{ ref('bronze_invoke__bc_discover_weekly') }}
+-- depends_on: {{ ref('bronze_invoke__bc_fan_playlist') }}
+-- depends_on: {{ ref('bronze_invoke__bc_fan_playlist_weekly') }}
+-- depends_on: {{ ref('bronze_invoke__bc_radio') }}
+-- depends_on: {{ ref('bronze_invoke__bc_radio_weekly') }}
+-- depends_on: {{ ref('bronze_invoke__bc_tralbum') }}
+-- depends_on: {{ ref('bronze_invoke__kexp_plays') }}
+-- depends_on: {{ ref('bronze_invoke__lb_fresh_releases') }}
+-- depends_on: {{ ref('bronze_invoke__sc_curator_playlists') }}
+-- depends_on: {{ ref('bronze_invoke__sc_curator_playlists_weekly') }}
+-- depends_on: {{ ref('bronze_invoke__sc_hubs') }}
+-- depends_on: {{ ref('bronze_invoke__sc_playlist') }}
+-- depends_on: {{ ref('bronze_invoke__sc_playlist_weekly') }}
+-- depends_on: {{ ref('bronze_invoke__sp_playlist') }}
+-- depends_on: {{ ref('bronze_invoke__sp_playlist_weekly') }}
+-- depends_on: {{ ref('bronze_invoke__sz_chart') }}
+{{ mdp_invoke('cycle_close') }}

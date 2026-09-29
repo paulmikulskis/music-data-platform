@@ -1,0 +1,36 @@
+{
+  "name": "@mdp/control-api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./auth": "./src/auth.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "start": "tsx src/index.ts",
+    "seed-runbooks": "tsx src/seed-runbooks.ts"
+  },
+  "dependencies": {
+    "@clerk/backend": "^2.0.0",
+    "@hono/node-server": "^1.19.0",
+    "@mdp/contracts": "workspace:*",
+    "@mdp/control-db": "workspace:*",
+    "@mdp/data-sdk": "workspace:*",
+    "@mdp/showcase-auth": "workspace:*",
+    "@orpc/openapi": "catalog:",
+    "@orpc/server": "catalog:",
+    "csv-parse": "^6.0.0",
+    "drizzle-orm": "^0.45.1",
+    "hono": "^4.0.0",
+    "nodemailer": "^7.0.0",
+    "pgsql-ast-parser": "^12.0.2",
+    "postgres": "^3.4.8",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/nodemailer": "^7.0.0"
+  }
+}

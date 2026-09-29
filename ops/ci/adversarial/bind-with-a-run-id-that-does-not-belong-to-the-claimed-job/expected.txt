@@ -1,0 +1,2 @@
+PASSED functions/tests/adversarial_runtime.py::test_cloud_identity_model
+IDENTITY scope_mismatch; model fails before invocation

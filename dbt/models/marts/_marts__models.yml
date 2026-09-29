@@ -1,0 +1,124 @@
+version: 2
+models:
+- name: mart_chart_history
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - chart_name
+      - chart_week
+      - chart_position
+  columns:
+  - name: chart_name
+    data_type: varchar
+    constraints:
+    - type: not_null
+  - name: chart_week
+    data_type: date
+    constraints:
+    - type: not_null
+  - name: chart_position
+    data_type: integer
+    constraints:
+    - type: not_null
+  - name: track_title
+    data_type: varchar
+  - name: artist_name
+    data_type: varchar
+  - name: song_key
+    data_type: text
+    description: Movement representative when exactly one group matches. Null means unmatched or ambiguous.
+  - name: billboard_match_method
+    data_type: text
+    description: folded, credit_primary, run_together, group, ambiguous, or unmatched. Open billboard_match_rules
+      for enabled methods.
+  - name: confidence
+    data_type: double precision
+    description: Conservative method confidence, capped by movement-group measured precision. Null for an unmatched
+      entry.
+  - name: matched_by_group
+    data_type: boolean
+    description: True when the match relies on a group with several strict song keys.
+  - name: weeks_on_chart
+    data_type: integer
+    description: Provider lifetime weeks on the chart. Null when the source omits it.
+  - name: is_debut
+    data_type: boolean
+    description: First observed group week with provider weeks equal to one and a complete preceding weekly chart.
+      An earlier ambiguous candidate leaves the debut unknown. Open the chart history to inspect prior entries.
+  - name: source_key
+    data_type: varchar
+  - name: learning_eligible
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: _cycle_id
+    data_type: text
+  - name: _built_by
+    data_type: text
+  - name: resale_permitted
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    data_type: text
+    data_tests:
+    - not_null
+- name: mart_search_index
+  description: Global Library objects seen in the daily cycle's last 90 days. Song copies share their movement group's
+    result. Accounts are excluded because their public visibility is not declared. Open the Library to search.
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - object_key
+      tenant_readable: false
+  columns:
+  - name: object_key
+    description: Kind-prefixed object identity, such as song:apple:123.
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: kind
+    data_type: text
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values:
+          - song
+          - artist
+          - playlist
+          - chart
+  - name: display_text
+    data_type: text
+    data_tests:
+    - not_null
+  - name: context
+    description: JSON object with the route identity, platform, display credit and available artwork identity.
+    data_type: text
+    data_tests:
+    - not_null
+  - name: aliases
+    description: JSON array of distinct identity aliases, including every copy of a movement group.
+    data_type: text
+    data_tests:
+    - not_null
+  - name: last_seen
+    data_type: timestamp
+    data_tests:
+    - not_null
+  - name: learning_eligible
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    data_type: boolean
+    data_tests:
+    - not_null
+  - name: source_keys
+    data_type: text
+    data_tests:
+    - not_null

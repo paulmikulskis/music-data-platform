@@ -1,0 +1,1 @@
+ALTER TABLE "control"."cycle" ADD COLUMN "timezone" text;

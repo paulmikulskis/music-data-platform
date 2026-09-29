@@ -1,0 +1,18 @@
+# The importer's declaration. Machines are created only by refresh.py (`fly machine run`), which
+# reads [env] and [[vm]] from this file, builds mb-import/Dockerfile with ops/fly as the context,
+# and mounts a temporary volume at /media/dbdump. Do not `fly deploy` this app.
+# Secrets on the app: POSTGRES_PASSWORD (musicbrainz) and MB_READER_PASSWORD.
+app = "mdp-mb-import"
+primary_region = "ewr"
+kill_timeout = "5m"
+[env]
+  POSTGRES_USER = "musicbrainz"
+  MUSICBRAINZ_POSTGRES_SERVER = "mdp-mb-db.internal"
+  MUSICBRAINZ_POSTGRES_READONLY_SERVER = "mdp-mb-db.internal"
+  MUSICBRAINZ_BASE_DOWNLOAD_URL = "https://data.metabrainz.org/pub/musicbrainz"
+  MUSICBRAINZ_STANDALONE_SERVER = "0"
+[[vm]]
+  size = "performance-4x"
+  memory = "16gb"
+[[restart]]
+  policy = "never"

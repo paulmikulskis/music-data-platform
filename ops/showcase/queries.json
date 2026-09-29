@@ -1,0 +1,722 @@
+[
+  {
+    "room": "Today / chart",
+    "relation": "marts.mart_chart_history",
+    "columns": [
+      "chart_name",
+      "chart_week",
+      "chart_position"
+    ]
+  },
+  {
+    "room": "Today / playlist",
+    "relation": "marts.mart_playlist_profile",
+    "columns": [
+      "platform",
+      "playlist_id",
+      "variant",
+      "stream",
+      "title",
+      "observed_at",
+      "snapshot_id",
+      "followers",
+      "follower_change",
+      "owner_class",
+      "source_keys",
+      "learning_eligible",
+      "resale_permitted"
+    ]
+  },
+  {
+    "room": "Song / playlist evidence",
+    "relation": "marts.mart_playlist_events",
+    "columns": [
+      "platform",
+      "playlist_id",
+      "variant",
+      "stream",
+      "occurrence_key",
+      "interval_id",
+      "event_type",
+      "is_baseline",
+      "platform_track_id",
+      "mb_recording_gid",
+      "isrc",
+      "observed_at",
+      "position",
+      "previous_position",
+      "owner_class",
+      "snapshot_id",
+      "source_keys",
+      "learning_eligible",
+      "resale_permitted"
+    ]
+  },
+  {
+    "room": "Song / chart / city",
+    "relation": "marts.mart_shazam_chart_daily",
+    "columns": [
+      "chart",
+      "chart_date",
+      "chart_type",
+      "country",
+      "city",
+      "position",
+      "title_text",
+      "artist_text",
+      "apple_song_id",
+      "apple_primary_artist_id",
+      "mb_recording_gid",
+      "isrc",
+      "observed_at",
+      "source_keys",
+      "learning_eligible",
+      "resale_permitted"
+    ]
+  },
+  {
+    "room": "Song / streams",
+    "relation": "marts.mart_track_daily_streams",
+    "columns": [
+      "platform",
+      "platform_track_id",
+      "day",
+      "play_count",
+      "streams_since_last_update",
+      "count_changed_at",
+      "previous_count_changed_at",
+      "count_status",
+      "observed_at",
+      "_run_ids",
+      "source_keys",
+      "learning_eligible",
+      "resale_permitted"
+    ]
+  },
+  {
+    "room": "Library / chart",
+    "relation": "marts.mart_chart_history",
+    "columns": [
+      "chart_name",
+      "chart_week",
+      "chart_position",
+      "track_title",
+      "artist_name",
+      "_cycle_id",
+      "source_keys",
+      "learning_eligible",
+      "resale_permitted"
+    ]
+  },
+  {
+    "room": "Artist / identity",
+    "relation": "intermediate.int_artist_identity",
+    "columns": [
+      "platform",
+      "platform_artist_id",
+      "mb_artist_gid",
+      "mb_artist_name",
+      "candidate_count",
+      "method",
+      "wikidata_qid"
+    ]
+  },
+  {
+    "room": "Rights",
+    "relation": "catalog.learning_rights",
+    "columns": [
+      "source_key",
+      "learning_eligible",
+      "resale_permitted"
+    ]
+  },
+  {
+    "room": "Song / aliases",
+    "relation": "marts.mart_song_aliases",
+    "columns": [
+      "alias_key",
+      "song_key",
+      "platform",
+      "platform_track_id",
+      "resolved",
+      "learning_eligible",
+      "resale_permitted",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Song / history",
+    "relation": "marts.mart_song_day",
+    "columns": [
+      "song_key",
+      "title_text",
+      "artist_text",
+      "day",
+      "editorial_adds",
+      "algorithmic_adds",
+      "removes",
+      "playlist_followers",
+      "list_count",
+      "shazam_cities",
+      "shazam_countries",
+      "shazam_charts",
+      "shazam_new_entries",
+      "best_position",
+      "shazam_best_position",
+      "stream_rate",
+      "stream_interval_hours",
+      "learning_eligible",
+      "resale_permitted",
+      "source_keys",
+      "playlists_observed",
+      "shazam_observed",
+      "streams_observed"
+    ]
+  },
+  {
+    "room": "Today / movers",
+    "relation": "marts.mart_top_movers_current",
+    "columns": [
+      "movement_list",
+      "rank",
+      "day",
+      "song_key",
+      "title_text",
+      "artist_text",
+      "window_days",
+      "age_class",
+      "age_basis",
+      "momentum_score",
+      "score_parts",
+      "coverage",
+      "reason_rule",
+      "evidence",
+      "ranking_build",
+      "learning_eligible",
+      "resale_permitted",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Song / daily identity",
+    "relation": "intermediate.int_song_key__daily",
+    "columns": [
+      "platform",
+      "platform_track_id",
+      "song_key",
+      "isrc",
+      "mb_recording_gid",
+      "match_method",
+      "title_text",
+      "artist_text",
+      "source_keys",
+      "resolved",
+      "confidence",
+      "primary_artist_id",
+      "primary_artist_key"
+    ]
+  },
+  {
+    "room": "Rising / early signals",
+    "relation": "marts.mart_early_signals_current",
+    "columns": [
+      "day",
+      "family",
+      "movement_list",
+      "rank",
+      "song_key",
+      "title_text",
+      "artist_text",
+      "window_days",
+      "component",
+      "value",
+      "age_basis",
+      "reason_rule",
+      "evidence",
+      "learning_eligible",
+      "resale_permitted",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Today and Song / readiness",
+    "relation": "marts.mart_readiness",
+    "columns": [
+      "family",
+      "day",
+      "history_days",
+      "first_rank_day",
+      "learning_eligible",
+      "resale_permitted",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Song / playlist receipt",
+    "relation": "staging.stg_playlist__snapshots",
+    "columns": [
+      "_run_id",
+      "snapshot_id",
+      "platform",
+      "playlist_id",
+      "_dump_id",
+      "_source_key",
+      "variant"
+    ]
+  },
+  {
+    "room": "Rising / recent movers",
+    "relation": "marts.mart_top_movers",
+    "columns": [
+      "movement_list",
+      "rank",
+      "day",
+      "song_key",
+      "title_text",
+      "artist_text",
+      "window_days",
+      "age_basis",
+      "momentum_score",
+      "score_parts",
+      "coverage",
+      "reason_rule",
+      "evidence",
+      "ranking_build",
+      "learning_eligible",
+      "resale_permitted",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Today / arrivals",
+    "relation": "marts.mart_arrivals_current",
+    "columns": [
+      "day",
+      "song_key",
+      "rank",
+      "title_text",
+      "artist_text",
+      "window_days",
+      "age_basis",
+      "movement_list",
+      "entered_lists",
+      "reason_rule",
+      "evidence",
+      "learning_eligible",
+      "resale_permitted",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Places / arrivals",
+    "relation": "marts.mart_arrivals_current",
+    "columns": [
+      "movement_list",
+      "rank",
+      "song_key",
+      "title_text",
+      "artist_text",
+      "window_days",
+      "entered_lists",
+      "entered_charts",
+      "market_count",
+      "chart_spread_gain",
+      "markets",
+      "age_basis",
+      "artist_stage_basis",
+      "reason_rule",
+      "learning_eligible",
+      "resale_permitted",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Artist card / lead artist",
+    "relation": "intermediate.int_song_key__daily",
+    "columns": [
+      "platform",
+      "platform_track_id",
+      "song_key",
+      "source_keys",
+      "primary_artist_id",
+      "primary_artist_key"
+    ]
+  },
+  {
+    "room": "Artist card / Wikidata item",
+    "relation": "intermediate.int_artist_identity",
+    "columns": [
+      "platform",
+      "platform_artist_id",
+      "mb_artist_name",
+      "candidate_count",
+      "wikidata_qid"
+    ]
+  },
+  {
+    "room": "Artist card / first seen",
+    "relation": "marts.mart_song_day",
+    "columns": [
+      "song_key",
+      "day",
+      "editorial_adds",
+      "algorithmic_adds",
+      "list_count",
+      "shazam_charts",
+      "stream_rate",
+      "billboard_position"
+    ]
+  },
+  {
+    "room": "Song / Shazam places",
+    "relation": "marts.mart_shazam_chart_daily",
+    "columns": [
+      "apple_song_id",
+      "country",
+      "city",
+      "chart_date"
+    ]
+  },
+  {
+    "room": "Calls / anchors",
+    "relation": "intermediate.int_song_key__daily",
+    "columns": [
+      "platform",
+      "platform_track_id",
+      "song_key",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Calls / song groups",
+    "relation": "intermediate.int_song_cluster__daily",
+    "columns": [
+      "song_key",
+      "cluster_key"
+    ]
+  },
+  {
+    "room": "Calls / live display",
+    "relation": "marts.mart_song_day",
+    "columns": [
+      "song_key",
+      "day",
+      "title_text",
+      "artist_text"
+    ]
+  },
+  {
+    "room": "Calls / places since submission",
+    "relation": "marts.mart_shazam_chart_daily",
+    "columns": [
+      "apple_song_id",
+      "country",
+      "city",
+      "chart_date",
+      "chart",
+      "chart_type",
+      "position",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Draft / frozen rule picks",
+    "id": "rule_picks",
+    "relation": "marts.mart_arrivals_current",
+    "columns": [
+      "artist_stage",
+      "age_class",
+      "discovery_entries",
+      "market_count",
+      "entered_lists",
+      "list_reach_tier",
+      "movement_list",
+      "rank"
+    ],
+    "sql": "WITH candidates AS (SELECT value AS c FROM jsonb_array_elements($1::text::jsonb)), rules AS (SELECT value AS r FROM jsonb_array_elements($2::text::jsonb)), matches AS (\n SELECT c->>'song_key' AS song_key,r->>'id' AS rule_id,(r->>'limit_per_draft')::int AS pick_limit,\n row_number() OVER (PARTITION BY r->>'id' ORDER BY CASE c->>'movement_list' WHEN 'new_entries' THEN 0 WHEN 'established_entries' THEN 1 WHEN 'catalog_entries' THEN 2 WHEN 'unplaced' THEN 3 ELSE 4 END,(c->>'rank')::bigint,md5($3::text || ':' || (c->>'song_key'))) AS n\n FROM candidates CROSS JOIN rules WHERE NOT EXISTS (\n SELECT 1 FROM jsonb_array_elements(r->'conditions') condition WHERE NOT coalesce(CASE condition->>'field'\n WHEN 'artist_stage' THEN c->>'artist_stage'=condition->>'value'\n WHEN 'age_class' THEN c->>'age_class'=condition->>'value'\n WHEN 'discovery_entries_at_least' THEN (c->>'discovery_entries')::int >= (condition->>'value')::int\n WHEN 'markets_at_least' THEN (c->>'market_count')::int >= (condition->>'value')::int\n WHEN 'lists_at_least' THEN (c->>'entered_lists')::int >= (condition->>'value')::int\n WHEN 'reach_tier_at_most' THEN (c->>'list_reach_tier')::int <= (condition->>'value')::int\n ELSE false END,false)))\n SELECT song_key,jsonb_agg(rule_id ORDER BY rule_id) AS rule_ids FROM matches WHERE n<=pick_limit GROUP BY song_key ORDER BY song_key"
+  },
+  {
+    "room": "Draft / Friday entries",
+    "relation": "intermediate.int_cluster_entries__daily",
+    "columns": [
+      "song_key",
+      "day",
+      "platform",
+      "list_id",
+      "list_kind",
+      "event_type",
+      "observed_at",
+      "locator",
+      "snapshot_id"
+    ]
+  },
+  {
+    "room": "Draft / tray",
+    "relation": "marts.mart_arrivals_current",
+    "columns": [
+      "song_key",
+      "cluster_key",
+      "member_song_keys",
+      "artist_stage",
+      "age_class",
+      "discovery_entries",
+      "market_count",
+      "entered_lists",
+      "list_reach_tier",
+      "movement_list",
+      "rank",
+      "window_days",
+      "day",
+      "source_keys"
+    ]
+  },
+  {
+    "room": "Draft / observation cadence",
+    "relation": "intermediate.int_playlist__snapshots",
+    "columns": [
+      "platform",
+      "playlist_id",
+      "snapshot_id",
+      "variant",
+      "stream",
+      "cadence"
+    ]
+  },
+  {
+    "room": "Draft / live song names",
+    "relation": "marts.mart_song_day",
+    "columns": [
+      "song_key",
+      "day",
+      "title_text",
+      "artist_text"
+    ]
+  },
+  {
+    "room": "Library",
+    "relation": "marts.mart_search_index",
+    "columns": [
+      "object_key",
+      "kind",
+      "display_text",
+      "context",
+      "aliases",
+      "last_seen",
+      "source_keys",
+      "learning_eligible",
+      "resale_permitted"
+    ],
+    "id": "library_search",
+    "class": "content",
+    "sql": "WITH scored AS (\n  SELECT i.object_key, i.kind, i.display_text, i.context, i.aliases, i.last_seen, i.source_keys,\n    i.learning_eligible, i.resale_permitted, similarity(lower(i.display_text), lower($1)) AS sim,\n    CASE WHEN lower(i.display_text) = lower($1) THEN 1.0\n      WHEN lower(i.display_text) LIKE replace(replace(replace(lower($1), '\\', '\\\\'), '%', '\\%'), '_', '\\_') || '%' THEN 0.6\n      WHEN lower(i.display_text) LIKE '% ' || replace(replace(replace(lower($1), '\\', '\\\\'), '%', '\\%'), '_', '\\_') || '%' THEN 0.5\n      WHEN lower(i.display_text) LIKE '%' || replace(replace(replace(lower($1), '\\', '\\\\'), '%', '\\%'), '_', '\\_') || '%' THEN 0.3\n      ELSE 0 END AS contained\n  FROM marts.mart_search_index i\n  WHERE lower(i.display_text) % lower($1) OR lower(i.display_text) LIKE '%' || replace(replace(replace(lower($1), '\\', '\\\\'), '%', '\\%'), '_', '\\_') || '%'\n  ORDER BY contained DESC, sim DESC, i.object_key\n  LIMIT 60\n), ranked AS (\n  SELECT s.*, max(s.sim) OVER () AS best, bool_or(s.contained > 0) OVER () AS contains FROM scored s\n)\nSELECT object_key, kind, display_text, context::json AS context,\n  aliases::json AS aliases, last_seen::text, source_keys::json AS source_keys,\n  learning_eligible, resale_permitted\n  FROM ranked r\n  WHERE r.contained > 0 OR r.sim >= greatest(0.3, 0.6 * r.best, CASE WHEN r.contains THEN 0.45 ELSE 0 END)\n  ORDER BY r.kind = 'song' AND NOT EXISTS (\n      SELECT 1 FROM marts.mart_song_day d\n      WHERE d.song_key = (r.context::json->>'key') COLLATE \"C\"\n        AND d.day >= (now() AT TIME ZONE 'UTC')::date - 27\n        AND (d.editorial_adds > 0 OR d.algorithmic_adds > 0 OR d.shazam_cities > 0\n          OR d.stream_rate > 0 OR d.billboard_position IS NOT NULL)),\n    r.sim + r.contained DESC, r.last_seen DESC, r.object_key\n  LIMIT 20"
+  },
+  {
+    "room": "Library / search ranking",
+    "relation": "marts.mart_song_day",
+    "columns": [
+      "song_key",
+      "day",
+      "editorial_adds",
+      "algorithmic_adds",
+      "shazam_cities",
+      "stream_rate",
+      "billboard_position"
+    ]
+  },
+  {
+    "room": "Library / playlist",
+    "relation": "marts.mart_playlist_profile",
+    "columns": [
+      "platform",
+      "playlist_id",
+      "variant",
+      "stream",
+      "title",
+      "owner_class",
+      "owner_name",
+      "followers",
+      "track_count_reported",
+      "observed_at"
+    ]
+  },
+  {
+    "room": "Library / playlist newest songs",
+    "relation": "marts.mart_playlist_events",
+    "columns": [
+      "platform",
+      "playlist_id",
+      "event_type",
+      "is_baseline",
+      "platform_track_id",
+      "observed_at",
+      "position"
+    ]
+  },
+  {
+    "room": "Library / chart top songs",
+    "relation": "marts.mart_shazam_chart_daily",
+    "columns": [
+      "chart",
+      "chart_type",
+      "country",
+      "city",
+      "chart_date",
+      "position",
+      "title_text",
+      "artist_text",
+      "apple_song_id"
+    ]
+  },
+  {
+    "room": "Library / artist songs",
+    "relation": "intermediate.int_song_key__daily",
+    "columns": [
+      "platform",
+      "platform_track_id",
+      "song_key",
+      "title_text",
+      "primary_artist_id"
+    ]
+  },
+  {
+    "room": "Library / artist song groups",
+    "relation": "intermediate.int_song_cluster__daily",
+    "columns": [
+      "song_key",
+      "cluster_key"
+    ]
+  },
+  {
+    "room": "Library / artist song days",
+    "relation": "marts.mart_song_day",
+    "columns": [
+      "song_key",
+      "day",
+      "editorial_adds",
+      "algorithmic_adds",
+      "list_count",
+      "shazam_charts",
+      "stream_rate",
+      "billboard_position"
+    ]
+  },
+  {
+    "room": "Proof / playlist titles",
+    "relation": "marts.mart_playlist_profile",
+    "columns": [
+      "platform",
+      "playlist_id",
+      "title",
+      "observed_at"
+    ]
+  },
+  {
+    "room": "Proof / editorial lists that day",
+    "relation": "marts.mart_playlist_events",
+    "columns": [
+      "platform",
+      "playlist_id",
+      "event_type",
+      "owner_class",
+      "platform_track_id",
+      "observed_at"
+    ]
+  },
+  {
+    "room": "Proof / city charts that day",
+    "relation": "marts.mart_shazam_chart_daily",
+    "columns": [
+      "chart",
+      "country",
+      "city",
+      "position",
+      "apple_song_id",
+      "chart_date"
+    ]
+  },
+  {
+    "room": "Proof / play counters that day",
+    "relation": "marts.mart_track_daily_streams",
+    "columns": [
+      "platform",
+      "platform_track_id",
+      "day",
+      "play_count"
+    ]
+  },
+  {
+    "room": "Places / new markets",
+    "relation": "intermediate.int_cluster_shazam__daily",
+    "columns": [
+      "song_key",
+      "chart_date",
+      "country"
+    ]
+  },
+  {
+    "room": "Places / new markets",
+    "relation": "intermediate.int_song_windows__daily",
+    "columns": [
+      "day",
+      "family",
+      "window_days"
+    ]
+  },
+  {
+    "room": "Places / new markets",
+    "relation": "intermediate.int_cluster_entries__daily",
+    "columns": [
+      "song_key",
+      "day",
+      "market",
+      "platform",
+      "list_kind"
+    ]
+  },
+  {
+    "room": "Song and Places / playlist kinds",
+    "relation": "reference.playlist_reach_tiers",
+    "columns": [
+      "platform",
+      "playlist_id",
+      "list_kind",
+      "market"
+    ]
+  },
+  {
+    "room": "Viewer / chart evidence",
+    "relation": "staging.stg_shazam__chart_entries",
+    "columns": [
+      "chart",
+      "chart_date",
+      "position",
+      "apple_song_id",
+      "_source_key",
+      "_run_id",
+      "_dump_id"
+    ]
+  },
+  {
+    "room": "Team / try a question",
+    "id": "team_shazam_cities",
+    "relation": "marts.mart_shazam_chart_daily",
+    "columns": [
+      "title_text",
+      "artist_text",
+      "city",
+      "country",
+      "chart_date",
+      "apple_song_id"
+    ],
+    "sql": "WITH firsts AS (\n  SELECT s.apple_song_id, s.city, s.country, min(s.chart_date) AS first_day,\n    min(s.title_text) AS title_text, min(s.artist_text) AS artist_text\n  FROM marts.mart_shazam_chart_daily s\n  WHERE s.city IS NOT NULL AND s.city <> '' AND s.apple_song_id IS NOT NULL\n  GROUP BY 1, 2, 3)\nSELECT f.title_text, f.artist_text, f.city, f.country, f.first_day::text AS first_day,\n  (SELECT k.song_key FROM explore_intermediate.int_song_key__daily k\n    WHERE k.platform = 'apple' AND k.platform_track_id = f.apple_song_id\n    ORDER BY k.song_key LIMIT 1) AS song_key\nFROM firsts f\nWHERE f.first_day >= (now() AT TIME ZONE 'UTC')::date - 6\nORDER BY f.first_day DESC, f.title_text, f.city\nLIMIT 5"
+  },
+  {
+    "room": "Team / try a question / song cover",
+    "relation": "explore_intermediate.int_song_key__daily",
+    "columns": [
+      "platform",
+      "platform_track_id",
+      "song_key"
+    ]
+  }
+]

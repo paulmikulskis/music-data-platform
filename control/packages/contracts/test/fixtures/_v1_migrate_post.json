@@ -1,0 +1,20 @@
+{
+  "path": "/v1/migrate",
+  "url": "/v1/migrate",
+  "method": "post",
+  "status": 200,
+  "request": {
+    "warehouse_id": "545f6635-ed1e-48c7-9523-c6da7349b77a",
+    "source_keys": [
+      "billboard_hot100"
+    ]
+  },
+  "response": {
+    "warehouse_id": "545f6635-ed1e-48c7-9523-c6da7349b77a",
+    "selected": 1,
+    "queued": 0,
+    "loaded": 1,
+    "rejected": 0,
+    "pending": 0
+  }
+}

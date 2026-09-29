@@ -1,0 +1,16 @@
+{
+  "columns": {
+    "artist": "text",
+    "chart": "text",
+    "last_week": "bigint",
+    "peak": "bigint",
+    "position": "bigint",
+    "title": "text",
+    "week": "date",
+    "weeks_on_chart": "bigint"
+  },
+  "table": "raw.chart_entries",
+  "tables": [
+    "raw.chart_entries"
+  ]
+}

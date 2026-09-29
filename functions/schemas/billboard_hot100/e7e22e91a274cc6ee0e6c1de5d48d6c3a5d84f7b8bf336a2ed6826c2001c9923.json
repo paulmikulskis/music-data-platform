@@ -1,0 +1,10 @@
+{
+  "columns": {
+    "reason": "text",
+    "record": "jsonb"
+  },
+  "table": "raw._rejected",
+  "tables": [
+    "raw._rejected"
+  ]
+}

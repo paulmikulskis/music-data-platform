@@ -1,0 +1,42 @@
+version: 2
+models:
+- name: mart_song_cluster_members
+  description: Every strict song key points to its current movement representative. Use song_key to find a score after copies are matched.
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain: [song_key]
+  columns:
+  - name: song_key
+    description: Strict identity key to look up.
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: cluster_key
+    description: Current provisional movement group.
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: representative_song_key
+    description: Song key carried by the current movement row.
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: cluster_methods
+    description: JSON array of the matching rules used by the group.
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: learning_eligible
+    description: True when every source permits derivative learning.
+    data_type: boolean
+    data_tests: [not_null]
+  - name: resale_permitted
+    description: True when every source permits resale.
+    data_type: boolean
+    data_tests: [not_null]
+  - name: source_keys
+    description: JSON array of every source behind the group.
+    data_type: text
+    data_tests: [not_null]

@@ -1,0 +1,16 @@
+{
+  "path": "/v1/invoke",
+  "url": "/v1/invoke",
+  "method": "post",
+  "status": 202,
+  "request": {
+    "source_key": "targets_export",
+    "cadence": "hourly",
+    "dbt_run_id": "lifecycle-085e1dad2e444c38921414529f7c7e04",
+    "manual": true
+  },
+  "response": {
+    "run_id": "bf01f346-92c9-42f3-8ea7-5e878fb1515c",
+    "status": "running"
+  }
+}

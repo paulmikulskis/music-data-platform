@@ -1,0 +1,17 @@
+{
+  "path": "/v1/backfill",
+  "url": "/v1/backfill",
+  "method": "post",
+  "status": 202,
+  "request": {
+    "source_key": "backfill_probe",
+    "window": {
+      "from": "2026-01-01T00:00:00Z",
+      "to": "2026-01-02T00:00:00Z"
+    }
+  },
+  "response": {
+    "run_id": "3a4cca02-7e5c-478c-87dc-21b1d8a5fd19",
+    "status": "queued"
+  }
+}

@@ -1,0 +1,1549 @@
+{
+  "schema_version": 1,
+  "console_tenant_review": null,
+  "links": [
+    {
+      "id": "stack-code-warehouse",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "ops/fly/postgres",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Warehouse card"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Warehouse",
+        "code"
+      ],
+      "highlights": [
+        "Dockerfile",
+        "boot",
+        "README.md"
+      ],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-code-readers",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "functions",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Readers card"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Readers",
+        "code"
+      ],
+      "highlights": [
+        "README.md",
+        "src",
+        "tests"
+      ],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-code-workbench",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "functions/src/mdp_functions/workbench.py",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Workbench card"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Workbench",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-code-clock",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "ops/run.sh",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Clock card"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Clock",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-code-musicbrainz",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "ops/fly/mb-db",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "MusicBrainz copy card"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "MusicBrainz",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-code-data-api",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "control/apps/data-api",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Data API card"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Data API",
+        "code"
+      ],
+      "highlights": [
+        "src",
+        "test"
+      ],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-code-console",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "control/apps/control-api",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Console card"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Console",
+        "code"
+      ],
+      "highlights": [
+        "src",
+        "test"
+      ],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-code-side-door",
+      "label": "How to connect",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/analyst-access.md",
+        "anchor": "connect-a-bi-tool"
+      },
+      "access": "code",
+      "surfaces": [
+        "Side door card"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "How to connect",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "connect-a-bi-tool"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "stack-code-this-app",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "control/apps/showcase",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "This app card"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Showcase",
+        "code"
+      ],
+      "highlights": [
+        "app",
+        "components",
+        "lib"
+      ],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-open-workbench",
+      "label": "Open Workbench",
+      "category": "console",
+      "destination": {
+        "route": "/workbench",
+        "back": "/stack#workbench"
+      },
+      "access": "session",
+      "surfaces": [
+        "Workbench card"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "SQL editor",
+        "preview",
+        "saved queries"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-open-console",
+      "label": "Open Console",
+      "category": "console",
+      "destination": {
+        "route": "/ops",
+        "back": "/stack#console"
+      },
+      "access": "session",
+      "surfaces": [
+        "Console card"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "status",
+        "alerts"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-open-warehouse",
+      "label": "Open Explorer",
+      "category": "console",
+      "destination": {
+        "route": "/explorer",
+        "back": "/stack#warehouse"
+      },
+      "access": "session",
+      "surfaces": [
+        "Warehouse card"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "tables",
+        "columns",
+        "sample"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-open-readers",
+      "label": "Open readers",
+      "category": "console",
+      "destination": {
+        "route": "/functions",
+        "back": "/stack#readers"
+      },
+      "access": "session",
+      "surfaces": [
+        "Readers card"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "readers",
+        "last check"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "stack-open-clock",
+      "label": "Open rounds",
+      "category": "console",
+      "destination": {
+        "route": "/runs",
+        "back": "/stack#clock"
+      },
+      "access": "session",
+      "surfaces": [
+        "Clock card"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "rounds",
+        "results"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "more-served-doc",
+      "label": "What analysts can read",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/analyst-access.md",
+        "anchor": "served-marts"
+      },
+      "access": "code",
+      "surfaces": [
+        "Warehouse sheet"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "What analysts can read",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "served-marts"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "more-source-list",
+      "label": "Source list",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/sources.md",
+        "anchor": "data-sources"
+      },
+      "access": "code",
+      "surfaces": [
+        "Readers sheet"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Source list",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "data-sources"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "more-workbench-guide",
+      "label": "Workbench guide",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/analyst-access.md",
+        "anchor": "run-plain-sql-in-the-workbench"
+      },
+      "access": "code",
+      "surfaces": [
+        "Workbench sheet"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Workbench guide",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "run-plain-sql-in-the-workbench"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "avatar-open-console",
+      "label": "Open Console",
+      "category": "console",
+      "destination": {
+        "route": "/ops",
+        "back": "/"
+      },
+      "access": "session",
+      "surfaces": [
+        "Data platform row"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "status",
+        "alerts"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-1-contributing",
+      "label": "Where to start",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "CONTRIBUTING.md",
+        "anchor": "contributing"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 1, primary"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Where to start",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "contributing"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-2-practice",
+      "label": "Practice copy guide",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "ops/local/README.md",
+        "anchor": "local-database-stacks"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 2, primary"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Practice copy guide",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "local-database-stacks"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-2-quickstart",
+      "label": "Developer quickstart",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/DEVELOPING.md",
+        "anchor": "quickstart"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 2, more"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Developer quickstart",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "quickstart"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-3-starters",
+      "label": "Ten starter questions",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/analyst-access.md",
+        "anchor": "ten-starter-queries"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 3, primary"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Ten starter questions",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "ten-starter-queries"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-3-notebook",
+      "label": "Python notebook",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/starters/notebook.ipynb",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 3, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Python notebook",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-3-r-package",
+      "label": "R package",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "r/mdpr",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 3, more"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "R package",
+        "code"
+      ],
+      "highlights": [
+        "R",
+        "inst",
+        "tests"
+      ],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-3-rstudio",
+      "label": "RStudio connection",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "r/mdpr/inst/rstudio",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 3, more"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "RStudio connection",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-3-r-guide",
+      "label": "R guide",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/r.md",
+        "anchor": "set-up"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 3, more"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "R guide",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "set-up"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-4-workbench",
+      "label": "Open Workbench",
+      "category": "console",
+      "destination": {
+        "route": "/workbench",
+        "back": "/team#workbench"
+      },
+      "access": "session",
+      "surfaces": [
+        "Step 4, primary"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "SQL editor",
+        "preview",
+        "saved queries"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-4-guide",
+      "label": "Workbench guide",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/analyst-access.md",
+        "anchor": "run-plain-sql-in-the-workbench"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 4, more"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Workbench guide",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "run-plain-sql-in-the-workbench"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-4-page-code",
+      "label": "Workbench page code",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "control/apps/control-api/src/workbench-page.tsx",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 4, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Workbench page code",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-4-publisher",
+      "label": "Proposal publisher code",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "functions/src/mdp_functions/workbench_pr.py",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 4, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Proposal publisher code",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-ship",
+      "label": "Ship a new number",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/operating.md",
+        "anchor": "data-scientist-ship-a-mart"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, primary"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Ship a new number",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "data-scientist-ship-a-mart"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-lands",
+      "label": "Where a new number lands",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/models/marts/global",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Where a new number lands",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-contracts",
+      "label": "Table contracts",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/models/marts/_marts__models.yml",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Table contracts",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-example",
+      "label": "Example to copy",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/models/marts/global/mart_chart_history.sql",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Example to copy",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-command",
+      "label": "New table command",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "control/packages/mdp-cli/src/index.ts",
+        "anchor": "L"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "New table command",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": "verb === \"new\" && kind === \"mart\""
+    },
+    {
+      "id": "team-5-view-to-table",
+      "label": "Saved query to table",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/analyst-access.md",
+        "anchor": "turn-a-view-into-a-model"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Saved query to table",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "turn-a-view-into-a-model"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-lift",
+      "label": "Saved query lift code",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "functions/src/mdp_functions/warehouse_lift.py",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Saved query lift code",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-ready",
+      "label": "Checks before a proposal",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/DEVELOPING.md",
+        "anchor": "before-a-pr"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Checks before a proposal",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "before-a-pr"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-workflows",
+      "label": "Checks on every proposal",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": ".github/workflows",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Checks on every proposal",
+        "code"
+      ],
+      "highlights": [
+        "dbt-ci.yml"
+      ],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-sql-check",
+      "label": "SQL check",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": ".github/workflows/dbt-ci.yml",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "SQL check",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-r-form",
+      "label": "R proposal form",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": ".github/PULL_REQUEST_TEMPLATE/r-proposal.md",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "R proposal form",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-projects",
+      "label": "Analyst project rules",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "analyses/README.md",
+        "anchor": "analyses"
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Analyst project rules",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "analyses"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-5-r-template",
+      "label": "R project template",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "r/mdpr/inst/templates/analysis",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Step 5, more"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "R project template",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-layer-cleaned",
+      "label": "Cleaned tables",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/models/staging",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "What they can open \u2192 Where the SQL lives"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Cleaned tables",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-layer-joined",
+      "label": "Joined tables",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/models/intermediate",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Where the SQL lives"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Joined tables",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-layer-ready",
+      "label": "Ready to use",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/models/marts/global",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Where the SQL lives"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Ready to use",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-layer-enriched",
+      "label": "Enriched tables",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/models/marts/global",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Where the SQL lives"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Enriched tables",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-layer-rules",
+      "label": "Rule and mapping tables",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/seeds",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Where the SQL lives"
+      ],
+      "thumbnail": "folder",
+      "nouns": [
+        "Rule and mapping tables",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-layer-rights",
+      "label": "Rights flags",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/macros/mdp_annotate.sql",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Where the SQL lives"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Rights flags",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-layer-conventions",
+      "label": "SQL conventions, one example",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/CLAUDE.md",
+        "anchor": "a-small-real-mart"
+      },
+      "access": "code",
+      "surfaces": [
+        "Where the SQL lives"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "SQL conventions, one example",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "a-small-real-mart"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-layer-glossary",
+      "label": "Glossary",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/glossary.md",
+        "anchor": "glossary"
+      },
+      "access": "code",
+      "surfaces": [
+        "Where the SQL lives (intern reference only; it still defines two retired viewer words)"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Glossary",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "glossary"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-open-served",
+      "label": "What analysts can read",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/analyst-access.md",
+        "anchor": "served-marts"
+      },
+      "access": "code",
+      "surfaces": [
+        "What they can open"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "What analysts can read",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "served-marts"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "team-open-explorer",
+      "label": "Open Explorer (staff)",
+      "category": "console",
+      "destination": {
+        "route": "/explorer",
+        "back": "/team"
+      },
+      "access": "session",
+      "surfaces": [
+        "What they can open"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "tables",
+        "columns",
+        "sample"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-question-code",
+      "label": "Code",
+      "category": "analyst-sql",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Try a question block"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Question code",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-question-workbench",
+      "label": "Open in Workbench",
+      "category": "console",
+      "destination": {
+        "route": "/workbench",
+        "back": "/team#try"
+      },
+      "access": "session",
+      "surfaces": [
+        "Try a question block"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "SQL editor",
+        "preview",
+        "saved queries"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "team-desk-anchors",
+      "label": "Desk graphic parts",
+      "category": "internal",
+      "destination": {
+        "route": "/team#screen",
+        "back": null
+      },
+      "access": "in-app",
+      "surfaces": [
+        "Desk SVG"
+      ],
+      "thumbnail": "none",
+      "nouns": [
+        "page",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "viewer-node-code",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "<node.file>",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "Peek, Code disclosure"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Code \u2192 Open code \u2197",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "viewer-open-workbench",
+      "label": "Open in Workbench",
+      "category": "console",
+      "destination": {
+        "route": "/workbench",
+        "back": "/"
+      },
+      "access": "session",
+      "surfaces": [
+        "Peek"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "SQL editor",
+        "preview",
+        "saved queries"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "viewer-open-explorer",
+      "label": "Open in Console",
+      "category": "console",
+      "destination": {
+        "route": "/explorer",
+        "back": "/"
+      },
+      "access": "session",
+      "surfaces": [
+        "Peek"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "tables",
+        "columns",
+        "sample"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "viewer-job-stack",
+      "label": "See it on Stack \u2192",
+      "category": "internal",
+      "destination": {
+        "route": "/stack#readers",
+        "back": null
+      },
+      "access": "in-app",
+      "surfaces": [
+        "Collection-job hover foot"
+      ],
+      "thumbnail": "none",
+      "nouns": [
+        "page",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "sources-stack",
+      "label": "See it on Stack \u2192",
+      "category": "internal",
+      "destination": {
+        "route": "/stack#readers",
+        "back": null
+      },
+      "access": "in-app",
+      "surfaces": [
+        "SourceCard sheet"
+      ],
+      "thumbnail": "none",
+      "nouns": [
+        "page",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "sources-reader-code",
+      "label": "Code",
+      "category": "repo-path",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "functions/src/mdp_functions/sources/<key>/function.py",
+        "anchor": null
+      },
+      "access": "code",
+      "surfaces": [
+        "SourceCard sheet"
+      ],
+      "thumbnail": "file",
+      "nouns": [
+        "Reader code",
+        "code"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "sources-catalog",
+      "label": "Source list",
+      "category": "docs",
+      "destination": {
+        "repo": "music-data-platform",
+        "path": "docs/sources.md",
+        "anchor": "data-sources"
+      },
+      "access": "code",
+      "surfaces": [
+        "SourceCard sheet"
+      ],
+      "thumbnail": "doc",
+      "nouns": [
+        "Source list",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [
+        "data-sources"
+      ],
+      "line_marker": null
+    },
+    {
+      "id": "proof-open-console",
+      "label": "Open in Console \u2197",
+      "category": "console",
+      "destination": {
+        "route": "/functions/<key>",
+        "back": "/"
+      },
+      "access": "session",
+      "surfaces": [
+        "Source proof page"
+      ],
+      "thumbnail": "page",
+      "nouns": [
+        "readers",
+        "last check"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "home-try",
+      "label": "Try a question \u2192",
+      "category": "internal",
+      "destination": {
+        "route": "/team#try",
+        "back": null
+      },
+      "access": "in-app",
+      "surfaces": [
+        "Panel link"
+      ],
+      "thumbnail": "none",
+      "nouns": [
+        "page",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "home-steps",
+      "label": "Steps \u2192 (4 tiles)",
+      "category": "internal",
+      "destination": {
+        "route": "/team#first-question",
+        "back": null
+      },
+      "access": "in-app",
+      "surfaces": [
+        "Tool tiles"
+      ],
+      "thumbnail": "none",
+      "nouns": [
+        "page",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "credits-all",
+      "label": "All mark credits \u2192",
+      "category": "internal",
+      "destination": {
+        "route": "/sources?credits=1",
+        "back": null
+      },
+      "access": "in-app",
+      "surfaces": [
+        "`/stack` and `/team` footers"
+      ],
+      "thumbnail": "none",
+      "nouns": [
+        "page",
+        "guide"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    },
+    {
+      "id": "credits-provider",
+      "label": "Provider links in the Credits sheet",
+      "category": "provider",
+      "destination": {
+        "host": "<mark.href>"
+      },
+      "access": "public",
+      "surfaces": [
+        "Credits sheet"
+      ],
+      "thumbnail": "none",
+      "nouns": [
+        "provider",
+        "home"
+      ],
+      "highlights": [],
+      "headings": [],
+      "line_marker": null
+    }
+  ]
+}

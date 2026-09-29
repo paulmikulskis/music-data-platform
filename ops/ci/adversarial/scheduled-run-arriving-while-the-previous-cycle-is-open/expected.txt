@@ -1,0 +1,3 @@
+ASSERT PASS: in-flight batch transitions to draining
+ASSERT PASS: no subsequent old batch starts
+ASSERT PASS: paid in-flight page landed

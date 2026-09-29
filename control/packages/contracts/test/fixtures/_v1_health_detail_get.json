@@ -1,0 +1,11 @@
+{
+  "path": "/v1/health/detail",
+  "url": "/v1/health/detail",
+  "method": "get",
+  "status": 200,
+  "response": {
+    "control_db": "ok",
+    "warehouse": "ok",
+    "object_store": "ok"
+  }
+}

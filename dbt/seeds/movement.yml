@@ -1,0 +1,92 @@
+version: 2
+seeds:
+- name: playlist_reach_tiers
+  description: Committed list tiers, country markets and movement list kinds. One is flagship or a national chart; two is a new-music or viral list; three is a specialist list. Unknown lists use tier_one_followers and tier_two_followers in movement_parameters, else tier four without counts. Apple tiers are editorial judgments, not inferred followers. market is blank for a list with no country. list_kind is movement's reading of a list, read only by the movement models; owner_class stays the platform's label. chart covers Top 50, Top 100 and Viral Hits lists; new_music covers lists built for new releases, such as New Music Friday, Fresh Finds, Up Next and the Breaking lists. Open inputs/playlist_seed.csv to check the list id.
+  config:
+    column_types:
+      platform: text
+      playlist_id: text
+      reach_tier: integer
+      market: text
+      list_kind: text
+  columns:
+  - name: reach_tier
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [1, 2, 3, 4]
+          quote: false
+  - name: list_kind
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values: [editorial, chart, new_music]
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns: [platform, playlist_id]
+- name: artist_stage_thresholds
+  description: The artist stage rules movement reads, one value per row; a list value joins names with ;. An
+    artist is established with at least established_min_release_groups counted release groups (primary type in
+    established_counted_primary_types and no secondary type in established_excluded_secondary_types), or a first
+    release of any kind at least established_min_years calendar years before the cycle day. An artist with at most
+    emerging_max_release_groups release groups of any kind and no dated release, or a first release at most emerging_max_years years
+    back, is emerging. Any other artist MusicBrainz holds is developing. People set these values; nothing is
+    learned. Edit a value and run dbt seed.
+  config:
+    column_types:
+      name: text
+      value: text
+      note: text
+      reviewed_on: date
+  columns:
+  - name: name
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values: [established_min_release_groups, established_counted_primary_types,
+            established_excluded_secondary_types, established_min_years, emerging_max_release_groups,
+            emerging_max_years]
+  - name: value
+    data_tests:
+    - not_null
+  - name: reviewed_on
+    description: Day a person reviewed this rule. Empty means an agent chose it and no one has reviewed it yet. Clear it when the value changes.
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns: [name]
+
+- name: movement_parameters
+  description: Named scoring values and window limits. Edit a value and run dbt seed. reviewed_on is empty until a person reviews the row.
+  config:
+    column_types:
+      name: text
+      value: double precision
+      note: text
+      reviewed_on: date
+  columns:
+  - name: name
+    data_tests: [not_null, unique]
+  - name: value
+    data_tests: [not_null]
+  - name: reviewed_on
+    description: Day a person reviewed this value. Empty means an agent chose it and no one has reviewed it yet. Clear it when the value changes.
+
+- name: song_age_parameters
+  description: Measured age proxies and the ISRC calendar-year rule. Remeasure before the cycle enters a later year.
+  config:
+    column_types:
+      name: text
+      value: bigint
+      measured_on: date
+      note: text
+  columns:
+  - name: name
+    data_tests: [not_null, unique]
+  - name: value
+    data_tests: [not_null]
+  - name: measured_on
+    data_tests: [not_null]

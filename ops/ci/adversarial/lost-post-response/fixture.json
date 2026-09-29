@@ -1,0 +1,4 @@
+{
+  "kind": "pytest",
+  "target": "test_runtime.py::test_lost_post_response_idempotency"
+}

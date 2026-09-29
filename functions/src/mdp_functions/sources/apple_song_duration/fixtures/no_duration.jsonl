@@ -1,0 +1,1 @@
+{"request": {"method": "GET", "url": "https://itunes.apple.com/lookup", "params": {"id": "9188270456", "entity": "song", "country": "US"}}, "response": {"status": 200, "headers": {"content-type": "application/json"}, "body": {"resultCount": 1, "results": [{"kind": "song", "trackId": 9188270456}]}}}

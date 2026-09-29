@@ -1,0 +1,42 @@
+# Local design notes
+VISION.md
+
+# dbt and local runtime artifacts
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/profiles/profiles.yml
+dbt/profiles/.user.yml
+**/.venv/
+*.duckdb
+*.duckdb.wal
+*.log
+**/node_modules/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.uv-cache/
+.env*
+
+# Credentials
+inputs/inputs.env
+inputs/*.env
+!inputs/inputs.example.env
+
+
+# Repository files outside the runner image
+.git/
+.github/
+docs/
+CLAUDE.md
+**/CLAUDE.md
+ops/evidence/
+
+# orchestration scratch (local only)
+scratch.md
+
+/inputs/sandbox-archives/
+
+**/.next/
+**/*.tsbuildinfo

@@ -1,0 +1,1 @@
+{"request": {"method": "GET", "url": "https://music.apple.com/us/playlist/todays-hits/pl.f4d106fed2bd41149aaacabb233eb5eb", "params": {}}, "response": {"status": 200, "headers": {"etag": "\"fixture-etag\""}, "body": "<html><script id=\"serialized-server-data\">{}</script></html>"}}

@@ -1,0 +1,80 @@
+{
+  "rel:marts.mart_top_movers_current": {
+    "label": "Songs rising together",
+    "short_label": "Rising songs",
+    "stage": "ready",
+    "family": "playlists"
+  },
+  "rel:marts.mart_playlist_profile": {
+    "label": "Playlist profiles",
+    "short_label": "Playlist profiles",
+    "stage": "ready",
+    "family": "playlists"
+  },
+  "rel:marts.mart_playlist_events": {
+    "label": "Playlist adds and removals",
+    "short_label": "Playlist changes",
+    "stage": "ready",
+    "family": "playlists"
+  },
+  "rel:marts.mart_shazam_chart_daily": {
+    "label": "Shazam charts",
+    "short_label": "Shazam charts",
+    "stage": "ready",
+    "family": "charts"
+  },
+  "rel:marts.mart_track_daily_streams": {
+    "label": "Song play counts",
+    "short_label": "Play counts",
+    "stage": "ready",
+    "family": "playlists"
+  },
+  "rel:raw.playlist_items": {
+    "label": "Songs on each playlist",
+    "short_label": "Playlist songs",
+    "stage": "collected",
+    "family": "playlists"
+  },
+  "rel:raw.playlist_snapshots": {
+    "label": "Each playlist read",
+    "short_label": "Playlist reads",
+    "stage": "collected",
+    "family": "playlists"
+  },
+  "rel:raw.shazam_chart_entries": {
+    "label": "Shazam charts as read",
+    "short_label": "Charts as read",
+    "stage": "collected",
+    "family": "charts"
+  },
+  "entry:home.playlist_adds": {
+    "label": "Added playlists",
+    "short_label": "Playlist adds",
+    "stage": "screen",
+    "family": "playlists"
+  },
+  "entry:home.follower_exposure_gain": {
+    "label": "Followers of added playlists",
+    "short_label": "List followers",
+    "stage": "screen",
+    "family": "playlists"
+  },
+  "entry:home.shazam_spread_gain": {
+    "label": "New Shazam places",
+    "short_label": "New chart places",
+    "stage": "screen",
+    "family": "charts"
+  },
+  "entry:home.stream_rate_gain": {
+    "label": "Change in daily plays",
+    "short_label": "Daily play change",
+    "stage": "screen",
+    "family": "playlists"
+  },
+  "source:Billboard Hot 100 (API/provider TBD)": {
+    "label": "Billboard Hot 100",
+    "short_label": "Billboard Hot 100",
+    "stage": "source",
+    "family": "charts"
+  }
+}

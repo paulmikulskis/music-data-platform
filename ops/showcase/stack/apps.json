@@ -1,0 +1,105 @@
+[
+  {
+    "app": "mdp-postgres",
+    "alias": "Warehouse",
+    "kind": "Database",
+    "process_role": "Warehouse and control storage",
+    "process_groups": [
+      "app"
+    ],
+    "public_link": null,
+    "machine_names": []
+  },
+  {
+    "app": "mdp-functions",
+    "alias": "Readers",
+    "kind": "Server",
+    "process_role": "Collector and API",
+    "process_groups": [
+      "api"
+    ],
+    "public_link": null,
+    "machine_names": []
+  },
+  {
+    "app": "mdp-functions",
+    "alias": "Workbench",
+    "kind": "Server",
+    "process_role": "Analyst queries",
+    "process_groups": [
+      "workbench"
+    ],
+    "public_link": null,
+    "machine_names": []
+  },
+  {
+    "app": "mdp-core-runner",
+    "alias": "The clock",
+    "kind": "On a timer",
+    "process_role": "Hourly, daily and weekly collection",
+    "process_groups": [
+      "app"
+    ],
+    "public_link": null,
+    "machine_names": [
+      "mdp-hourly",
+      "mdp-daily",
+      "mdp-weekly"
+    ]
+  },
+  {
+    "app": "mdp-mb-db",
+    "alias": "MusicBrainz copy",
+    "kind": "Database",
+    "process_role": "Music matching",
+    "process_groups": [
+      "app"
+    ],
+    "public_link": null,
+    "machine_names": []
+  },
+  {
+    "app": "mdp-data-api",
+    "alias": "Data API",
+    "kind": "Server",
+    "process_role": "Served tables",
+    "process_groups": [
+      "app"
+    ],
+    "public_link": null,
+    "machine_names": []
+  },
+  {
+    "app": "mdp-control-api",
+    "alias": "Console",
+    "kind": "Server",
+    "process_role": "Operator controls",
+    "process_groups": [
+      "app"
+    ],
+    "public_link": null,
+    "machine_names": []
+  },
+  {
+    "app": "mdp-pg-frontend",
+    "alias": "Side door",
+    "kind": "Server",
+    "process_role": "Approved SQL access",
+    "process_groups": [
+      "app"
+    ],
+    "public_link": null,
+    "machine_names": []
+  },
+  {
+    "app": "mdp-showcase",
+    "alias": "This app",
+    "kind": "Server",
+    "process_role": "Viewer screens",
+    "process_groups": [
+      "app"
+    ],
+    "public_link": null,
+    "machine_names": []
+  }
+]

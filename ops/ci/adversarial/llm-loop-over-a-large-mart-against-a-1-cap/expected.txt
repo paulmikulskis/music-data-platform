@@ -1,0 +1,2 @@
+PASSED functions/tests/test_enrichment_runtime.py::test_gold_cap_snapshot_and_costsync
+CAP status=partial cost_cents=100 rows_written=4 rows_rejected=2; costsync idempotent

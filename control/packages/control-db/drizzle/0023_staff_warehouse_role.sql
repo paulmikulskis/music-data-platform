@@ -1,0 +1,1 @@
+ALTER TABLE "control"."api_key" ADD COLUMN "warehouse_role" text;

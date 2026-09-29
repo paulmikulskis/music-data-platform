@@ -1,0 +1,26 @@
+{
+  "name": "instruments",
+  "model": "jev-1.13.0",
+  "fields": [
+    "instrument"
+  ],
+  "data_class": "public",
+  "questions": {
+    "family": {
+      "type": "choice",
+      "instructions": "Which conventional orchestral family contains this instrument? Classify by the instrument, not its material.",
+      "criteria": {
+        "strings": "A vibrating string produces the sound.",
+        "woodwind": "Air excites a reed or passes an edge.",
+        "brass": "The player vibrates their lips into a mouthpiece.",
+        "percussion": "Striking or shaking produces the sound."
+      }
+    }
+  },
+  "thresholds": {
+    "family": 0.8
+  },
+  "floors": {
+    "family.accuracy": 0.8
+  }
+}

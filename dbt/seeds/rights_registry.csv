@@ -1,0 +1,39 @@
+source_key,provider,category,license_ref,learning_eligible,resale_permitted,refresh_cadence,notes,review_ref,review_required
+billboard_hot100,Billboard Hot 100 (API/provider TBD),public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+am_playlist,Apple Music,platform playlists,public-surface,false,false,daily,Canonical public playlist HTML / serialized-server-data,,false
+sp_playlist_embed,Spotify,platform playlists,public-surface,false,false,daily,Retired; historical public embed rows,,false
+sp_playlist_page,Spotify,platform playlists,public-surface,false,false,daily,Retired; historical public page rows,,false
+sp_playlist,Spotify,platform playlists,public-surface,false,false,daily,Paired public playlist embed and page,,false
+am_playlist_weekly,Apple Music,platform playlists,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+sp_playlist_weekly,Spotify,platform playlists,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+sc_playlist,SoundCloud,platform playlists,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+sc_playlist_weekly,SoundCloud,platform playlists,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+sc_curator_playlists,SoundCloud,platform playlists,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+sc_curator_playlists_weekly,SoundCloud,platform playlists,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+sc_hubs,SoundCloud,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_discover,Bandcamp,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_discover_weekly,Bandcamp,public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_daily_list,Bandcamp,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_daily_list_weekly,Bandcamp,public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_radio,Bandcamp,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_radio_weekly,Bandcamp,public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_fan_playlist,Bandcamp,platform playlists,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_fan_playlist_weekly,Bandcamp,platform playlists,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+bc_tralbum,Bandcamp,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+sp_track_artists,Spotify,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+mb_resolve,MusicBrainz,public charts and catalogs,unverified,false,false,hourly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+mb_spine,MusicBrainz,public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+mb_artist_catalog,MusicBrainz,public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+track_isrc_crosswalk,Deezer,public charts and catalogs,unverified,false,false,hourly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+sz_chart,Shazam,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+wiki_sitelinks,Wikimedia,public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+wiki_pageviews,Wikimedia,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+lb_popularity,ListenBrainz,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+lb_sitewide,ListenBrainz,public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+lb_fresh_releases,ListenBrainz,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+lb_similar_artists,ListenBrainz Labs,public charts and catalogs,unverified,false,false,weekly,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+kexp_plays,KEXP,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,true
+typesafe,TypeSafe,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,true
+jev_instruments,Public instrument facts,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,false
+jev_instrument_family,TypeSafe,public charts and catalogs,unverified,false,false,daily,Synthetic release registry. Review provider terms before collection or derivative use.,,true
+apple_song_duration,Apple,platform playlists,public-surface,false,false,daily,"Public iTunes Lookup by exact song id; learning and resale permission unknown, treated as false.",,

@@ -1,0 +1,7 @@
+name,value,note,reviewed_on
+established_min_release_groups,10,An artist credited on at least this many counted release groups is established,
+established_counted_primary_types,Album;EP,The primary types the established group count reads,
+established_excluded_secondary_types,Compilation;Remix;DJ-mix;Live;Mixtape/Street;Soundtrack,A release group with any of these secondary types never counts toward established,
+established_min_years,8,An artist whose first release of any kind came at least this many calendar years before the cycle day is established,
+emerging_max_release_groups,3,An artist with at most this many release groups of any kind can be emerging,
+emerging_max_years,3,An artist with few release groups whose first release came at most this many calendar years before the cycle day is emerging,

@@ -1,0 +1,4 @@
+method,enabled,confidence
+folded,true,0.99
+credit_primary,true,0.99
+run_together,false,0.97

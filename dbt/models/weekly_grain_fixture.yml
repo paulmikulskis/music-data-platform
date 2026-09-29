@@ -1,0 +1,76 @@
+version: 2
+unit_tests:
+- name: mart_radio_rotation_week_boundaries
+  model: mart_radio_rotation
+  config:
+    tags:
+    - week_fixture
+  overrides:
+    vars:
+      dry_run: true
+      call_week: null
+      timezone: America/New_York
+      cycle_opened_at: '2026-09-28 12:00:00'
+    macros:
+      mdp_annotate: select * from rotation
+  given:
+  - input: ref('stg_kexp__plays')
+    rows:
+    - station: fixture
+      recording_mbid: sunday
+      airdate: '2026-09-28 03:30:00'
+      rotation_rank: 3
+      rotation_status: Heavy
+    - station: fixture
+      recording_mbid: spring_dst
+      airdate: '2026-03-09 03:30:00'
+      rotation_rank: 3
+      rotation_status: Heavy
+    - station: fixture
+      recording_mbid: fall_dst
+      airdate: '2026-11-02 04:30:00'
+      rotation_rank: 3
+      rotation_status: Heavy
+    - station: fixture
+      recording_mbid: monday
+      airdate: '2026-09-28 04:30:00'
+      rotation_rank: 3
+      rotation_status: Heavy
+  - input: ref('int_radio__rotation_events')
+    rows:
+    - station: fixture
+      recording_mbid: sunday
+      airdate: '2026-09-28 03:30:00'
+      event_type: rotation_add
+    - station: fixture
+      recording_mbid: spring_dst
+      airdate: '2026-03-09 03:30:00'
+      event_type: rotation_add
+    - station: fixture
+      recording_mbid: fall_dst
+      airdate: '2026-11-02 04:30:00'
+      event_type: rotation_add
+    - station: fixture
+      recording_mbid: monday
+      airdate: '2026-09-28 04:30:00'
+      event_type: rotation_add
+  - input: ref('rights_registry')
+    rows: []
+  expect:
+    rows:
+    - recording_mbid: sunday
+      week_start: '2026-09-28'
+      plays: 1
+      rotation_added: true
+    - recording_mbid: spring_dst
+      week_start: '2026-03-09'
+      plays: 1
+      rotation_added: true
+    - recording_mbid: fall_dst
+      week_start: '2026-11-02'
+      plays: 1
+      rotation_added: true
+    - recording_mbid: monday
+      week_start: '2026-09-28'
+      plays: 1
+      rotation_added: true

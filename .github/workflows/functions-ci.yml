@@ -1,0 +1,150 @@
+# Functions CI: ruff and the tests that need no PostgreSQL, then the PostgreSQL-backed tests through
+# functions/tests/checks.sh, the command developers run (docs/DEVELOPING.md), against plain
+# postgres:17. Tests marked `docker` need PostgreSQL (conftest marks every test on the disposable
+# databases); the two jobs together run the whole suite. prove_udf.py, which checks.sh runs
+# only against the UDF stack on port 5435, is not run here.
+name: functions-ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: functions-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  offline:
+    name: ruff and tests without postgres
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.12'
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+          cache-dependency-path: control/pnpm-lock.yaml
+
+      - run: pnpm --dir control install --frozen-lockfile
+
+      - name: sync the functions and dbt environments
+        run: uv sync --project functions && uv sync --project dbt
+
+      - name: profiles for the ci target
+        run: cp dbt/profiles/profiles.example.yml dbt/profiles/profiles.yml
+
+      - name: ruff
+        run: uv run --project functions ruff check functions
+
+      - name: error catalog
+        run: |
+          uv run --project functions python ops/ci/lint_error_catalog.py
+          uv run --project functions python -m unittest discover -s ops/ci -p test_error_catalog.py
+
+      - name: copy lint
+        run: |
+          uv run --project functions python ops/ci/lint_copy.py
+          uv run --project functions python -m unittest discover -s ops/ci -p test_copy_lint.py
+
+      - name: source network imports
+        run: uv run --project functions python -m mdp_functions.source_lint
+
+      - name: tests without postgres
+        run: uv run --project functions pytest functions/tests -q -m "not docker"
+
+      - name: backtest harness
+        run: |
+          uv run --project functions ruff check ops/backtest
+          uv run --project functions pytest -c functions/pyproject.toml ops/backtest -q
+
+  postgres:
+    name: postgres tests (${{ matrix.shard }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Complementary halves of the test_* files, by the letter after "test_". The identity files
+          # build `intermediate`, which test_reference_probe.py reads in the same session, so i-o and
+          # q-r share a shard and keep file order.
+          - shard: a-h p s-z
+            ignore: '*/test_[i-oq-r]*'
+          - shard: i-o q-r
+            ignore: '*/test_[!i-oq-r]*'
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        # The default 64 MB /dev/shm fails parallel hash joins.
+        options: >-
+          --shm-size=1g
+          --health-cmd "pg_isready -h 127.0.0.1 -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 30
+    env:
+      MDP_PG_PORT: '5432'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.12'
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+          cache-dependency-path: control/pnpm-lock.yaml
+
+      # The fixtures copy the control schema with pg_dump, which must match the server's major version.
+      - name: PostgreSQL 17 client
+        run: |
+          sudo install -d /etc/apt/keyrings
+          curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/keyrings/postgresql.asc >/dev/null
+          source /etc/os-release
+          echo "deb [signed-by=/etc/apt/keyrings/postgresql.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list >/dev/null
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client-17
+          echo /usr/lib/postgresql/17/bin >> "$GITHUB_PATH"
+
+      - name: install control (Drizzle migrations)
+        run: pnpm --dir control install --frozen-lockfile
+
+      - name: sync the functions and dbt environments
+        run: uv sync --project functions && uv sync --project dbt
+
+      - name: profiles for the ci target
+        run: cp dbt/profiles/profiles.example.yml dbt/profiles/profiles.yml
+
+      - name: bootstrap databases, roles and control migrations
+        run: bash ops/local/init.sh
+
+      - name: checks
+        run: bash functions/tests/checks.sh -m docker --ignore-glob='${{ matrix.ignore }}'

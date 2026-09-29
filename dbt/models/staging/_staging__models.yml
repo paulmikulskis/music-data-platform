@@ -1,0 +1,108 @@
+version: 2
+models:
+- name: stg_billboard__chart_entries
+  description: Typed chart entries, deduplicated by chart, week, and position.
+  tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - chart_name
+        - chart_week
+        - chart_position
+  columns:
+  - name: chart_position
+    tests:
+    - not_null
+  - name: source_key
+    tests:
+    - relationships:
+        arguments:
+          to: ref('rights_registry')
+          field: source_key
+        config:
+          severity: warn
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_billboard__chart_entries_daily
+  description: Daily manifest chart entries, deduplicated by week and position. Open mart_chart_history for matches.
+  tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - chart_name
+        - chart_week
+        - chart_position
+  columns:
+  - name: chart_position
+    tests:
+    - not_null
+  - name: source_key
+    tests:
+    - relationships:
+        arguments:
+          to: ref('rights_registry')
+          field: source_key
+        config:
+          severity: warn
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_shazam__chart_entries
+  description: Shazam chart rows, deduplicated by chart, chart date, and position.
+  tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - chart
+        - chart_date
+        - position
+  columns:
+  - name: apple_song_id
+    tests:
+    - not_null
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_playlist__snapshots
+  tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - platform
+        - playlist_id
+        - variant
+        - snapshot_id
+  columns:
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.
+- name: stg_playlist__items
+  tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - platform
+        - playlist_id
+        - variant
+        - snapshot_id
+        - position
+  columns:
+  - name: added_by
+    description: A keyed pseudonym.
+    meta:
+      privacy: personal
+      representation: pseudonym
+  - name: _extra
+    meta:
+      privacy: personal
+      representation: omitted
+    description: Null. Unverified personal values stay private.

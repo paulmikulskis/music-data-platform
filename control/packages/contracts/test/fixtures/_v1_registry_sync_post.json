@@ -1,0 +1,10 @@
+{
+  "path": "/v1/registry/sync",
+  "url": "/v1/registry/sync",
+  "method": "post",
+  "status": 200,
+  "request": {},
+  "response": {
+    "registered": 10
+  }
+}

@@ -1,0 +1,22 @@
+otelcol.receiver.otlp "service" {
+  grpc { endpoint = "[::]:4317" }
+  http { endpoint = "[::]:4318" }
+  output {
+    traces = [otelcol.processor.batch.service.input]
+    metrics = [otelcol.processor.batch.service.input]
+    logs = [otelcol.processor.batch.service.input]
+  }
+}
+otelcol.processor.batch "service" {
+  output {
+    traces = [otelcol.exporter.otlphttp.cloud.input]
+    metrics = [otelcol.exporter.otlphttp.cloud.input]
+    logs = [otelcol.exporter.otlphttp.cloud.input]
+  }
+}
+otelcol.exporter.otlphttp "cloud" {
+  client {
+    endpoint = sys.env("OTLP_ENDPOINT")
+    headers = { "Authorization" = sys.env("OTLP_AUTH_HEADER") }
+  }
+}

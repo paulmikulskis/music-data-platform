@@ -1,0 +1,39 @@
+app = "mdp-functions"
+primary_region = "ewr"
+[build]
+  dockerfile = "../ops/fly/functions/Dockerfile"
+[processes]
+  api = "python /opt/mdp/serve.py"
+  workbench = "python -m mdp_functions.workbench"
+[env]
+  MDP_DUMP_ROOT = "file:///data/dumps"
+  MDP_SCHEMA_ROOT = "/data/schemas"
+[[mounts]]
+  source = "dumps"
+  destination = "/data"
+  processes = ["api"]
+  snapshot_retention = 14
+# The api machine runs on a dedicated core: a shared CPU spends its burst credit in the daily bronze
+# burst, then throttles to its baseline, and page landing, admission and run polls all slow down.
+[[vm]]
+  processes = ["api"]
+  cpu_kind = "performance"
+  cpus = 1
+  memory = "2gb"
+[[vm]]
+  processes = ["workbench"]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = "1gb"
+# No services: direct private networking only.
+# ops/deploy.sh starts the core-runner machines only after every api machine passes this check.
+[checks]
+  [checks.api_health]
+    type = "http"
+    port = 8080
+    method = "get"
+    path = "/v1/health"
+    interval = "15s"
+    timeout = "10s"
+    grace_period = "60s"
+    processes = ["api"]

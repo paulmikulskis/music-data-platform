@@ -1,0 +1,13 @@
+app = "mdp-core-runner"
+primary_region = "ewr"
+[build]
+  dockerfile = "Dockerfile"
+[env]
+  DBT_TARGET = "pg"
+  DBT_MDP_SCOPE = "global"
+  MDP_RUN_REASON_CATEGORY = "scheduled"
+# Private networking only; no public services.
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 2
+  memory = "2gb"

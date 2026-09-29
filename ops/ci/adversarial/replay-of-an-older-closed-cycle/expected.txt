@@ -1,0 +1,3 @@
+ASSERT PASS: Replay binds older closed cycle
+ASSERT PASS: Replay makes zero vendor calls
+ASSERT PASS: Replay manifest unchanged

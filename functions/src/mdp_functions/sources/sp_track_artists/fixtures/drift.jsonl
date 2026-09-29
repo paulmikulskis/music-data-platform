@@ -1,0 +1,2 @@
+{"request": {"method": "GET", "url": "https://open.spotify.com/track/0FixtureTrack000000001", "params": {}}, "response": {"status": 200, "headers": {"content-type": "text/html; charset=utf-8"}, "body": "<html><body><div id='main'></div></body></html>"}}
+{"request": {"method": "GET", "url": "https://open.spotify.com/track/0FixtureTrack000000002", "params": {}}, "response": {"status": 200, "headers": {"content-type": "text/html; charset=utf-8"}, "body": "<html><body><div id='main'></div></body></html>"}}

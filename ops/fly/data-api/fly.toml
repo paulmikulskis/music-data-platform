@@ -1,0 +1,14 @@
+app = "mdp-data-api"
+primary_region = "ewr"
+[build]
+  dockerfile = "../../../control/apps/data-api/Dockerfile"
+[env]
+  NODE_ENV = "production"
+  MDP_AUTH_MODE = "production"
+  HOST = "::"
+  PORT = "8091"
+# Private networking only; no public services.
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = "512mb"

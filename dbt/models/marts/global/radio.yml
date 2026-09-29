@@ -1,0 +1,60 @@
+version: 2
+models:
+- name: mart_radio_rotation
+  description: KEXP rotation per recording and ISO week - did a tastemaker station add or upgrade
+    this track? Operator-only, and learning false, until the kexp_plays registry row's review_ref names
+    KEXP's written permission; it has no serving grain and remains outside the generated API.
+  config:
+    contract:
+      enforced: true
+    meta:
+      tenant_readable: false
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns: [station, recording_mbid, week_start]
+  columns:
+  - name: station
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: recording_mbid
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: week_start
+    data_type: date
+    constraints:
+    - type: not_null
+  - name: plays
+    data_type: bigint
+  - name: top_rotation
+    description: The heaviest rotation any play of the week carried (Heavy, Medium, Light), else the
+      station's other status.
+    data_type: text
+  - name: first_played
+    data_type: boolean
+  - name: rotation_added
+    data_type: boolean
+  - name: rotation_upgraded
+    data_type: boolean
+  - name: artist_mbids
+    data_type: text
+  - name: release_group_mbid
+    data_type: text
+  - name: requests
+    data_type: bigint
+  - name: local
+    data_type: boolean
+  - name: learning_eligible
+    data_type: boolean
+    constraints:
+    - type: not_null
+  - name: resale_permitted
+    data_type: boolean
+    constraints:
+    - type: not_null
+  - name: source_keys
+    data_type: text
+    constraints:
+    - type: not_null

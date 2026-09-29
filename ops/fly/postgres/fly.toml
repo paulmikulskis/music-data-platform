@@ -1,0 +1,20 @@
+app = "mdp-postgres"
+primary_region = "ewr"
+[build]
+  dockerfile = "Dockerfile"
+[build.args]
+  # Native pg_lake compiler was killed; explicit permitted heap fallback.
+  WITH_PG_LAKE = "0"
+[env]
+  PGDATA = "/var/lib/postgresql/data/pgdata"
+  MDP_PG_HOSTNAME = "mdp-pg-frontend.example.invalid"
+  PGDUCK_MEMORY_LIMIT = "1GB"
+[mounts]
+  source = "pgdata"
+  destination = "/var/lib/postgresql/data"
+# Private networking only, PostgreSQL listens on internal 5432. No public service.
+# Suggested machine: shared-cpu-2x, 4 GB RAM. One writer; do not scale horizontally.
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 2
+  memory = "4gb"

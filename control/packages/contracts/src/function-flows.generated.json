@@ -1,0 +1,2117 @@
+{
+  "am_playlist": {
+    "platform": "apple_music",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "daily",
+    "hosts": [
+      "music.apple.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "apple_music"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads the public pages of the {count} Apple Music playlists on our watch list every day and saves songs in order with their album and artist identifiers.",
+      "how_often": "Every day",
+      "reads": "the Apple Music playlists on our watch list across countries",
+      "why": "It shows adds and drops on Apple's staff-selected and chart lists day by day; Apple shows no follower counts, so this is list membership only.",
+      "ideas": [
+        "Could list songs that are on an Apple list but not yet on any Spotify list we follow, as a hint of where Apple is ahead."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "am_playlist_weekly": {
+    "platform": "apple_music",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "weekly",
+    "hosts": [
+      "music.apple.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "apple_music"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads the public pages of Apple Music playlists on our weekly watch list every week and saves songs in order with their album and artist identifiers.",
+      "how_often": "Every week",
+      "reads": "Apple Music playlists on our weekly watch list",
+      "why": "It lets us add slower Apple lists cheaply later without new code.",
+      "ideas": [
+        "Could take on long-tail genre and mood lists at a seventh of the daily cost."
+      ],
+      "waiting_on": "weekly Apple Music playlists"
+    },
+    "hidden": false
+  },
+  "apple_song_duration": {
+    "platform": "apple_music",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Lookup",
+    "cadence": "daily",
+    "hosts": [
+      "itunes.apple.com"
+    ],
+    "writes": [
+      "raw.apple_song_durations"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "apple_catalog"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Looks up lengths for the {count} Apple Music songs on our watch list through the public Apple catalog every day and saves the duration or a missing result.",
+      "how_often": "Every day",
+      "reads": "Apple Music songs we track",
+      "why": "Song length is one of the observations used to decide that a song on Apple, Spotify and Shazam is the same recording.",
+      "ideas": [
+        "Could widen to every Apple song on the lists we follow so more songs get matched across services."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "bc_daily_list": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "daily",
+    "hosts": [
+      "daily.bandcamp.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads Bandcamp Daily's staff-selected 'best of the month' lists every day and saves each featured release.",
+      "how_often": "Every day",
+      "reads": "Bandcamp Daily staff-selected lists",
+      "why": "Editor picks on Bandcamp Daily are early press for independent artists.",
+      "ideas": [
+        "Could identify a release when Bandcamp editors feature it."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "bc_daily_list_weekly": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "weekly",
+    "hosts": [
+      "daily.bandcamp.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads Bandcamp Daily lists set to weekly, every week each and saves the results for comparison.",
+      "how_often": "Every week",
+      "reads": "Bandcamp Daily lists set to weekly",
+      "why": "It covers older staff-selected lists at lower cost.",
+      "ideas": [
+        "Could count how often each artist is featured across the year."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "bc_discover": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "daily",
+    "hosts": [
+      "bandcamp.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads Bandcamp's Discover genre rankings (for example top rock, jazz, hip-hop) every day and saves each ranked release.",
+      "how_often": "Every day",
+      "reads": "Bandcamp Discover genre pages",
+      "why": "Bandcamp rankings reflect people paying for music in independent scenes, a signal the big services miss.",
+      "ideas": [
+        "Could list artists rising on Bandcamp who have no Spotify playlist presence yet."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "bc_discover_weekly": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "weekly",
+    "hosts": [
+      "bandcamp.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads Bandcamp Discover rankings set to weekly, every week each and saves the results for comparison.",
+      "how_often": "Every week",
+      "reads": "Bandcamp Discover pages set to weekly",
+      "why": "It covers slower Bandcamp rankings at lower cost.",
+      "ideas": [
+        "Could track which genres gain the most new releases week over week."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "bc_fan_playlist": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "daily",
+    "hosts": [
+      "bandcamp.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads public Bandcamp fan playlists every day and saves each track on them.",
+      "how_often": "Every day",
+      "reads": "public Bandcamp fan playlists",
+      "why": "Fan-made lists show what dedicated buyers are sharing.",
+      "ideas": [
+        "Could spot tracks that appear on many fan lists before any staff-selected list."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "bc_fan_playlist_weekly": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "weekly",
+    "hosts": [
+      "bandcamp.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads Bandcamp fan playlists set to weekly, every week each and saves the results for comparison.",
+      "how_often": "Every week",
+      "reads": "Bandcamp fan playlists set to weekly",
+      "why": "It covers slower fan lists at lower cost.",
+      "ideas": [
+        "Could track which fan lists add new artists most often."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "bc_radio": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "daily",
+    "hosts": [
+      "bandcamp.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads the tracklists of Bandcamp Radio shows every day and saves each played track.",
+      "how_often": "Every day",
+      "reads": "Bandcamp Radio shows",
+      "why": "Radio picks are curated attention for independent tracks.",
+      "ideas": [
+        "Could show which artists get played on more than one show."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "bc_radio_weekly": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "weekly",
+    "hosts": [
+      "bandcamp.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads Bandcamp Radio shows set to weekly, every week each and saves the results for comparison.",
+      "how_often": "Every week",
+      "reads": "Bandcamp Radio shows set to weekly",
+      "why": "It covers older shows at lower cost.",
+      "ideas": [
+        "Could make a list of tracks with repeat plays across shows."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "bc_tralbum": {
+    "platform": "bandcamp",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "daily",
+    "hosts": [
+      "*.bandcamp.com"
+    ],
+    "writes": [
+      "raw.bc_releases",
+      "raw.bc_tracks"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "bandcamp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads each Bandcamp artist's sitemap every day and, when it changed, their album and track pages, and saves release and track details.",
+      "how_often": "Every day",
+      "reads": "Bandcamp artist pages",
+      "why": "It gives release details for independent artists who are not on the big stores yet.",
+      "ideas": [
+        "Could flag a Bandcamp artist who just put out a new release."
+      ],
+      "waiting_on": "readable Bandcamp pages and a watch list"
+    },
+    "hidden": false
+  },
+  "billboard_hot100": {
+    "platform": "billboard",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "weekly",
+    "hosts": [],
+    "writes": [
+      "raw.chart_entries"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "billboard"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads the Billboard Hot 100 page every week and saves each position with title, artist, last week's spot, peak and weeks on chart.",
+      "how_often": "Every week",
+      "reads": "the Billboard Hot 100",
+      "why": "It is the chart everyone in the industry quotes, so it anchors our earlier signals against a known outcome.",
+      "ideas": [
+        "Could measure how many weeks earlier a Hot 100 song showed up on Shazam city charts or our followed playlists."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "cycle_close": {
+    "platform": null,
+    "access": null,
+    "vendor": null,
+    "job_kind": "Housekeeping",
+    "cadence": "daily",
+    "hosts": [],
+    "writes": [],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Closes each round once every reader in it has finished and stamps it with a number, so the cleaning and matching steps know the round's data is complete.",
+      "how_often": "Every day",
+      "reads": "Completed collection records",
+      "why": "It stops half-finished data from reaching the tables people read.",
+      "ideas": [
+        "Could show a simple 'last complete round' time on every page."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": true
+  },
+  "jev_instrument_family": {
+    "platform": null,
+    "access": "typesafe",
+    "vendor": "typesafe",
+    "job_kind": "AI step",
+    "cadence": "daily",
+    "hosts": [
+      "api.typesafe.ai"
+    ],
+    "writes": [
+      "raw.jev_instrument_family"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Access",
+        "mark": "typesafe"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "typesafe"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Asks TypeSafe AI a fixed set of questions about public instrument facts every day and saves each answer with its confidence for reviewing structured answers.",
+      "how_often": "Every day",
+      "reads": "a small local list of instruments",
+      "why": "Public instrument questions give authors a small example of structured AI answers and confidence values.",
+      "ideas": [
+        "Could reuse the same pattern to answer fixed questions about artists, with a confidence score per answer."
+      ],
+      "waiting_on": "a TypeSafe AI credential and reviewed questions"
+    },
+    "hidden": false
+  },
+  "kexp_plays": {
+    "platform": "kexp",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "daily",
+    "hosts": [
+      "api.kexp.org"
+    ],
+    "writes": [
+      "raw.radio_plays"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "kexp"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads every song KEXP radio played, with rotation status and performance and request flags, every day, plus a two-year backfill.",
+      "how_often": "Every day",
+      "reads": "all KEXP airplay",
+      "why": "Radio rotation adds an independent view of attention around emerging artists.",
+      "ideas": [
+        "Could flag a watchlist artist added to KEXP's heavy rotation."
+      ],
+      "waiting_on": "KEXP’s written permission"
+    },
+    "hidden": false
+  },
+  "lb_fresh_releases": {
+    "platform": "listenbrainz",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "daily",
+    "hosts": [
+      "api.listenbrainz.org"
+    ],
+    "writes": [
+      "raw.lb_fresh_releases"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "listenbrainz"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads releases dated within three days of today, with their listen counts, from ListenBrainz every day.",
+      "how_often": "Every day",
+      "reads": "new releases ListenBrainz knows about",
+      "why": "Early listens help an analyst compare recent releases.",
+      "ideas": [
+        "Could list this week's new releases with the most early listens."
+      ],
+      "waiting_on": "ListenBrainz supporter access"
+    },
+    "hidden": false
+  },
+  "lb_popularity": {
+    "platform": "listenbrainz",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "daily",
+    "hosts": [
+      "api.listenbrainz.org"
+    ],
+    "writes": [
+      "raw.lb_popularity"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "listenbrainz"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads each public catalog artists artist's total ListenBrainz listens and distinct listeners every day.",
+      "how_often": "Every day",
+      "reads": "global MusicBrainz artist identities and public lookup results",
+      "why": "Open listening totals provide another measure of an artist’s audience over time.",
+      "ideas": [
+        "Could show week-over-week listener growth per artist from an open source."
+      ],
+      "waiting_on": "source access configuration"
+    },
+    "hidden": false
+  },
+  "lb_similar_artists": {
+    "platform": "listenbrainz",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Lookup",
+    "cadence": "daily",
+    "hosts": [
+      "labs.api.listenbrainz.org"
+    ],
+    "writes": [
+      "raw.lb_similar_artists"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "listenbrainz"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Checks catalog artists every day for their weekly ListenBrainz lookup and saves artists that listeners play alongside them for the analyst.",
+      "how_often": "Every day; each input is checked once a week.",
+      "reads": "global MusicBrainz artist identities and public lookup results",
+      "why": "Related listening gives an analyst another set of artists to investigate.",
+      "ideas": [
+        "Could suggest new watchlist artists who share listeners with selected catalog artists."
+      ],
+      "waiting_on": "source access configuration"
+    },
+    "hidden": false
+  },
+  "lb_sitewide": {
+    "platform": "listenbrainz",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "weekly",
+    "hosts": [
+      "api.listenbrainz.org"
+    ],
+    "writes": [
+      "raw.lb_sitewide"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "listenbrainz"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads ListenBrainz's weekly top 1,000 artists, songs and albums every week and saves the results for comparison.",
+      "how_often": "Every week",
+      "reads": "ListenBrainz sitewide weekly charts",
+      "why": "Open listening charts provide a reference beyond the large streaming services.",
+      "ideas": [
+        "Could compare ListenBrainz top artists against Spotify lists to find artists popular with dedicated listeners."
+      ],
+      "waiting_on": "ListenBrainz supporter access"
+    },
+    "hidden": false
+  },
+  "mb_artist_catalog": {
+    "platform": "musicbrainz",
+    "access": "our MusicBrainz copy",
+    "vendor": null,
+    "job_kind": "Lookup",
+    "cadence": "daily",
+    "hosts": [],
+    "writes": [
+      "raw.mb_artist_catalog",
+      "raw.mb_artist_release_groups"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "musicbrainz"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Checks credited artists every day for a weekly reading from our MusicBrainz copy, saving release counts by type and the year of each artist’s first release.",
+      "how_often": "Every day; each input is checked once a week.",
+      "reads": "every MusicBrainz artist credited on a song we track",
+      "why": "Release history helps distinguish a new artist from an artist with a long catalog.",
+      "ideas": [
+        "Could filter the songs moving on our lists to artists with fewer than three releases, for exploration."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "mb_resolve": {
+    "platform": "musicbrainz",
+    "access": "our MusicBrainz copy",
+    "vendor": null,
+    "job_kind": "Lookup",
+    "cadence": "hourly",
+    "hosts": [],
+    "writes": [
+      "raw.mb_resolve",
+      "raw.mb_resolve_closure"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "musicbrainz"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Matches priority songs left by our first matching pass against our MusicBrainz copy every hour, using album links, titles, artists and song lengths.",
+      "how_often": "Every hour",
+      "reads": "priority tracks from the lists and charts on our watch list that have no recording match yet",
+      "why": "More matches means one song is counted once, not three times, across services.",
+      "ideas": [
+        "Could show a 'songs we still can't identify' list so a person can fix the worst gaps."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "mb_spine": {
+    "platform": "musicbrainz",
+    "access": "our MusicBrainz copy",
+    "vendor": null,
+    "job_kind": "Import",
+    "cadence": "weekly",
+    "hosts": [],
+    "writes": [
+      "raw.mb_url_link",
+      "raw.mb_isrc",
+      "raw.mb_recording",
+      "raw.mb_track",
+      "raw.mb_medium",
+      "raw.mb_release",
+      "raw.mb_release_group",
+      "raw.mb_artist_credit",
+      "raw.mb_artist_credit_name",
+      "raw.mb_artist",
+      "raw.mb_l_artist_label",
+      "raw.mb_label",
+      "raw.mb_l_label_label",
+      "raw.mb_artist_ipi",
+      "raw.mb_artist_isni",
+      "raw.mb_redirect",
+      "raw.mb_generation"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "musicbrainz"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Copies the part of the MusicBrainz music database that covers the songs, releases, artists and labels we track, from our private mirror, every week.",
+      "how_often": "Every week",
+      "reads": "every song",
+      "why": "Shared recording and artist references help connect copies across services and retain their published label relationships.",
+      "ideas": [
+        "Could show each artist's label and that label's parent company in one line."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "sc_curator_playlists": {
+    "platform": "soundcloud",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "daily",
+    "hosts": [
+      "api-v2.soundcloud.com",
+      "soundcloud.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items",
+      "raw.sc_tracks",
+      "raw.playlist_candidates"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "soundcloud"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads the playlist listings of SoundCloud curator accounts every day and suggests new playlists to follow.",
+      "how_often": "Every day",
+      "reads": "the SoundCloud curator accounts listed",
+      "why": "It finds new SoundCloud lists without a person searching for them.",
+      "ideas": [
+        "Could propose new curator lists to follow each week."
+      ],
+      "waiting_on": "an official credentialed SoundCloud integration (not included)"
+    },
+    "hidden": false
+  },
+  "sc_curator_playlists_weekly": {
+    "platform": "soundcloud",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "weekly",
+    "hosts": [
+      "api-v2.soundcloud.com",
+      "soundcloud.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items",
+      "raw.sc_tracks",
+      "raw.playlist_candidates"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "soundcloud"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads SoundCloud curator accounts set to weekly, every week each and saves the results for comparison.",
+      "how_often": "Every week",
+      "reads": "SoundCloud curator accounts set to weekly",
+      "why": "It covers slower curators at lower cost.",
+      "ideas": [
+        "Could track which curators create new lists most often."
+      ],
+      "waiting_on": "an official credentialed SoundCloud integration (not included)"
+    },
+    "hidden": false
+  },
+  "sc_hubs": {
+    "platform": "soundcloud",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "daily",
+    "hosts": [
+      "api-v2.soundcloud.com",
+      "soundcloud.com"
+    ],
+    "writes": [
+      "raw.playlist_candidates"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "soundcloud"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads SoundCloud's own staff-selected selections and chart shelves every day and suggests playlists to follow.",
+      "how_often": "Every day",
+      "reads": "SoundCloud's staff-selected and chart pages",
+      "why": "It finds SoundCloud's official lists automatically.",
+      "ideas": [
+        "Could show which genres SoundCloud features most this month."
+      ],
+      "waiting_on": "an official credentialed SoundCloud integration (not included)"
+    },
+    "hidden": false
+  },
+  "sc_playlist": {
+    "platform": "soundcloud",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "daily",
+    "hosts": [
+      "api-v2.soundcloud.com",
+      "soundcloud.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items",
+      "raw.sc_tracks"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "soundcloud"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads SoundCloud playlists every day and saves every track with plays, likes, reposts, comments, label and ISRC.",
+      "how_often": "Every day",
+      "reads": "the SoundCloud playlists listed",
+      "why": "SoundCloud playlist history adds evidence from rap and electronic scenes that other services may miss.",
+      "ideas": [
+        "Could flag tracks with fast-growing reposts on underground lists."
+      ],
+      "waiting_on": "an official credentialed SoundCloud integration (not included)"
+    },
+    "hidden": false
+  },
+  "sc_playlist_weekly": {
+    "platform": "soundcloud",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "weekly",
+    "hosts": [
+      "api-v2.soundcloud.com",
+      "soundcloud.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items",
+      "raw.sc_tracks"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "soundcloud"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads SoundCloud playlists set to weekly, every week each and saves the results for comparison.",
+      "how_often": "Every week",
+      "reads": "SoundCloud playlists set to weekly",
+      "why": "It covers slower SoundCloud lists at lower cost.",
+      "ideas": [
+        "Could show week-over-week adds per list."
+      ],
+      "waiting_on": "an official credentialed SoundCloud integration (not included)"
+    },
+    "hidden": false
+  },
+  "sp_playlist": {
+    "platform": "spotify",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "daily",
+    "hosts": [
+      "open.spotify.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "spotify"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads the public pages of the {count} Spotify playlists on our watch list every day and saves each song in order, playlist followers and the first 30 songs’ play counts.",
+      "how_often": "Every day",
+      "reads": "the Spotify playlists on our watch list daily",
+      "why": "Day-by-day playlist membership shows exactly when a song gets added, moved or dropped on the lists that matter, which paid trackers sell as a product.",
+      "ideas": [
+        "Could send a note the day a watched artist lands on one of these playlists, with the position and the playlist's follower count.",
+        "Could rank songs by how many of these playlists added them this week."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "sp_playlist_weekly": {
+    "platform": "spotify",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "weekly",
+    "hosts": [
+      "open.spotify.com"
+    ],
+    "writes": [
+      "raw.playlist_snapshots",
+      "raw.playlist_items"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "spotify"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads the public pages of the {count} Spotify playlists on our watch list every week and saves each song in order and the playlist’s follower count.",
+      "how_often": "Every week",
+      "reads": "the Spotify playlists we check weekly",
+      "why": "It keeps slower-moving playlists in the picture at a seventh of the cost of daily reads.",
+      "ideas": [
+        "Could show the week-over-week adds and drops for each of these lists in one short table."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "sp_track_artists": {
+    "platform": "spotify",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Lookup",
+    "cadence": "daily",
+    "hosts": [
+      "open.spotify.com"
+    ],
+    "writes": [
+      "raw.sp_track_artists"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "spotify"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Looks up the public Spotify page of tracks from our followed playlists whose artist was not shown on the playlist, every day, and saves the artist ids and names.",
+      "how_often": "Every day",
+      "reads": "tracks on the playlists on our watch list that came in without an artist id",
+      "why": "It fills in missing artists so every song on a list can be tied to a real artist.",
+      "ideas": [
+        "Could spot features and collaborations by counting tracks with more than one credited artist."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "sz_chart": {
+    "platform": "shazam",
+    "access": "public page",
+    "vendor": null,
+    "job_kind": "Page reader",
+    "cadence": "daily",
+    "hosts": [
+      "www.shazam.com"
+    ],
+    "writes": [
+      "raw.shazam_chart_entries"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "shazam"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads the {count} Shazam charts on our watch list every day and saves each position with the song, artist and available Apple song identifiers.",
+      "how_often": "Every day",
+      "reads": "the Shazam charts on our watch list",
+      "why": "Shazam shows people actively trying to find out what a song is, often city by city and before it charts elsewhere.",
+      "ideas": [
+        "Could flag a song that enters a city chart before it appears on any Spotify or Apple list we follow.",
+        "Could map which cities pick up a song first."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "targets_export": {
+    "platform": null,
+    "access": null,
+    "vendor": null,
+    "job_kind": "Housekeeping",
+    "cadence": "daily",
+    "hosts": [],
+    "writes": [
+      "raw.targets"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Freezes the list of playlists, charts and accounts to read at the start of each hourly, daily and weekly round, so every step in the round works from the same list.",
+      "how_often": "Every day",
+      "reads": "The saved watch list",
+      "why": "It makes each round repeatable: a retry reads the same list, so numbers do not shift because someone edited the list mid-run.",
+      "ideas": [
+        "Could show 'what we watched on this day' for any past day."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": true
+  },
+  "track_isrc_crosswalk": {
+    "platform": "deezer",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Lookup",
+    "cadence": "hourly",
+    "hosts": [
+      "api.deezer.com"
+    ],
+    "writes": [
+      "raw.track_isrc_crosswalk"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "deezer"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Searches Deezer's public API every hour for priority Spotify tracks that have no ISRC yet and saves the ISRC only when artist, title and length agree.",
+      "how_often": "Every hour",
+      "reads": "priority Spotify tracks from the lists on our watch list that have no ISRC",
+      "why": "A recording code helps connect the same song across Spotify, Apple, Shazam and rights data.",
+      "ideas": [
+        "Could report what share of the songs on our followed lists we can tie to one barcode, per list."
+      ],
+      "waiting_on": "the first scheduled read"
+    },
+    "hidden": false
+  },
+  "wiki_pageviews": {
+    "platform": "wikipedia",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Reader",
+    "cadence": "daily",
+    "hosts": [
+      "wikimedia.org"
+    ],
+    "writes": [
+      "raw.wiki_pageviews"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "wikipedia"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Reads daily human views of each public catalog artists artist's Wikipedia articles from the Wikimedia API every day.",
+      "how_often": "Every day",
+      "reads": "global MusicBrainz artist identities and public lookup results",
+      "why": "A jump in people looking an artist up is a public sign of rising curiosity, and it feeds the attention rule for weekly picks.",
+      "ideas": [
+        "Could flag an artist whose Wikipedia views doubled week over week, next to what else happened that week."
+      ],
+      "waiting_on": "source access configuration"
+    },
+    "hidden": false
+  },
+  "wiki_sitelinks": {
+    "platform": "wikipedia",
+    "access": "official API",
+    "vendor": null,
+    "job_kind": "Lookup",
+    "cadence": "daily",
+    "hosts": [
+      "www.wikidata.org"
+    ],
+    "writes": [
+      "raw.wiki_sitelinks",
+      "raw.wiki_lookups"
+    ],
+    "stages": [
+      {
+        "stage": "Watch list",
+        "mark": "watch_list"
+      },
+      {
+        "stage": "Source",
+        "mark": "wikipedia"
+      },
+      {
+        "stage": "Access",
+        "mark": "access"
+      },
+      {
+        "stage": "Collection job",
+        "mark": "python"
+      },
+      {
+        "stage": "Received",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Cleaned and matched",
+        "mark": "dbt"
+      },
+      {
+        "stage": "Ready to use",
+        "mark": "postgresql"
+      },
+      {
+        "stage": "Your number",
+        "mark": "mdp"
+      }
+    ],
+    "card": {
+      "what": "Checks catalog artists every day for their weekly Wikipedia article lookup through Wikidata, saving the language editions that the page view reader can use.",
+      "how_often": "Every day; each input is checked once a week.",
+      "reads": "global MusicBrainz artist identities and public lookup results",
+      "why": "It finds the articles that the page-view counter then reads.",
+      "ideas": [
+        "Could show how many languages have a Wikipedia article about each artist, as a rough measure of reach abroad."
+      ],
+      "waiting_on": "source access configuration"
+    },
+    "hidden": false
+  }
+}

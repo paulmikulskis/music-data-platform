@@ -1,0 +1,1 @@
+CREATE INDEX "audit_log_probe_action_idx" ON "control"."audit_log" USING btree ("action") WHERE "control"."audit_log"."action" = 'streamlines.probe';

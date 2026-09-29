@@ -1,0 +1,1 @@
+CREATE INDEX "run_streamline_created_idx" ON "control"."run" USING btree ("streamline_id","created_at");

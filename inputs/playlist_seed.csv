@@ -1,0 +1,8 @@
+platform,platform_account_id,handle,display_name,cadence,owner_class,params,kind,priority_market
+spotify,SynthPlaylist000000001,synthetic-playlist,Synthetic Playlist,daily,editorial,,playlist,US
+apple_music,us:pl.synthetic001,synthetic-playlist,Synthetic Playlist,daily,editorial,,playlist,US
+spotify,SynthWeekly00000000001,synthetic-playlist,Synthetic Playlist,weekly,user,{},playlist,
+soundcloud,900000001,synthetic-playlist,Synthetic Playlist,weekly,curator,{},playlist,
+bandcamp,discover:6a608b3b8d95dbcd,synthetic-playlist,Synthetic Playlist,daily,editorial,"{""spec"": {""genre_id"": 0, ""tag_names"": [""fixture-pop""], ""sort"": ""date"", ""format"": ""all"", ""location"": 0}}",playlist,
+bandcamp,daily:synthetic:2026-01,synthetic-playlist,Synthetic Playlist,daily,editorial,{},playlist,
+bandcamp,radio:900001,synthetic-playlist,Synthetic Playlist,daily,editorial,{},playlist,

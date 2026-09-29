@@ -1,0 +1,116 @@
+{
+  "reviews": {
+    "dbt/models/marts/global/mart_playlist_profile.sql": "670ddf361beb323832b1b9aa1dd534dd17103db5c1bc0f4a312cdc790df1e5de",
+    "dbt/models/marts/global/mart_shazam_chart_daily.sql": "df9c477016ba5b1e2dcdb33ab29bc12f39bc8cb324c1aba86426ff4701930bdc",
+    "dbt/models/intermediate/int_playlist__rights.sql": "d8cc4cd395d49625970fb950a64fe96f3556dba37b8fe66981f076228a9290f9",
+    "dbt/models/staging/stg_playlist__items.sql": "c1fdf8786bd82f7e039a131e4704ab8f9524b5b7f439452cb6b9c5a010d47e9f",
+    "dbt/models/staging/stg_playlist__snapshots.sql": "3c3ec8ebf8f6439f7b5273b25e7ed6c19c439a9fd56ae8867d199c1d26402cae",
+    "dbt/models/intermediate/int_playlist__snapshots.sql": "76d27ab990c985570b8a262119a3a5f1e3f49c4d9f51ded3ebf19851936c0235",
+    "dbt/models/intermediate/int_track_identity__daily.sql": "40c1a0c8126adfae4a676e71e6159bb482772a21cd9e11254ce3cf1d33a47e10",
+    "dbt/models/intermediate/int_identity__track_inputs_daily.sql": "92c51309213ba13d8cac455ecf710e532f21d54b31db52f6e57ac0a1dc1037de",
+    "dbt/models/staging/stg_shazam__chart_entries.sql": "fcd34e3699226ac34c6b14433718e48a951c0450a3d4a31b300bc8768e9b7765",
+    "dbt/macros/mdp_playlist.sql": "123aafc40d6791eea7e48eddd8e9375dea4dd8820241b415b8d29f1927b43dec"
+  },
+  "projections": {
+    "marts.mart_playlist_profile": {
+      "columns": [
+        "title",
+        "platform",
+        "followers",
+        "observed_at"
+      ],
+      "order": [
+        "observed_at",
+        "snapshot_id"
+      ],
+      "filters": [
+        "platform",
+        "playlist_id",
+        "snapshot_id"
+      ],
+      "public_links": [],
+      "workbench": true,
+      "provenance": {
+        "followers": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "observed_at": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "platform": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "playlist_id": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "snapshot_id": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "title": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        }
+      },
+      "policy": "public_metadata",
+      "guards": []
+    },
+    "marts.mart_shazam_chart_daily": {
+      "columns": [
+        "title_text",
+        "artist_text",
+        "position",
+        "chart_date"
+      ],
+      "order": [
+        "chart_date",
+        "chart",
+        "position"
+      ],
+      "filters": [
+        "chart",
+        "chart_date",
+        "position"
+      ],
+      "public_links": [],
+      "workbench": true,
+      "provenance": {
+        "artist_text": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "chart": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "chart_date": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "position": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "title_text": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        }
+      },
+      "policy": "public_metadata",
+      "guards": []
+    }
+  },
+  "no_preview": {
+    "marts.mart_top_movers_current": "No reviewed public projection. See source details.",
+    "marts.mart_playlist_events": "No reviewed public projection. See source details.",
+    "marts.mart_track_daily_streams": "No reviewed public projection. See source details.",
+    "raw.playlist_items": "No reviewed public projection. See source details.",
+    "raw.playlist_snapshots": "No reviewed public projection. See source details.",
+    "raw.shazam_chart_entries": "No reviewed public projection. See source details.",
+    "raw.account_snapshots": "No reviewed public projection. See source details."
+  }
+}

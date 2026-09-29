@@ -1,0 +1,5745 @@
+{
+  "edges": [
+    {
+      "from": "fn:am_playlist",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:am_playlist",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:am_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:am_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:apple_song_duration",
+      "kind": "write",
+      "to": "rel:raw.apple_song_durations"
+    },
+    {
+      "from": "fn:bc_daily_list",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:bc_daily_list",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:bc_daily_list_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:bc_daily_list_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:bc_discover",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:bc_discover",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:bc_discover_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:bc_discover_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:bc_fan_playlist",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:bc_fan_playlist",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:bc_fan_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:bc_fan_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:bc_radio",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:bc_radio",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:bc_radio_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:bc_radio_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:bc_tralbum",
+      "kind": "write",
+      "to": "rel:raw.bc_releases"
+    },
+    {
+      "from": "fn:bc_tralbum",
+      "kind": "write",
+      "to": "rel:raw.bc_tracks"
+    },
+    {
+      "from": "fn:billboard_hot100",
+      "kind": "write",
+      "to": "rel:raw.chart_entries"
+    },
+    {
+      "from": "fn:jev_instrument_family",
+      "kind": "write",
+      "to": "rel:raw.jev_instrument_family"
+    },
+    {
+      "from": "fn:kexp_plays",
+      "kind": "write",
+      "to": "rel:raw.radio_plays"
+    },
+    {
+      "from": "fn:lb_fresh_releases",
+      "kind": "write",
+      "to": "rel:raw.lb_fresh_releases"
+    },
+    {
+      "from": "fn:lb_popularity",
+      "kind": "write",
+      "to": "rel:raw.lb_popularity"
+    },
+    {
+      "from": "fn:lb_similar_artists",
+      "kind": "write",
+      "to": "rel:raw.lb_similar_artists"
+    },
+    {
+      "from": "fn:lb_sitewide",
+      "kind": "write",
+      "to": "rel:raw.lb_sitewide"
+    },
+    {
+      "from": "fn:mb_artist_catalog",
+      "kind": "write",
+      "to": "rel:raw.mb_artist_catalog"
+    },
+    {
+      "from": "fn:mb_artist_catalog",
+      "kind": "write",
+      "to": "rel:raw.mb_artist_release_groups"
+    },
+    {
+      "from": "fn:mb_resolve",
+      "kind": "write",
+      "to": "rel:raw.mb_resolve"
+    },
+    {
+      "from": "fn:mb_resolve",
+      "kind": "write",
+      "to": "rel:raw.mb_resolve_closure"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_artist"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_artist_credit"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_artist_credit_name"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_artist_ipi"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_artist_isni"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_generation"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_isrc"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_l_artist_label"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_l_label_label"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_label"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_medium"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_recording"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_redirect"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_release"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_release_group"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_track"
+    },
+    {
+      "from": "fn:mb_spine",
+      "kind": "write",
+      "to": "rel:raw.mb_url_link"
+    },
+    {
+      "from": "fn:sc_curator_playlists",
+      "kind": "write",
+      "to": "rel:raw.playlist_candidates"
+    },
+    {
+      "from": "fn:sc_curator_playlists",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:sc_curator_playlists",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:sc_curator_playlists",
+      "kind": "write",
+      "to": "rel:raw.sc_tracks"
+    },
+    {
+      "from": "fn:sc_curator_playlists_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_candidates"
+    },
+    {
+      "from": "fn:sc_curator_playlists_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:sc_curator_playlists_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:sc_curator_playlists_weekly",
+      "kind": "write",
+      "to": "rel:raw.sc_tracks"
+    },
+    {
+      "from": "fn:sc_hubs",
+      "kind": "write",
+      "to": "rel:raw.playlist_candidates"
+    },
+    {
+      "from": "fn:sc_playlist",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:sc_playlist",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:sc_playlist",
+      "kind": "write",
+      "to": "rel:raw.sc_tracks"
+    },
+    {
+      "from": "fn:sc_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:sc_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:sc_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.sc_tracks"
+    },
+    {
+      "from": "fn:sp_playlist",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:sp_playlist",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:sp_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_items"
+    },
+    {
+      "from": "fn:sp_playlist_weekly",
+      "kind": "write",
+      "to": "rel:raw.playlist_snapshots"
+    },
+    {
+      "from": "fn:sp_track_artists",
+      "kind": "write",
+      "to": "rel:raw.sp_track_artists"
+    },
+    {
+      "from": "fn:sz_chart",
+      "kind": "write",
+      "to": "rel:raw.shazam_chart_entries"
+    },
+    {
+      "from": "fn:targets_export",
+      "kind": "write",
+      "to": "rel:raw.targets"
+    },
+    {
+      "from": "fn:track_isrc_crosswalk",
+      "kind": "write",
+      "to": "rel:raw.track_isrc_crosswalk"
+    },
+    {
+      "from": "fn:wiki_pageviews",
+      "kind": "write",
+      "to": "rel:raw.wiki_pageviews"
+    },
+    {
+      "from": "fn:wiki_sitelinks",
+      "kind": "write",
+      "to": "rel:raw.wiki_lookups"
+    },
+    {
+      "from": "fn:wiki_sitelinks",
+      "kind": "write",
+      "to": "rel:raw.wiki_sitelinks"
+    },
+    {
+      "from": "rel:intermediate.int_artist_catalog__inputs",
+      "kind": "read",
+      "to": "fn:mb_artist_catalog"
+    },
+    {
+      "from": "rel:intermediate.int_artist_identity",
+      "kind": "transform",
+      "to": "rel:intermediate.int_lb__popularity_inputs"
+    },
+    {
+      "from": "rel:intermediate.int_artist_identity",
+      "kind": "transform",
+      "to": "rel:intermediate.int_lb__similarity_inputs"
+    },
+    {
+      "from": "rel:intermediate.int_artist_identity",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_artists__daily"
+    },
+    {
+      "from": "rel:intermediate.int_artist_identity",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_key__daily"
+    },
+    {
+      "from": "rel:intermediate.int_artist_identity",
+      "kind": "transform",
+      "to": "rel:intermediate.int_wiki__artist_qids"
+    },
+    {
+      "from": "rel:intermediate.int_artist_identity",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:intermediate.int_artist_stage__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_age__daily"
+    },
+    {
+      "from": "rel:intermediate.int_billboard_song__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_chart_history"
+    },
+    {
+      "from": "rel:intermediate.int_billboard_song__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:intermediate.int_chart_slot_identity",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_identity_audit"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_age__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_day__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_day__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_early_signals_current"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_day__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_readiness"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_day__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_top_movers"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_entries__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_entries__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_arrivals_current"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_shazam__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_day__daily"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_shazam__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_entries__daily"
+    },
+    {
+      "from": "rel:intermediate.int_cluster_shazam__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:intermediate.int_identity__crosswalk_inputs",
+      "kind": "read",
+      "to": "fn:track_isrc_crosswalk"
+    },
+    {
+      "from": "rel:intermediate.int_identity__exact",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__crosswalk_inputs"
+    },
+    {
+      "from": "rel:intermediate.int_identity__exact",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__resolution_inputs"
+    },
+    {
+      "from": "rel:intermediate.int_identity__exact",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity"
+    },
+    {
+      "from": "rel:intermediate.int_identity__priority_tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__crosswalk_inputs"
+    },
+    {
+      "from": "rel:intermediate.int_identity__priority_tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__resolution_inputs"
+    },
+    {
+      "from": "rel:intermediate.int_identity__resolution_inputs",
+      "kind": "read",
+      "to": "fn:mb_resolve"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs",
+      "kind": "read",
+      "to": "fn:mb_spine"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__crosswalk_inputs"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__exact"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__priority_tracks"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__resolution_inputs"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs_daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster_inputs__daily"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs_daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_key__daily"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs_daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:intermediate.int_identity__track_inputs_daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:intermediate.int_jev_instruments",
+      "kind": "read",
+      "to": "fn:jev_instrument_family"
+    },
+    {
+      "from": "rel:intermediate.int_label__ownership_closure",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist__contract_edges"
+    },
+    {
+      "from": "rel:intermediate.int_lb__popularity_inputs",
+      "kind": "read",
+      "to": "fn:lb_popularity"
+    },
+    {
+      "from": "rel:intermediate.int_lb__similarity_inputs",
+      "kind": "read",
+      "to": "fn:lb_similar_artists"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__membership",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__track_days"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__membership",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_events"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__membership",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_membership_current"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__observations",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_entries__daily"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__observations",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__membership"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__observations",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__track_days"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__observations",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_events"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__observations",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_membership_current"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__observations",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_daily_streams"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__recording_days",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_playlist_followers"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__recording_days",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_playlist_followers_by_variant"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__rights",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__track_days"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__rights",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_coverage"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__rights",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_events"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__rights",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_membership_current"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__rights",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_profile"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_entries__daily"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__membership"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__observations"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__rights"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__track_days"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_coverage"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_events"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_membership_current"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_profile"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__track_days",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__recording_days"
+    },
+    {
+      "from": "rel:intermediate.int_playlist__track_days",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_followers__daily"
+    },
+    {
+      "from": "rel:intermediate.int_radio__rotation_events",
+      "kind": "transform",
+      "to": "rel:marts.mart_radio_rotation"
+    },
+    {
+      "from": "rel:intermediate.int_reference__current",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__exact"
+    },
+    {
+      "from": "rel:intermediate.int_reference__current",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity"
+    },
+    {
+      "from": "rel:intermediate.int_song_age__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_age__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_aliases__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_aliases"
+    },
+    {
+      "from": "rel:intermediate.int_song_apple_successors__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster_edges__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_artists__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist_catalog__inputs"
+    },
+    {
+      "from": "rel:intermediate.int_song_artists__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_age__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_billboard_song__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_age__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_day__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_entries__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_shazam__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_arrivals_current"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_early_signals_current"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_cluster_members"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_top_movers"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster_edges__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster_inputs__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_billboard_song__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster_inputs__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_cluster_inputs__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster_edges__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_entries__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_entries__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_entries__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_evidence__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_evidence__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_early_signals_current"
+    },
+    {
+      "from": "rel:intermediate.int_song_evidence__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_top_movers"
+    },
+    {
+      "from": "rel:intermediate.int_song_followers__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_group_evidence__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_followers__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_followers__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:intermediate.int_song_group_evidence__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_day__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_entries__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_age__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_aliases__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_apple_successors__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_artists__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster_inputs__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_entries__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_evidence__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_followers__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_group_evidence__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_shazam__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:intermediate.int_song_key__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:intermediate.int_song_movement__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_arrivals_current"
+    },
+    {
+      "from": "rel:intermediate.int_song_movement__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_early_signals_current"
+    },
+    {
+      "from": "rel:intermediate.int_song_movement__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_top_movers"
+    },
+    {
+      "from": "rel:intermediate.int_song_shazam__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_shazam__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_shazam__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_entries__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_shazam__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_group_evidence__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_shazam__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:intermediate.int_song_windows__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:intermediate.int_song_windows__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_arrivals_current"
+    },
+    {
+      "from": "rel:intermediate.int_spotify__track_artist_inputs",
+      "kind": "read",
+      "to": "fn:sp_track_artists"
+    },
+    {
+      "from": "rel:intermediate.int_track_identity__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__recording_days"
+    },
+    {
+      "from": "rel:intermediate.int_track_identity__daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_key__daily"
+    },
+    {
+      "from": "rel:intermediate.int_track_identity__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_events"
+    },
+    {
+      "from": "rel:intermediate.int_track_identity__daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_shazam_chart_daily"
+    },
+    {
+      "from": "rel:intermediate.int_wiki__articles",
+      "kind": "read",
+      "to": "fn:wiki_pageviews"
+    },
+    {
+      "from": "rel:intermediate.int_wiki__artist_qids",
+      "kind": "read",
+      "to": "fn:wiki_sitelinks"
+    },
+    {
+      "from": "rel:intermediate.int_wiki__artist_qids",
+      "kind": "transform",
+      "to": "rel:intermediate.int_wiki__articles"
+    },
+    {
+      "from": "rel:marts.mart_arrivals_current",
+      "kind": "transform",
+      "to": "rel:marts.mart_readiness"
+    },
+    {
+      "from": "rel:marts.mart_chart_history",
+      "kind": "transform",
+      "to": "rel:marts.mart_readiness"
+    },
+    {
+      "from": "rel:marts.mart_chart_history",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:marts.mart_early_signals_current",
+      "kind": "transform",
+      "to": "rel:marts.mart_readiness"
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "kind": "evidence",
+      "to": "entry:home.follower_exposure_gain"
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "kind": "evidence",
+      "to": "entry:home.playlist_adds"
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_entries__daily"
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_evidence__daily"
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "kind": "transform",
+      "to": "rel:marts.mart_editorial_entries"
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "kind": "transform",
+      "to": "rel:marts.mart_editorial_presence"
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:marts.mart_playlist_profile",
+      "kind": "evidence",
+      "to": "entry:home.follower_exposure_gain"
+    },
+    {
+      "from": "rel:marts.mart_playlist_profile",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__track_days"
+    },
+    {
+      "from": "rel:marts.mart_playlist_profile",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_entries__daily"
+    },
+    {
+      "from": "rel:marts.mart_playlist_profile",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_evidence__daily"
+    },
+    {
+      "from": "rel:marts.mart_playlist_profile",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:marts.mart_shazam_chart_daily",
+      "kind": "evidence",
+      "to": "entry:home.shazam_spread_gain"
+    },
+    {
+      "from": "rel:marts.mart_shazam_chart_daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_apple_successors__daily"
+    },
+    {
+      "from": "rel:marts.mart_shazam_chart_daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_entries__daily"
+    },
+    {
+      "from": "rel:marts.mart_shazam_chart_daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_evidence__daily"
+    },
+    {
+      "from": "rel:marts.mart_shazam_chart_daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_shazam__daily"
+    },
+    {
+      "from": "rel:marts.mart_shazam_chart_daily",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:marts.mart_song_aliases",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:marts.mart_song_cluster_members",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:marts.mart_song_day",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_day__daily"
+    },
+    {
+      "from": "rel:marts.mart_song_day",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_windows__daily"
+    },
+    {
+      "from": "rel:marts.mart_song_day",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:marts.mart_top_movers",
+      "kind": "transform",
+      "to": "rel:marts.mart_top_movers_current"
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "kind": "serves",
+      "to": "entry:home.follower_exposure_gain"
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "kind": "serves",
+      "to": "entry:home.playlist_adds"
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "kind": "serves",
+      "to": "entry:home.shazam_spread_gain"
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "kind": "serves",
+      "to": "entry:home.stream_rate_gain"
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "kind": "transform",
+      "to": "rel:marts.mart_readiness"
+    },
+    {
+      "from": "rel:marts.mart_track_daily_streams",
+      "kind": "evidence",
+      "to": "entry:home.stream_rate_gain"
+    },
+    {
+      "from": "rel:marts.mart_track_daily_streams",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_evidence__daily"
+    },
+    {
+      "from": "rel:marts.mart_track_daily_streams",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_group_evidence__daily"
+    },
+    {
+      "from": "rel:marts.mart_track_daily_streams",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_key__daily"
+    },
+    {
+      "from": "rel:marts.mart_track_daily_streams",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:raw._run_completion",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist__contract_edges"
+    },
+    {
+      "from": "rel:raw._run_completion",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist_identity"
+    },
+    {
+      "from": "rel:raw._run_completion",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw._run_completion",
+      "kind": "transform",
+      "to": "rel:intermediate.int_label__ownership_closure"
+    },
+    {
+      "from": "rel:raw._run_completion",
+      "kind": "transform",
+      "to": "rel:intermediate.int_reference__current"
+    },
+    {
+      "from": "rel:raw._run_completion",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_artists__daily"
+    },
+    {
+      "from": "rel:raw._run_completion",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw._run_completion",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.apple_song_durations",
+      "kind": "transform",
+      "to": "rel:staging.stg_apple__song_durations"
+    },
+    {
+      "from": "rel:raw.bc_releases",
+      "kind": "transform",
+      "to": "rel:staging.stg_bandcamp__releases"
+    },
+    {
+      "from": "rel:raw.bc_tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.bc_tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__track_inputs"
+    },
+    {
+      "from": "rel:raw.bc_tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__track_inputs_daily"
+    },
+    {
+      "from": "rel:raw.bc_tracks",
+      "kind": "transform",
+      "to": "rel:staging.stg_bandcamp__tracks"
+    },
+    {
+      "from": "rel:raw.chart_entries",
+      "kind": "transform",
+      "to": "rel:staging.stg_billboard__chart_entries"
+    },
+    {
+      "from": "rel:raw.chart_entries",
+      "kind": "transform",
+      "to": "rel:staging.stg_billboard__chart_entries_daily"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__crosswalk_inputs"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__resolution_inputs"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__track_days"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster_inputs__daily"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_coverage"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_events"
+    },
+    {
+      "from": "rel:raw.cycles",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_membership_current"
+    },
+    {
+      "from": "rel:raw.jev_instrument_family",
+      "kind": "transform",
+      "to": "rel:staging.stg_jev__instrument_family"
+    },
+    {
+      "from": "rel:raw.lb_fresh_releases",
+      "kind": "transform",
+      "to": "rel:staging.stg_lb__fresh_releases"
+    },
+    {
+      "from": "rel:raw.lb_popularity",
+      "kind": "transform",
+      "to": "rel:staging.stg_lb__popularity"
+    },
+    {
+      "from": "rel:raw.lb_similar_artists",
+      "kind": "transform",
+      "to": "rel:staging.stg_lb__similar_artists"
+    },
+    {
+      "from": "rel:raw.lb_sitewide",
+      "kind": "transform",
+      "to": "rel:intermediate.int_lb__sitewide_refreshes"
+    },
+    {
+      "from": "rel:raw.lb_sitewide",
+      "kind": "transform",
+      "to": "rel:staging.stg_lb__sitewide"
+    },
+    {
+      "from": "rel:raw.mb_artist",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist__contract_edges"
+    },
+    {
+      "from": "rel:raw.mb_artist",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist_identity"
+    },
+    {
+      "from": "rel:raw.mb_artist",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_artists__daily"
+    },
+    {
+      "from": "rel:raw.mb_artist",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_artist_catalog",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__artist_catalog"
+    },
+    {
+      "from": "rel:raw.mb_artist_credit",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_artist_credit_name",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_artists__daily"
+    },
+    {
+      "from": "rel:raw.mb_artist_credit_name",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_artist_ipi",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_artist_isni",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_artist_release_groups",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__artist_release_groups"
+    },
+    {
+      "from": "rel:raw.mb_isrc",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.mb_isrc",
+      "kind": "transform",
+      "to": "rel:intermediate.int_reference__current"
+    },
+    {
+      "from": "rel:raw.mb_isrc",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw.mb_isrc",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_l_artist_label",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist__contract_edges"
+    },
+    {
+      "from": "rel:raw.mb_l_artist_label",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_l_label_label",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist__contract_edges"
+    },
+    {
+      "from": "rel:raw.mb_l_label_label",
+      "kind": "transform",
+      "to": "rel:intermediate.int_label__ownership_closure"
+    },
+    {
+      "from": "rel:raw.mb_l_label_label",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_label",
+      "kind": "transform",
+      "to": "rel:intermediate.int_label__ownership_closure"
+    },
+    {
+      "from": "rel:raw.mb_label",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_medium",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_recording",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.mb_recording",
+      "kind": "transform",
+      "to": "rel:intermediate.int_reference__current"
+    },
+    {
+      "from": "rel:raw.mb_recording",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_artists__daily"
+    },
+    {
+      "from": "rel:raw.mb_recording",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw.mb_recording",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_redirect",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.mb_redirect",
+      "kind": "transform",
+      "to": "rel:intermediate.int_reference__current"
+    },
+    {
+      "from": "rel:raw.mb_redirect",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw.mb_redirect",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_release",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_release_group",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_resolve",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.mb_resolve",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw.mb_resolve",
+      "kind": "transform",
+      "to": "rel:staging.stg_enrich__mb_resolve"
+    },
+    {
+      "from": "rel:raw.mb_resolve_closure",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist__contract_edges"
+    },
+    {
+      "from": "rel:raw.mb_resolve_closure",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist_identity"
+    },
+    {
+      "from": "rel:raw.mb_resolve_closure",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.mb_resolve_closure",
+      "kind": "transform",
+      "to": "rel:intermediate.int_reference__current"
+    },
+    {
+      "from": "rel:raw.mb_resolve_closure",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_artists__daily"
+    },
+    {
+      "from": "rel:raw.mb_resolve_closure",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw.mb_resolve_closure",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_track",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.mb_url_link",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist_identity"
+    },
+    {
+      "from": "rel:raw.mb_url_link",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.mb_url_link",
+      "kind": "transform",
+      "to": "rel:intermediate.int_reference__current"
+    },
+    {
+      "from": "rel:raw.mb_url_link",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw.mb_url_link",
+      "kind": "transform",
+      "to": "rel:staging.stg_mb__reference_weekly"
+    },
+    {
+      "from": "rel:raw.playlist_candidates",
+      "kind": "transform",
+      "to": "rel:staging.stg_playlist__candidates"
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__track_inputs"
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__track_inputs_daily"
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "kind": "transform",
+      "to": "rel:staging.stg_playlist__items"
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__track_inputs"
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__track_inputs_daily"
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "kind": "transform",
+      "to": "rel:staging.stg_playlist__snapshots"
+    },
+    {
+      "from": "rel:raw.radio_plays",
+      "kind": "transform",
+      "to": "rel:staging.stg_kexp__plays"
+    },
+    {
+      "from": "rel:raw.sc_tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.sc_tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__track_inputs"
+    },
+    {
+      "from": "rel:raw.sc_tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__track_inputs_daily"
+    },
+    {
+      "from": "rel:raw.sc_tracks",
+      "kind": "transform",
+      "to": "rel:staging.stg_soundcloud__tracks"
+    },
+    {
+      "from": "rel:raw.shazam_chart_entries",
+      "kind": "transform",
+      "to": "rel:staging.stg_shazam__chart_entries"
+    },
+    {
+      "from": "rel:raw.sp_track_artists",
+      "kind": "transform",
+      "to": "rel:staging.stg_spotify__track_artists"
+    },
+    {
+      "from": "rel:raw.targets",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__track_days"
+    },
+    {
+      "from": "rel:raw.targets",
+      "kind": "transform",
+      "to": "rel:staging.stg_control__targets_weekly"
+    },
+    {
+      "from": "rel:raw.track_isrc_crosswalk",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:raw.track_isrc_crosswalk",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster_inputs__daily"
+    },
+    {
+      "from": "rel:raw.track_isrc_crosswalk",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:raw.track_isrc_crosswalk",
+      "kind": "transform",
+      "to": "rel:staging.stg_enrich__track_isrc_crosswalk"
+    },
+    {
+      "from": "rel:raw.wiki_lookups",
+      "kind": "transform",
+      "to": "rel:staging.stg_wiki__lookups"
+    },
+    {
+      "from": "rel:raw.wiki_pageviews",
+      "kind": "transform",
+      "to": "rel:staging.stg_wiki__pageviews"
+    },
+    {
+      "from": "rel:raw.wiki_sitelinks",
+      "kind": "transform",
+      "to": "rel:staging.stg_wiki__sitelinks"
+    },
+    {
+      "from": "rel:reference.artist_stage_thresholds",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist_stage__daily"
+    },
+    {
+      "from": "rel:reference.billboard_match_rules",
+      "kind": "transform",
+      "to": "rel:intermediate.int_billboard_song__daily"
+    },
+    {
+      "from": "rel:reference.identity_confidence_floors",
+      "kind": "transform",
+      "to": "rel:intermediate.int_identity__audit"
+    },
+    {
+      "from": "rel:reference.identity_confidence_floors",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity"
+    },
+    {
+      "from": "rel:reference.identity_confidence_floors",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity__daily"
+    },
+    {
+      "from": "rel:reference.jev_instruments",
+      "kind": "transform",
+      "to": "rel:intermediate.int_jev_instruments"
+    },
+    {
+      "from": "rel:reference.lb_similarity_algorithms",
+      "kind": "transform",
+      "to": "rel:intermediate.int_lb__similarity_inputs"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:intermediate.int_cluster_shazam__daily"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_apple_successors__daily"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_entries__daily"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_shazam__daily"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_windows__daily"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:marts.mart_early_signals_current"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:marts.mart_readiness"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:reference.movement_parameters",
+      "kind": "transform",
+      "to": "rel:marts.mart_top_movers"
+    },
+    {
+      "from": "rel:reference.playlist_reach_tiers",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_entries__daily"
+    },
+    {
+      "from": "rel:reference.playlist_reach_tiers",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_movement__daily"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_arrivals_current"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_chart_history"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_early_signals_current"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_editorial_entries"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_editorial_presence"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_coverage"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_events"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_membership_current"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_profile"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_radio_rotation"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_readiness"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_search_index"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_shazam_chart_daily"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_aliases"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_cluster_members"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_song_day"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_top_movers"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_top_movers_current"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_daily_streams"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_playlist_followers"
+    },
+    {
+      "from": "rel:reference.rights_registry",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_playlist_followers_by_variant"
+    },
+    {
+      "from": "rel:reference.shazam_markets",
+      "kind": "transform",
+      "to": "rel:marts.mart_shazam_chart_daily"
+    },
+    {
+      "from": "rel:reference.song_age_parameters",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_age__daily"
+    },
+    {
+      "from": "rel:reference.song_cluster_rules",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster__daily"
+    },
+    {
+      "from": "rel:reference.song_cluster_rules",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster_edges__daily"
+    },
+    {
+      "from": "rel:reference.source_priority",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_identity_audit"
+    },
+    {
+      "from": "rel:reference.track_candidates_fixture",
+      "kind": "transform",
+      "to": "rel:intermediate.int_chart_slot_identity"
+    },
+    {
+      "from": "rel:reference.wiki_projects",
+      "kind": "transform",
+      "to": "rel:intermediate.int_wiki__articles"
+    },
+    {
+      "from": "rel:staging.stg_apple__song_durations",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_cluster_inputs__daily"
+    },
+    {
+      "from": "rel:staging.stg_bandcamp__tracks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_bandcamp__release_tracks"
+    },
+    {
+      "from": "rel:staging.stg_billboard__chart_entries_daily",
+      "kind": "transform",
+      "to": "rel:intermediate.int_billboard_song__daily"
+    },
+    {
+      "from": "rel:staging.stg_enrich__mb_resolve",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity"
+    },
+    {
+      "from": "rel:staging.stg_enrich__track_isrc_crosswalk",
+      "kind": "transform",
+      "to": "rel:intermediate.int_track_identity"
+    },
+    {
+      "from": "rel:staging.stg_kexp__plays",
+      "kind": "transform",
+      "to": "rel:intermediate.int_radio__rotation_events"
+    },
+    {
+      "from": "rel:staging.stg_kexp__plays",
+      "kind": "transform",
+      "to": "rel:marts.mart_radio_rotation"
+    },
+    {
+      "from": "rel:staging.stg_mb__artist_catalog",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist_stage__daily"
+    },
+    {
+      "from": "rel:staging.stg_mb__artist_release_groups",
+      "kind": "transform",
+      "to": "rel:intermediate.int_artist_stage__daily"
+    },
+    {
+      "from": "rel:staging.stg_playlist__items",
+      "kind": "transform",
+      "to": "rel:intermediate.int_bandcamp__release_tracks"
+    },
+    {
+      "from": "rel:staging.stg_playlist__items",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__observations"
+    },
+    {
+      "from": "rel:staging.stg_playlist__items",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__rights"
+    },
+    {
+      "from": "rel:staging.stg_playlist__items",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__snapshots"
+    },
+    {
+      "from": "rel:staging.stg_playlist__items",
+      "kind": "transform",
+      "to": "rel:intermediate.int_spotify__track_artist_inputs"
+    },
+    {
+      "from": "rel:staging.stg_playlist__items",
+      "kind": "transform",
+      "to": "rel:staging.stg_playlist__snapshots"
+    },
+    {
+      "from": "rel:staging.stg_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__observations"
+    },
+    {
+      "from": "rel:staging.stg_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__rights"
+    },
+    {
+      "from": "rel:staging.stg_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:intermediate.int_playlist__snapshots"
+    },
+    {
+      "from": "rel:staging.stg_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:marts.mart_playlist_profile"
+    },
+    {
+      "from": "rel:staging.stg_playlist__snapshots",
+      "kind": "transform",
+      "to": "rel:marts.mart_track_daily_streams"
+    },
+    {
+      "from": "rel:staging.stg_shazam__chart_entries",
+      "kind": "transform",
+      "to": "rel:intermediate.int_song_key__daily"
+    },
+    {
+      "from": "rel:staging.stg_shazam__chart_entries",
+      "kind": "transform",
+      "to": "rel:marts.mart_shazam_chart_daily"
+    },
+    {
+      "from": "rel:staging.stg_wiki__sitelinks",
+      "kind": "transform",
+      "to": "rel:intermediate.int_wiki__articles"
+    },
+    {
+      "from": "source:Apple",
+      "kind": "declares",
+      "to": "fn:apple_song_duration"
+    },
+    {
+      "from": "source:Apple Music",
+      "kind": "declares",
+      "to": "fn:am_playlist"
+    },
+    {
+      "from": "source:Apple Music",
+      "kind": "declares",
+      "to": "fn:am_playlist_weekly"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_daily_list"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_daily_list_weekly"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_discover"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_discover_weekly"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_fan_playlist"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_fan_playlist_weekly"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_radio"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_radio_weekly"
+    },
+    {
+      "from": "source:Bandcamp",
+      "kind": "declares",
+      "to": "fn:bc_tralbum"
+    },
+    {
+      "from": "source:Billboard Hot 100 (API/provider TBD)",
+      "kind": "declares",
+      "to": "fn:billboard_hot100"
+    },
+    {
+      "from": "source:Deezer",
+      "kind": "declares",
+      "to": "fn:track_isrc_crosswalk"
+    },
+    {
+      "from": "source:KEXP",
+      "kind": "declares",
+      "to": "fn:kexp_plays"
+    },
+    {
+      "from": "source:ListenBrainz",
+      "kind": "declares",
+      "to": "fn:lb_fresh_releases"
+    },
+    {
+      "from": "source:ListenBrainz",
+      "kind": "declares",
+      "to": "fn:lb_popularity"
+    },
+    {
+      "from": "source:ListenBrainz",
+      "kind": "declares",
+      "to": "fn:lb_sitewide"
+    },
+    {
+      "from": "source:ListenBrainz Labs",
+      "kind": "declares",
+      "to": "fn:lb_similar_artists"
+    },
+    {
+      "from": "source:MusicBrainz",
+      "kind": "declares",
+      "to": "fn:mb_artist_catalog"
+    },
+    {
+      "from": "source:MusicBrainz",
+      "kind": "declares",
+      "to": "fn:mb_resolve"
+    },
+    {
+      "from": "source:MusicBrainz",
+      "kind": "declares",
+      "to": "fn:mb_spine"
+    },
+    {
+      "from": "source:Shazam",
+      "kind": "declares",
+      "to": "fn:sz_chart"
+    },
+    {
+      "from": "source:SoundCloud",
+      "kind": "declares",
+      "to": "fn:sc_curator_playlists"
+    },
+    {
+      "from": "source:SoundCloud",
+      "kind": "declares",
+      "to": "fn:sc_curator_playlists_weekly"
+    },
+    {
+      "from": "source:SoundCloud",
+      "kind": "declares",
+      "to": "fn:sc_hubs"
+    },
+    {
+      "from": "source:SoundCloud",
+      "kind": "declares",
+      "to": "fn:sc_playlist"
+    },
+    {
+      "from": "source:SoundCloud",
+      "kind": "declares",
+      "to": "fn:sc_playlist_weekly"
+    },
+    {
+      "from": "source:Spotify",
+      "kind": "declares",
+      "to": "fn:sp_playlist"
+    },
+    {
+      "from": "source:Spotify",
+      "kind": "declares",
+      "to": "fn:sp_playlist_weekly"
+    },
+    {
+      "from": "source:Spotify",
+      "kind": "declares",
+      "to": "fn:sp_track_artists"
+    },
+    {
+      "from": "source:TypeSafe",
+      "kind": "declares",
+      "to": "fn:jev_instrument_family"
+    },
+    {
+      "from": "source:Wikimedia",
+      "kind": "declares",
+      "to": "fn:wiki_pageviews"
+    },
+    {
+      "from": "source:Wikimedia",
+      "kind": "declares",
+      "to": "fn:wiki_sitelinks"
+    }
+  ],
+  "entries": [
+    {
+      "code": "control/apps/showcase/server/reads.ts",
+      "component": "playlist_adds",
+      "id": "home.playlist_adds",
+      "relation": "marts.mart_top_movers_current",
+      "selectors": [
+        {
+          "evidence": "served_locator",
+          "relation": "marts.mart_playlist_events",
+          "require_input_build": true,
+          "row_keys": [
+            "platform",
+            "playlist_id",
+            "variant",
+            "stream",
+            "occurrence_key",
+            "interval_id",
+            "event_type",
+            "observed_at"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "control/apps/showcase/server/reads.ts",
+      "component": "follower_exposure_gain",
+      "id": "home.follower_exposure_gain",
+      "relation": "marts.mart_top_movers_current",
+      "selectors": [
+        {
+          "evidence": "served_locator",
+          "relation": "marts.mart_playlist_events",
+          "require_input_build": true,
+          "row_keys": [
+            "platform",
+            "playlist_id",
+            "variant",
+            "stream",
+            "occurrence_key",
+            "interval_id",
+            "event_type",
+            "observed_at"
+          ]
+        },
+        {
+          "evidence": "served_locator",
+          "relation": "marts.mart_playlist_profile",
+          "require_input_build": true,
+          "row_keys": [
+            "platform",
+            "playlist_id",
+            "variant",
+            "stream",
+            "snapshot_id"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "control/apps/showcase/server/reads.ts",
+      "component": "shazam_spread_gain",
+      "id": "home.shazam_spread_gain",
+      "relation": "marts.mart_top_movers_current",
+      "selectors": [
+        {
+          "evidence": "served_locator",
+          "relation": "marts.mart_shazam_chart_daily",
+          "require_input_build": true,
+          "row_keys": [
+            "chart",
+            "chart_date",
+            "position"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "control/apps/showcase/server/reads.ts",
+      "component": "stream_rate_gain",
+      "id": "home.stream_rate_gain",
+      "relation": "marts.mart_top_movers_current",
+      "selectors": [
+        {
+          "evidence": "served_locator",
+          "relation": "marts.mart_track_daily_streams",
+          "require_input_build": true,
+          "row_keys": [
+            "platform",
+            "platform_track_id",
+            "day"
+          ]
+        }
+      ]
+    }
+  ],
+  "input_hashes": {
+    "entries": "6044c8248a8fee2bfa8f65919e2d7655061191df20a2535964b307a9568ce632",
+    "labels": "ebfc87ea942688bb22b1527b19db83a60ff0eee4963898627d88b8a39da0376a",
+    "macros": "7f71e6516ab552c24019b5de7cd642a416619e38ecc3cbca5fcb57f4968c5223",
+    "manifest": "a7946d4f6fac2a1de7d55a75d4a12837c51cb219a3e025bad604588614dae4b7",
+    "peek": "7b3a51fafa8fcac015b3559169bfae65f6030717a39e6e9d54c3092da201354e",
+    "projection_policy": "7dd072eb706dbaef97499c2458d010dfd900dbf91088be3262f5d286223dbdf7",
+    "queries": "f6ee635fbcc65f52e4593f020ea9ff7bf45f374d4ef2d8f0ca62a26b1d1f05e7",
+    "registry": "2610f4655cfd627aa9f8dec8420dab474be3e8166d27552b575da986fc70fac3",
+    "reviewed_code": "b28e72ce5bc84527cf1bff1b0cf864885f1ef4a85e43e341efe2620f001638d0",
+    "rights_registry": "9ce473c1ca48d174c814aeef9aac25fa4ebecd4b61c3c7d7f1e8f3fa577ac0a4"
+  },
+  "meaning": "Can feed this",
+  "nodes": [
+    {
+      "cadence": null,
+      "family": null,
+      "file": "control/apps/showcase/server/reads.ts",
+      "id": "entry:home.follower_exposure_gain",
+      "kind": "fact",
+      "label": "Followers of added playlists",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_top_movers_current",
+      "short_label": "List followers",
+      "stage": "screen",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "control/apps/showcase/server/reads.ts",
+      "id": "entry:home.playlist_adds",
+      "kind": "fact",
+      "label": "Added playlists",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_top_movers_current",
+      "short_label": "Playlist adds",
+      "stage": "screen",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "control/apps/showcase/server/reads.ts",
+      "id": "entry:home.shazam_spread_gain",
+      "kind": "fact",
+      "label": "New Shazam places",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_top_movers_current",
+      "short_label": "New chart places",
+      "stage": "screen",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "control/apps/showcase/server/reads.ts",
+      "id": "entry:home.stream_rate_gain",
+      "kind": "fact",
+      "label": "Change in daily plays",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_top_movers_current",
+      "short_label": "Daily play change",
+      "stage": "screen",
+      "tier": 1
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/am_playlist/function.py",
+      "id": "fn:am_playlist",
+      "kind": "function",
+      "label": "am_playlist",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/am_playlist_weekly/function.py",
+      "id": "fn:am_playlist_weekly",
+      "kind": "function",
+      "label": "am_playlist_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/apple_song_duration/function.py",
+      "id": "fn:apple_song_duration",
+      "kind": "function",
+      "label": "apple_song_duration",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_daily_list/function.py",
+      "id": "fn:bc_daily_list",
+      "kind": "function",
+      "label": "bc_daily_list",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_daily_list_weekly/function.py",
+      "id": "fn:bc_daily_list_weekly",
+      "kind": "function",
+      "label": "bc_daily_list_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_discover/function.py",
+      "id": "fn:bc_discover",
+      "kind": "function",
+      "label": "bc_discover",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_discover_weekly/function.py",
+      "id": "fn:bc_discover_weekly",
+      "kind": "function",
+      "label": "bc_discover_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_fan_playlist/function.py",
+      "id": "fn:bc_fan_playlist",
+      "kind": "function",
+      "label": "bc_fan_playlist",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_fan_playlist_weekly/function.py",
+      "id": "fn:bc_fan_playlist_weekly",
+      "kind": "function",
+      "label": "bc_fan_playlist_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_radio/function.py",
+      "id": "fn:bc_radio",
+      "kind": "function",
+      "label": "bc_radio",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_radio_weekly/function.py",
+      "id": "fn:bc_radio_weekly",
+      "kind": "function",
+      "label": "bc_radio_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/bc_tralbum/function.py",
+      "id": "fn:bc_tralbum",
+      "kind": "function",
+      "label": "bc_tralbum",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "weekly",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/billboard/function.py",
+      "id": "fn:billboard_hot100",
+      "kind": "function",
+      "label": "billboard_hot100",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/jev_instrument_family/function.py",
+      "id": "fn:jev_instrument_family",
+      "kind": "function",
+      "label": "jev_instrument_family",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/kexp_plays/function.py",
+      "id": "fn:kexp_plays",
+      "kind": "function",
+      "label": "kexp_plays",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/lb_fresh_releases/function.py",
+      "id": "fn:lb_fresh_releases",
+      "kind": "function",
+      "label": "lb_fresh_releases",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/lb_popularity/function.py",
+      "id": "fn:lb_popularity",
+      "kind": "function",
+      "label": "lb_popularity",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/lb_similar_artists/function.py",
+      "id": "fn:lb_similar_artists",
+      "kind": "function",
+      "label": "lb_similar_artists",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "weekly",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/lb_sitewide/function.py",
+      "id": "fn:lb_sitewide",
+      "kind": "function",
+      "label": "lb_sitewide",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/mb_artist_catalog/function.py",
+      "id": "fn:mb_artist_catalog",
+      "kind": "function",
+      "label": "mb_artist_catalog",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/mb_resolve/function.py",
+      "id": "fn:mb_resolve",
+      "kind": "function",
+      "label": "mb_resolve",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "weekly",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/mb_spine/function.py",
+      "id": "fn:mb_spine",
+      "kind": "function",
+      "label": "mb_spine",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sc_curator_playlists/function.py",
+      "id": "fn:sc_curator_playlists",
+      "kind": "function",
+      "label": "sc_curator_playlists",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sc_curator_playlists_weekly/function.py",
+      "id": "fn:sc_curator_playlists_weekly",
+      "kind": "function",
+      "label": "sc_curator_playlists_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sc_hubs/function.py",
+      "id": "fn:sc_hubs",
+      "kind": "function",
+      "label": "sc_hubs",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sc_playlist/function.py",
+      "id": "fn:sc_playlist",
+      "kind": "function",
+      "label": "sc_playlist",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sc_playlist_weekly/function.py",
+      "id": "fn:sc_playlist_weekly",
+      "kind": "function",
+      "label": "sc_playlist_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sp_playlist/function.py",
+      "id": "fn:sp_playlist",
+      "kind": "function",
+      "label": "sp_playlist",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sp_playlist_weekly/function.py",
+      "id": "fn:sp_playlist_weekly",
+      "kind": "function",
+      "label": "sp_playlist_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sp_track_artists/function.py",
+      "id": "fn:sp_track_artists",
+      "kind": "function",
+      "label": "sp_track_artists",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/sz_chart/function.py",
+      "id": "fn:sz_chart",
+      "kind": "function",
+      "label": "sz_chart",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": null,
+      "id": "fn:targets_export",
+      "kind": "function",
+      "label": "targets_export",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/track_isrc_crosswalk/function.py",
+      "id": "fn:track_isrc_crosswalk",
+      "kind": "function",
+      "label": "track_isrc_crosswalk",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/wiki_pageviews/function.py",
+      "id": "fn:wiki_pageviews",
+      "kind": "function",
+      "label": "wiki_pageviews",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "functions/src/mdp_functions/sources/wiki_sitelinks/function.py",
+      "id": "fn:wiki_sitelinks",
+      "kind": "function",
+      "label": "wiki_sitelinks",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": null,
+      "stage": "readers",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_artist__contract_edges.sql",
+      "id": "rel:intermediate.int_artist__contract_edges",
+      "kind": "relation",
+      "label": "intermediate.int_artist__contract_edges",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_artist__contract_edges",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_artist_catalog__inputs.sql",
+      "id": "rel:intermediate.int_artist_catalog__inputs",
+      "kind": "relation",
+      "label": "intermediate.int_artist_catalog__inputs",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_artist_catalog__inputs",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_artist_catalog__receipts.sql",
+      "id": "rel:intermediate.int_artist_catalog__receipts",
+      "kind": "relation",
+      "label": "intermediate.int_artist_catalog__receipts",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_artist_catalog__receipts",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_artist_identity.sql",
+      "id": "rel:intermediate.int_artist_identity",
+      "kind": "relation",
+      "label": "intermediate.int_artist_identity",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_artist_identity",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_artist_stage__daily.sql",
+      "id": "rel:intermediate.int_artist_stage__daily",
+      "kind": "relation",
+      "label": "intermediate.int_artist_stage__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_artist_stage__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_bandcamp__release_tracks.sql",
+      "id": "rel:intermediate.int_bandcamp__release_tracks",
+      "kind": "relation",
+      "label": "intermediate.int_bandcamp__release_tracks",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_bandcamp__release_tracks",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_billboard_song__daily.sql",
+      "id": "rel:intermediate.int_billboard_song__daily",
+      "kind": "relation",
+      "label": "intermediate.int_billboard_song__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_billboard_song__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_chart_slot_identity.sql",
+      "id": "rel:intermediate.int_chart_slot_identity",
+      "kind": "relation",
+      "label": "intermediate.int_chart_slot_identity",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_chart_slot_identity",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_cluster_age__daily.sql",
+      "id": "rel:intermediate.int_cluster_age__daily",
+      "kind": "relation",
+      "label": "intermediate.int_cluster_age__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_cluster_age__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_cluster_day__daily.sql",
+      "id": "rel:intermediate.int_cluster_day__daily",
+      "kind": "relation",
+      "label": "intermediate.int_cluster_day__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_cluster_day__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_cluster_entries__daily.sql",
+      "id": "rel:intermediate.int_cluster_entries__daily",
+      "kind": "relation",
+      "label": "intermediate.int_cluster_entries__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_cluster_entries__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_cluster_shazam__daily.sql",
+      "id": "rel:intermediate.int_cluster_shazam__daily",
+      "kind": "relation",
+      "label": "intermediate.int_cluster_shazam__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_cluster_shazam__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_identity__audit.sql",
+      "id": "rel:intermediate.int_identity__audit",
+      "kind": "relation",
+      "label": "intermediate.int_identity__audit",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_identity__audit",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/intermediate/int_identity__crosswalk_inputs.sql",
+      "id": "rel:intermediate.int_identity__crosswalk_inputs",
+      "kind": "relation",
+      "label": "intermediate.int_identity__crosswalk_inputs",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_identity__crosswalk_inputs",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/intermediate/int_identity__exact.sql",
+      "id": "rel:intermediate.int_identity__exact",
+      "kind": "relation",
+      "label": "intermediate.int_identity__exact",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_identity__exact",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/intermediate/int_identity__priority_tracks.sql",
+      "id": "rel:intermediate.int_identity__priority_tracks",
+      "kind": "relation",
+      "label": "intermediate.int_identity__priority_tracks",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_identity__priority_tracks",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/intermediate/int_identity__resolution_inputs.sql",
+      "id": "rel:intermediate.int_identity__resolution_inputs",
+      "kind": "relation",
+      "label": "intermediate.int_identity__resolution_inputs",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_identity__resolution_inputs",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/intermediate/int_identity__track_inputs.sql",
+      "id": "rel:intermediate.int_identity__track_inputs",
+      "kind": "relation",
+      "label": "intermediate.int_identity__track_inputs",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_identity__track_inputs",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_identity__track_inputs_daily.sql",
+      "id": "rel:intermediate.int_identity__track_inputs_daily",
+      "kind": "relation",
+      "label": "intermediate.int_identity__track_inputs_daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_identity__track_inputs_daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_jev_instruments.sql",
+      "id": "rel:intermediate.int_jev_instruments",
+      "kind": "relation",
+      "label": "intermediate.int_jev_instruments",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_jev_instruments",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_label__ownership_closure.sql",
+      "id": "rel:intermediate.int_label__ownership_closure",
+      "kind": "relation",
+      "label": "intermediate.int_label__ownership_closure",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_label__ownership_closure",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_lb__popularity_inputs.sql",
+      "id": "rel:intermediate.int_lb__popularity_inputs",
+      "kind": "relation",
+      "label": "intermediate.int_lb__popularity_inputs",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_lb__popularity_inputs",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_lb__similarity_inputs.sql",
+      "id": "rel:intermediate.int_lb__similarity_inputs",
+      "kind": "relation",
+      "label": "intermediate.int_lb__similarity_inputs",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_lb__similarity_inputs",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_lb__sitewide_refreshes.sql",
+      "id": "rel:intermediate.int_lb__sitewide_refreshes",
+      "kind": "relation",
+      "label": "intermediate.int_lb__sitewide_refreshes",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_lb__sitewide_refreshes",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_playlist__membership.sql",
+      "id": "rel:intermediate.int_playlist__membership",
+      "kind": "relation",
+      "label": "intermediate.int_playlist__membership",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_playlist__membership",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_playlist__observations.sql",
+      "id": "rel:intermediate.int_playlist__observations",
+      "kind": "relation",
+      "label": "intermediate.int_playlist__observations",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_playlist__observations",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_playlist__recording_days.sql",
+      "id": "rel:intermediate.int_playlist__recording_days",
+      "kind": "relation",
+      "label": "intermediate.int_playlist__recording_days",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_playlist__recording_days",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_playlist__rights.sql",
+      "id": "rel:intermediate.int_playlist__rights",
+      "kind": "relation",
+      "label": "intermediate.int_playlist__rights",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_playlist__rights",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_playlist__snapshots.sql",
+      "id": "rel:intermediate.int_playlist__snapshots",
+      "kind": "relation",
+      "label": "intermediate.int_playlist__snapshots",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_playlist__snapshots",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_playlist__track_days.sql",
+      "id": "rel:intermediate.int_playlist__track_days",
+      "kind": "relation",
+      "label": "intermediate.int_playlist__track_days",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_playlist__track_days",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_radio__rotation_events.sql",
+      "id": "rel:intermediate.int_radio__rotation_events",
+      "kind": "relation",
+      "label": "intermediate.int_radio__rotation_events",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_radio__rotation_events",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/intermediate/int_reference__current.sql",
+      "id": "rel:intermediate.int_reference__current",
+      "kind": "relation",
+      "label": "intermediate.int_reference__current",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_reference__current",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_age__daily.sql",
+      "id": "rel:intermediate.int_song_age__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_age__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_age__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_aliases__daily.sql",
+      "id": "rel:intermediate.int_song_aliases__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_aliases__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_aliases__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_apple_successors__daily.sql",
+      "id": "rel:intermediate.int_song_apple_successors__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_apple_successors__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_apple_successors__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_artists__daily.sql",
+      "id": "rel:intermediate.int_song_artists__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_artists__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_artists__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_cluster__daily.sql",
+      "id": "rel:intermediate.int_song_cluster__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_cluster__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_cluster__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_cluster_edges__daily.sql",
+      "id": "rel:intermediate.int_song_cluster_edges__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_cluster_edges__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_cluster_edges__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_cluster_inputs__daily.sql",
+      "id": "rel:intermediate.int_song_cluster_inputs__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_cluster_inputs__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_cluster_inputs__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_entries__daily.sql",
+      "id": "rel:intermediate.int_song_entries__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_entries__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_entries__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_evidence__daily.sql",
+      "id": "rel:intermediate.int_song_evidence__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_evidence__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_evidence__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_followers__daily.sql",
+      "id": "rel:intermediate.int_song_followers__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_followers__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_followers__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_group_evidence__daily.sql",
+      "id": "rel:intermediate.int_song_group_evidence__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_group_evidence__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_group_evidence__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_key__daily.sql",
+      "id": "rel:intermediate.int_song_key__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_key__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_key__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_movement__daily.sql",
+      "id": "rel:intermediate.int_song_movement__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_movement__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_movement__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_shazam__daily.sql",
+      "id": "rel:intermediate.int_song_shazam__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_shazam__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_shazam__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_song_windows__daily.sql",
+      "id": "rel:intermediate.int_song_windows__daily",
+      "kind": "relation",
+      "label": "intermediate.int_song_windows__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_song_windows__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_spotify__track_artist_inputs.sql",
+      "id": "rel:intermediate.int_spotify__track_artist_inputs",
+      "kind": "relation",
+      "label": "intermediate.int_spotify__track_artist_inputs",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_spotify__track_artist_inputs",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/intermediate/int_track_identity.sql",
+      "id": "rel:intermediate.int_track_identity",
+      "kind": "relation",
+      "label": "intermediate.int_track_identity",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_track_identity",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_track_identity__daily.sql",
+      "id": "rel:intermediate.int_track_identity__daily",
+      "kind": "relation",
+      "label": "intermediate.int_track_identity__daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_track_identity__daily",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_wiki__articles.sql",
+      "id": "rel:intermediate.int_wiki__articles",
+      "kind": "relation",
+      "label": "intermediate.int_wiki__articles",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_wiki__articles",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_wiki__artist_qids.sql",
+      "id": "rel:intermediate.int_wiki__artist_qids",
+      "kind": "relation",
+      "label": "intermediate.int_wiki__artist_qids",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_wiki__artist_qids",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/intermediate/int_wiki__receipts.sql",
+      "id": "rel:intermediate.int_wiki__receipts",
+      "kind": "relation",
+      "label": "intermediate.int_wiki__receipts",
+      "preview": "No preview is available. See source details.",
+      "relation": "intermediate.int_wiki__receipts",
+      "short_label": null,
+      "stage": "intermediate",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_arrivals_current.sql",
+      "id": "rel:marts.mart_arrivals_current",
+      "kind": "relation",
+      "label": "marts.mart_arrivals_current",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_arrivals_current",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_chart_history.sql",
+      "id": "rel:marts.mart_chart_history",
+      "kind": "relation",
+      "label": "marts.mart_chart_history",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_chart_history",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_early_signals_current.sql",
+      "id": "rel:marts.mart_early_signals_current",
+      "kind": "relation",
+      "label": "marts.mart_early_signals_current",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_early_signals_current",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_editorial_entries.sql",
+      "id": "rel:marts.mart_editorial_entries",
+      "kind": "relation",
+      "label": "marts.mart_editorial_entries",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_editorial_entries",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_editorial_presence.sql",
+      "id": "rel:marts.mart_editorial_presence",
+      "kind": "relation",
+      "label": "marts.mart_editorial_presence",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_editorial_presence",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_playlist_coverage.sql",
+      "id": "rel:marts.mart_playlist_coverage",
+      "kind": "relation",
+      "label": "marts.mart_playlist_coverage",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_playlist_coverage",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": "playlists",
+      "file": "dbt/models/marts/global/mart_playlist_events.sql",
+      "id": "rel:marts.mart_playlist_events",
+      "kind": "relation",
+      "label": "Playlist adds and removals",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_playlist_events",
+      "short_label": "Playlist changes",
+      "stage": "ready",
+      "tier": 1
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_playlist_membership_current.sql",
+      "id": "rel:marts.mart_playlist_membership_current",
+      "kind": "relation",
+      "label": "marts.mart_playlist_membership_current",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_playlist_membership_current",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": "playlists",
+      "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+      "id": "rel:marts.mart_playlist_profile",
+      "kind": "relation",
+      "label": "Playlist profiles",
+      "preview": "reviewed",
+      "relation": "marts.mart_playlist_profile",
+      "short_label": "Playlist profiles",
+      "stage": "ready",
+      "tier": 1
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_radio_rotation.sql",
+      "id": "rel:marts.mart_radio_rotation",
+      "kind": "relation",
+      "label": "marts.mart_radio_rotation",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_radio_rotation",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_readiness.sql",
+      "id": "rel:marts.mart_readiness",
+      "kind": "relation",
+      "label": "marts.mart_readiness",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_readiness",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_search_index.sql",
+      "id": "rel:marts.mart_search_index",
+      "kind": "relation",
+      "label": "marts.mart_search_index",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_search_index",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": "charts",
+      "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+      "id": "rel:marts.mart_shazam_chart_daily",
+      "kind": "relation",
+      "label": "Shazam charts",
+      "preview": "reviewed",
+      "relation": "marts.mart_shazam_chart_daily",
+      "short_label": "Shazam charts",
+      "stage": "ready",
+      "tier": 1
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_song_aliases.sql",
+      "id": "rel:marts.mart_song_aliases",
+      "kind": "relation",
+      "label": "marts.mart_song_aliases",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_song_aliases",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_song_cluster_members.sql",
+      "id": "rel:marts.mart_song_cluster_members",
+      "kind": "relation",
+      "label": "marts.mart_song_cluster_members",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_song_cluster_members",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_song_day.sql",
+      "id": "rel:marts.mart_song_day",
+      "kind": "relation",
+      "label": "marts.mart_song_day",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_song_day",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_top_movers.sql",
+      "id": "rel:marts.mart_top_movers",
+      "kind": "relation",
+      "label": "marts.mart_top_movers",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_top_movers",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": "playlists",
+      "file": "dbt/models/marts/global/mart_top_movers_current.sql",
+      "id": "rel:marts.mart_top_movers_current",
+      "kind": "relation",
+      "label": "Songs rising together",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_top_movers_current",
+      "short_label": "Rising songs",
+      "stage": "ready",
+      "tier": 1
+    },
+    {
+      "cadence": "daily",
+      "family": "playlists",
+      "file": "dbt/models/marts/global/mart_track_daily_streams.sql",
+      "id": "rel:marts.mart_track_daily_streams",
+      "kind": "relation",
+      "label": "Song play counts",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_track_daily_streams",
+      "short_label": "Play counts",
+      "stage": "ready",
+      "tier": 1
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_track_identity_audit.sql",
+      "id": "rel:marts.mart_track_identity_audit",
+      "kind": "relation",
+      "label": "marts.mart_track_identity_audit",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_track_identity_audit",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_track_playlist_followers.sql",
+      "id": "rel:marts.mart_track_playlist_followers",
+      "kind": "relation",
+      "label": "marts.mart_track_playlist_followers",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_track_playlist_followers",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/marts/global/mart_track_playlist_followers_by_variant.sql",
+      "id": "rel:marts.mart_track_playlist_followers_by_variant",
+      "kind": "relation",
+      "label": "marts.mart_track_playlist_followers_by_variant",
+      "preview": "No preview is available. See source details.",
+      "relation": "marts.mart_track_playlist_followers_by_variant",
+      "short_label": null,
+      "stage": "marts",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw._enrichment_completion",
+      "kind": "relation",
+      "label": "raw._enrichment_completion",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw._enrichment_completion",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw._run_completion",
+      "kind": "relation",
+      "label": "raw._run_completion",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw._run_completion",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.apple_song_durations",
+      "kind": "relation",
+      "label": "raw.apple_song_durations",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.apple_song_durations",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.bc_releases",
+      "kind": "relation",
+      "label": "raw.bc_releases",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.bc_releases",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.bc_tracks",
+      "kind": "relation",
+      "label": "raw.bc_tracks",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.bc_tracks",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.chart_entries",
+      "kind": "relation",
+      "label": "raw.chart_entries",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.chart_entries",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.cost_ledger",
+      "kind": "relation",
+      "label": "raw.cost_ledger",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.cost_ledger",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.cycle_attempts",
+      "kind": "relation",
+      "label": "raw.cycle_attempts",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.cycle_attempts",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.cycle_inputs",
+      "kind": "relation",
+      "label": "raw.cycle_inputs",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.cycle_inputs",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.cycles",
+      "kind": "relation",
+      "label": "raw.cycles",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.cycles",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.dump_stamps",
+      "kind": "relation",
+      "label": "raw.dump_stamps",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.dump_stamps",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.jev_instrument_family",
+      "kind": "relation",
+      "label": "raw.jev_instrument_family",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.jev_instrument_family",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.lb_fresh_releases",
+      "kind": "relation",
+      "label": "raw.lb_fresh_releases",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.lb_fresh_releases",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.lb_popularity",
+      "kind": "relation",
+      "label": "raw.lb_popularity",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.lb_popularity",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.lb_similar_artists",
+      "kind": "relation",
+      "label": "raw.lb_similar_artists",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.lb_similar_artists",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.lb_sitewide",
+      "kind": "relation",
+      "label": "raw.lb_sitewide",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.lb_sitewide",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_artist",
+      "kind": "relation",
+      "label": "raw.mb_artist",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_artist",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_artist_catalog",
+      "kind": "relation",
+      "label": "raw.mb_artist_catalog",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_artist_catalog",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_artist_credit",
+      "kind": "relation",
+      "label": "raw.mb_artist_credit",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_artist_credit",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_artist_credit_name",
+      "kind": "relation",
+      "label": "raw.mb_artist_credit_name",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_artist_credit_name",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_artist_ipi",
+      "kind": "relation",
+      "label": "raw.mb_artist_ipi",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_artist_ipi",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_artist_isni",
+      "kind": "relation",
+      "label": "raw.mb_artist_isni",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_artist_isni",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_artist_release_groups",
+      "kind": "relation",
+      "label": "raw.mb_artist_release_groups",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_artist_release_groups",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_generation",
+      "kind": "relation",
+      "label": "raw.mb_generation",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_generation",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_isrc",
+      "kind": "relation",
+      "label": "raw.mb_isrc",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_isrc",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_l_artist_label",
+      "kind": "relation",
+      "label": "raw.mb_l_artist_label",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_l_artist_label",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_l_label_label",
+      "kind": "relation",
+      "label": "raw.mb_l_label_label",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_l_label_label",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_label",
+      "kind": "relation",
+      "label": "raw.mb_label",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_label",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_medium",
+      "kind": "relation",
+      "label": "raw.mb_medium",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_medium",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_recording",
+      "kind": "relation",
+      "label": "raw.mb_recording",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_recording",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_redirect",
+      "kind": "relation",
+      "label": "raw.mb_redirect",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_redirect",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_release",
+      "kind": "relation",
+      "label": "raw.mb_release",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_release",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_release_group",
+      "kind": "relation",
+      "label": "raw.mb_release_group",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_release_group",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_resolve",
+      "kind": "relation",
+      "label": "raw.mb_resolve",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_resolve",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_resolve_closure",
+      "kind": "relation",
+      "label": "raw.mb_resolve_closure",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_resolve_closure",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_track",
+      "kind": "relation",
+      "label": "raw.mb_track",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_track",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.mb_url_link",
+      "kind": "relation",
+      "label": "raw.mb_url_link",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.mb_url_link",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.playlist_candidates",
+      "kind": "relation",
+      "label": "raw.playlist_candidates",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.playlist_candidates",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": "playlists",
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.playlist_items",
+      "kind": "relation",
+      "label": "Songs on each playlist",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.playlist_items",
+      "short_label": "Playlist songs",
+      "stage": "collected",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": "playlists",
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.playlist_snapshots",
+      "kind": "relation",
+      "label": "Each playlist read",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.playlist_snapshots",
+      "short_label": "Playlist reads",
+      "stage": "collected",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.radio_plays",
+      "kind": "relation",
+      "label": "raw.radio_plays",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.radio_plays",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.sc_tracks",
+      "kind": "relation",
+      "label": "raw.sc_tracks",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.sc_tracks",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": "charts",
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.shazam_chart_entries",
+      "kind": "relation",
+      "label": "Shazam charts as read",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.shazam_chart_entries",
+      "short_label": "Charts as read",
+      "stage": "collected",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.sp_track_artists",
+      "kind": "relation",
+      "label": "raw.sp_track_artists",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.sp_track_artists",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.streamlines",
+      "kind": "relation",
+      "label": "raw.streamlines",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.streamlines",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.targets",
+      "kind": "relation",
+      "label": "raw.targets",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.targets",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.track_isrc_crosswalk",
+      "kind": "relation",
+      "label": "raw.track_isrc_crosswalk",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.track_isrc_crosswalk",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.wiki_lookups",
+      "kind": "relation",
+      "label": "raw.wiki_lookups",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.wiki_lookups",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.wiki_pageviews",
+      "kind": "relation",
+      "label": "raw.wiki_pageviews",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.wiki_pageviews",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/models/sources/_raw__sources.yml",
+      "id": "rel:raw.wiki_sitelinks",
+      "kind": "relation",
+      "label": "raw.wiki_sitelinks",
+      "preview": "No preview is available. See source details.",
+      "relation": "raw.wiki_sitelinks",
+      "short_label": null,
+      "stage": "raw",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/artist_stage_thresholds.csv",
+      "id": "rel:reference.artist_stage_thresholds",
+      "kind": "relation",
+      "label": "reference.artist_stage_thresholds",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.artist_stage_thresholds",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/billboard_match_rules.csv",
+      "id": "rel:reference.billboard_match_rules",
+      "kind": "relation",
+      "label": "reference.billboard_match_rules",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.billboard_match_rules",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/chart_caps.csv",
+      "id": "rel:reference.chart_caps",
+      "kind": "relation",
+      "label": "reference.chart_caps",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.chart_caps",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/identity_confidence_floors.csv",
+      "id": "rel:reference.identity_confidence_floors",
+      "kind": "relation",
+      "label": "reference.identity_confidence_floors",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.identity_confidence_floors",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/jev_instruments.csv",
+      "id": "rel:reference.jev_instruments",
+      "kind": "relation",
+      "label": "reference.jev_instruments",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.jev_instruments",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/lb_similarity_algorithms.csv",
+      "id": "rel:reference.lb_similarity_algorithms",
+      "kind": "relation",
+      "label": "reference.lb_similarity_algorithms",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.lb_similarity_algorithms",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/movement_parameters.csv",
+      "id": "rel:reference.movement_parameters",
+      "kind": "relation",
+      "label": "reference.movement_parameters",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.movement_parameters",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/playlist_reach_tiers.csv",
+      "id": "rel:reference.playlist_reach_tiers",
+      "kind": "relation",
+      "label": "reference.playlist_reach_tiers",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.playlist_reach_tiers",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "rel:reference.rights_registry",
+      "kind": "relation",
+      "label": "reference.rights_registry",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.rights_registry",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/shazam_markets.csv",
+      "id": "rel:reference.shazam_markets",
+      "kind": "relation",
+      "label": "reference.shazam_markets",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.shazam_markets",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/song_age_parameters.csv",
+      "id": "rel:reference.song_age_parameters",
+      "kind": "relation",
+      "label": "reference.song_age_parameters",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.song_age_parameters",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/song_cluster_rules.csv",
+      "id": "rel:reference.song_cluster_rules",
+      "kind": "relation",
+      "label": "reference.song_cluster_rules",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.song_cluster_rules",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/source_priority.csv",
+      "id": "rel:reference.source_priority",
+      "kind": "relation",
+      "label": "reference.source_priority",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.source_priority",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/track_candidates_fixture.csv",
+      "id": "rel:reference.track_candidates_fixture",
+      "kind": "relation",
+      "label": "reference.track_candidates_fixture",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.track_candidates_fixture",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/wiki_projects.csv",
+      "id": "rel:reference.wiki_projects",
+      "kind": "relation",
+      "label": "reference.wiki_projects",
+      "preview": "No preview is available. See source details.",
+      "relation": "reference.wiki_projects",
+      "short_label": null,
+      "stage": "reference",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_apple__song_durations.sql",
+      "id": "rel:staging.stg_apple__song_durations",
+      "kind": "relation",
+      "label": "staging.stg_apple__song_durations",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_apple__song_durations",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_bandcamp__releases.sql",
+      "id": "rel:staging.stg_bandcamp__releases",
+      "kind": "relation",
+      "label": "staging.stg_bandcamp__releases",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_bandcamp__releases",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_bandcamp__tracks.sql",
+      "id": "rel:staging.stg_bandcamp__tracks",
+      "kind": "relation",
+      "label": "staging.stg_bandcamp__tracks",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_bandcamp__tracks",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "weekly",
+      "family": null,
+      "file": "dbt/models/staging/stg_billboard__chart_entries.sql",
+      "id": "rel:staging.stg_billboard__chart_entries",
+      "kind": "relation",
+      "label": "staging.stg_billboard__chart_entries",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_billboard__chart_entries",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_billboard__chart_entries_daily.sql",
+      "id": "rel:staging.stg_billboard__chart_entries_daily",
+      "kind": "relation",
+      "label": "staging.stg_billboard__chart_entries_daily",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_billboard__chart_entries_daily",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "weekly",
+      "family": null,
+      "file": "dbt/models/staging/stg_control__targets_weekly.sql",
+      "id": "rel:staging.stg_control__targets_weekly",
+      "kind": "relation",
+      "label": "staging.stg_control__targets_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_control__targets_weekly",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/staging/stg_enrich__mb_resolve.sql",
+      "id": "rel:staging.stg_enrich__mb_resolve",
+      "kind": "relation",
+      "label": "staging.stg_enrich__mb_resolve",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_enrich__mb_resolve",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "hourly",
+      "family": null,
+      "file": "dbt/models/staging/stg_enrich__track_isrc_crosswalk.sql",
+      "id": "rel:staging.stg_enrich__track_isrc_crosswalk",
+      "kind": "relation",
+      "label": "staging.stg_enrich__track_isrc_crosswalk",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_enrich__track_isrc_crosswalk",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_jev__instrument_family.sql",
+      "id": "rel:staging.stg_jev__instrument_family",
+      "kind": "relation",
+      "label": "staging.stg_jev__instrument_family",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_jev__instrument_family",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_kexp__plays.sql",
+      "id": "rel:staging.stg_kexp__plays",
+      "kind": "relation",
+      "label": "staging.stg_kexp__plays",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_kexp__plays",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_lb__fresh_releases.sql",
+      "id": "rel:staging.stg_lb__fresh_releases",
+      "kind": "relation",
+      "label": "staging.stg_lb__fresh_releases",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_lb__fresh_releases",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_lb__popularity.sql",
+      "id": "rel:staging.stg_lb__popularity",
+      "kind": "relation",
+      "label": "staging.stg_lb__popularity",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_lb__popularity",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_lb__similar_artists.sql",
+      "id": "rel:staging.stg_lb__similar_artists",
+      "kind": "relation",
+      "label": "staging.stg_lb__similar_artists",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_lb__similar_artists",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "weekly",
+      "family": null,
+      "file": "dbt/models/staging/stg_lb__sitewide.sql",
+      "id": "rel:staging.stg_lb__sitewide",
+      "kind": "relation",
+      "label": "staging.stg_lb__sitewide",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_lb__sitewide",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_mb__artist_catalog.sql",
+      "id": "rel:staging.stg_mb__artist_catalog",
+      "kind": "relation",
+      "label": "staging.stg_mb__artist_catalog",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_mb__artist_catalog",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_mb__artist_release_groups.sql",
+      "id": "rel:staging.stg_mb__artist_release_groups",
+      "kind": "relation",
+      "label": "staging.stg_mb__artist_release_groups",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_mb__artist_release_groups",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "weekly",
+      "family": null,
+      "file": "dbt/models/staging/stg_mb__reference_weekly.sql",
+      "id": "rel:staging.stg_mb__reference_weekly",
+      "kind": "relation",
+      "label": "staging.stg_mb__reference_weekly",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_mb__reference_weekly",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_playlist__candidates.sql",
+      "id": "rel:staging.stg_playlist__candidates",
+      "kind": "relation",
+      "label": "staging.stg_playlist__candidates",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_playlist__candidates",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_playlist__items.sql",
+      "id": "rel:staging.stg_playlist__items",
+      "kind": "relation",
+      "label": "staging.stg_playlist__items",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_playlist__items",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_playlist__snapshots.sql",
+      "id": "rel:staging.stg_playlist__snapshots",
+      "kind": "relation",
+      "label": "staging.stg_playlist__snapshots",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_playlist__snapshots",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_shazam__chart_entries.sql",
+      "id": "rel:staging.stg_shazam__chart_entries",
+      "kind": "relation",
+      "label": "staging.stg_shazam__chart_entries",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_shazam__chart_entries",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_soundcloud__tracks.sql",
+      "id": "rel:staging.stg_soundcloud__tracks",
+      "kind": "relation",
+      "label": "staging.stg_soundcloud__tracks",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_soundcloud__tracks",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_spotify__track_artists.sql",
+      "id": "rel:staging.stg_spotify__track_artists",
+      "kind": "relation",
+      "label": "staging.stg_spotify__track_artists",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_spotify__track_artists",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_wiki__lookups.sql",
+      "id": "rel:staging.stg_wiki__lookups",
+      "kind": "relation",
+      "label": "staging.stg_wiki__lookups",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_wiki__lookups",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_wiki__pageviews.sql",
+      "id": "rel:staging.stg_wiki__pageviews",
+      "kind": "relation",
+      "label": "staging.stg_wiki__pageviews",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_wiki__pageviews",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": "daily",
+      "family": null,
+      "file": "dbt/models/staging/stg_wiki__sitelinks.sql",
+      "id": "rel:staging.stg_wiki__sitelinks",
+      "kind": "relation",
+      "label": "staging.stg_wiki__sitelinks",
+      "preview": "No preview is available. See source details.",
+      "relation": "staging.stg_wiki__sitelinks",
+      "short_label": null,
+      "stage": "staging",
+      "tier": 2
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:Apple",
+      "kind": "source",
+      "label": "Apple",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "Apple",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:Apple Music",
+      "kind": "source",
+      "label": "Apple Music",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "Apple Music",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:Bandcamp",
+      "kind": "source",
+      "label": "Bandcamp",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "Bandcamp",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:Billboard Hot 100 (API/provider TBD)",
+      "kind": "source",
+      "label": "Billboard Hot 100",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "Billboard Hot 100",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:Deezer",
+      "kind": "source",
+      "label": "Deezer",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "Deezer",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:KEXP",
+      "kind": "source",
+      "label": "KEXP",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "KEXP",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:ListenBrainz",
+      "kind": "source",
+      "label": "ListenBrainz",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "ListenBrainz",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:ListenBrainz Labs",
+      "kind": "source",
+      "label": "ListenBrainz Labs",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "ListenBrainz Labs",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:MusicBrainz",
+      "kind": "source",
+      "label": "MusicBrainz",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "MusicBrainz",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:Shazam",
+      "kind": "source",
+      "label": "Shazam",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "Shazam",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:SoundCloud",
+      "kind": "source",
+      "label": "SoundCloud",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "SoundCloud",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:Spotify",
+      "kind": "source",
+      "label": "Spotify",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "Spotify",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:TypeSafe",
+      "kind": "source",
+      "label": "TypeSafe",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "TypeSafe",
+      "stage": "source",
+      "tier": 1
+    },
+    {
+      "cadence": null,
+      "family": null,
+      "file": "dbt/seeds/rights_registry.csv",
+      "id": "source:Wikimedia",
+      "kind": "source",
+      "label": "Wikimedia",
+      "preview": "No preview is available. See source details.",
+      "relation": null,
+      "short_label": "Wikimedia",
+      "stage": "source",
+      "tier": 1
+    }
+  ],
+  "peeks": {
+    "marts.mart_playlist_profile": {
+      "columns": [
+        "title",
+        "platform",
+        "followers",
+        "observed_at"
+      ],
+      "filters": [
+        "platform",
+        "playlist_id",
+        "snapshot_id"
+      ],
+      "guards": [],
+      "order": [
+        "observed_at",
+        "snapshot_id"
+      ],
+      "policy": "public_metadata",
+      "provenance": {
+        "followers": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "observed_at": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "platform": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "playlist_id": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "snapshot_id": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "title": {
+          "file": "dbt/models/marts/global/mart_playlist_profile.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        }
+      },
+      "public_links": [],
+      "workbench": true
+    },
+    "marts.mart_shazam_chart_daily": {
+      "columns": [
+        "title_text",
+        "artist_text",
+        "position",
+        "chart_date"
+      ],
+      "filters": [
+        "chart",
+        "chart_date",
+        "position"
+      ],
+      "guards": [],
+      "order": [
+        "chart_date",
+        "chart",
+        "position"
+      ],
+      "policy": "public_metadata",
+      "provenance": {
+        "artist_text": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "chart": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "chart_date": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "position": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        },
+        "title_text": {
+          "file": "dbt/models/marts/global/mart_shazam_chart_daily.sql",
+          "reason": "Public song, chart or playlist metadata; no owner identity or retained text."
+        }
+      },
+      "public_links": [],
+      "workbench": true
+    }
+  },
+  "schema_version": 1,
+  "simple_edges": [
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "to": "entry:home.follower_exposure_gain",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "to": "entry:home.playlist_adds",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_playlist_events",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "rel:intermediate.int_song_evidence__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "rel:marts.mart_playlist_profile",
+      "to": "entry:home.follower_exposure_gain",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_playlist_profile",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "rel:intermediate.int_song_evidence__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "rel:marts.mart_shazam_chart_daily",
+      "to": "entry:home.shazam_spread_gain",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_shazam_chart_daily",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "rel:intermediate.int_song_evidence__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "to": "entry:home.follower_exposure_gain",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "to": "entry:home.playlist_adds",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "to": "entry:home.shazam_spread_gain",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_top_movers_current",
+      "to": "entry:home.stream_rate_gain",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_track_daily_streams",
+      "to": "entry:home.stream_rate_gain",
+      "via": []
+    },
+    {
+      "from": "rel:marts.mart_track_daily_streams",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "rel:intermediate.int_song_evidence__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "to": "rel:marts.mart_playlist_events",
+      "via": [
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "to": "rel:marts.mart_playlist_profile",
+      "via": [
+        "rel:staging.stg_playlist__items",
+        "rel:intermediate.int_playlist__rights"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "to": "rel:marts.mart_shazam_chart_daily",
+      "via": [
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_song_cluster_inputs__daily",
+        "rel:intermediate.int_song_cluster__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_items",
+      "to": "rel:marts.mart_track_daily_streams",
+      "via": [
+        "rel:staging.stg_playlist__items",
+        "rel:intermediate.int_playlist__observations"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "to": "rel:marts.mart_playlist_events",
+      "via": [
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "to": "rel:marts.mart_playlist_profile",
+      "via": [
+        "rel:staging.stg_playlist__snapshots"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "to": "rel:marts.mart_shazam_chart_daily",
+      "via": [
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_song_cluster_inputs__daily",
+        "rel:intermediate.int_song_cluster__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "rel:raw.playlist_snapshots",
+      "to": "rel:marts.mart_track_daily_streams",
+      "via": [
+        "rel:staging.stg_playlist__snapshots"
+      ]
+    },
+    {
+      "from": "rel:raw.shazam_chart_entries",
+      "to": "rel:marts.mart_shazam_chart_daily",
+      "via": [
+        "rel:staging.stg_shazam__chart_entries"
+      ]
+    },
+    {
+      "from": "rel:raw.shazam_chart_entries",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "rel:staging.stg_shazam__chart_entries",
+        "rel:intermediate.int_song_key__daily",
+        "rel:intermediate.int_cluster_day__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "source:Apple Music",
+      "to": "rel:raw.playlist_items",
+      "via": [
+        "fn:am_playlist"
+      ]
+    },
+    {
+      "from": "source:Apple Music",
+      "to": "rel:raw.playlist_snapshots",
+      "via": [
+        "fn:am_playlist"
+      ]
+    },
+    {
+      "from": "source:Apple",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "fn:apple_song_duration",
+        "rel:raw.apple_song_durations",
+        "rel:staging.stg_apple__song_durations",
+        "rel:intermediate.int_song_cluster_inputs__daily",
+        "rel:intermediate.int_song_cluster__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "source:Bandcamp",
+      "to": "rel:marts.mart_playlist_events",
+      "via": [
+        "fn:bc_tralbum",
+        "rel:raw.bc_tracks",
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "source:Bandcamp",
+      "to": "rel:marts.mart_shazam_chart_daily",
+      "via": [
+        "fn:bc_tralbum",
+        "rel:raw.bc_tracks",
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "source:Bandcamp",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "fn:bc_tralbum",
+        "rel:raw.bc_tracks",
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_song_cluster_inputs__daily",
+        "rel:intermediate.int_song_cluster__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "source:Bandcamp",
+      "to": "rel:raw.playlist_items",
+      "via": [
+        "fn:bc_daily_list"
+      ]
+    },
+    {
+      "from": "source:Bandcamp",
+      "to": "rel:raw.playlist_snapshots",
+      "via": [
+        "fn:bc_daily_list"
+      ]
+    },
+    {
+      "from": "source:Billboard Hot 100 (API/provider TBD)",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "fn:billboard_hot100",
+        "rel:raw.chart_entries",
+        "rel:staging.stg_billboard__chart_entries_daily",
+        "rel:intermediate.int_billboard_song__daily",
+        "rel:marts.mart_song_day",
+        "rel:intermediate.int_cluster_day__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "source:Deezer",
+      "to": "rel:marts.mart_playlist_events",
+      "via": [
+        "fn:track_isrc_crosswalk",
+        "rel:raw.track_isrc_crosswalk",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "source:Deezer",
+      "to": "rel:marts.mart_shazam_chart_daily",
+      "via": [
+        "fn:track_isrc_crosswalk",
+        "rel:raw.track_isrc_crosswalk",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "source:Deezer",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "fn:track_isrc_crosswalk",
+        "rel:raw.track_isrc_crosswalk",
+        "rel:intermediate.int_song_cluster_inputs__daily",
+        "rel:intermediate.int_song_cluster__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "source:MusicBrainz",
+      "to": "rel:marts.mart_playlist_events",
+      "via": [
+        "fn:mb_resolve",
+        "rel:raw.mb_resolve",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "source:MusicBrainz",
+      "to": "rel:marts.mart_shazam_chart_daily",
+      "via": [
+        "fn:mb_resolve",
+        "rel:raw.mb_resolve",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "source:MusicBrainz",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "fn:mb_resolve",
+        "rel:raw.mb_resolve",
+        "rel:intermediate.int_track_identity__daily",
+        "rel:intermediate.int_song_key__daily",
+        "rel:intermediate.int_cluster_day__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "source:Shazam",
+      "to": "rel:raw.shazam_chart_entries",
+      "via": [
+        "fn:sz_chart"
+      ]
+    },
+    {
+      "from": "source:SoundCloud",
+      "to": "rel:marts.mart_playlist_events",
+      "via": [
+        "fn:sc_curator_playlists",
+        "rel:raw.sc_tracks",
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "source:SoundCloud",
+      "to": "rel:marts.mart_shazam_chart_daily",
+      "via": [
+        "fn:sc_curator_playlists",
+        "rel:raw.sc_tracks",
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_track_identity__daily"
+      ]
+    },
+    {
+      "from": "source:SoundCloud",
+      "to": "rel:marts.mart_top_movers_current",
+      "via": [
+        "fn:sc_curator_playlists",
+        "rel:raw.sc_tracks",
+        "rel:intermediate.int_identity__track_inputs_daily",
+        "rel:intermediate.int_song_cluster_inputs__daily",
+        "rel:intermediate.int_song_cluster__daily",
+        "rel:marts.mart_top_movers"
+      ]
+    },
+    {
+      "from": "source:SoundCloud",
+      "to": "rel:raw.playlist_items",
+      "via": [
+        "fn:sc_curator_playlists"
+      ]
+    },
+    {
+      "from": "source:SoundCloud",
+      "to": "rel:raw.playlist_snapshots",
+      "via": [
+        "fn:sc_curator_playlists"
+      ]
+    },
+    {
+      "from": "source:Spotify",
+      "to": "rel:raw.playlist_items",
+      "via": [
+        "fn:sp_playlist"
+      ]
+    },
+    {
+      "from": "source:Spotify",
+      "to": "rel:raw.playlist_snapshots",
+      "via": [
+        "fn:sp_playlist"
+      ]
+    }
+  ]
+}

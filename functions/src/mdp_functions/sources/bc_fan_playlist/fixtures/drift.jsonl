@@ -1,0 +1,1 @@
+{"request": {"method": "GET", "url": "https://bandcamp.com/fan-example-a/playlist/post-hardcore"}, "response": {"status": 200, "headers": {"content-type": "text/html; charset=utf-8"}, "body": "<html><body><div id='x'></div></body></html>"}}

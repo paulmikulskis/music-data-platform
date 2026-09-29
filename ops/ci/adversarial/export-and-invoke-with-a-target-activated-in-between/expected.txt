@@ -1,0 +1,2 @@
+ASSERT PASS: target activated after export absent from this cycle
+ASSERT PASS: new target appears in next scheduled export

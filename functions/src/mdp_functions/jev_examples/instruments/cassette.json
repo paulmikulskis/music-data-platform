@@ -1,0 +1,406 @@
+{
+  "kind": "synthetic",
+  "note": "Authored test responses. Never a vendor quality measurement.",
+  "entries": {
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:a7837e85681cf6af37a2380f60019088d3a3c82b7c0ff8e8e77ceb6efe4a0816": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "strings",
+          "probabilities": {
+            "strings": 0.94,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:ba0a60edb121003261bd598a9d0c7ff522280afad3250317330d08998a162842": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "strings",
+          "probabilities": {
+            "strings": 0.94,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:d1d3de5297e3d629d73a5c33e1c71a5ab20b067fd20c674f7e43472af7c939ce": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "strings",
+          "probabilities": {
+            "strings": 0.94,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:f345c4c0c3de45ea2f7dd797721dfe0b6562d95ca5521e1a9dfe1dc42aab6455": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "strings",
+          "probabilities": {
+            "strings": 0.94,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:7bee623b52fcf845ed7550d4840d7aa7c514129e8fe280730adb0fda2ecbb184": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "woodwind",
+          "probabilities": {
+            "strings": 0.15,
+            "woodwind": 0.55,
+            "brass": 0.15,
+            "percussion": 0.15
+          },
+          "confidence": 0.4
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:44fd29c874d2a0822281d3b23e94b3387e38a68dfdceac0541fe8f14e8e2f165": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "woodwind",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.94,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:1435c1106821c76de762e3e463cf3365eaf8e502267e0c586c2e39fd4876fa9a": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "woodwind",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.94,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:f14a3d15e6415d15548fde10fac89b73922aaf2790b0b0828c312993e45ed59d": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "woodwind",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.94,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:feed68d0ef07f9d59563a0e8db27022bac00995a808a8b320389797feb035adf": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "woodwind",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.94,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:39c428dcc930582f001808767284b38a8a96c41a04b2a19bca97c0d481668a4d": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "woodwind",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.94,
+            "brass": 0.020000000000000018,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:04c387943b2f39b0bd1747ee99221fbaecfb81c02b5a9eda001bfdc92d30e1f2": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "brass",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.94,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:97a801c77d55a459ab8a2ca3b0e553952c118e954fc47d89f752356e732be5ee": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "brass",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.94,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:c5e6e244392836b9caf0ce165b1f0cd839e16b965bd88948f8502f9c70d0122a": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "brass",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.94,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:f2a2b06c62dfb1d0b2374eef694a93562b49c07e21857a43c02b1a9898efb49c": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "brass",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.94,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:5aefe70e61027b046e72d6240d338ec059e3504d58b62a80cb46dde25ae786a2": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "brass",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.94,
+            "percussion": 0.020000000000000018
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:28feb206a0f110beab2cbadbf2e1e882872dd926949bda675c40160185dda715": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "percussion",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.020000000000000018,
+            "percussion": 0.94
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:aa263432abbe506d2dcdf08d7ee9188f21e17726b8e10be1c79b37a66b6a2012": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "percussion",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.020000000000000018,
+            "percussion": 0.94
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:a148f7e5a552517f70504d308d597052296269892641f9b57848f3c50d3041d8": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "percussion",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.020000000000000018,
+            "percussion": 0.94
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:84e156848ee1b39cdfbfb4709a30830892199509858c4121407e38f8504190dd": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "percussion",
+          "probabilities": {
+            "strings": 0.020000000000000018,
+            "woodwind": 0.020000000000000018,
+            "brass": 0.020000000000000018,
+            "percussion": 0.94
+          },
+          "confidence": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    },
+    "cfd570770b68f4f4ed95bec6e299a0379faae3063dcc55f5a705e0798bbfdb59:bed06f2f8af95326aff4d3c629f2ce0274ecd7991e70093a4056a0a48f21f0dc": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "family": {
+          "type": "choice",
+          "choice": "strings",
+          "probabilities": {
+            "strings": 0.55,
+            "woodwind": 0.15,
+            "brass": 0.15,
+            "percussion": 0.15
+          },
+          "confidence": 0.4
+        }
+      },
+      "usage": {
+        "input_tokens": 120,
+        "output_tokens": 0
+      }
+    }
+  }
+}

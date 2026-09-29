@@ -1,0 +1,83 @@
+services:
+  mdp-pg:
+    image: postgres:17
+    container_name: mdp-pg
+    ports:
+      - "127.0.0.1:5433:5432"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    volumes:
+      - mdp-pg-data:/var/lib/postgresql/data
+  mdp-pg-lake:
+    image: mdp-postgres:local
+    build:
+      context: ../..
+      dockerfile: ops/fly/postgres/Dockerfile
+      args:
+        WITH_PG_LAKE: ${WITH_PG_LAKE:-1}
+    container_name: ${MDP_PG_LAKE_CONTAINER:-mdp-pg-lake}
+    ports:
+      - "127.0.0.1:5434:5432"
+    environment:
+      # Dev-only credentials. Never use these values on Fly.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      MDP_ROLE_PASSWORD_MIGRATOR: migrator
+      MDP_ROLE_PASSWORD_RIGHTS_SYNC: rights_sync
+      MDP_ROLE_PASSWORD_CONTROL_RT: control_rt
+      MDP_ROLE_PASSWORD_FUNCTIONS_RT: functions_rt
+      MDP_ROLE_PASSWORD_SERVICE_READ: service_read
+      MDP_ROLE_PASSWORD_LOADER_WH: loader_wh
+      MDP_ROLE_PASSWORD_DBT_TRANSFORM: dbt_transform
+      MDP_ROLE_PASSWORD_WORKBENCH_WH: workbench_wh
+      MDP_ROLE_PASSWORD_READER_WH: reader_wh
+      MDP_ROLE_PASSWORD_API_KEY_READER: api_key_reader
+      MDP_ROLE_PASSWORD_SHOWCASE_WH: showcase_wh
+      PGDATA: /var/lib/postgresql/data/pgdata
+      MDP_PG_HOSTNAME: localhost
+      PGDUCK_MEMORY_LIMIT: ${PGDUCK_MEMORY_LIMIT:-1GB}
+      MDP_S3_ENDPOINT: http://mdp-minio:9000
+      MDP_S3_ACCESS_KEY: service_read
+      MDP_S3_SECRET_KEY: service_read
+      R2_BUCKET: mdp-dumps
+    volumes:
+      - mdp-pg-lake-data:/var/lib/postgresql/data
+    depends_on:
+      mdp-minio-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "/opt/mdp/boot/healthcheck.sh"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    stop_grace_period: 70s
+  # MinIO removed its public images; Chainguard publishes the same server and client.
+  mdp-minio:
+    image: cgr.dev/chainguard/minio:latest
+    container_name: ${MDP_MINIO_CONTAINER:-mdp-minio}
+    command: server /data --console-address :9001
+    ports:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
+    environment:
+      # Dev-only, role-name credentials for the local S3 stand-in.
+      MINIO_ROOT_USER: service_read
+      MINIO_ROOT_PASSWORD: service_read
+    volumes:
+      - mdp-minio-data:/data
+  mdp-minio-init:
+    # The -dev variant carries the shell the bucket loop below needs.
+    image: cgr.dev/chainguard/minio-client:latest-dev
+    depends_on: [mdp-minio]
+    environment:
+      MINIO_ROOT_USER: service_read
+      MINIO_ROOT_PASSWORD: service_read
+    entrypoint: /bin/sh
+    command:
+      - -ec
+      - |
+        until mc alias set local http://mdp-minio:9000 "$$MINIO_ROOT_USER" "$$MINIO_ROOT_PASSWORD" >/dev/null 2>&1; do sleep 1; done
+        mc mb --ignore-existing local/mdp-dumps
+volumes:
+  mdp-pg-data:
+  mdp-pg-lake-data:
+  mdp-minio-data:

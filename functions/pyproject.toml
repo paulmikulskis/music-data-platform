@@ -1,0 +1,49 @@
+[project]
+name = "mdp-functions"
+version = "0.0.1"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "httpx>=0.28,<0.29",
+  "pydantic>=2.10,<3",
+  "pydantic-settings>=2.7,<3",
+  "structlog>=25,<26",
+  "psycopg[binary,pool]>=3.2,<4",
+  "pyarrow>=19,<24",
+  "beautifulsoup4>=4.13,<5",
+  "boto3>=1.36,<2",
+  "typer>=0.15,<1",
+  "pyyaml>=6,<7",
+  "python-dotenv>=1,<2",
+  "duckdb>=1.2,<2",
+  "pytz>=2025,<2027",
+  # The Core gate loads scoped timezones with zoneinfo; python:3.12-slim images ship
+  # without the legacy and backward-link names, so the IANA database comes with the package.
+  "tzdata>=2025.2,<2027",
+  "opentelemetry-api>=1.30,<2",
+  "opentelemetry-sdk>=1.30,<2",
+  "opentelemetry-exporter-otlp-proto-http>=1.30,<2",
+  "opentelemetry-instrumentation-fastapi>=0.51b0,<1",
+  "opentelemetry-instrumentation-httpx>=0.51b0,<1",
+  "cloudpickle>=3,<4",
+  "sqlglot==30.17.0",
+  "jinja2>=3.1.6,<4",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.11,<1"]
+
+[project.scripts]
+mdp = "mdp_functions.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mdp_functions"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+markers = ["docker: requires local PostgreSQL (MDP_CONTROL_URL, MDP_CONTROL_ADMIN_URL); conftest adds it to every test on the disposable databases"]

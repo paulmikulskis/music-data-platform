@@ -1,0 +1,2 @@
+ASSERT PASS: daily sequence allocation precedes hourly close
+ASSERT PASS: next daily manifest includes late daily dump exactly once

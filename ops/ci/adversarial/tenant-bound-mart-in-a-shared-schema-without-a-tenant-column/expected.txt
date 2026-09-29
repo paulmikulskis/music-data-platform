@@ -1,0 +1,2 @@
+adversarial_tenant: tenant_scoped model in shared schema must expose tenant_id
+PASS adversarial_tenant: tenant scope column/schema

@@ -1,0 +1,4 @@
+{
+  "kind": "pytest",
+  "target": "adversarial_runtime.py::test_deactivation_frozen_revision"
+}

@@ -1,0 +1,2 @@
+PASSED functions/tests/adversarial_runtime.py::test_schema_breaking
+SCHEMA dump dead-lettered; alert; invoke model failed

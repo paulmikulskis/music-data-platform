@@ -1,0 +1,343 @@
+version: 2
+models:
+- name: mart_early_signals_current
+  description: Movement uses observed history minus one day, up to seven UTC days. Only positive movement
+    in two independent families qualifies for movers; early signals have exactly one. Chart spread is
+    separate and never qualifies a second family. Adds count editorial at 3 and algorithmic at 1, with
+    head entries at half confidence. Reach sums followers of entered lists once per window; new_entries
+    counts editorial and new-music lists only. list_kind, movement's reading of a list in
+    playlist_reach_tiers, sets these weights; owner_class stays the platform's label. Each movement_list
+    ranks only its own rows, and signal lists rank new chart markets first.
+    In new_entries, emerging artists rank first among equal scores. Ties use entered list tier,
+    market count and latest entry time, then a fixed hash of day and song key, never key order. Open
+    evidence for source rows.
+  config:
+    pre_hook: '{{ mdp_hash_join_plan() }}'
+    post_hook: '{{ mdp_analyze() }}'
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - movement_list
+      - family
+      - rank
+  columns:
+  - name: family
+    data_type: text
+    description: Independent family; playlists, shazam or streams.
+    constraints:
+    - type: not_null
+  - name: rank
+    data_type: bigint
+    description: Position inside its movement list and family. Places lists order by chart_spread_gain
+      first; then score, emerging artists first in new_entries, list reach tier, markets, entry time and a
+      fixed hash of day and song key.
+    constraints:
+    - type: not_null
+  - name: day
+    data_type: date
+    description: Bound daily cycle day in UTC.
+  - name: song_key
+    data_type: text
+    description: Song link key.
+  - name: title_text
+    data_type: text
+    description: Song title from the daily identity.
+  - name: artist_text
+    data_type: text
+    description: Artist credit from the daily identity.
+  - name: component
+    data_type: text
+    description: Existing movement component that supplies value and evidence.
+  - name: value
+    data_type: double precision
+    description: Positive component value; no percentile or second score.
+  - name: reason_rule
+    data_type: text
+    description: One sentence with a next step to inspect the evidence.
+  - name: evidence
+    data_type: text
+    description: Source row locators and their captured input builds. cluster_confidence is measured
+      precision, the lowest merge-rule Wilson 95% lower bound; open the cluster audit.
+  - &id001
+    name: learning_eligible
+    data_type: boolean
+    data_tests:
+    - not_null
+  - &id002
+    name: resale_permitted
+    data_type: boolean
+    data_tests:
+    - not_null
+  - &id003
+    name: source_keys
+    data_type: text
+    data_tests:
+    - not_null
+  - name: window_days
+    data_type: integer
+    description: Elapsed UTC days back to the observed Shazam baseline, or the configured playlist or stream window.
+  - name: chart_spread_gain
+    data_type: bigint
+    description: New country markets on tracked chart lists or Shazam charts. It ranks signal lists first
+      and never joins the two-family score, because it overlaps playlists and Shazam.
+  - name: list_reach_tier
+    data_type: integer
+    description: Best entered list tier; new_entries reads editorial and new-music lists only. One is widest;
+      four is unclassified. See playlist_reach_tiers.
+  - name: market_count
+    data_type: bigint
+    description: Distinct entered country markets; global and unknown are excluded.
+  - name: last_entered_at
+    data_type: timestamp with time zone
+    description: Most recent qualifying entry observation.
+  - name: movement_list
+    data_type: text
+    description: 'new_entries: new songs by emerging, developing or unknown-stage artists. established_entries:
+      new songs by established artists. catalog_entries: catalog waking up. unplaced: unknown age and no new-music
+      list in the window, so no movement view reads it. Lists never mix.'
+    constraints:
+    - type: not_null
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [new_entries, established_entries, catalog_entries, unplaced]
+  - name: age_class
+    data_type: text
+    description: new when the age proxy is this year or last; catalog when older; unknown without a proxy.
+      A proxy, never a release date. Open age_basis for its source.
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [new, catalog, unknown]
+  - name: age_basis
+    data_type: text
+    description: 'isrc_year: the year code in the ISRC, which a reissue can make newer, never older.
+      apple_id_band: the Apple song id range. none: no proxy.'
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [isrc_year, apple_id_band, none]
+  - name: artist_stage
+    data_type: text
+    description: Stage of the song's most established credited artist, from MusicBrainz catalog depth. emerging,
+      developing, established or unknown; artist_stage_thresholds holds the rules. unknown means no linked
+      MusicBrainz artist or no catalog reading yet. Playlist data never sets it.
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [emerging, developing, established, unknown]
+  - name: artist_stage_basis
+    data_type: text
+    description: 'Source of artist_stage. musicbrainz_catalog: release group counts and first release years read
+      from the MusicBrainz mirror. none: artist_stage is unknown.'
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [musicbrainz_catalog, none]
+  - name: cluster_key
+    data_type: text
+    description: Provisional movement group key. Open member_song_keys to inspect the strict keys.
+    constraints:
+    - type: not_null
+  - name: member_song_keys
+    data_type: text
+    description: Sorted JSON array of strict keys scored together. Open evidence for merge methods.
+    constraints:
+    - type: not_null
+
+- name: mart_readiness
+  description: History through the bound day. Playlists and Shazam need two observed days. Streams need
+    three rated days in each comparison half. Dates assume daily collection continues. Open mart_song_day
+    to inspect gaps. The billboard_hot100 row reports keyed entries in the latest chart week
+    at or before the bound day. Open mart_chart_history for the entries.
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - family
+  columns:
+  - name: family
+    data_type: text
+    description: History family, artist_stage followed by the movement list, or billboard_hot100 for keyed coverage.
+    constraints:
+    - type: not_null
+  - name: day
+    data_type: date
+    description: Bound daily cycle day in UTC.
+  - name: history_days
+    data_type: bigint
+    description: Distinct days with observed family data; streams count rated days only.
+    constraints:
+    - type: not_null
+  - name: history_needed
+    data_type: text
+    description: Window requirement or Hot 100 keyed coverage in plain words, followed by the evidence next step.
+  - name: first_rank_day
+    data_type: date
+    description: 'Earliest comparison date: first source day plus one, or first rated stream day plus
+      five. Gaps can delay it.'
+  - name: movement_list
+    data_type: text
+    description: Movement list for artist-stage coverage; null for history rows.
+  - name: stage_known_songs
+    data_type: bigint
+    description: Distinct songs with an artist-stage reading in the served current list. Open the list for evidence.
+  - name: list_songs
+    data_type: bigint
+    description: Distinct songs across current movers, early signals and arrivals in this list. Open the list for evidence.
+  - name: chart_week
+    data_type: date
+    description: Latest observed Hot 100 week at or before the bound day; null without a read. Open mart_chart_history.
+  - name: keyed_entries
+    data_type: bigint
+    description: Hot 100 positions with a song key in chart_week; null without a read. Open mart_chart_history.
+  - name: chart_entries
+    data_type: bigint
+    description: Hot 100 positions observed in chart_week, out of 100; null without a read. Open mart_chart_history.
+  - *id001
+  - *id002
+  - *id003
+- name: mart_arrivals_current
+  description: Songs entering tracked editorial or chart lists or Shazam charts over the adaptive window.
+    Baseline collections are excluded. Head entries carry half confidence. A list's market comes from
+    playlist_reach_tiers only. New markets count once across chart providers and exclude global. Chart
+    spread stays outside the two-family score. Filter movement_list to new_entries for Rising, or to
+    established_entries or catalog_entries for Places, order by rank, then open evidence.
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - song_key
+    pre_hook: '{{ mdp_hash_join_plan() }}'
+    post_hook: '{{ mdp_analyze() }}'
+  columns:
+  - name: song_key
+    data_type: text
+    description: Song link key.
+    constraints:
+    - type: not_null
+  - name: rank
+    data_type: bigint
+    description: Position inside its movement list. Places lists order by chart_spread_gain first; new_entries puts
+      emerging artists first; then list reach tier, markets, latest entry and a fixed hash of day and song key.
+    constraints:
+    - type: not_null
+  - name: day
+    data_type: date
+    description: Bound UTC day.
+  - name: title_text
+    data_type: text
+    description: Song title.
+  - name: artist_text
+    data_type: text
+    description: Artist credit.
+  - name: markets
+    data_type: text
+    description: JSON array of entered country markets.
+  - name: entered_lists
+    data_type: bigint
+    description: Distinct editorial and chart lists entered.
+  - name: discovery_entries
+    data_type: bigint
+    description: Distinct Shazam Discovery charts entered in the arrival window. Open evidence for the charts.
+    constraints:
+    - type: not_null
+  - name: entered_charts
+    data_type: bigint
+    description: Distinct Shazam charts entered.
+  - name: reason_rule
+    data_type: text
+    description: Entry window and next step.
+  - name: evidence
+    data_type: text
+    description: Entry row locators with captured input builds. cluster_confidence is measured
+      precision, the lowest merge-rule Wilson 95% lower bound; open the cluster audit.
+  - name: window_days
+    data_type: integer
+    description: Comparison window in UTC days; it grows with observed history to seven.
+  - name: chart_spread_gain
+    data_type: bigint
+    description: New country markets on tracked chart lists or Shazam charts. It ranks signal lists first
+      and never joins the two-family score, because it overlaps playlists and Shazam.
+  - name: list_reach_tier
+    data_type: integer
+    description: Best entered list tier; new_entries reads editorial and new-music lists only. One is widest;
+      four is unclassified. See playlist_reach_tiers.
+  - name: market_count
+    data_type: bigint
+    description: Distinct entered country markets; global and unknown are excluded.
+  - name: last_entered_at
+    data_type: timestamp with time zone
+    description: Most recent qualifying entry observation.
+  - name: movement_list
+    data_type: text
+    description: 'new_entries: new songs by emerging, developing or unknown-stage artists. established_entries:
+      new songs by established artists. catalog_entries: catalog waking up. unplaced: unknown age and no new-music
+      list in the window, so no movement view reads it. Lists never mix.'
+    constraints:
+    - type: not_null
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [new_entries, established_entries, catalog_entries, unplaced]
+  - name: age_class
+    data_type: text
+    description: new when the age proxy is this year or last; catalog when older; unknown without a proxy.
+      A proxy, never a release date. Open age_basis for its source.
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [new, catalog, unknown]
+  - name: age_basis
+    data_type: text
+    description: 'isrc_year: the year code in the ISRC, which a reissue can make newer, never older.
+      apple_id_band: the Apple song id range. none: no proxy.'
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [isrc_year, apple_id_band, none]
+  - name: artist_stage
+    data_type: text
+    description: Stage of the song's most established credited artist, from MusicBrainz catalog depth. emerging,
+      developing, established or unknown; artist_stage_thresholds holds the rules. unknown means no linked
+      MusicBrainz artist or no catalog reading yet. Playlist data never sets it.
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [emerging, developing, established, unknown]
+  - name: artist_stage_basis
+    data_type: text
+    description: 'Source of artist_stage. musicbrainz_catalog: release group counts and first release years read
+      from the MusicBrainz mirror. none: artist_stage is unknown.'
+    data_tests:
+    - accepted_values:
+        arguments:
+          values: [musicbrainz_catalog, none]
+  - name: learning_eligible
+    data_type: boolean
+    description: Learning permission.
+    data_tests:
+    - not_null
+  - name: resale_permitted
+    data_type: boolean
+    description: Resale permission.
+    data_tests:
+    - not_null
+  - name: source_keys
+    data_type: text
+    description: Contributing source keys.
+    data_tests:
+    - not_null
+  - name: cluster_key
+    data_type: text
+    description: Provisional movement group key. Open member_song_keys to inspect the strict keys.
+    constraints:
+    - type: not_null
+  - name: member_song_keys
+    data_type: text
+    description: Sorted JSON array of strict keys scored together. Open evidence for merge methods.
+    constraints:
+    - type: not_null

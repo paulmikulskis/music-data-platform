@@ -1,0 +1,115 @@
+selectors:
+  - name: hourly_global_bronze
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:hourly"}
+        - {method: tag, value: "scope:global"}
+        - {method: tag, value: bronze}
+        - union:
+            - {method: tag, value: export}
+            - {method: tag, value: invoke}
+            - {method: tag, value: close}
+  - name: hourly_global_transform
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:hourly"}
+        - {method: tag, value: "scope:global"}
+        - exclude:
+            - {method: selector, value: hourly_global_bronze}
+  - name: hourly_tenant_bronze
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:hourly"}
+        - {method: tag, value: "scope:tenant"}
+        - {method: tag, value: bronze}
+        - union:
+            - {method: tag, value: export}
+            - {method: tag, value: invoke}
+            - {method: tag, value: close}
+  - name: hourly_tenant_transform
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:hourly"}
+        - {method: tag, value: "scope:tenant"}
+        - exclude:
+            - {method: selector, value: hourly_tenant_bronze}
+  - name: hourly_bronze
+    definition: {method: selector, value: hourly_global_bronze}
+  - name: hourly_transform
+    definition: {method: selector, value: hourly_global_transform}
+  - name: daily_global_bronze
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:daily"}
+        - {method: tag, value: "scope:global"}
+        - {method: tag, value: bronze}
+        - union:
+            - {method: tag, value: export}
+            - {method: tag, value: invoke}
+            - {method: tag, value: close}
+  - name: daily_global_transform
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:daily"}
+        - {method: tag, value: "scope:global"}
+        - exclude:
+            - {method: selector, value: daily_global_bronze}
+  - name: daily_tenant_bronze
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:daily"}
+        - {method: tag, value: "scope:tenant"}
+        - {method: tag, value: bronze}
+        - union:
+            - {method: tag, value: export}
+            - {method: tag, value: invoke}
+            - {method: tag, value: close}
+  - name: daily_tenant_transform
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:daily"}
+        - {method: tag, value: "scope:tenant"}
+        - exclude:
+            - {method: selector, value: daily_tenant_bronze}
+  - name: daily_bronze
+    definition: {method: selector, value: daily_global_bronze}
+  - name: daily_transform
+    definition: {method: selector, value: daily_global_transform}
+  - name: weekly_global_bronze
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:weekly"}
+        - {method: tag, value: "scope:global"}
+        - {method: tag, value: bronze}
+        - union:
+            - {method: tag, value: export}
+            - {method: tag, value: invoke}
+            - {method: tag, value: close}
+  - name: weekly_global_transform
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:weekly"}
+        - {method: tag, value: "scope:global"}
+        - exclude:
+            - {method: selector, value: weekly_global_bronze}
+  - name: weekly_tenant_bronze
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:weekly"}
+        - {method: tag, value: "scope:tenant"}
+        - {method: tag, value: bronze}
+        - union:
+            - {method: tag, value: export}
+            - {method: tag, value: invoke}
+            - {method: tag, value: close}
+  - name: weekly_tenant_transform
+    definition:
+      intersection:
+        - {method: tag, value: "cadence:weekly"}
+        - {method: tag, value: "scope:tenant"}
+        - exclude:
+            - {method: selector, value: weekly_tenant_bronze}
+  - name: weekly_bronze
+    definition: {method: selector, value: weekly_global_bronze}
+  - name: weekly_transform
+    definition: {method: selector, value: weekly_global_transform}

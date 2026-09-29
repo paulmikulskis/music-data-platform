@@ -1,0 +1,17 @@
+data/
+_pins/
+_targets/
+snapshot/
+*.duckdb
+*.parquet
+*.feather
+*.rds
+*.RData
+*.rda
+*_files/
+*.html
+.Renviron
+.pgpass
+pgpass.conf
+renv/library/
+renv/staging/

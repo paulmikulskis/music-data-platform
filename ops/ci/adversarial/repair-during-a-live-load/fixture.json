@@ -1,0 +1,4 @@
+{
+  "kind": "pytest",
+  "target": "test_landing.py::test_repair_during_claimed_load[postgres]"
+}

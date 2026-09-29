@@ -1,0 +1,1 @@
+{"request": {"method": "GET", "url": "https://api.listenbrainz.org/1/explore/fresh-releases/", "params": {"days": 3}}, "response": {"status": 404, "headers": {"content-type": "application/json"}, "body": {"code": 404, "error": "Not found"}}}

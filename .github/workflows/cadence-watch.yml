@@ -1,0 +1,19 @@
+name: cadence-watch
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  status:
+    # Enable only after the public summary is deployed. See ops/runbooks/runners_held.md.
+    if: vars.MDP_STATUS_WATCH_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check scheduled closes
+        env:
+          MDP_STATUS_URL: ${{ vars.MDP_STATUS_URL }}
+        run: python3 ops/check-cadence.py

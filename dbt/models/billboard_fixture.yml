@@ -1,0 +1,795 @@
+version: 2
+unit_tests:
+- name: billboard_debut_requires_prior_group_absence
+  model: int_billboard_song__daily
+  config:
+    tags:
+    - song_fixture
+  given:
+  - input: ref('stg_billboard__chart_entries_daily')
+    rows:
+    - {chart_week: '2026-09-19', chart_position: 1, chart_name: hot-100, track_title: Ambiguous, artist_name: Act Q, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 2, chart_name: hot-100, track_title: Fixture 2026-09-19 2, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 3, chart_name: hot-100, track_title: Fixture 2026-09-19 3, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 4, chart_name: hot-100, track_title: Fixture 2026-09-19 4, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 5, chart_name: hot-100, track_title: Fixture 2026-09-19 5, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 6, chart_name: hot-100, track_title: Fixture 2026-09-19 6, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 7, chart_name: hot-100, track_title: Fixture 2026-09-19 7, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 8, chart_name: hot-100, track_title: Fixture 2026-09-19 8, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 9, chart_name: hot-100, track_title: Fixture 2026-09-19 9, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 10, chart_name: hot-100, track_title: Fixture 2026-09-19 10, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 11, chart_name: hot-100, track_title: Fixture 2026-09-19 11, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 12, chart_name: hot-100, track_title: Fixture 2026-09-19 12, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 13, chart_name: hot-100, track_title: Fixture 2026-09-19 13, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 14, chart_name: hot-100, track_title: Fixture 2026-09-19 14, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 15, chart_name: hot-100, track_title: Fixture 2026-09-19 15, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 16, chart_name: hot-100, track_title: Fixture 2026-09-19 16, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 17, chart_name: hot-100, track_title: Fixture 2026-09-19 17, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 18, chart_name: hot-100, track_title: Fixture 2026-09-19 18, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 19, chart_name: hot-100, track_title: Fixture 2026-09-19 19, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 20, chart_name: hot-100, track_title: Fixture 2026-09-19 20, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 21, chart_name: hot-100, track_title: Fixture 2026-09-19 21, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 22, chart_name: hot-100, track_title: Fixture 2026-09-19 22, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 23, chart_name: hot-100, track_title: Fixture 2026-09-19 23, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 24, chart_name: hot-100, track_title: Fixture 2026-09-19 24, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 25, chart_name: hot-100, track_title: Fixture 2026-09-19 25, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 26, chart_name: hot-100, track_title: Fixture 2026-09-19 26, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 27, chart_name: hot-100, track_title: Fixture 2026-09-19 27, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 28, chart_name: hot-100, track_title: Fixture 2026-09-19 28, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 29, chart_name: hot-100, track_title: Fixture 2026-09-19 29, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 30, chart_name: hot-100, track_title: Fixture 2026-09-19 30, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 31, chart_name: hot-100, track_title: Fixture 2026-09-19 31, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 32, chart_name: hot-100, track_title: Fixture 2026-09-19 32, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 33, chart_name: hot-100, track_title: Fixture 2026-09-19 33, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 34, chart_name: hot-100, track_title: Fixture 2026-09-19 34, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 35, chart_name: hot-100, track_title: Fixture 2026-09-19 35, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 36, chart_name: hot-100, track_title: Fixture 2026-09-19 36, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 37, chart_name: hot-100, track_title: Fixture 2026-09-19 37, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 38, chart_name: hot-100, track_title: Fixture 2026-09-19 38, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 39, chart_name: hot-100, track_title: Fixture 2026-09-19 39, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 40, chart_name: hot-100, track_title: Fixture 2026-09-19 40, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 41, chart_name: hot-100, track_title: Fixture 2026-09-19 41, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 42, chart_name: hot-100, track_title: Fixture 2026-09-19 42, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 43, chart_name: hot-100, track_title: Fixture 2026-09-19 43, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 44, chart_name: hot-100, track_title: Fixture 2026-09-19 44, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 45, chart_name: hot-100, track_title: Fixture 2026-09-19 45, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 46, chart_name: hot-100, track_title: Fixture 2026-09-19 46, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 47, chart_name: hot-100, track_title: Fixture 2026-09-19 47, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 48, chart_name: hot-100, track_title: Fixture 2026-09-19 48, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 49, chart_name: hot-100, track_title: Fixture 2026-09-19 49, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 50, chart_name: hot-100, track_title: Fixture 2026-09-19 50, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 51, chart_name: hot-100, track_title: Fixture 2026-09-19 51, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 52, chart_name: hot-100, track_title: Fixture 2026-09-19 52, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 53, chart_name: hot-100, track_title: Fixture 2026-09-19 53, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 54, chart_name: hot-100, track_title: Fixture 2026-09-19 54, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 55, chart_name: hot-100, track_title: Fixture 2026-09-19 55, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 56, chart_name: hot-100, track_title: Fixture 2026-09-19 56, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 57, chart_name: hot-100, track_title: Fixture 2026-09-19 57, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 58, chart_name: hot-100, track_title: Fixture 2026-09-19 58, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 59, chart_name: hot-100, track_title: Fixture 2026-09-19 59, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 60, chart_name: hot-100, track_title: Fixture 2026-09-19 60, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 61, chart_name: hot-100, track_title: Fixture 2026-09-19 61, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 62, chart_name: hot-100, track_title: Fixture 2026-09-19 62, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 63, chart_name: hot-100, track_title: Fixture 2026-09-19 63, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 64, chart_name: hot-100, track_title: Fixture 2026-09-19 64, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 65, chart_name: hot-100, track_title: Fixture 2026-09-19 65, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 66, chart_name: hot-100, track_title: Fixture 2026-09-19 66, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 67, chart_name: hot-100, track_title: Fixture 2026-09-19 67, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 68, chart_name: hot-100, track_title: Fixture 2026-09-19 68, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 69, chart_name: hot-100, track_title: Fixture 2026-09-19 69, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 70, chart_name: hot-100, track_title: Fixture 2026-09-19 70, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 71, chart_name: hot-100, track_title: Fixture 2026-09-19 71, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 72, chart_name: hot-100, track_title: Fixture 2026-09-19 72, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 73, chart_name: hot-100, track_title: Fixture 2026-09-19 73, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 74, chart_name: hot-100, track_title: Fixture 2026-09-19 74, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 75, chart_name: hot-100, track_title: Fixture 2026-09-19 75, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 76, chart_name: hot-100, track_title: Fixture 2026-09-19 76, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 77, chart_name: hot-100, track_title: Fixture 2026-09-19 77, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 78, chart_name: hot-100, track_title: Fixture 2026-09-19 78, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 79, chart_name: hot-100, track_title: Fixture 2026-09-19 79, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 80, chart_name: hot-100, track_title: Fixture 2026-09-19 80, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 81, chart_name: hot-100, track_title: Fixture 2026-09-19 81, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 82, chart_name: hot-100, track_title: Fixture 2026-09-19 82, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 83, chart_name: hot-100, track_title: Fixture 2026-09-19 83, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 84, chart_name: hot-100, track_title: Fixture 2026-09-19 84, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 85, chart_name: hot-100, track_title: Fixture 2026-09-19 85, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 86, chart_name: hot-100, track_title: Fixture 2026-09-19 86, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 87, chart_name: hot-100, track_title: Fixture 2026-09-19 87, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 88, chart_name: hot-100, track_title: Fixture 2026-09-19 88, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 89, chart_name: hot-100, track_title: Fixture 2026-09-19 89, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 90, chart_name: hot-100, track_title: Fixture 2026-09-19 90, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 91, chart_name: hot-100, track_title: Fixture 2026-09-19 91, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 92, chart_name: hot-100, track_title: Fixture 2026-09-19 92, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 93, chart_name: hot-100, track_title: Fixture 2026-09-19 93, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 94, chart_name: hot-100, track_title: Fixture 2026-09-19 94, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 95, chart_name: hot-100, track_title: Fixture 2026-09-19 95, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 96, chart_name: hot-100, track_title: Fixture 2026-09-19 96, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 97, chart_name: hot-100, track_title: Fixture 2026-09-19 97, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 98, chart_name: hot-100, track_title: Fixture 2026-09-19 98, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 99, chart_name: hot-100, track_title: Fixture 2026-09-19 99, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - {chart_week: '2026-09-19', chart_position: 100, chart_name: hot-100, track_title: Fixture 2026-09-19 100, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000019, weeks_on_chart: 1}
+    - &id001 {chart_week: '2026-09-26', chart_position: 1, chart_name: hot-100, track_title: Together, artist_name: Act AXAct B, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - &id002 {chart_week: '2026-09-26', chart_position: 2, chart_name: hot-100, track_title: Feature, artist_name: Act C Featuring Act D, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 3, chart_name: hot-100, track_title: Group, artist_name: Act E, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 4, chart_name: hot-100, track_title: Same title, artist_name: Wrong act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 5, chart_name: hot-100, track_title: Missing, artist_name: Absent act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 6, chart_name: hot-100, track_title: Comma, artist_name: 'Act G,Act H', source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 7, chart_name: hot-100, track_title: Ampersand, artist_name: Act I&Act J, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 8, chart_name: hot-100, track_title: And, artist_name: Act K and Act L, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 9, chart_name: hot-100, track_title: Lowercase, artist_name: Act M x Act N, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 10, chart_name: hot-100, track_title: Short feature, artist_name: Act O feat. Act P, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 11, chart_name: hot-100, track_title: Ambiguous, artist_name: Act Q, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 12, chart_name: hot-100, track_title: Resolved copy, artist_name: Act R, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 13, chart_name: hot-100, track_title: Fixture 2026-09-26 13, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 14, chart_name: hot-100, track_title: Fixture 2026-09-26 14, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 15, chart_name: hot-100, track_title: Fixture 2026-09-26 15, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 16, chart_name: hot-100, track_title: Fixture 2026-09-26 16, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 17, chart_name: hot-100, track_title: Fixture 2026-09-26 17, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 18, chart_name: hot-100, track_title: Fixture 2026-09-26 18, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 19, chart_name: hot-100, track_title: Fixture 2026-09-26 19, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 20, chart_name: hot-100, track_title: Fixture 2026-09-26 20, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 21, chart_name: hot-100, track_title: Fixture 2026-09-26 21, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 22, chart_name: hot-100, track_title: Fixture 2026-09-26 22, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 23, chart_name: hot-100, track_title: Fixture 2026-09-26 23, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 24, chart_name: hot-100, track_title: Fixture 2026-09-26 24, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 25, chart_name: hot-100, track_title: Fixture 2026-09-26 25, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 26, chart_name: hot-100, track_title: Fixture 2026-09-26 26, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 27, chart_name: hot-100, track_title: Fixture 2026-09-26 27, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 28, chart_name: hot-100, track_title: Fixture 2026-09-26 28, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 29, chart_name: hot-100, track_title: Fixture 2026-09-26 29, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 30, chart_name: hot-100, track_title: Fixture 2026-09-26 30, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 31, chart_name: hot-100, track_title: Fixture 2026-09-26 31, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 32, chart_name: hot-100, track_title: Fixture 2026-09-26 32, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 33, chart_name: hot-100, track_title: Fixture 2026-09-26 33, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 34, chart_name: hot-100, track_title: Fixture 2026-09-26 34, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 35, chart_name: hot-100, track_title: Fixture 2026-09-26 35, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 36, chart_name: hot-100, track_title: Fixture 2026-09-26 36, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 37, chart_name: hot-100, track_title: Fixture 2026-09-26 37, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 38, chart_name: hot-100, track_title: Fixture 2026-09-26 38, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 39, chart_name: hot-100, track_title: Fixture 2026-09-26 39, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 40, chart_name: hot-100, track_title: Fixture 2026-09-26 40, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 41, chart_name: hot-100, track_title: Fixture 2026-09-26 41, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 42, chart_name: hot-100, track_title: Fixture 2026-09-26 42, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 43, chart_name: hot-100, track_title: Fixture 2026-09-26 43, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 44, chart_name: hot-100, track_title: Fixture 2026-09-26 44, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 45, chart_name: hot-100, track_title: Fixture 2026-09-26 45, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 46, chart_name: hot-100, track_title: Fixture 2026-09-26 46, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 47, chart_name: hot-100, track_title: Fixture 2026-09-26 47, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 48, chart_name: hot-100, track_title: Fixture 2026-09-26 48, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 49, chart_name: hot-100, track_title: Fixture 2026-09-26 49, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 50, chart_name: hot-100, track_title: Fixture 2026-09-26 50, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 51, chart_name: hot-100, track_title: Fixture 2026-09-26 51, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 52, chart_name: hot-100, track_title: Fixture 2026-09-26 52, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 53, chart_name: hot-100, track_title: Fixture 2026-09-26 53, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 54, chart_name: hot-100, track_title: Fixture 2026-09-26 54, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 55, chart_name: hot-100, track_title: Fixture 2026-09-26 55, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 56, chart_name: hot-100, track_title: Fixture 2026-09-26 56, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 57, chart_name: hot-100, track_title: Fixture 2026-09-26 57, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 58, chart_name: hot-100, track_title: Fixture 2026-09-26 58, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 59, chart_name: hot-100, track_title: Fixture 2026-09-26 59, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 60, chart_name: hot-100, track_title: Fixture 2026-09-26 60, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 61, chart_name: hot-100, track_title: Fixture 2026-09-26 61, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 62, chart_name: hot-100, track_title: Fixture 2026-09-26 62, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 63, chart_name: hot-100, track_title: Fixture 2026-09-26 63, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 64, chart_name: hot-100, track_title: Fixture 2026-09-26 64, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 65, chart_name: hot-100, track_title: Fixture 2026-09-26 65, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 66, chart_name: hot-100, track_title: Fixture 2026-09-26 66, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 67, chart_name: hot-100, track_title: Fixture 2026-09-26 67, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 68, chart_name: hot-100, track_title: Fixture 2026-09-26 68, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 69, chart_name: hot-100, track_title: Fixture 2026-09-26 69, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 70, chart_name: hot-100, track_title: Fixture 2026-09-26 70, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 71, chart_name: hot-100, track_title: Fixture 2026-09-26 71, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 72, chart_name: hot-100, track_title: Fixture 2026-09-26 72, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 73, chart_name: hot-100, track_title: Fixture 2026-09-26 73, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 74, chart_name: hot-100, track_title: Fixture 2026-09-26 74, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 75, chart_name: hot-100, track_title: Fixture 2026-09-26 75, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 76, chart_name: hot-100, track_title: Fixture 2026-09-26 76, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 77, chart_name: hot-100, track_title: Fixture 2026-09-26 77, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 78, chart_name: hot-100, track_title: Fixture 2026-09-26 78, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 79, chart_name: hot-100, track_title: Fixture 2026-09-26 79, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 80, chart_name: hot-100, track_title: Fixture 2026-09-26 80, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 81, chart_name: hot-100, track_title: Fixture 2026-09-26 81, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 82, chart_name: hot-100, track_title: Fixture 2026-09-26 82, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 83, chart_name: hot-100, track_title: Fixture 2026-09-26 83, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 84, chart_name: hot-100, track_title: Fixture 2026-09-26 84, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 85, chart_name: hot-100, track_title: Fixture 2026-09-26 85, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 86, chart_name: hot-100, track_title: Fixture 2026-09-26 86, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 87, chart_name: hot-100, track_title: Fixture 2026-09-26 87, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 88, chart_name: hot-100, track_title: Fixture 2026-09-26 88, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 89, chart_name: hot-100, track_title: Fixture 2026-09-26 89, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 90, chart_name: hot-100, track_title: Fixture 2026-09-26 90, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 91, chart_name: hot-100, track_title: Fixture 2026-09-26 91, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 92, chart_name: hot-100, track_title: Fixture 2026-09-26 92, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 93, chart_name: hot-100, track_title: Fixture 2026-09-26 93, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 94, chart_name: hot-100, track_title: Fixture 2026-09-26 94, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 95, chart_name: hot-100, track_title: Fixture 2026-09-26 95, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 96, chart_name: hot-100, track_title: Fixture 2026-09-26 96, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 97, chart_name: hot-100, track_title: Fixture 2026-09-26 97, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 98, chart_name: hot-100, track_title: Fixture 2026-09-26 98, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 99, chart_name: hot-100, track_title: Fixture 2026-09-26 99, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+    - {chart_week: '2026-09-26', chart_position: 100, chart_name: hot-100, track_title: Fixture 2026-09-26 100, artist_name: Untracked act, source_key: billboard_hot100, _dump_id: 00000000-0000-0000-0000-000000000026, weeks_on_chart: 1}
+  - input: ref('int_song_cluster_inputs__daily')
+    rows: &id003
+    - {song_key: a, folded_title: together, folded_artist: act a}
+    - {song_key: c, folded_title: feature, folded_artist: act c}
+    - {song_key: e, folded_title: group, folded_artist: act e}
+    - {song_key: f, folded_title: same title, folded_artist: right act}
+    - {song_key: g, folded_title: comma, folded_artist: act g}
+    - {song_key: i, folded_title: ampersand, folded_artist: act i}
+    - {song_key: k, folded_title: and, folded_artist: act k}
+    - {song_key: m, folded_title: lowercase, folded_artist: act m}
+    - {song_key: o, folded_title: short feature, folded_artist: act o}
+    - {song_key: q, folded_title: ambiguous, folded_artist: act q}
+    - {song_key: e2, folded_title: group, folded_artist: act e}
+    - {song_key: q2, folded_title: ambiguous, folded_artist: act q}
+    - {song_key: q3, folded_title: resolved copy, folded_artist: act r}
+  - input: ref('int_song_cluster__daily')
+    rows: &id004
+    - song_key: a
+      cluster_key: a
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: c
+      cluster_key: c
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: e
+      cluster_key: e
+      cluster_confidence: 0.97
+      cluster_methods: '["title_artist_duration"]'
+      source_keys: '["am_playlist"]'
+    - song_key: f
+      cluster_key: f
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: g
+      cluster_key: g
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: i
+      cluster_key: i
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: k
+      cluster_key: k
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: m
+      cluster_key: m
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: o
+      cluster_key: o
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: q
+      cluster_key: q
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: e2
+      cluster_key: e
+      cluster_confidence: 0.97
+      cluster_methods: '["title_artist_duration"]'
+      source_keys: '["am_playlist","sp_playlist"]'
+    - song_key: q2
+      cluster_key: q2
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["sp_playlist"]'
+    - {song_key: q3, cluster_key: q, cluster_confidence: 0.97, cluster_methods: '["title_artist_duration"]', source_keys: '["am_playlist"]'}
+  - input: ref('billboard_match_rules')
+    rows:
+    - method: folded
+      enabled: true
+      confidence: 0.99
+    - method: credit_primary
+      enabled: true
+      confidence: 0.99
+    - method: run_together
+      enabled: true
+      confidence: 0.97
+  expect:
+    rows:
+    - {chart_week: '2026-09-19', chart_position: 1, song_key: null, billboard_match_method: ambiguous, is_debut: null, week_complete: true, track_title: Ambiguous, artist_name: Act Q}
+    - {chart_week: '2026-09-19', chart_position: 2, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 2, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 3, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 3, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 4, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 4, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 5, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 5, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 6, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 6, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 7, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 7, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 8, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 8, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 9, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 9, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 10, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 10, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 11, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 11, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 12, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 12, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 13, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 13, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 14, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 14, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 15, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 15, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 16, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 16, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 17, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 17, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 18, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 18, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 19, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 19, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 20, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 20, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 21, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 21, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 22, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 22, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 23, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 23, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 24, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 24, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 25, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 25, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 26, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 26, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 27, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 27, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 28, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 28, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 29, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 29, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 30, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 30, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 31, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 31, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 32, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 32, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 33, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 33, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 34, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 34, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 35, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 35, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 36, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 36, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 37, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 37, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 38, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 38, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 39, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 39, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 40, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 40, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 41, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 41, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 42, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 42, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 43, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 43, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 44, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 44, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 45, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 45, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 46, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 46, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 47, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 47, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 48, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 48, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 49, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 49, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 50, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 50, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 51, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 51, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 52, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 52, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 53, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 53, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 54, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 54, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 55, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 55, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 56, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 56, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 57, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 57, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 58, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 58, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 59, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 59, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 60, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 60, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 61, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 61, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 62, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 62, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 63, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 63, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 64, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 64, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 65, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 65, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 66, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 66, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 67, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 67, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 68, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 68, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 69, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 69, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 70, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 70, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 71, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 71, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 72, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 72, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 73, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 73, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 74, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 74, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 75, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 75, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 76, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 76, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 77, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 77, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 78, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 78, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 79, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 79, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 80, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 80, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 81, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 81, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 82, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 82, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 83, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 83, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 84, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 84, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 85, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 85, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 86, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 86, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 87, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 87, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 88, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 88, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 89, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 89, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 90, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 90, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 91, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 91, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 92, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 92, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 93, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 93, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 94, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 94, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 95, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 95, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 96, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 96, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 97, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 97, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 98, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 98, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 99, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 99, artist_name: Untracked act}
+    - {chart_week: '2026-09-19', chart_position: 100, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-19 100, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 1, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Together, artist_name: Act AXAct B}
+    - {chart_week: '2026-09-26', chart_position: 2, song_key: c, billboard_match_method: credit_primary, is_debut: true, week_complete: true, track_title: Feature, artist_name: Act C Featuring Act D}
+    - {chart_week: '2026-09-26', chart_position: 3, song_key: e, billboard_match_method: group, is_debut: true, week_complete: true, track_title: Group, artist_name: Act E}
+    - {chart_week: '2026-09-26', chart_position: 4, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Same title, artist_name: Wrong act}
+    - {chart_week: '2026-09-26', chart_position: 5, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Missing, artist_name: Absent act}
+    - {chart_week: '2026-09-26', chart_position: 6, song_key: g, billboard_match_method: credit_primary, is_debut: true, week_complete: true, track_title: Comma, artist_name: 'Act G,Act H'}
+    - {chart_week: '2026-09-26', chart_position: 7, song_key: i, billboard_match_method: credit_primary, is_debut: true, week_complete: true, track_title: Ampersand, artist_name: Act I&Act J}
+    - {chart_week: '2026-09-26', chart_position: 8, song_key: k, billboard_match_method: credit_primary, is_debut: true, week_complete: true, track_title: And, artist_name: Act K and Act L}
+    - {chart_week: '2026-09-26', chart_position: 9, song_key: m, billboard_match_method: credit_primary, is_debut: true, week_complete: true, track_title: Lowercase, artist_name: Act M x Act N}
+    - {chart_week: '2026-09-26', chart_position: 10, song_key: o, billboard_match_method: credit_primary, is_debut: true, week_complete: true, track_title: Short feature, artist_name: Act O feat. Act P}
+    - {chart_week: '2026-09-26', chart_position: 11, song_key: null, billboard_match_method: ambiguous, is_debut: null, week_complete: true, track_title: Ambiguous, artist_name: Act Q}
+    - {chart_week: '2026-09-26', chart_position: 12, song_key: q, billboard_match_method: group, is_debut: null, week_complete: true, track_title: Resolved copy, artist_name: Act R}
+    - {chart_week: '2026-09-26', chart_position: 13, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 13, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 14, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 14, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 15, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 15, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 16, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 16, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 17, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 17, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 18, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 18, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 19, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 19, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 20, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 20, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 21, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 21, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 22, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 22, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 23, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 23, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 24, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 24, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 25, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 25, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 26, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 26, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 27, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 27, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 28, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 28, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 29, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 29, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 30, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 30, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 31, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 31, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 32, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 32, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 33, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 33, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 34, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 34, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 35, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 35, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 36, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 36, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 37, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 37, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 38, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 38, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 39, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 39, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 40, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 40, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 41, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 41, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 42, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 42, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 43, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 43, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 44, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 44, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 45, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 45, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 46, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 46, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 47, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 47, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 48, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 48, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 49, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 49, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 50, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 50, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 51, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 51, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 52, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 52, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 53, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 53, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 54, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 54, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 55, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 55, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 56, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 56, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 57, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 57, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 58, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 58, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 59, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 59, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 60, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 60, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 61, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 61, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 62, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 62, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 63, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 63, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 64, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 64, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 65, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 65, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 66, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 66, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 67, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 67, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 68, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 68, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 69, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 69, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 70, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 70, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 71, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 71, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 72, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 72, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 73, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 73, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 74, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 74, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 75, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 75, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 76, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 76, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 77, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 77, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 78, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 78, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 79, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 79, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 80, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 80, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 81, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 81, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 82, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 82, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 83, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 83, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 84, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 84, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 85, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 85, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 86, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 86, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 87, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 87, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 88, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 88, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 89, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 89, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 90, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 90, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 91, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 91, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 92, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 92, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 93, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 93, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 94, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 94, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 95, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 95, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 96, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 96, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 97, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 97, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 98, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 98, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 99, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 99, artist_name: Untracked act}
+    - {chart_week: '2026-09-26', chart_position: 100, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: true, track_title: Fixture 2026-09-26 100, artist_name: Untracked act}
+- name: billboard_partial_history_and_disabled_method
+  model: int_billboard_song__daily
+  config:
+    tags:
+    - song_fixture
+  given:
+  - input: ref('stg_billboard__chart_entries_daily')
+    rows:
+    - *id001
+    - *id002
+  - input: ref('int_song_cluster_inputs__daily')
+    rows: *id003
+  - input: ref('int_song_cluster__daily')
+    rows: *id004
+  - input: ref('billboard_match_rules')
+    rows:
+    - method: folded
+      enabled: true
+      confidence: 0.99
+    - method: credit_primary
+      enabled: true
+      confidence: 0.99
+    - method: run_together
+      enabled: false
+      confidence: 0.97
+  expect:
+    rows:
+    - {chart_position: 1, song_key: null, billboard_match_method: unmatched, is_debut: null, week_complete: false}
+    - {chart_position: 2, song_key: c, billboard_match_method: credit_primary, is_debut: null, week_complete: false}
+- name: billboard_history_reaches_group_members_on_publication_day
+  model: mart_song_day
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows
+  given:
+  - input: ref('int_billboard_song__daily')
+    rows:
+    - song_key: group
+      chart_week: '2026-09-25'
+      chart_position: 8
+      weeks_on_chart: 1
+      is_debut: true
+      source_keys: '["billboard_hot100"]'
+    - song_key: group
+      chart_week: '2026-09-26'
+      chart_position: 9
+      weeks_on_chart: 2
+      is_debut: false
+      source_keys: '["billboard_hot100"]'
+  - input: ref('int_song_cluster__daily')
+    rows:
+    - song_key: a
+      cluster_key: group
+    - song_key: b
+      cluster_key: group
+  - input: ref('mart_playlist_events')
+    rows: []
+  - input: ref('int_song_key__daily')
+    rows:
+    - song_key: a
+      platform: apple
+      platform_track_id: a
+      source_keys: '["am_playlist"]'
+    - song_key: b
+      platform: apple
+      platform_track_id: b
+      source_keys: '["am_playlist"]'
+  - input: ref('int_playlist__snapshots')
+    rows: []
+  - input: ref('int_song_followers__daily')
+    rows: []
+  - input: ref('int_song_shazam__daily')
+    rows: []
+  - input: ref('mart_track_daily_streams')
+    rows: []
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - song_key: a
+      day: '2026-09-25'
+      billboard_position: 8
+      billboard_weeks_on_chart: 1
+      billboard_debut: true
+      playlists_observed: false
+      shazam_observed: false
+      streams_observed: false
+    - song_key: b
+      day: '2026-09-25'
+      billboard_position: 8
+      billboard_weeks_on_chart: 1
+      billboard_debut: true
+      playlists_observed: false
+      shazam_observed: false
+      streams_observed: false
+- name: billboard_word_boundaries_and_full_credit
+  model: int_billboard_song__daily
+  config:
+    tags:
+    - song_fixture
+  given:
+  - input: ref('stg_billboard__chart_entries_daily')
+    rows:
+    - chart_week: '2026-09-26'
+      chart_position: 1
+      chart_name: hot-100
+      track_title: Boundary 1
+      artist_name: Actandria
+      source_key: billboard_hot100
+      _dump_id: 00000000-0000-0000-0000-000000000026
+      weeks_on_chart: 1
+    - chart_week: '2026-09-26'
+      chart_position: 2
+      chart_name: hot-100
+      track_title: Boundary 2
+      artist_name: Actwithheld
+      source_key: billboard_hot100
+      _dump_id: 00000000-0000-0000-0000-000000000026
+      weeks_on_chart: 1
+    - chart_week: '2026-09-26'
+      chart_position: 3
+      chart_name: hot-100
+      track_title: Boundary 3
+      artist_name: Actxeno
+      source_key: billboard_hot100
+      _dump_id: 00000000-0000-0000-0000-000000000026
+      weeks_on_chart: 1
+    - chart_week: '2026-09-26'
+      chart_position: 4
+      chart_name: hot-100
+      track_title: Boundary 4
+      artist_name: Actfeaturingtail
+      source_key: billboard_hot100
+      _dump_id: 00000000-0000-0000-0000-000000000026
+      weeks_on_chart: 1
+    - chart_week: '2026-09-26'
+      chart_position: 5
+      chart_name: hot-100
+      track_title: Boundary 5
+      artist_name: Act and Another
+      source_key: billboard_hot100
+      _dump_id: 00000000-0000-0000-0000-000000000026
+      weeks_on_chart: 1
+    - chart_week: '2026-09-26'
+      chart_position: 6
+      chart_name: hot-100
+      track_title: Boundary 6
+      artist_name: Act and Another
+      source_key: billboard_hot100
+      _dump_id: 00000000-0000-0000-0000-000000000026
+      weeks_on_chart: 1
+    - chart_week: '2026-09-26'
+      chart_position: 7
+      chart_name: hot-100
+      track_title: Boundary 7
+      artist_name: Act,Another
+      source_key: billboard_hot100
+      _dump_id: 00000000-0000-0000-0000-000000000026
+      weeks_on_chart: 1
+    - chart_week: '2026-09-26'
+      chart_position: 8
+      chart_name: hot-100
+      track_title: Boundary 8
+      artist_name: Act X Another
+      source_key: billboard_hot100
+      _dump_id: 00000000-0000-0000-0000-000000000026
+      weeks_on_chart: 1
+  - input: ref('int_song_cluster_inputs__daily')
+    rows:
+    - song_key: short
+      folded_title: boundary 1
+      folded_artist: act
+    - song_key: short
+      folded_title: boundary 2
+      folded_artist: act
+    - song_key: short
+      folded_title: boundary 3
+      folded_artist: act
+    - song_key: short
+      folded_title: boundary 4
+      folded_artist: act
+    - song_key: short
+      folded_title: boundary 5
+      folded_artist: act
+    - song_key: whole
+      folded_title: boundary 5
+      folded_artist: act and another
+    - song_key: short
+      folded_title: boundary 6
+      folded_artist: act
+    - song_key: short
+      folded_title: boundary 7
+      folded_artist: act
+    - song_key: whole
+      folded_title: boundary 7
+      folded_artist: act,another
+    - song_key: short
+      folded_title: boundary 8
+      folded_artist: act
+  - input: ref('int_song_cluster__daily')
+    rows:
+    - song_key: short
+      cluster_key: short
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+    - song_key: whole
+      cluster_key: whole
+      cluster_confidence: 1
+      cluster_methods: '[]'
+      source_keys: '["am_playlist"]'
+  - input: ref('billboard_match_rules')
+    rows:
+    - method: folded
+      enabled: true
+      confidence: 0.99
+    - method: credit_primary
+      enabled: true
+      confidence: 0.99
+    - method: run_together
+      enabled: true
+      confidence: 0.99
+  expect:
+    rows:
+    - chart_position: 1
+      song_key: null
+      billboard_match_method: unmatched
+      billboard_match_rule: null
+    - chart_position: 2
+      song_key: null
+      billboard_match_method: unmatched
+      billboard_match_rule: null
+    - chart_position: 3
+      song_key: null
+      billboard_match_method: unmatched
+      billboard_match_rule: null
+    - chart_position: 4
+      song_key: null
+      billboard_match_method: unmatched
+      billboard_match_rule: null
+    - chart_position: 5
+      song_key: whole
+      billboard_match_method: folded
+      billboard_match_rule: folded
+    - chart_position: 6
+      song_key: short
+      billboard_match_method: credit_primary
+      billboard_match_rule: credit_primary
+    - chart_position: 7
+      song_key: whole
+      billboard_match_method: folded
+      billboard_match_rule: folded
+    - chart_position: 8
+      song_key: short
+      billboard_match_method: credit_primary
+      billboard_match_rule: credit_primary

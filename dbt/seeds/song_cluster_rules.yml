@@ -1,0 +1,13 @@
+version: 2
+seeds:
+- name: song_cluster_rules
+  description: Movement-only merge switches and measured precision. Same observed ISRC always groups. Open docs/movement.md and its linked census before changing a switch.
+  config:
+    column_types:
+      method: text
+      enabled: boolean
+      duration_tolerance_ms: bigint
+      confidence: double precision
+  columns:
+  - name: method
+    data_tests: [unique, not_null]

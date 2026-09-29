@@ -1,0 +1,1 @@
+ASSERT PASS: manual full rerun reuses closed cycle with zero vendor calls

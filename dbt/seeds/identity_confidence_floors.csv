@@ -1,0 +1,9 @@
+platform,method,floor,note
+spotify,crosswalk,1.01,Deliberately withheld below the 0.97 precision target; re-measure before lowering this floor; not a coverage gap; validate against an operator-reviewed sample before changing
+apple_music,crosswalk,0.9,Small sample; retain 0.9; validate against an operator-reviewed sample before changing
+soundcloud,crosswalk,0.9,Small sample; retain 0.9; validate against an operator-reviewed sample before changing
+bandcamp,crosswalk,0.9,Small sample; retain 0.9; validate against an operator-reviewed sample before changing
+spotify,mb_trigram,0.9167,95% Wilson lower bound >= 0.97; validate against an operator-reviewed sample before changing
+apple_music,mb_trigram,0.9286,95% Wilson lower bound >= 0.97; validate against an operator-reviewed sample before changing
+soundcloud,mb_trigram,0.9,Small sample; retain 0.9; validate against an operator-reviewed sample before changing
+bandcamp,mb_trigram,0.9,Small sample; retain 0.9; validate against an operator-reviewed sample before changing

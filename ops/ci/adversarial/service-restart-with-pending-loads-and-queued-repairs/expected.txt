@@ -1,0 +1,2 @@
+PASSED functions/tests/adversarial_runtime.py::test_restart_pending_loads_and_repairs
+RECOVERY pending load and queued repair drained within 60s; one row set each

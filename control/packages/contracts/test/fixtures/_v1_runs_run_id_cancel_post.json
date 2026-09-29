@@ -1,0 +1,205 @@
+{
+  "path": "/v1/runs/{run_id}/cancel",
+  "url": "/v1/runs/14a600e6-7376-427f-893a-7c0642e1f343/cancel",
+  "method": "post",
+  "status": 200,
+  "request": {},
+  "response": {
+    "run": {
+      "id": "14a600e6-7376-427f-893a-7c0642e1f343",
+      "kind": "invoke",
+      "scope": "global",
+      "streamline_id": "3efb6621-338c-452a-a5da-bcfd6c7264ac",
+      "cycle_id": "2369ea0e-a670-4cdf-bfd5-949acd27c62e",
+      "parent_run_id": null,
+      "trace_id": "f4cdf526a9654e3398ce4d50729f3714",
+      "status": "partial",
+      "coverage": "partial",
+      "error_class": "vendor_4xx",
+      "error_message": "HTTP 400 for /public/check",
+      "rows_written": "5",
+      "rows_rejected": "0",
+      "cost_cents": "0",
+      "created_at": "2026-09-18T07:50:28.577583Z",
+      "repairs_pending": 0,
+      "work_key": "manual:[\"manual:conformance-5e3d700e-3637-4adb-94a6-7a574a73015a\",\"fixture_accounts\",\"global\"]",
+      "target_set_id": "3f69d8db-dd40-402d-ae38-e4bb7ee36ca8",
+      "revision_id": "55d5d373-0cce-4dfb-9252-051fbc535609",
+      "tenant_id": null,
+      "warehouse_id": "983aced2-6f63-4a24-958d-21c8d7f69641",
+      "expected_batches": 10,
+      "input_dump_id": null,
+      "updated_at": "2026-09-18T07:50:30.917705+00:00",
+      "config_version": null,
+      "input_relation": null
+    },
+    "receipts": [
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "1",
+        "rows_rejected": "0",
+        "dump_id": "8fdc675f-5805-404c-b368-86dfadd48646",
+        "landed_seq": "1073",
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": [
+          {
+            "dump_id": "8fdc675f-5805-404c-b368-86dfadd48646",
+            "status": "loaded",
+            "generation": 1,
+            "rows_inserted": "1"
+          }
+        ]
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "1",
+        "rows_rejected": "0",
+        "dump_id": "f395927f-775b-41f5-8bdf-50f9a531557c",
+        "landed_seq": "1074",
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": [
+          {
+            "dump_id": "f395927f-775b-41f5-8bdf-50f9a531557c",
+            "status": "loaded",
+            "generation": 1,
+            "rows_inserted": "1"
+          }
+        ]
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "1",
+        "rows_rejected": "0",
+        "dump_id": "485e7921-087e-4c06-957b-30437253ecde",
+        "landed_seq": "1075",
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": [
+          {
+            "dump_id": "485e7921-087e-4c06-957b-30437253ecde",
+            "status": "loaded",
+            "generation": 1,
+            "rows_inserted": "1"
+          }
+        ]
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "1",
+        "rows_rejected": "0",
+        "dump_id": "70c95a87-3118-4688-a6a2-1636bd12482b",
+        "landed_seq": "1076",
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": [
+          {
+            "dump_id": "70c95a87-3118-4688-a6a2-1636bd12482b",
+            "status": "loaded",
+            "generation": 1,
+            "rows_inserted": "1"
+          }
+        ]
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "1",
+        "rows_rejected": "0",
+        "dump_id": "be1d2397-4f48-4e84-b6b3-bd0667dec873",
+        "landed_seq": "1077",
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": [
+          {
+            "dump_id": "be1d2397-4f48-4e84-b6b3-bd0667dec873",
+            "status": "loaded",
+            "generation": 1,
+            "rows_inserted": "1"
+          }
+        ]
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "0",
+        "rows_rejected": "0",
+        "dump_id": null,
+        "landed_seq": null,
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": []
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "0",
+        "rows_rejected": "0",
+        "dump_id": null,
+        "landed_seq": null,
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": []
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "0",
+        "rows_rejected": "0",
+        "dump_id": null,
+        "landed_seq": null,
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": []
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "0",
+        "rows_rejected": "0",
+        "dump_id": null,
+        "landed_seq": null,
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": []
+      },
+      {
+        "allow_partial": false,
+        "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+        "status": "partial",
+        "coverage": "partial",
+        "rows_written": "0",
+        "rows_rejected": "0",
+        "dump_id": null,
+        "landed_seq": null,
+        "trace_url": "local://trace/f4cdf526a9654e3398ce4d50729f3714",
+        "message": "HTTP 400 for /public/check",
+        "loads": []
+      }
+    ],
+    "repairs_pending": 0
+  }
+}

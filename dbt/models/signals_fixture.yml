@@ -1,0 +1,868 @@
+version: 2
+unit_tests:
+- name: movement_readiness_three_days
+  model: mart_readiness
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows
+  given:
+  - input: ref('mart_chart_history')
+    rows: []
+  - input: ref('int_cluster_day__daily')
+    rows:
+    - song_key: same
+      day: '2026-09-23'
+      playlists_observed: true
+      shazam_observed: true
+      stream_rate: 10
+      source_keys: '[]'
+    - song_key: same
+      day: '2026-09-24'
+      playlists_observed: true
+      shazam_observed: true
+      stream_rate: 10
+      source_keys: '[]'
+    - song_key: same
+      day: '2026-09-25'
+      playlists_observed: true
+      shazam_observed: true
+      stream_rate: 10
+      source_keys: '[]'
+    - song_key: duplicate
+      day: '2026-09-23'
+      playlists_observed: true
+      shazam_observed: true
+      stream_rate: 10
+      source_keys: '[]'
+    - song_key: same
+      day: '2026-09-26'
+      playlists_observed: true
+      shazam_observed: true
+      stream_rate: 10
+      source_keys: '[]'
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('mart_top_movers_current')
+    rows: []
+  - input: ref('mart_early_signals_current')
+    rows: []
+  - input: ref('mart_arrivals_current')
+    rows: []
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - family: billboard_hot100
+      day: '2026-09-25'
+      history_days: 0
+      first_rank_day: null
+    - family: playlists
+      day: '2026-09-25'
+      history_days: 3
+      first_rank_day: '2026-09-24'
+    - family: shazam
+      day: '2026-09-25'
+      history_days: 3
+      first_rank_day: '2026-09-24'
+    - family: streams
+      day: '2026-09-25'
+      history_days: 3
+      first_rank_day: '2026-09-28'
+    - family: artist_stage:new_entries
+      day: '2026-09-25'
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:established_entries
+      day: '2026-09-25'
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:catalog_entries
+      day: '2026-09-25'
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:unplaced
+      day: '2026-09-25'
+      history_days: 0
+      first_rank_day: null
+
+- name: movement_readiness_no_history
+  model: mart_readiness
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows
+  given:
+  - input: ref('mart_chart_history')
+    rows: []
+  - input: ref('int_cluster_day__daily')
+    rows: []
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('mart_top_movers_current')
+    rows: []
+  - input: ref('mart_early_signals_current')
+    rows: []
+  - input: ref('mart_arrivals_current')
+    rows: []
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - family: billboard_hot100
+      history_days: 0
+      first_rank_day: null
+    - family: playlists
+      history_days: 0
+      first_rank_day: null
+    - family: shazam
+      history_days: 0
+      first_rank_day: null
+    - family: streams
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:new_entries
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:established_entries
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:catalog_entries
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:unplaced
+      history_days: 0
+      first_rank_day: null
+
+- name: movement_readiness_unrated_streams
+  model: mart_readiness
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows
+  given:
+  - input: ref('mart_chart_history')
+    rows: []
+  - input: ref('int_cluster_day__daily')
+    rows:
+    - song_key: unrated
+      day: '2026-09-25'
+      streams_observed: true
+      stream_rate: null
+      source_keys: '[]'
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('mart_top_movers_current')
+    rows: []
+  - input: ref('mart_early_signals_current')
+    rows: []
+  - input: ref('mart_arrivals_current')
+    rows: []
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - family: billboard_hot100
+      history_days: 0
+      first_rank_day: null
+    - family: playlists
+      history_days: 0
+      first_rank_day: null
+    - family: shazam
+      history_days: 0
+      first_rank_day: null
+    - family: streams
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:new_entries
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:established_entries
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:catalog_entries
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:unplaced
+      history_days: 0
+      first_rank_day: null
+
+- name: early_signals_one_family_only
+  model: mart_early_signals_current
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from ranked
+  given:
+  - input: ref('int_song_movement__daily')
+    rows:
+    - song_key: zero
+      day: '2026-09-25'
+      playlist_adds: 0
+      follower_exposure_gain: 0
+      shazam_spread_gain: 0
+      stream_rate_gain: 0
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:59:00'
+      cluster_key: zero
+      member_song_keys: '["zero"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: one
+      day: '2026-09-25'
+      playlist_adds: 10
+      follower_exposure_gain: 100
+      shazam_spread_gain: 0
+      stream_rate_gain: 0
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:58:00'
+      cluster_key: one
+      member_song_keys: '["one"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: winner
+      day: '2026-09-25'
+      playlist_adds: 3
+      follower_exposure_gain: 0
+      shazam_spread_gain: 1
+      stream_rate_gain: 0
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:57:00'
+      cluster_key: winner
+      member_song_keys: '["winner"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: all
+      day: '2026-09-25'
+      playlist_adds: 4
+      follower_exposure_gain: 8
+      shazam_spread_gain: 2
+      stream_rate_gain: 1
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:56:00'
+      cluster_key: all
+      member_song_keys: '["all"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: follower
+      day: '2026-09-25'
+      playlist_adds: 0
+      follower_exposure_gain: 900
+      shazam_spread_gain: 0
+      stream_rate_gain: 0
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:55:00'
+      cluster_key: follower
+      member_song_keys: '["follower"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: chart
+      day: '2026-09-25'
+      playlist_adds: 0
+      follower_exposure_gain: 0
+      shazam_spread_gain: 2
+      stream_rate_gain: 0
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:54:00'
+      cluster_key: chart
+      member_song_keys: '["chart"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: streams
+      day: '2026-09-25'
+      playlist_adds: 0
+      follower_exposure_gain: 0
+      shazam_spread_gain: 0
+      stream_rate_gain: 0.5
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:53:00'
+      cluster_key: streams
+      member_song_keys: '["streams"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: tie
+      day: '2026-09-25'
+      playlist_adds: 10
+      follower_exposure_gain: 0
+      shazam_spread_gain: 0
+      stream_rate_gain: 0
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:52:00'
+      cluster_key: tie
+      member_song_keys: '["tie"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - &id001
+      song_key: older
+      day: '2026-09-24'
+      playlist_adds: 30
+      follower_exposure_gain: 0
+      shazam_spread_gain: 0
+      stream_rate_gain: 0
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:59:00'
+      cluster_key: older
+      member_song_keys: '["older"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: future
+      day: '2026-09-26'
+      playlist_adds: 40
+      follower_exposure_gain: 0
+      shazam_spread_gain: 0
+      stream_rate_gain: 0
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:50:00'
+      cluster_key: future
+      member_song_keys: '["future"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - song_key: negative
+      day: '2026-09-25'
+      playlist_adds: -1
+      follower_exposure_gain: null
+      shazam_spread_gain: null
+      stream_rate_gain: null
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:49:00'
+      cluster_key: negative
+      member_song_keys: '["negative"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+  - input: ref('int_song_evidence__daily')
+    rows:
+    - day: '2026-09-25'
+      song_key: one
+      component: playlist_adds
+      locator: '{"component":"playlist_adds","row_key":{"song_key":"one"},"input_build":{"cycle_id":"captured"}}'
+    - day: '2026-09-25'
+      song_key: one
+      component: follower_exposure_gain
+      locator: '{"component":"follower_exposure_gain"}'
+    - day: '2026-09-18'
+      song_key: one
+      component: playlist_adds
+      locator: '{"component":"old"}'
+  - input: ref('int_cluster_day__daily')
+    rows: []
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('int_song_cluster__daily')
+    rows:
+    - song_key: all
+      cluster_key: all
+      member_song_keys: '["all"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: chart
+      cluster_key: chart
+      member_song_keys: '["chart"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: follower
+      cluster_key: follower
+      member_song_keys: '["follower"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: future
+      cluster_key: future
+      member_song_keys: '["future"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: negative
+      cluster_key: negative
+      member_song_keys: '["negative"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: older
+      cluster_key: older
+      member_song_keys: '["older"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: one
+      cluster_key: one
+      member_song_keys: '["one"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: streams
+      cluster_key: streams
+      member_song_keys: '["streams"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: tie
+      cluster_key: tie
+      member_song_keys: '["tie"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: winner
+      cluster_key: winner
+      member_song_keys: '["winner"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: zero
+      cluster_key: zero
+      member_song_keys: '["zero"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - song_key: one
+      family: playlists
+      rank: 1
+      component: playlist_adds
+      value: 10
+    - song_key: tie
+      family: playlists
+      rank: 2
+      component: playlist_adds
+      value: 10
+    - song_key: follower
+      family: playlists
+      rank: 3
+      component: follower_exposure_gain
+      value: 900
+    - song_key: chart
+      family: shazam
+      rank: 1
+      component: shazam_spread_gain
+      value: 2
+    - song_key: streams
+      family: streams
+      rank: 1
+      component: stream_rate_gain
+      value: 0.5
+- name: early_signals_empty_bound_day
+  model: mart_early_signals_current
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from ranked
+  given:
+  - input: ref('int_song_movement__daily')
+    rows:
+    - *id001
+  - input: ref('int_song_evidence__daily')
+    rows: []
+  - input: ref('int_cluster_day__daily')
+    rows: []
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('int_song_cluster__daily')
+    rows:
+    - song_key: older
+      cluster_key: older
+      member_song_keys: '["older"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows: []
+
+- name: artist_stage_coverage_counts_served_songs_once
+  model: mart_readiness
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows
+  given:
+  - input: ref('mart_chart_history')
+    rows: []
+  - input: ref('int_cluster_day__daily')
+    rows: []
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('mart_top_movers_current')
+    rows:
+    - movement_list: new_entries
+      song_key: known
+      artist_stage: emerging
+      source_keys: '[]'
+  - input: ref('mart_early_signals_current')
+    rows:
+    - movement_list: new_entries
+      song_key: unknown
+      artist_stage: unknown
+      source_keys: '[]'
+  - input: ref('mart_arrivals_current')
+    rows:
+    - movement_list: new_entries
+      song_key: known
+      artist_stage: emerging
+      source_keys: '[]'
+    - movement_list: established_entries
+      song_key: established
+      artist_stage: established
+      source_keys: '[]'
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - family: billboard_hot100
+      stage_known_songs: null
+      list_songs: null
+      history_days: 0
+      first_rank_day: null
+    - family: playlists
+      stage_known_songs: null
+      list_songs: null
+      history_days: 0
+      first_rank_day: null
+    - family: shazam
+      stage_known_songs: null
+      list_songs: null
+      history_days: 0
+      first_rank_day: null
+    - family: streams
+      stage_known_songs: null
+      list_songs: null
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:new_entries
+      stage_known_songs: 1
+      list_songs: 2
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:established_entries
+      stage_known_songs: 1
+      list_songs: 1
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:catalog_entries
+      stage_known_songs: 0
+      list_songs: 0
+      history_days: 0
+      first_rank_day: null
+    - family: artist_stage:unplaced
+      stage_known_songs: 0
+      list_songs: 0
+      history_days: 0
+      first_rank_day: null
+
+- name: hot100_keyed_share_uses_latest_observed_week
+  model: mart_readiness
+  config:
+    tags: [song_fixture]
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows where family = 'billboard_hot100'
+  given:
+  - input: ref('mart_chart_history')
+    rows:
+    - {chart_name: hot-100, chart_week: '2026-09-12', chart_position: 1, song_key: old, source_keys: '["billboard_hot100"]'}
+    - {chart_name: hot-100, chart_week: '2026-09-19', chart_position: 1, song_key: matched, source_keys: '["billboard_hot100"]'}
+    - {chart_name: hot-100, chart_week: '2026-09-19', chart_position: 2, song_key: null, source_keys: '["billboard_hot100"]'}
+    - {chart_name: hot-100, chart_week: '2026-09-19', chart_position: 3, song_key: matched, source_keys: '["billboard_hot100"]'}
+    - {chart_name: hot-100, chart_week: '2026-09-26', chart_position: 1, song_key: future, source_keys: '["billboard_hot100"]'}
+    - {chart_name: other-chart, chart_week: '2026-09-25', chart_position: 1, song_key: other, source_keys: '[]'}
+  - input: ref('int_cluster_day__daily')
+    rows: []
+  - input: ref('mart_top_movers_current')
+    rows: []
+  - input: ref('mart_early_signals_current')
+    rows: []
+  - input: ref('mart_arrivals_current')
+    rows: []
+  - input: ref('movement_parameters')
+    rows: [{name: stream_min_days, value: 3}]
+  expect:
+    rows:
+    - family: billboard_hot100
+      chart_week: '2026-09-19'
+      keyed_entries: 2
+      chart_entries: 3
+      first_rank_day: null
+      _source_keys: '["billboard_hot100"]'

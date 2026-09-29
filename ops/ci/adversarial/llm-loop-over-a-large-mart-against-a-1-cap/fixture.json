@@ -1,0 +1,4 @@
+{
+  "kind": "pytest",
+  "target": "test_enrichment_runtime.py::test_gold_cap_snapshot_and_costsync"
+}

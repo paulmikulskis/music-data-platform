@@ -1,0 +1,17 @@
+{
+  "path": "/v1/dbt/webhook",
+  "url": "/v1/dbt/webhook",
+  "method": "post",
+  "status": 200,
+  "request": {
+    "event_id": "e79d710c-be74-4486-8eed-bc973a9b69b3",
+    "run_id": "conformance-2f782e91-b4dd-4759-8c34-56cf111a69cf",
+    "job_id": "core-hourly-global",
+    "status": "succeeded",
+    "message": "Synthetic conformance capture"
+  },
+  "response": {
+    "run_id": "2f7548af-4520-4af3-aa43-dc7a02281099",
+    "status": "succeeded"
+  }
+}

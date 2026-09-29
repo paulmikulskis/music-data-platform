@@ -1,0 +1,1 @@
+ASSERT PASS: six current snapshots have the known historical-to-current growth delta after retry

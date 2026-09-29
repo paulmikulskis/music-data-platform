@@ -1,0 +1,3 @@
+entity,field,source_key,rank,notes
+track,chart_position,billboard_hot100,1,Chart of record when present.
+track,position,billboard_hot100,1,fixture

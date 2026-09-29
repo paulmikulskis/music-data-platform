@@ -1,0 +1,32 @@
+{
+  "name": "@mdp/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./source-wording": "./src/source-wording.ts",
+    "./runner-state": "./src/runner-state.ts",
+    "./platform-sql": "./src/platform-sql.ts",
+    "./health-policy.generated": "./src/health-policy.generated.ts",
+    "./platform": "./src/platform.ts",
+    "./flows": "./src/flows.ts",
+    "./marks": "./src/marks.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "openapi": "tsx scripts/openapi.ts",
+    "error-catalog": "uv run --project ../../../functions python scripts/error-catalog.py"
+  },
+  "dependencies": {
+    "@mdp/control-db": "workspace:*",
+    "@mdp/data-sdk": "workspace:*",
+    "@orpc/contract": "catalog:",
+    "@orpc/openapi": "catalog:",
+    "@orpc/zod": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}

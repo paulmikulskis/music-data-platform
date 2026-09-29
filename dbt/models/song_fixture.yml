@@ -1,0 +1,931 @@
+version: 2
+unit_tests:
+- name: song_ranking_requires_two_positive_families
+  model: mart_top_movers
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from ranked
+  given:
+  - input: ref('int_song_movement__daily')
+    rows:
+    - day: '2026-09-25'
+      playlist_adds: 0
+      follower_exposure_gain: 0
+      shazam_spread_gain: 0
+      stream_rate_gain: 0
+      playlists_observed: 1
+      shazam_observed: 1
+      streams_observed: 1
+      song_key: zero
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:59:00'
+      cluster_key: zero
+      member_song_keys: '["zero"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - day: '2026-09-25'
+      playlist_adds: 10
+      follower_exposure_gain: 100
+      shazam_spread_gain: 0
+      stream_rate_gain: 0
+      playlists_observed: 1
+      shazam_observed: 1
+      streams_observed: 1
+      song_key: one
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:58:00'
+      cluster_key: one
+      member_song_keys: '["one"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - day: '2026-09-25'
+      playlist_adds: 3
+      follower_exposure_gain: 0
+      shazam_spread_gain: 1
+      stream_rate_gain: 0
+      playlists_observed: 1
+      shazam_observed: 1
+      streams_observed: 1
+      song_key: winner
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:57:00'
+      cluster_key: winner
+      member_song_keys: '["winner"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+  - input: ref('int_song_evidence__daily')
+    rows: []
+  - input: ref('int_cluster_day__daily')
+    rows: []
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('int_song_cluster__daily')
+    rows:
+    - song_key: one
+      cluster_key: one
+      member_song_keys: '["one"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: winner
+      cluster_key: winner
+      member_song_keys: '["winner"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: zero
+      cluster_key: zero
+      member_song_keys: '["zero"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - song_key: winner
+      rank: 1
+      momentum_score: 0.6
+
+- name: song_percentiles_ties_and_positive_cohorts
+  model: mart_top_movers
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from ranked
+  given:
+  - input: ref('int_song_movement__daily')
+    rows:
+    - day: '2026-09-25'
+      playlist_adds: 3
+      follower_exposure_gain: 0
+      shazam_spread_gain: 1
+      stream_rate_gain: 0
+      playlists_observed: 1
+      shazam_observed: 1
+      streams_observed: 1
+      song_key: a
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:59:00'
+      cluster_key: a
+      member_song_keys: '["a"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - day: '2026-09-25'
+      playlist_adds: 3
+      follower_exposure_gain: 0
+      shazam_spread_gain: 2
+      stream_rate_gain: 1
+      playlists_observed: 1
+      shazam_observed: 1
+      streams_observed: 1
+      song_key: b
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:58:00'
+      cluster_key: b
+      member_song_keys: '["b"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+    - day: '2026-09-25'
+      playlist_adds: 3
+      follower_exposure_gain: 0
+      shazam_spread_gain: 2
+      stream_rate_gain: 0
+      playlists_observed: 1
+      shazam_observed: 1
+      streams_observed: 1
+      song_key: c
+      window_days: 7
+      playlist_window_days: 7
+      shazam_window_days: 7
+      shazam_baseline_day: '2026-09-18'
+      stream_window_days: 7
+      list_reach_tier: 3
+      market_count: 1
+      last_entered_at: '2026-09-25 12:57:00'
+      cluster_key: c
+      member_song_keys: '["c"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+  - input: ref('int_song_evidence__daily')
+    rows: []
+  - input: ref('int_cluster_day__daily')
+    rows: []
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('int_song_cluster__daily')
+    rows:
+    - song_key: a
+      cluster_key: a
+      member_song_keys: '["a"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: b
+      cluster_key: b
+      member_song_keys: '["b"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: c
+      cluster_key: c
+      member_song_keys: '["c"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - song_key: b
+      rank: 1
+      momentum_score: 0.75
+    - song_key: c
+      rank: 2
+      momentum_score: 0.6
+    - song_key: a
+      rank: 3
+      momentum_score: 0.4333333333333333
+
+- name: song_current_never_reuses_previous_winners
+  model: mart_top_movers_current
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows
+  given:
+  - input: ref('mart_top_movers')
+    rows:
+    - day: '2026-09-24'
+      rank: 1
+      song_key: yesterday
+  - input: ref('rights_registry')
+    rows: []
+  expect:
+    rows: []
+- name: song_alias_redirects_to_resolved_recording
+  model: int_song_aliases__daily
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      is_incremental: false
+  given:
+  - input: ref('int_song_key__daily')
+    rows:
+    - platform: apple
+      platform_track_id: '123'
+      isrc: CODE
+      song_key: recording
+      resolved: true
+      source_keys: '["am_playlist"]'
+  expect:
+    rows:
+    - alias_key: apple:123
+      song_key: recording
+    - alias_key: isrc:CODE
+      song_key: recording
+- name: song_apple_and_shazam_share_fallback
+  model: int_song_key__daily
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros: {}
+  given:
+  - input: ref('stg_shazam__chart_entries')
+    rows:
+    - apple_song_id: '123'
+      title_text: Fixture
+      artist_text: Fixture act
+      _source_key: sz_chart
+    - apple_song_id: '456'
+      title_text: Only chart
+      _source_key: sz_chart
+  - input: ref('mart_track_daily_streams')
+    rows: []
+  - input: ref('int_track_identity__daily')
+    rows: []
+  - input: ref('int_artist_identity')
+    rows: []
+  - input: ref('int_identity__track_inputs_daily')
+    rows:
+    - platform: apple_music
+      platform_track_id: '123'
+      title: Fixture
+      artist_names: '["Fixture act"]'
+      platform_artist_ids: '[]'
+      _source_keys: '["am_playlist"]'
+  expect:
+    rows:
+    - platform: apple
+      platform_track_id: '123'
+      song_key: apple:123
+    - platform: apple
+      platform_track_id: '456'
+      song_key: apple:456
+- name: song_followers_collapse_variants_without_losing_past_days
+  model: int_song_followers__daily
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros: {}
+  given:
+  - input: ref('int_song_key__daily')
+    rows:
+    - platform: apple
+      platform_track_id: '123'
+      song_key: apple:123
+  - input: ref('int_playlist__track_days')
+    rows:
+    - platform: apple_music
+      platform_track_id: '123'
+      playlist_id: list
+      day: '2026-09-23'
+      followers: 100
+      best_position: 2
+      owner_class: editorial
+      source_keys: '["am_playlist"]'
+    - platform: apple_music
+      platform_track_id: '123'
+      playlist_id: list
+      day: '2026-09-23'
+      followers: 100
+      best_position: 4
+      owner_class: editorial
+      source_keys: '["am_playlist"]'
+    - platform: apple_music
+      platform_track_id: '123'
+      playlist_id: list
+      day: '2026-09-24'
+      followers: 200
+      best_position: 3
+      owner_class: editorial
+      source_keys: '["am_playlist"]'
+  expect:
+    rows:
+    - song_key: apple:123
+      day: '2026-09-23'
+      followers: 100
+      best_position: 2
+    - song_key: apple:123
+      day: '2026-09-24'
+      followers: 200
+      best_position: 3
+- name: song_shazam_two_ids_count_one_entry
+  model: int_song_shazam__daily
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros: {}
+  given:
+  - input: ref('mart_shazam_chart_daily')
+    rows:
+    - chart: known
+      chart_date: '2026-09-24'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-23'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-22'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-21'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-20'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-19'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-18'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-17'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-16'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-15'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-14'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-13'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-12'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-11'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-10'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-09'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-08'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-07'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-06'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-05'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-04'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-03'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-02'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-01'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-08-31'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-08-30'
+      apple_song_id: history
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-25'
+      apple_song_id: a
+      position: 1
+      source_keys: '["sz_chart"]'
+    - chart: known
+      chart_date: '2026-09-25'
+      apple_song_id: b
+      position: 2
+      source_keys: '["sz_chart"]'
+  - input: ref('int_song_key__daily')
+    rows:
+    - platform: apple
+      platform_track_id: a
+      song_key: resolved
+    - platform: apple
+      platform_track_id: b
+      song_key: resolved
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - song_key: resolved
+      chart: known
+      chart_date: '2026-09-25'
+      new_entry: 1
+- name: song_known_entries_and_zero_observations_survive
+  model: mart_song_day
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from rows
+  given:
+  - input: ref('int_billboard_song__daily')
+    rows: []
+  - input: ref('int_song_cluster__daily')
+    rows: []
+  - input: ref('mart_playlist_events')
+    rows: []
+  - input: ref('int_song_key__daily')
+    rows:
+    - song_key: observed
+      platform: apple
+      platform_track_id: a
+      source_keys: '[]'
+    - song_key: missing
+      platform: spotify
+      platform_track_id: b
+      source_keys: '[]'
+    - song_key: no_count
+      platform: spotify
+      platform_track_id: c
+      source_keys: '[]'
+  - input: ref('int_playlist__snapshots')
+    rows:
+    - platform: apple_music
+      observed_at: '2026-09-25 12:00:00'
+  - input: ref('int_song_followers__daily')
+    rows: []
+  - input: ref('int_song_shazam__daily')
+    rows:
+    - song_key: observed
+      chart: known
+      chart_date: '2026-09-25'
+      new_entry: 1
+      source_keys: '[]'
+    - song_key: observed
+      chart: short
+      chart_date: '2026-09-25'
+      new_entry: null
+      source_keys: '[]'
+    - song_key: missing
+      chart: short
+      chart_date: '2026-09-25'
+      new_entry: null
+      source_keys: '[]'
+  - input: ref('mart_track_daily_streams')
+    rows:
+    - platform: apple
+      platform_track_id: a
+      day: '2026-09-25'
+      count_status: unchanged
+      source_keys: '[]'
+    - platform: spotify
+      platform_track_id: b
+      day: '2026-09-25'
+      count_status: no_fetch
+      source_keys: '[]'
+    - platform: spotify
+      platform_track_id: c
+      day: '2026-09-25'
+      count_status: no_count
+      source_keys: '[]'
+  - input: ref('rights_registry')
+    rows: []
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - song_key: observed
+      shazam_new_entries: 1
+      editorial_adds: 0
+      playlists_observed: true
+      streams_observed: true
+      stream_rate: null
+    - song_key: missing
+      shazam_new_entries: null
+      editorial_adds: null
+      playlists_observed: false
+      streams_observed: false
+      stream_rate: null
+    - song_key: no_count
+      shazam_new_entries: null
+      editorial_adds: null
+      playlists_observed: false
+      streams_observed: false
+      stream_rate: null
+- name: song_add_proof_reads_counted_entries
+  model: int_song_evidence__daily
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros:
+      mdp_song_input_build: '''{}'''
+  given:
+  - input: ref('mart_playlist_events')
+    rows: []
+  - input: ref('int_song_key__daily')
+    rows: []
+  - input: ref('mart_track_daily_streams')
+    rows: []
+  - input: ref('mart_shazam_chart_daily')
+    rows: []
+  - input: ref('mart_playlist_profile')
+    rows: []
+  - input: ref('int_song_entries__daily')
+    rows:
+    - song_key: resolved
+      day: '2026-09-25'
+      platform: apple_music
+      list_id: editorial
+      list_kind: editorial
+      followers: null
+      locator: '{"row_key": {"playlist_id": "editorial"}, "window": {}}'
+    - song_key: resolved
+      day: '2026-09-25'
+      platform: spotify
+      list_id: fresh
+      list_kind: new_music
+      followers: null
+      locator: '{"row_key": {"playlist_id": "fresh"}, "window": {}}'
+    - song_key: resolved
+      day: '2026-09-25'
+      platform: spotify
+      list_id: algorithmic
+      list_kind: dsp_algorithmic
+      followers: null
+      locator: '{"row_key": {"playlist_id": "algorithmic"}, "window": {}}'
+    - song_key: resolved
+      day: '2026-09-25'
+      platform: spotify
+      list_id: top-50
+      list_kind: chart
+      followers: null
+      locator: '{"row_key": {"playlist_id": "top-50"}, "window": {}}'
+    - song_key: resolved
+      day: '2026-09-25'
+      platform: shazam
+      list_id: shazam-us
+      list_kind: chart
+      followers: null
+      locator: '{"row_key": {"chart": "shazam-us"}, "window": {}}'
+  expect:
+    rows:
+    - song_key: resolved
+      component: playlist_adds
+      list_kind: editorial
+    - song_key: resolved
+      component: playlist_adds
+      list_kind: new_music
+    - song_key: resolved
+      component: playlist_adds
+      list_kind: dsp_algorithmic
+- name: song_coverage_uses_collection_not_movement
+  model: int_song_movement__daily
+  config:
+    tags:
+    - song_fixture
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-25 12:00:00'
+      dry_run: true
+    macros: {}
+  given:
+  - input: ref('int_cluster_day__daily')
+    rows:
+    - song_key: zero
+      day: '2026-09-25'
+      stream_rate: null
+      playlists_observed: true
+      streams_observed: true
+      shazam_observed: false
+    - song_key: missing
+      day: '2026-09-25'
+      stream_rate: null
+      playlists_observed: false
+      streams_observed: false
+      shazam_observed: false
+  - input: ref('int_song_windows__daily')
+    rows:
+    - day: '2026-09-25'
+      family: playlists
+      window_days: 0
+      rate_window_days: 0
+    - day: '2026-09-25'
+      family: shazam
+      window_days: 0
+      rate_window_days: 0
+    - day: '2026-09-25'
+      family: streams
+      window_days: 0
+      rate_window_days: 0
+  - input: ref('int_cluster_entries__daily')
+    rows: []
+  - input: ref('int_song_followers__daily')
+    rows: []
+  - input: ref('playlist_reach_tiers')
+    rows: []
+  - input: ref('int_cluster_shazam__daily')
+    rows: []
+  - input: ref('int_cluster_age__daily')
+    rows: []
+  - input: ref('int_song_cluster__daily')
+    rows:
+    - song_key: missing
+      cluster_key: missing
+      member_song_keys: '["missing"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+    - song_key: zero
+      cluster_key: zero
+      member_song_keys: '["zero"]'
+      cluster_methods: '[]'
+      cluster_confidence: 1.0
+      source_keys: '[]'
+  - input: ref('movement_parameters')
+    rows:
+    - name: window_max_days
+      value: 7
+    - name: stream_min_days
+      value: 3
+    - name: editorial_add_points
+      value: 3
+    - name: algorithmic_add_points
+      value: 1
+    - name: head_confidence
+      value: 0.5
+    - name: tier_one_followers
+      value: 1000000
+    - name: tier_two_followers
+      value: 100000
+    - name: playlist_adds_weight
+      value: 0.35
+    - name: follower_exposure_gain_weight
+      value: 0.25
+    - name: shazam_spread_gain_weight
+      value: 0.25
+    - name: stream_rate_gain_weight
+      value: 0.15
+    - name: stream_interval_min_hours
+      value: 20
+    - name: stream_interval_max_hours
+      value: 28
+    - name: shazam_history_days
+      value: 28
+    - name: shazam_min_observed_days
+      value: 26
+  expect:
+    rows:
+    - song_key: zero
+      playlists_observed: 1
+      streams_observed: 1
+      shazam_observed: 0
+    - song_key: missing
+      playlists_observed: 0
+      streams_observed: 0
+      shazam_observed: 0

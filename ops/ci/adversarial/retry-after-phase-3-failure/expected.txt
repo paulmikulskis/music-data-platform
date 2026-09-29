@@ -1,0 +1,2 @@
+ASSERT PASS: zero new call_ledger rows
+ASSERT PASS: manifest unchanged

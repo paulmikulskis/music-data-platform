@@ -1,0 +1,5 @@
+# real inputs never enter git; only the example template is tracked
+*.env
+!inputs.example.env
+# real target lists stay local
+fixture_targets.csv

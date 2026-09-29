@@ -1,0 +1,21 @@
+app = "mdp-mb-db"
+primary_region = "ewr"
+kill_signal = "SIGINT"
+kill_timeout = "5m"
+
+[build]
+  image = "metabrainz/musicbrainz-docker-db:18-build0"
+[env]
+  POSTGRES_USER = "musicbrainz"
+  POSTGRES_DB = "postgres"
+  PGDATA = "/var/lib/postgresql/18/docker"
+[processes]
+  app = "postgres -c shared_buffers=2048MB -c effective_cache_size=6GB -c maintenance_work_mem=512MB -c work_mem=16MB -c max_connections=100 -c max_wal_size=4GB -c listen_addresses=* -c password_encryption=scram-sha-256"
+[[mounts]]
+  source = "mbdata"
+  destination = "/var/lib/postgresql"
+[[vm]]
+  size = "shared-cpu-4x"
+  memory = "8gb"
+[[restart]]
+  policy = "always"

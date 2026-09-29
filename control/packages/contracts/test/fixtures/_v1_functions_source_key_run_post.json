@@ -1,0 +1,11 @@
+{
+  "path": "/v1/functions/{source_key}/run",
+  "url": "/v1/functions/fixture_accounts/run?dbt_run_id=lifecycle-085e1dad2e444c38921414529f7c7e04",
+  "method": "post",
+  "status": 202,
+  "request": {},
+  "response": {
+    "run_id": "14a600e6-7376-427f-893a-7c0642e1f343",
+    "status": "queued"
+  }
+}

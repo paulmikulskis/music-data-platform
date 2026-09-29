@@ -1,0 +1,86 @@
+version: 2
+models:
+- name: mart_shazam_chart_daily
+  description: Every Shazam country Top 200, Discovery and city Top 50 row per chart date, by Apple song
+    id and the primary artist id of its one artist link. A collaboration row names only its
+    primary artist; a secondary credit reaches a recording only through the track identity columns,
+    and strict identity never matches artist_text. Movement can compare full credits through its flagged successor rule. mart_chart_history stays weekly and holds Billboard alone.
+  config:
+    contract:
+      enforced: true
+    meta:
+      grain:
+      - chart
+      - chart_date
+      - position
+  columns:
+  - name: chart
+    description: shazam:<type>:<country>[:<city>], as the chart's page path names it.
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: chart_type
+    description: top-200 (country), top-50 (city) or discovery.
+    data_type: text
+  - name: country
+    description: ISO country code from shazam_markets. Worldwide and unknown markets are null. Open chart for the original slug.
+    data_type: text
+  - name: city
+    data_type: text
+  - name: chart_date
+    description: The chart's own date, from its CSV.
+    data_type: date
+    constraints:
+    - type: not_null
+  - name: position
+    description: The rank the CSV and the page both print for this row.
+    data_type: integer
+    constraints:
+    - type: not_null
+  - name: apple_song_id
+    data_type: text
+    constraints:
+    - type: not_null
+  - name: apple_primary_artist_id
+    description: The Apple artist id of the row's one artist link; on a collaboration row, the primary
+      artist only.
+    data_type: text
+  - name: artist_text
+    description: The credit as the CSV prints it. Strict identity does not match names. Open the movement rules for provisional successor matching.
+    data_type: text
+  - name: title_text
+    data_type: text
+  - name: multi_artist_credit
+    description: The printed credit names more than one artist (a comma or an ampersand), so the row's
+      artist id covers only its primary artist.
+    data_type: boolean
+  - name: isrc
+    description: The page's ISRC where it carries one (the video-highlight songs), else the resolved
+      track identity's.
+    data_type: text
+  - name: isrc_source
+    data_type: text
+  - name: mb_recording_gid
+    description: The MusicBrainz recording, where the Apple song id resolves in track identity.
+    data_type: text
+  - name: recording_method
+    data_type: text
+  - name: confidence
+    description: Confidence of the selected recording_method on a zero-to-one scale; null when no recording is resolved.
+    data_type: double precision
+  - name: observed_at
+    data_type: timestamp
+    constraints:
+    - type: not_null
+  - name: learning_eligible
+    data_type: boolean
+    constraints:
+    - type: not_null
+  - name: resale_permitted
+    data_type: boolean
+    constraints:
+    - type: not_null
+  - name: source_keys
+    data_type: text
+    constraints:
+    - type: not_null

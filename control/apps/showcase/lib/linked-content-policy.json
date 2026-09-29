@@ -1,0 +1,115 @@
+{
+  "hard": [
+    {
+      "class": "email",
+      "pattern": "(?<![a-z0-9._%+\\[\\]-])(?!(?:no-?reply)@)(?!(?:workbench|[a-z0-9._%+-]+\\[bot\\])@users\\.noreply\\.github\\.com\\b)[a-z0-9][a-z0-9._%+\\[\\]-]*@[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\\.[a-z]{2,}\\b",
+      "flags": "i"
+    },
+    {
+      "class": "credential",
+      "pattern": "\\b(?:sk|pk|signkey|whsec)[-_](?:live|test|prod)?[-_]?[A-Za-z0-9]{8,}",
+      "flags": ""
+    },
+    {
+      "class": "credential",
+      "pattern": "\\b(?:gh[pousr]_|github_pat_|xox[a-z]-|(?:AKIA|ASIA)[A-Z0-9]|AIza|FlyV1[ _-]?|fo1_|fm2_|dp\\.(?:st|pt)\\.|SG\\.)[A-Za-z0-9_.+/=-]{12,}",
+      "flags": ""
+    },
+    {
+      "class": "credential",
+      "pattern": "\\beyJ[A-Za-z0-9_-]{4,}\\.[A-Za-z0-9_-]{4,}\\.[A-Za-z0-9_-]{8,}\\b",
+      "flags": ""
+    },
+    {
+      "class": "credential",
+      "pattern": "\\bBearer\\s+[A-Za-z0-9._-]{16,}",
+      "flags": "i"
+    },
+    {
+      "class": "credential",
+      "pattern": "-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY-----",
+      "flags": ""
+    },
+    {
+      "class": "credential",
+      "pattern": "token=",
+      "flags": "i"
+    },
+    {
+      "class": "credential",
+      "pattern": "\\b(?:postgres(?:ql)?|mysql|mariadb|mongodb(?:\\+srv)?|redis|rediss|mssql|sqlserver)://[^/\\s:@]+:[^@\\s/]+@",
+      "flags": "i"
+    },
+    {
+      "class": "credential",
+      "pattern": "(?<![A-Za-z0-9_+/-])[A-Za-z0-9+/][A-Za-z0-9+/-]{19,}={0,2}(?![A-Za-z0-9_+/=-])",
+      "flags": "",
+      "kind": "opaque"
+    },
+    {
+      "class": "price",
+      "pattern": "(?:[$\u20ac\u00a3\u00a5\\u20a0-\\u20cf]\\s*\\d+(?:[,.]\\d+)*|\\b(?:USD|EUR|GBP|JPY|CAD|AUD|CHF|INR|BRL|MXN|ZAR|NZD|SGD|HKD|KRW|SEK|NOK|DKK|PLN|CZK|AED|SAR)\\s*\\d+(?:[,.]\\d+)*|\\b\\d+(?:[,.]\\d+)*\\s*(?:USD|EUR|GBP|JPY|CAD|AUD|CHF|INR|BRL|MXN|ZAR|NZD|SGD|HKD|KRW|SEK|NOK|DKK|PLN|CZK|AED|SAR|dollars?|euros?|pounds?))\\b",
+      "flags": "i"
+    },
+    {
+      "class": "home_path",
+      "pattern": "(?:/(?:Users|home)/[a-z0-9._-]+(?:/|\\b)|\\b[a-z]:\\\\Users\\\\[a-z0-9._-]+)",
+      "flags": "i"
+    }
+  ],
+  "record": [
+    {
+      "class": "internal_host",
+      "pattern": "\\b[a-z0-9-]+\\.(?:internal|flycast)\\b",
+      "flags": "i"
+    },
+    {
+      "class": "ip_address",
+      "pattern": "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b|\\bfdaa:[0-9a-f:]+|(?<![0-9a-f:])::1(?![0-9a-f:])",
+      "flags": "i"
+    },
+    {
+      "class": "env_name",
+      "pattern": "\\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*_(?:KEY|SECRET|TOKEN|PASSWORD|URL|DSN)\\b",
+      "flags": ""
+    },
+    {
+      "class": "machine_id",
+      "pattern": "\\b[0-9a-f]{14}\\b",
+      "flags": "i"
+    },
+    {
+      "class": "volume_id",
+      "pattern": "\\bvol_[a-z0-9]+\\b|\\b(?!metadata\\b)[a-z][a-z0-9]*(?:_?data|_vol(?:ume)?)\\b",
+      "flags": "i"
+    },
+    {
+      "class": "image_id",
+      "pattern": "\\b(?:registry\\.fly\\.io|docker\\.io)/[\\w./:-]+|\\bsha256:[0-9a-f]{64}\\b",
+      "flags": "i"
+    }
+  ],
+  "opaque_token": {
+    "secret_words": [
+      "key",
+      "token",
+      "secret",
+      "password",
+      "passwd",
+      "pwd",
+      "auth",
+      "authorization",
+      "bearer",
+      "api-key",
+      "apikey",
+      "credential",
+      "private"
+    ],
+    "hash": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$",
+    "slug": "^[a-z0-9]+(?:-[a-z0-9]+)+$",
+    "long_numeric_word": "(?:^|-)[0-9]{9,}(?:-|$)",
+    "long_alphanumeric_length": 40,
+    "minimum_entropy": 4.5,
+    "short_token_margin": 0.25
+  }
+}

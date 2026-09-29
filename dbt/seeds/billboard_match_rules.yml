@@ -1,0 +1,12 @@
+version: 2
+seeds:
+- name: billboard_match_rules
+  description: Text match switches. Validate against an operator-reviewed sample before enabling an unmeasured method.
+  config:
+    column_types:
+      method: text
+      enabled: boolean
+      confidence: double precision
+  columns:
+  - name: method
+    data_tests: [unique, not_null]

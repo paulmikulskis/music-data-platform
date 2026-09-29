@@ -1,0 +1,5 @@
+method,enabled,duration_tolerance_ms,confidence
+isrc_crosswalk,true,0,0.9603
+apple_variant,false,3000,0.9259
+title_artist_duration,true,3000,0.9690
+apple_id_successor,false,0,0.4385

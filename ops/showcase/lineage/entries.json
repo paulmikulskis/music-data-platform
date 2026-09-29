@@ -1,0 +1,96 @@
+[
+  {
+    "id": "home.playlist_adds",
+    "component": "playlist_adds",
+    "relation": "marts.mart_top_movers_current",
+    "code": "control/apps/showcase/server/reads.ts",
+    "selectors": [
+      {
+        "relation": "marts.mart_playlist_events",
+        "row_keys": [
+          "platform",
+          "playlist_id",
+          "variant",
+          "stream",
+          "occurrence_key",
+          "interval_id",
+          "event_type",
+          "observed_at"
+        ],
+        "evidence": "served_locator",
+        "require_input_build": true
+      }
+    ]
+  },
+  {
+    "id": "home.follower_exposure_gain",
+    "component": "follower_exposure_gain",
+    "relation": "marts.mart_top_movers_current",
+    "code": "control/apps/showcase/server/reads.ts",
+    "selectors": [
+      {
+        "relation": "marts.mart_playlist_events",
+        "row_keys": [
+          "platform",
+          "playlist_id",
+          "variant",
+          "stream",
+          "occurrence_key",
+          "interval_id",
+          "event_type",
+          "observed_at"
+        ],
+        "evidence": "served_locator",
+        "require_input_build": true
+      },
+      {
+        "relation": "marts.mart_playlist_profile",
+        "row_keys": [
+          "platform",
+          "playlist_id",
+          "variant",
+          "stream",
+          "snapshot_id"
+        ],
+        "evidence": "served_locator",
+        "require_input_build": true
+      }
+    ]
+  },
+  {
+    "id": "home.shazam_spread_gain",
+    "component": "shazam_spread_gain",
+    "relation": "marts.mart_top_movers_current",
+    "code": "control/apps/showcase/server/reads.ts",
+    "selectors": [
+      {
+        "relation": "marts.mart_shazam_chart_daily",
+        "row_keys": [
+          "chart",
+          "chart_date",
+          "position"
+        ],
+        "evidence": "served_locator",
+        "require_input_build": true
+      }
+    ]
+  },
+  {
+    "id": "home.stream_rate_gain",
+    "component": "stream_rate_gain",
+    "relation": "marts.mart_top_movers_current",
+    "code": "control/apps/showcase/server/reads.ts",
+    "selectors": [
+      {
+        "relation": "marts.mart_track_daily_streams",
+        "row_keys": [
+          "platform",
+          "platform_track_id",
+          "day"
+        ],
+        "evidence": "served_locator",
+        "require_input_build": true
+      }
+    ]
+  }
+]

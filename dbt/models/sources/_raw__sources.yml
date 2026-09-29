@@ -1,0 +1,2523 @@
+version: 2
+sources:
+- name: raw
+  description: Append-only function output with runtime lineage.
+  schema: raw
+  loaded_at_field: _ingested_at
+  tags:
+  - bronze
+  tables:
+  - name: _enrichment_completion
+    freshness: null
+    loaded_at_field: null
+    columns:
+    - name: scope
+      data_type: text
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: required_outputs
+      data_type: jsonb
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: _run_completion
+    freshness: null
+    loaded_at_field: null
+    columns:
+    - name: run_id
+      data_type: text
+    - name: source_key
+      data_type: text
+    - name: outputs
+      data_type: jsonb
+    - name: recorded
+      data_type: jsonb
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: apple_song_durations
+    meta:
+      dedupe: latest
+      writers:
+      - apple_song_duration
+    columns:
+    - name: apple_song_id
+      data_type: text
+    - name: duration_ms
+      data_type: bigint
+    - name: status
+      data_type: text
+    - name: observed_at
+      data_type: timestamptz
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: bc_releases
+    columns:
+    - name: page_url
+      data_type: text
+    - name: position
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: lastmod
+      data_type: text
+    - name: item_type
+      data_type: text
+    - name: item_id
+      data_type: text
+    - name: band_id
+      data_type: text
+    - name: title
+      data_type: text
+    - name: artist
+      data_type: text
+    - name: upc
+      data_type: text
+    - name: isrc
+      data_type: text
+    - name: album_id
+      data_type: text
+    - name: featured_track_id
+      data_type: text
+    - name: num_tracks
+      data_type: bigint
+    - name: release_date
+      data_type: text
+    - name: publish_date
+      data_type: text
+    - name: mod_date
+      data_type: text
+    - name: label
+      data_type: text
+    - name: fetch_surface
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - bc_tralbum
+  - name: bc_tracks
+    columns:
+    - name: page_url
+      data_type: text
+    - name: position
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: track_id
+      data_type: text
+    - name: album_id
+      data_type: text
+    - name: page_item_type
+      data_type: text
+    - name: page_item_id
+      data_type: text
+    - name: track_num
+      data_type: bigint
+    - name: title
+      data_type: text
+    - name: duration_ms
+      data_type: bigint
+    - name: isrc
+      data_type: text
+    - name: band_id
+      data_type: text
+    - name: fetch_surface
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - bc_tralbum
+  - name: chart_entries
+    meta:
+      source_key: billboard_hot100
+      dedupe: latest
+      writers:
+      - billboard_hot100
+    columns:
+    - name: chart
+      data_type: text
+    - name: week
+      data_type: date
+    - name: position
+      data_type: bigint
+    - name: title
+      data_type: text
+    - name: artist
+      data_type: text
+    - name: last_week
+      data_type: bigint
+    - name: peak
+      data_type: bigint
+    - name: weeks_on_chart
+      data_type: bigint
+    - name: _run_id
+      description: Producing run identifier.
+      data_type: uuid
+    - name: _dump_id
+      description: Committed output dump identifier.
+      data_type: uuid
+    - name: _landed_seq
+      description: Monotonic landing sequence.
+      data_type: bigint
+    - name: _cycle_id
+      description: Bound cycle identifier.
+      data_type: uuid
+    - name: _revision_id
+      description: Frozen target membership revision; nullable.
+      data_type: uuid
+    - name: _target_id
+      description: Target identifier; nullable.
+      data_type: uuid
+    - name: _request_id
+      description: Originating request identifier.
+      data_type: text
+    - name: _source_key
+      description: Producing function source key.
+      data_type: text
+    - name: _ingested_at
+      description: Runtime ingestion timestamp.
+      data_type: timestamptz
+    - name: _extra
+      description: Unknown provider fields preserved as JSON.
+      data_type: jsonb
+  - name: cost_ledger
+    freshness: null
+    loaded_at_field: null
+    columns:
+    - name: id
+      data_type: uuid
+    - name: run_id
+      data_type: uuid
+    - name: llm_step_id
+      data_type: uuid
+    - name: provider_request_id
+      data_type: text
+    - name: cost_cents
+      data_type: bigint
+    - name: origin
+      data_type: text
+    - name: is_current
+      data_type: boolean
+  - name: cycle_attempts
+    loaded_at_field: null
+    freshness: null
+  - name: cycle_inputs
+    loaded_at_field: null
+    freshness: null
+  - name: cycles
+    loaded_at_field: null
+    freshness: null
+  - name: dump_stamps
+    freshness: null
+    loaded_at_field: null
+  - name: jev_instrument_family
+    meta:
+      dedupe: latest
+      writers:
+      - jev_instrument_family
+    columns:
+    - name: state_id
+      data_type: text
+    - name: question
+      data_type: text
+    - name: answer
+      data_type: text
+    - name: probabilities
+      data_type: jsonb
+    - name: confidence
+      data_type: double precision
+    - name: question_set_version
+      data_type: text
+    - name: model_id
+      data_type: text
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: instrument
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: lb_fresh_releases
+    meta:
+      dedupe: latest
+      writers:
+      - lb_fresh_releases
+    columns:
+    - name: release_mbid
+      data_type: text
+    - name: release_group_mbid
+      data_type: text
+    - name: artist_mbids
+      data_type: text
+    - name: artist_credit_name
+      data_type: text
+    - name: release_name
+      data_type: text
+    - name: release_group_primary_type
+      data_type: text
+    - name: release_date
+      data_type: date
+    - name: listen_count
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: lb_popularity
+    meta:
+      dedupe: latest
+      writers:
+      - lb_popularity
+    columns:
+    - name: entity_type
+      data_type: text
+    - name: mbid
+      data_type: text
+    - name: total_listen_count
+      data_type: bigint
+    - name: total_user_count
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: mb_artist_gid
+      data_type: text
+    - name: popularity_day
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: lb_similar_artists
+    meta:
+      dedupe: latest
+      writers:
+      - lb_similar_artists
+    columns:
+    - name: reference_mbid
+      data_type: text
+    - name: neighbour_mbid
+      data_type: text
+    - name: score
+      data_type: bigint
+    - name: rank
+      data_type: bigint
+    - name: algorithm
+      data_type: text
+    - name: observed_at
+      data_type: timestamptz
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: mb_artist_gid
+      data_type: text
+    - name: similarity_week
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: lb_sitewide
+    meta:
+      dedupe: latest
+      writers:
+      - lb_sitewide
+    columns:
+    - name: entity_type
+      data_type: text
+    - name: stats_range
+      data_type: text
+    - name: window_start
+      data_type: timestamptz
+    - name: window_end
+      data_type: timestamptz
+    - name: last_updated
+      data_type: timestamptz
+    - name: rank
+      data_type: bigint
+    - name: mbid
+      data_type: text
+    - name: name
+      data_type: text
+    - name: artist_mbids
+      data_type: text
+    - name: listen_count
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: mb_artist
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: artist_id
+      data_type: bigint
+    - name: artist_gid
+      data_type: text
+    - name: name
+      data_type: text
+    - name: sort_name
+      data_type: text
+    - name: type_id
+      data_type: bigint
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_artist_catalog
+    meta:
+      dedupe: latest
+      writers:
+      - mb_artist_catalog
+    columns:
+    - name: status
+      data_type: text
+    - name: artist_id
+      data_type: bigint
+    - name: artist_gid
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: catalog_week
+      data_type: text
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: mb_artist_gid
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: mb_artist_credit
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: artist_credit_id
+      data_type: bigint
+    - name: name
+      data_type: text
+    - name: artist_count
+      data_type: bigint
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_artist_credit_name
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: artist_credit_id
+      data_type: bigint
+    - name: position
+      data_type: bigint
+    - name: artist_id
+      data_type: bigint
+    - name: name
+      data_type: text
+    - name: join_phrase
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_artist_ipi
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: artist_id
+      data_type: bigint
+    - name: ipi
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: mb_artist_isni
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: artist_id
+      data_type: bigint
+    - name: isni
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: mb_artist_release_groups
+    meta:
+      dedupe: latest
+      writers:
+      - mb_artist_catalog
+    columns:
+    - name: primary_type
+      data_type: text
+    - name: secondary_types
+      data_type: text
+    - name: release_groups
+      data_type: bigint
+    - name: first_release_year
+      data_type: bigint
+    - name: catalog_week
+      data_type: text
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: mb_artist_gid
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: mb_generation
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: export_date
+      data_type: timestamptz
+    - name: schema_sequence
+      data_type: bigint
+    - name: imported_at
+      data_type: timestamptz
+    - name: validated_at
+      data_type: timestamptz
+    - name: mirror_counts
+      data_type: text
+    - name: read_at
+      data_type: timestamptz
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_isrc
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: isrc_id
+      data_type: bigint
+    - name: isrc
+      data_type: text
+    - name: recording_id
+      data_type: bigint
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_l_artist_label
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: link_id
+      data_type: bigint
+    - name: artist_id
+      data_type: bigint
+    - name: label_id
+      data_type: bigint
+    - name: link_type
+      data_type: text
+    - name: begin_year
+      data_type: bigint
+    - name: begin_month
+      data_type: bigint
+    - name: begin_day
+      data_type: bigint
+    - name: end_year
+      data_type: bigint
+    - name: end_month
+      data_type: bigint
+    - name: end_day
+      data_type: bigint
+    - name: ended
+      data_type: boolean
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: mb_l_label_label
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: link_id
+      data_type: bigint
+    - name: label_id0
+      data_type: bigint
+    - name: label_id1
+      data_type: bigint
+    - name: link_type
+      data_type: text
+    - name: begin_year
+      data_type: bigint
+    - name: begin_month
+      data_type: bigint
+    - name: begin_day
+      data_type: bigint
+    - name: end_year
+      data_type: bigint
+    - name: end_month
+      data_type: bigint
+    - name: end_day
+      data_type: bigint
+    - name: ended
+      data_type: boolean
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: mb_label
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: label_id
+      data_type: bigint
+    - name: label_gid
+      data_type: text
+    - name: name
+      data_type: text
+    - name: type_id
+      data_type: bigint
+    - name: label_code
+      data_type: bigint
+    - name: begin_year
+      data_type: bigint
+    - name: end_year
+      data_type: bigint
+    - name: ended
+      data_type: boolean
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: mb_medium
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: medium_id
+      data_type: bigint
+    - name: release_id
+      data_type: bigint
+    - name: position
+      data_type: bigint
+    - name: format_id
+      data_type: bigint
+    - name: track_count
+      data_type: bigint
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_recording
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: recording_id
+      data_type: bigint
+    - name: recording_gid
+      data_type: text
+    - name: name
+      data_type: text
+    - name: artist_credit_id
+      data_type: bigint
+    - name: length_ms
+      data_type: bigint
+    - name: video
+      data_type: boolean
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_redirect
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: entity_type
+      data_type: text
+    - name: gid
+      data_type: text
+    - name: new_id
+      data_type: bigint
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_release
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: release_id
+      data_type: bigint
+    - name: release_gid
+      data_type: text
+    - name: name
+      data_type: text
+    - name: artist_credit_id
+      data_type: bigint
+    - name: release_group_id
+      data_type: bigint
+    - name: barcode
+      data_type: text
+    - name: status_id
+      data_type: bigint
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_release_group
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: release_group_id
+      data_type: bigint
+    - name: release_group_gid
+      data_type: text
+    - name: name
+      data_type: text
+    - name: artist_credit_id
+      data_type: bigint
+    - name: type_id
+      data_type: bigint
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_resolve
+    columns:
+    - name: platform
+      data_type: text
+    - name: platform_track_id
+      data_type: text
+    - name: status
+      data_type: text
+    - name: method
+      data_type: text
+    - name: recording_id
+      data_type: bigint
+    - name: recording_gid
+      data_type: text
+    - name: isrc
+      data_type: text
+    - name: isrc_count
+      data_type: bigint
+    - name: release_id
+      data_type: bigint
+    - name: release_gid
+      data_type: text
+    - name: candidate_count
+      data_type: bigint
+    - name: confidence
+      data_type: double precision
+    - name: evidence
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: lookup_ms
+      data_type: double precision
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: fields_hash
+      data_type: text
+    - name: reference_version
+      data_type: text
+    - name: retry_week
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_resolve
+  - name: mb_resolve_closure
+    columns:
+    - name: mb_table
+      data_type: text
+    - name: mb_key
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: entity_type
+      data_type: text
+    - name: link_id
+      data_type: bigint
+    - name: entity_id
+      data_type: bigint
+    - name: url_id
+      data_type: bigint
+    - name: url
+      data_type: text
+    - name: link_type
+      data_type: text
+    - name: ended
+      data_type: boolean
+    - name: url_platform
+      data_type: text
+    - name: url_kind
+      data_type: text
+    - name: url_platform_id
+      data_type: text
+    - name: isrc_id
+      data_type: bigint
+    - name: isrc
+      data_type: text
+    - name: recording_id
+      data_type: bigint
+    - name: recording_gid
+      data_type: text
+    - name: name
+      data_type: text
+    - name: artist_credit_id
+      data_type: bigint
+    - name: length_ms
+      data_type: bigint
+    - name: video
+      data_type: boolean
+    - name: track_id
+      data_type: bigint
+    - name: track_gid
+      data_type: text
+    - name: medium_id
+      data_type: bigint
+    - name: position
+      data_type: bigint
+    - name: number
+      data_type: text
+    - name: release_id
+      data_type: bigint
+    - name: format_id
+      data_type: bigint
+    - name: track_count
+      data_type: bigint
+    - name: release_gid
+      data_type: text
+    - name: release_group_id
+      data_type: bigint
+    - name: barcode
+      data_type: text
+    - name: status_id
+      data_type: bigint
+    - name: release_group_gid
+      data_type: text
+    - name: type_id
+      data_type: bigint
+    - name: artist_count
+      data_type: bigint
+    - name: artist_id
+      data_type: bigint
+    - name: join_phrase
+      data_type: text
+    - name: artist_gid
+      data_type: text
+    - name: sort_name
+      data_type: text
+    - name: gid
+      data_type: text
+    - name: new_id
+      data_type: bigint
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: fields_hash
+      data_type: text
+    - name: reference_version
+      data_type: text
+    - name: retry_week
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_resolve
+  - name: mb_track
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: track_id
+      data_type: bigint
+    - name: track_gid
+      data_type: text
+    - name: recording_id
+      data_type: bigint
+    - name: medium_id
+      data_type: bigint
+    - name: position
+      data_type: bigint
+    - name: number
+      data_type: text
+    - name: name
+      data_type: text
+    - name: artist_credit_id
+      data_type: bigint
+    - name: length_ms
+      data_type: bigint
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: mb_url_link
+    columns:
+    - name: mb_channel
+      data_type: text
+    - name: mb_generation
+      data_type: text
+    - name: mb_sequence
+      data_type: bigint
+    - name: mb_key
+      data_type: text
+    - name: entity_type
+      data_type: text
+    - name: link_id
+      data_type: bigint
+    - name: entity_id
+      data_type: bigint
+    - name: url_id
+      data_type: bigint
+    - name: url
+      data_type: text
+    - name: link_type
+      data_type: text
+    - name: ended
+      data_type: boolean
+    - name: url_platform
+      data_type: text
+    - name: url_kind
+      data_type: text
+    - name: url_platform_id
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - mb_spine
+  - name: playlist_candidates
+    columns:
+    - name: platform
+      data_type: text
+    - name: playlist_id
+      data_type: text
+    - name: variant
+      data_type: text
+    - name: stream
+      data_type: text
+    - name: snapshot_id
+      data_type: text
+    - name: position
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: discovered_via
+      data_type: text
+    - name: via_ref
+      data_type: text
+    - name: hint_title
+      data_type: text
+    - name: hint_owner_id
+      data_type: text
+    - name: hint_owner_name
+      data_type: text
+    - name: hint_followers
+      data_type: bigint
+    - name: hint_track_count
+      data_type: bigint
+    - name: hint_version
+      data_type: text
+    - name: fetch_surface
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - sc_curator_playlists
+      - sc_curator_playlists_weekly
+      - sc_hubs
+  - name: playlist_items
+    columns:
+    - name: platform
+      data_type: text
+    - name: playlist_id
+      data_type: text
+    - name: variant
+      data_type: text
+    - name: stream
+      data_type: text
+    - name: observation_group
+      data_type: text
+    - name: snapshot_id
+      data_type: text
+    - name: observed_at
+      data_type: timestamptz
+    - name: position
+      data_type: bigint
+    - name: item_type
+      data_type: text
+    - name: platform_item_id
+      data_type: text
+    - name: featured_track_id
+      data_type: text
+    - name: platform_track_id
+      data_type: text
+    - name: platform_row_id
+      data_type: text
+    - name: occurrence
+      data_type: bigint
+    - name: occurrence_key
+      data_type: text
+    - name: occurrence_inferred
+      data_type: boolean
+    - name: title
+      data_type: text
+    - name: artist_names
+      data_type: jsonb
+    - name: platform_artist_ids
+      data_type: jsonb
+    - name: platform_album_id
+      data_type: text
+    - name: duration_ms
+      data_type: bigint
+    - name: is_explicit
+      data_type: boolean
+    - name: playcount
+      data_type: bigint
+    - name: added_at
+      data_type: timestamptz
+    - name: added_by
+      data_type: text
+    - name: isrc
+      data_type: text
+    - name: fetch_surface
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - am_playlist
+      - am_playlist_weekly
+      - bc_daily_list
+      - bc_daily_list_weekly
+      - bc_discover
+      - bc_discover_weekly
+      - bc_fan_playlist
+      - bc_fan_playlist_weekly
+      - bc_radio
+      - bc_radio_weekly
+      - sc_curator_playlists
+      - sc_curator_playlists_weekly
+      - sc_playlist
+      - sc_playlist_weekly
+      - sp_playlist
+      - sp_playlist_weekly
+  - name: playlist_snapshots
+    columns:
+    - name: platform
+      data_type: text
+    - name: playlist_id
+      data_type: text
+    - name: variant
+      data_type: text
+    - name: stream
+      data_type: text
+    - name: observation_group
+      data_type: text
+    - name: snapshot_id
+      data_type: text
+    - name: position
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: title
+      data_type: text
+    - name: description
+      data_type: text
+    - name: owner_id
+      data_type: text
+    - name: owner_name
+      data_type: text
+    - name: owner_class
+      data_type: text
+    - name: owner_class_observed
+      data_type: text
+    - name: followers
+      data_type: bigint
+    - name: track_count_reported
+      data_type: bigint
+    - name: items_observed
+      data_type: bigint
+    - name: coverage
+      data_type: text
+    - name: observation
+      data_type: text
+    - name: content_ref
+      data_type: text
+    - name: platform_version
+      data_type: text
+    - name: snapshot_hash
+      data_type: text
+    - name: membership_hash
+      data_type: text
+    - name: content_hash
+      data_type: text
+    - name: canonical_url
+      data_type: text
+    - name: etag
+      data_type: text
+    - name: continuation
+      data_type: boolean
+    - name: attributes
+      data_type: jsonb
+    - name: fetch_surface
+      data_type: text
+    - name: tier
+      data_type: text
+    - name: cadence
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - am_playlist
+      - am_playlist_weekly
+      - bc_daily_list
+      - bc_daily_list_weekly
+      - bc_discover
+      - bc_discover_weekly
+      - bc_fan_playlist
+      - bc_fan_playlist_weekly
+      - bc_radio
+      - bc_radio_weekly
+      - sc_curator_playlists
+      - sc_curator_playlists_weekly
+      - sc_playlist
+      - sc_playlist_weekly
+      - sp_playlist
+      - sp_playlist_weekly
+  - name: radio_plays
+    meta:
+      dedupe: latest
+      writers:
+      - kexp_plays
+    columns:
+    - name: station
+      data_type: text
+    - name: play_id
+      data_type: bigint
+    - name: airdate
+      data_type: timestamptz
+    - name: play_type
+      data_type: text
+    - name: recording_mbid
+      data_type: text
+    - name: artist_mbids
+      data_type: text
+    - name: release_group_mbid
+      data_type: text
+    - name: label_mbids
+      data_type: text
+    - name: rotation_status
+      data_type: text
+    - name: is_local
+      data_type: boolean
+    - name: is_request
+      data_type: boolean
+    - name: is_live
+      data_type: boolean
+    - name: artist_text
+      data_type: text
+    - name: song_text
+      data_type: text
+    - name: observed_at
+      data_type: timestamptz
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: sc_tracks
+    columns:
+    - name: platform
+      data_type: text
+    - name: playlist_id
+      data_type: text
+    - name: variant
+      data_type: text
+    - name: stream
+      data_type: text
+    - name: snapshot_id
+      data_type: text
+    - name: position
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: track_id
+      data_type: text
+    - name: urn
+      data_type: text
+    - name: title
+      data_type: text
+    - name: permalink_url
+      data_type: text
+    - name: genre
+      data_type: text
+    - name: label_name
+      data_type: text
+    - name: duration_ms
+      data_type: bigint
+    - name: created_at
+      data_type: timestamptz
+    - name: display_date
+      data_type: timestamptz
+    - name: release_date
+      data_type: timestamptz
+    - name: last_modified
+      data_type: timestamptz
+    - name: playback_count
+      data_type: bigint
+    - name: likes_count
+      data_type: bigint
+    - name: reposts_count
+      data_type: bigint
+    - name: comment_count
+      data_type: bigint
+    - name: monetization_model
+      data_type: text
+    - name: policy
+      data_type: text
+    - name: isrc
+      data_type: text
+    - name: upc
+      data_type: text
+    - name: p_line
+      data_type: text
+    - name: c_line
+      data_type: text
+    - name: release_title
+      data_type: text
+    - name: album_title
+      data_type: text
+    - name: publisher_artist
+      data_type: text
+    - name: writer_composer
+      data_type: text
+    - name: publisher
+      data_type: text
+    - name: explicit
+      data_type: boolean
+    - name: uploader_id
+      data_type: text
+    - name: uploader_permalink
+      data_type: text
+    - name: uploader_username
+      data_type: text
+    - name: uploader_verified
+      data_type: boolean
+    - name: uploader_followers
+      data_type: bigint
+    - name: fetch_surface
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - sc_curator_playlists
+      - sc_curator_playlists_weekly
+      - sc_playlist
+      - sc_playlist_weekly
+  - name: shazam_chart_entries
+    meta:
+      dedupe: latest
+      writers:
+      - sz_chart
+    columns:
+    - name: chart
+      data_type: text
+    - name: chart_date
+      data_type: date
+    - name: position
+      data_type: bigint
+    - name: apple_song_id
+      data_type: text
+    - name: apple_primary_artist_id
+      data_type: text
+    - name: artist_text
+      data_type: text
+    - name: title_text
+      data_type: text
+    - name: isrc
+      data_type: text
+    - name: observed_at
+      data_type: timestamptz
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: sp_track_artists
+    columns:
+    - name: track_id
+      data_type: text
+    - name: artist_id
+      data_type: text
+    - name: artist_name
+      data_type: text
+    - name: position
+      data_type: bigint
+    - name: album_id
+      data_type: text
+    - name: title
+      data_type: text
+    - name: duration_ms
+      data_type: bigint
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: platform_track_id
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - sp_track_artists
+  - name: streamlines
+    loaded_at_field: null
+    freshness: null
+    columns:
+    - name: source_key
+      data_type: text
+    - name: enabled
+      data_type: boolean
+    - name: allow_partial
+      data_type: boolean
+    - name: timeout_s
+      data_type: bigint
+    - name: batch_size
+      data_type: bigint
+    - name: max_concurrency
+      data_type: bigint
+    - name: storage
+      data_type: text
+    - name: updated_at
+      data_type: timestamptz
+  - name: targets
+    loaded_at_field: null
+    freshness: null
+    columns:
+    - name: id
+      data_type: uuid
+    - name: platform
+      data_type: text
+    - name: platform_account_id
+      data_type: text
+    - name: handle
+      data_type: text
+    - name: display_name
+      data_type: text
+    - name: role
+      data_type: text
+    - name: target_set_id
+      data_type: uuid
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+  - name: track_isrc_crosswalk
+    columns:
+    - name: platform
+      data_type: text
+    - name: platform_track_id
+      data_type: text
+    - name: status
+      data_type: text
+    - name: method
+      data_type: text
+    - name: isrc
+      data_type: text
+    - name: confidence
+      data_type: double precision
+    - name: candidate_count
+      data_type: bigint
+    - name: match_id
+      data_type: text
+    - name: evidence
+      data_type: text
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: fields_hash
+      data_type: text
+    - name: reference_version
+      data_type: text
+    - name: retry_week
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+    meta:
+      dedupe: latest
+      writers:
+      - track_isrc_crosswalk
+  - name: wiki_lookups
+    meta:
+      dedupe: latest
+      writers:
+      - wiki_sitelinks
+    columns:
+    - name: qid
+      data_type: text
+    - name: entity_qid
+      data_type: text
+    - name: articles
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: sitelinks_week
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: wiki_pageviews
+    meta:
+      dedupe: latest
+      writers:
+      - wiki_pageviews
+    columns:
+    - name: qid
+      data_type: text
+    - name: project
+      data_type: text
+    - name: title
+      data_type: text
+    - name: date
+      data_type: date
+    - name: views
+      data_type: bigint
+    - name: observed_at
+      data_type: timestamptz
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: pageview_day
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb
+  - name: wiki_sitelinks
+    meta:
+      dedupe: latest
+      writers:
+      - wiki_sitelinks
+    columns:
+    - name: qid
+      data_type: text
+    - name: entity_qid
+      data_type: text
+    - name: site
+      data_type: text
+    - name: project
+      data_type: text
+    - name: title
+      data_type: text
+    - name: observed_at
+      data_type: timestamptz
+    - name: input_ref
+      data_type: text
+    - name: input_version
+      data_type: text
+    - name: scope
+      data_type: text
+    - name: step
+      data_type: text
+    - name: config_version
+      data_type: text
+    - name: llm_step_id
+      data_type: text
+    - name: learning_eligible
+      data_type: boolean
+    - name: _source_keys
+      data_type: jsonb
+    - name: _input_cycle
+      data_type: text
+    - name: run_admitted_at
+      data_type: timestamptz
+    - name: sitelinks_week
+      data_type: text
+    - name: _run_id
+      data_type: uuid
+    - name: _dump_id
+      data_type: uuid
+    - name: _landed_seq
+      data_type: bigint
+    - name: _cycle_id
+      data_type: uuid
+    - name: _revision_id
+      data_type: uuid
+    - name: _target_id
+      data_type: uuid
+    - name: _request_id
+      data_type: text
+    - name: _source_key
+      data_type: text
+    - name: _ingested_at
+      data_type: timestamptz
+    - name: _extra
+      data_type: jsonb

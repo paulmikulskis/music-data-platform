@@ -1,0 +1,12 @@
+# Deploy from the repository root with --config ops/fly/core-runner/fly.toml.example.
+# Run the image as a scheduled machine; pass hourly, daily, or weekly to ops/run.sh.
+app = "music-data-platform"
+primary_region = "ewr"
+
+[build]
+  dockerfile = "ops/fly/core-runner/Dockerfile"
+
+[env]
+  DBT_TARGET = "pg"
+  DBT_MDP_SCOPE = "global"
+  MDP_RUN_REASON_CATEGORY = "scheduled"

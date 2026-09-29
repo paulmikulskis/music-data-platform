@@ -1,0 +1,1 @@
+{"request": {"method": "GET", "url": "https://api.kexp.org/v2/plays/", "params": {"airdate_after": "2026-09-22T00:00:00Z", "airdate_before": "2026-09-23T00:00:00Z", "limit": 100, "ordering": "airdate"}}, "response": {"status": 200, "headers": {"content-type": "application/json"}, "body": {"detail": "fixture drift"}}}

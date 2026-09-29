@@ -1,0 +1,8 @@
+version: 2
+models:
+  - name: adversarial_tenant
+    config:
+      contract: {enforced: true}
+    columns:
+      - {name: id, data_type: integer}
+      - {name: tenant_id, data_type: varchar}

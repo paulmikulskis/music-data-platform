@@ -1,0 +1,2 @@
+{"request": {"method": "POST", "url": "https://api.listenbrainz.org/1/popularity/artist/", "params": {}}, "response": {"status": 200, "headers": {"content-type": "application/json"}, "body": {"code": 500, "error": "fixture drift"}}}
+{"request": {"method": "POST", "url": "https://api.listenbrainz.org/1/popularity/artist/", "params": {}}, "response": {"status": 200, "headers": {"content-type": "application/json"}, "body": {"code": 500, "error": "fixture drift"}}}

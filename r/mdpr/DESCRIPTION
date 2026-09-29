@@ -1,0 +1,13 @@
+Package: mdpr
+Title: Warehouse Connections and Reproducible Analyses
+Version: 0.1.0
+Authors@R: person("Paul", "Mikulskis", email = "paulmikulskis@users.noreply.github.com", role = c("aut", "cre"))
+Description: Connect through libpq services, explore declared warehouse relations,
+    preserve rights annotations, and prepare reproducible analysis proposals.
+License: All rights reserved
+Encoding: UTF-8
+Depends: R (>= 4.5)
+Imports: DBI, RPostgres, dplyr, dbplyr (>= 2.6.0), jsonlite, cli, rlang
+Suggests: duckdb, pins, yaml, renv, rstudioapi, askpass, usethis, testthat (>= 3.0.0), withr
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.0

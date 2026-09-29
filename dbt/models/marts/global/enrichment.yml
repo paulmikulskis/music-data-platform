@@ -1,0 +1,31 @@
+version: 2
+models:
+- name: mart_track_identity_audit
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: chart
+    data_type: text
+  - name: territory
+    data_type: text
+  - name: week
+    data_type: text
+  - name: canonical_track_id
+    data_type: text
+  - name: source_key
+    data_type: text
+  - name: value
+    data_type: text
+  - name: entity_id
+    data_type: text
+  - name: valid_components
+    data_type: boolean
+  - name: priority_rank
+    data_type: integer
+  - name: selected
+    data_type: boolean
+  - name: selected_source
+    data_type: text
+  - name: selected_value
+    data_type: text

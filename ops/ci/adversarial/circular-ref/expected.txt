@@ -1,0 +1,4 @@
+Found a cycle
+adversarial_cycle_a
+adversarial_cycle_b
+dbt-failure: acyclic-dbt-graph rejected the cycle

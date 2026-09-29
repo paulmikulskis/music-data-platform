@@ -1,0 +1,368 @@
+{
+ "about": "Apple playlist header shapes (structure only) from saved pages and the warehouse: the class parse_apple must observe and the owner name it lands. Ten Top 100 charts and New Music Daily carry the bare 'Apple Music' link; the owner name is the evidence link's, never the first link's.",
+ "shapes": [
+  {
+   "case": "top 100 jp",
+   "id": "pl.043a2c9876114d95a4659988497567be",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:02:18Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 br",
+   "id": "pl.11ac7cc7d09741c5822e8c66e5c7edbb",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:00:13Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 au",
+   "id": "pl.18be1cf04dfd4ffb9b6b0453e8fae8f1",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:01:20Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 fr",
+   "id": "pl.6e8cfd81d51042648fa36c9df5236b8d",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:00:18Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 ca",
+   "id": "pl.79bac9045a2540e0b195e983df8ba569",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:01:07Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 de",
+   "id": "pl.c10a2c113db14685a0b09fa5834d8e8b",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:00:14Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 gb",
+   "id": "pl.c2273b7e89b44121b3093f67228918e7",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:01:52Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 mx",
+   "id": "pl.df3f10ca27b1479087de2cd3f9f6716b",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:00:10Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 us",
+   "id": "pl.606afcbb70264d2eb2b51d8dbcfa6a12",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-22T07:00:38Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "top 100 global",
+   "id": "pl.d25f5d1181894928af76c85c967f8f31",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-22T07:01:01Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  },
+  {
+   "case": "new music daily",
+   "id": "pl.2b0e6e332fdf4b7a91164da3162127b5",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T16:00:45Z",
+   "ranked": false,
+   "expected": "editorial",
+   "name": "Apple Music"
+  },
+  {
+   "case": "appleCurator list",
+   "id": "pl.1fa57a04cd794a8aa482a3492f26fbcd",
+   "links": [
+    {
+     "title": "Apple Music Hip-Hop",
+     "segue": {
+      "destination": {
+       "kind": "catalogItemDetailPage",
+       "contentDescriptor": {
+        "kind": "appleCurator",
+        "identifiers": {
+         "storeAdamID": "976439539"
+        }
+       }
+      }
+     }
+    }
+   ],
+   "date_published": "2026-09-18T04:18:11Z",
+   "ranked": false,
+   "expected": "editorial",
+   "name": "Apple Music Hip-Hop"
+  },
+  {
+   "case": "listener library list",
+   "id": "pl.u-synthetic",
+   "links": [
+    {
+     "title": "A Listener",
+     "segue": {
+      "destination": {
+       "kind": "catalogPage",
+       "intent": {
+        "contentDescriptor": {
+         "kind": "socialProfile",
+         "identifiers": {
+          "socialProfileID": "sp.00000000-0000-0000-0000-000000000001"
+         }
+        }
+       }
+      }
+     }
+    }
+   ],
+   "date_published": null,
+   "ranked": false,
+   "expected": "user",
+   "name": null
+  },
+  {
+   "case": "library list with a bare Apple Music link",
+   "id": "pl.u-synthetic",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-23T07:00:00Z",
+   "ranked": true,
+   "expected": "user",
+   "name": null
+  },
+  {
+   "case": "catalog list with a listener profile",
+   "id": "pl.0123456789abcdef0123456789abcdef",
+   "links": [
+    {
+     "title": "Apple Music"
+    },
+    {
+     "title": "A Listener",
+     "segue": {
+      "destination": {
+       "kind": "catalogPage",
+       "intent": {
+        "contentDescriptor": {
+         "kind": "socialProfile",
+         "identifiers": {
+          "socialProfileID": "sp.00000000-0000-0000-0000-000000000001"
+         }
+        }
+       }
+      }
+     }
+    }
+   ],
+   "date_published": "2026-09-23T07:00:00Z",
+   "ranked": false,
+   "expected": "user",
+   "name": null
+  },
+  {
+   "case": "catalog list without a JSON-LD date",
+   "id": "pl.fedcba9876543210fedcba9876543210",
+   "links": [
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": null,
+   "ranked": true,
+   "expected": "unknown",
+   "name": null
+  },
+  {
+   "case": "listener profile before an Apple curator",
+   "id": "pl.1fa57a04cd794a8aa482a3492f26fbcd",
+   "links": [
+    {
+     "title": "A Listener",
+     "segue": {
+      "destination": {
+       "kind": "catalogPage",
+       "intent": {
+        "contentDescriptor": {
+         "kind": "socialProfile",
+         "identifiers": {
+          "socialProfileID": "sp.00000000-0000-0000-0000-000000000001"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "title": "Apple Music Hip-Hop",
+     "segue": {
+      "destination": {
+       "kind": "catalogItemDetailPage",
+       "contentDescriptor": {
+        "kind": "appleCurator",
+        "identifiers": {
+         "storeAdamID": "976439539"
+        }
+       }
+      }
+     }
+    }
+   ],
+   "date_published": "2026-09-18T04:18:11Z",
+   "ranked": false,
+   "expected": "user",
+   "name": null
+  },
+  {
+   "case": "appleCurator list without a JSON-LD date",
+   "id": "pl.28926c578a80475c904026ea97646ad5",
+   "links": [
+    {
+     "title": "Apple Music Hip-Hop",
+     "segue": {
+      "destination": {
+       "kind": "catalogItemDetailPage",
+       "contentDescriptor": {
+        "kind": "appleCurator",
+        "identifiers": {
+         "storeAdamID": "976439539"
+        }
+       }
+      }
+     }
+    }
+   ],
+   "date_published": null,
+   "ranked": false,
+   "expected": "editorial",
+   "name": "Apple Music Hip-Hop"
+  },
+  {
+   "case": "third-party curator list",
+   "id": "pl.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "links": [
+    {
+     "title": "A Magazine",
+     "segue": {
+      "destination": {
+       "kind": "catalogItemDetailPage",
+       "contentDescriptor": {
+        "kind": "curator",
+        "identifiers": {
+         "storeAdamID": "1100000001"
+        }
+       }
+      }
+     }
+    }
+   ],
+   "date_published": "2026-09-18T04:18:11Z",
+   "ranked": false,
+   "expected": "unknown",
+   "name": null
+  },
+  {
+   "case": "artist link before the bare Apple Music link",
+   "id": "pl.d25f5d1181894928af76c85c967f8f31",
+   "links": [
+    {
+     "title": "An Artist",
+     "segue": {
+      "destination": {
+       "kind": "catalogItemDetailPage",
+       "contentDescriptor": {
+        "kind": "artist",
+        "identifiers": {
+         "storeAdamID": "1200000001"
+        }
+       }
+      }
+     }
+    },
+    {
+     "title": "Apple Music"
+    }
+   ],
+   "date_published": "2026-09-22T07:01:01Z",
+   "ranked": true,
+   "expected": "chart",
+   "name": "Apple Music"
+  }
+ ]
+}

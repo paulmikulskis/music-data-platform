@@ -1,0 +1,62 @@
+# Local design notes
+/VISION.md
+
+# dbt and local runtime artifacts
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/profiles/profiles.yml
+dbt/profiles/.user.yml
+**/.venv/
+*.duckdb
+*.duckdb.wal
+*.log
+**/node_modules/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.uv-cache/
+.env*
+!.env.example
+
+# Credentials
+inputs/inputs.env
+inputs/*.env
+!inputs/inputs.example.env
+
+
+# orchestration scratch stays local
+scratch.md
+
+# stale root build output from the pre-relayout scaffold (never committed)
+/target/
+/logs/
+
+# preflight runtime reports carry account identities; regenerated on every run
+ops/evidence/preflight/
+
+# raw reconnaissance captures (signed URLs, public usernames); sanitized fixtures live under functions/src/mdp_functions/sources/*/fixtures
+ops/evidence/recon-*/
+
+# Local browser snapshots
+.playwright-cli/
+
+/inputs/sandbox-archives/
+
+# Backtest row predictions stay in private scratch; commit the report summary.
+**/*predictions*.csv
+**/*predictions*.csv.*
+
+# Showcase deploy measurements belong only to the validated build context.
+control/apps/showcase/lib/stack.generated.json
+control/apps/showcase/lib/permissions.generated.json
+control/apps/showcase/lib/artifacts.build.json
+
+control/apps/showcase/lib/links.generated.json
+
+# Public configuration template and private audit workspace
+!.env.example
+
+# Local verification output; CI uploads these as artifacts.
+ops/evidence/

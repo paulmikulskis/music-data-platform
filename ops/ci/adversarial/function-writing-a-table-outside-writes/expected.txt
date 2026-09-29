@@ -1,0 +1,1 @@
+PASSED functions/tests/test_runtime.py::test_undeclared_write

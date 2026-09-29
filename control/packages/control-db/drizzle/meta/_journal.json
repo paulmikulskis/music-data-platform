@@ -1,0 +1,265 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1789699987443,
+      "tag": "0000_rapid_famine",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789699991665,
+      "tag": "0001_grants",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789701067999,
+      "tag": "0002_control_boundaries",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789701085612,
+      "tag": "0003_batch_provenance",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1789702057882,
+      "tag": "0004_batch_partial",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1789702121903,
+      "tag": "0005_control_boundaries_2",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1789707611000,
+      "tag": "0006_cycle_attempt_runner",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1789712500191,
+      "tag": "0007_next_viper",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1789717000000,
+      "tag": "0008_enrichment",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1790146313102,
+      "tag": "0009_crazy_robin_chapel",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1790157294991,
+      "tag": "0010_runtime_completion",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1790163207216,
+      "tag": "0011_close_stamps",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1790170000000,
+      "tag": "0012_api_key_reader",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1790179769771,
+      "tag": "0013_tenant_schedule",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1790204672528,
+      "tag": "0014_reference_spine",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1790214726767,
+      "tag": "0015_api_key_promoter",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1790226163365,
+      "tag": "0016_cycle_timezone",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1790242517304,
+      "tag": "0017_chart_kind",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1790245745985,
+      "tag": "0018_reference_closure",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1790276034508,
+      "tag": "0019_provider_request_cap",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1790276040875,
+      "tag": "0020_target_kind_constraint",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1790329547661,
+      "tag": "0023_staff_warehouse_role",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "7",
+      "when": 1790329548365,
+      "tag": "0024_staff_key_role",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "7",
+      "when": 1790350864779,
+      "tag": "0025_showcase",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1790350865473,
+      "tag": "0026_showcase_grants",
+      "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "7",
+      "when": 1790358678970,
+      "tag": "0027_platform_read_indexes",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "7",
+      "when": 1790393519128,
+      "tag": "0028_platform_sources_run_index",
+      "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "7",
+      "when": 1790403273704,
+      "tag": "0029_alert_recovery",
+      "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "7",
+      "when": 1790403274480,
+      "tag": "0030_resolve_recovered_alerts",
+      "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1790417653462,
+      "tag": "0031_showcase_call",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1790423635863,
+      "tag": "0032_alert_attempt",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1790423637048,
+      "tag": "0033_alert_attempt_baseline",
+      "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "7",
+      "when": 1790428927494,
+      "tag": "0034_showcase_draft",
+      "breakpoints": true
+    },
+    {
+      "idx": 35,
+      "version": "7",
+      "when": 1790436628857,
+      "tag": "0035_run_settlement",
+      "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1790501579394,
+      "tag": "0036_showcase_relation_count",
+      "breakpoints": true
+    },
+    {
+      "idx": 37,
+      "version": "7",
+      "when": 1790628716193,
+      "tag": "0037_resolve_on_retry",
+      "breakpoints": true
+    },
+    {
+      "idx": 38,
+      "version": "7",
+      "when": 1790632937204,
+      "tag": "0038_audit_probe_lookup",
+      "breakpoints": true
+    }
+  ]
+}

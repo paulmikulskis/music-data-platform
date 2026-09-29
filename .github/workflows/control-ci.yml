@@ -1,0 +1,94 @@
+name: control-ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  control:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: [5432:5432]
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      MDP_PG_PORT: '5432'
+      MDP_CALL_TEST_URL: postgresql://postgres:postgres@127.0.0.1:5432/control
+      MDP_TENANTS_TEST_URL: postgresql://postgres:postgres@127.0.0.1:5432/control
+      MDP_SHOWCASE_QUERY_TEST_URL: postgresql://showcase_wh:showcase_wh@127.0.0.1:5432/warehouse
+      MDP_STATUS_TEST_URL: postgresql://postgres:postgres@127.0.0.1:5432/control
+      MDP_SHOWCASE_TEST_URL: postgresql://control_rt:control_rt@127.0.0.1:5432/control
+      MDP_ADMIN_TEST_URL: postgresql://migrator:migrator@127.0.0.1:5432/control
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # Platform tests copy the control schema with pg_dump, which must match the server's major version.
+      - name: PostgreSQL 17 client
+        run: |
+          sudo install -d /etc/apt/keyrings
+          curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/keyrings/postgresql.asc >/dev/null
+          source /etc/os-release
+          echo "deb [signed-by=/etc/apt/keyrings/postgresql.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list >/dev/null
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client-17
+          echo /usr/lib/postgresql/17/bin >> "$GITHUB_PATH"
+      - run: pnpm --dir control install --frozen-lockfile
+      - run: pnpm --dir control typecheck
+      - run: bash ops/local/init.sh
+      - run: pnpm --dir control test
+
+  showcase:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: [5432:5432]
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      MDP_PG_PORT: '5432'
+      MDP_CALL_TEST_URL: postgresql://postgres:postgres@127.0.0.1:5432/control
+      MDP_SHOWCASE_BROWSER_DB: postgresql://postgres:postgres@127.0.0.1:5432/control
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pnpm --dir control install --frozen-lockfile
+      - uses: astral-sh/setup-uv@v5
+      - run: pnpm --dir control --filter @mdp/showcase typecheck
+      - run: pnpm --dir control --filter @mdp/showcase lint
+      - run: pnpm --dir control --filter @mdp/showcase typecheck:browser
+      # The call tests read MDP_CALL_TEST_URL, so the control database exists before the unit tests run.
+      - run: bash ops/local/init.sh
+      - run: pnpm --dir control --filter @mdp/showcase test
+      - run: pnpm --dir control --filter @mdp/showcase build
+      - run: bash ops/showcase/check-adapters.sh
+      - run: pnpm --dir control --filter @mdp/showcase exec playwright install --with-deps chromium
+      - run: pnpm --dir control --filter @mdp/showcase density
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: showcase-screens
+          path: ops/evidence/showcase-app/

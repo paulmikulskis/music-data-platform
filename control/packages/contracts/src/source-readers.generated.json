@@ -1,0 +1,281 @@
+[
+  {
+    "source_key": "am_playlist",
+    "unit": "playlists",
+    "platforms": [
+      "apple_music",
+      "am"
+    ],
+    "member_cadence": "daily",
+    "id_prefix": null
+  },
+  {
+    "source_key": "am_playlist_weekly",
+    "unit": "playlists",
+    "platforms": [
+      "apple_music",
+      "am"
+    ],
+    "member_cadence": "weekly",
+    "id_prefix": null
+  },
+  {
+    "source_key": "apple_song_duration",
+    "unit": "songs",
+    "platforms": [
+      "apple",
+      "apple_music"
+    ],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "bc_daily_list",
+    "unit": "playlists",
+    "platforms": [
+      "bandcamp"
+    ],
+    "member_cadence": "daily",
+    "id_prefix": "daily:"
+  },
+  {
+    "source_key": "bc_daily_list_weekly",
+    "unit": "playlists",
+    "platforms": [
+      "bandcamp"
+    ],
+    "member_cadence": "weekly",
+    "id_prefix": "daily:"
+  },
+  {
+    "source_key": "bc_discover",
+    "unit": "playlists",
+    "platforms": [
+      "bandcamp"
+    ],
+    "member_cadence": "daily",
+    "id_prefix": "discover:"
+  },
+  {
+    "source_key": "bc_discover_weekly",
+    "unit": "playlists",
+    "platforms": [
+      "bandcamp"
+    ],
+    "member_cadence": "weekly",
+    "id_prefix": "discover:"
+  },
+  {
+    "source_key": "bc_fan_playlist",
+    "unit": "playlists",
+    "platforms": [
+      "bandcamp"
+    ],
+    "member_cadence": "daily",
+    "id_prefix": "playlist:"
+  },
+  {
+    "source_key": "bc_fan_playlist_weekly",
+    "unit": "playlists",
+    "platforms": [
+      "bandcamp"
+    ],
+    "member_cadence": "weekly",
+    "id_prefix": "playlist:"
+  },
+  {
+    "source_key": "bc_radio",
+    "unit": "playlists",
+    "platforms": [
+      "bandcamp"
+    ],
+    "member_cadence": "daily",
+    "id_prefix": "radio:"
+  },
+  {
+    "source_key": "bc_radio_weekly",
+    "unit": "playlists",
+    "platforms": [
+      "bandcamp"
+    ],
+    "member_cadence": "weekly",
+    "id_prefix": "radio:"
+  },
+  {
+    "source_key": "bc_tralbum",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "billboard_hot100",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "jev_instrument_family",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "kexp_plays",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "lb_fresh_releases",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "lb_popularity",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "lb_similar_artists",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "lb_sitewide",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "mb_artist_catalog",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "mb_resolve",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "mb_spine",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "sc_curator_playlists",
+    "unit": "curators",
+    "platforms": [
+      "soundcloud"
+    ],
+    "member_cadence": "daily",
+    "id_prefix": null
+  },
+  {
+    "source_key": "sc_curator_playlists_weekly",
+    "unit": "curators",
+    "platforms": [
+      "soundcloud"
+    ],
+    "member_cadence": "weekly",
+    "id_prefix": null
+  },
+  {
+    "source_key": "sc_hubs",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "sc_playlist",
+    "unit": "playlists",
+    "platforms": [
+      "soundcloud"
+    ],
+    "member_cadence": "daily",
+    "id_prefix": null
+  },
+  {
+    "source_key": "sc_playlist_weekly",
+    "unit": "playlists",
+    "platforms": [
+      "soundcloud"
+    ],
+    "member_cadence": "weekly",
+    "id_prefix": null
+  },
+  {
+    "source_key": "sp_playlist",
+    "unit": "playlists",
+    "platforms": [
+      "spotify",
+      "sp"
+    ],
+    "member_cadence": "daily",
+    "id_prefix": null
+  },
+  {
+    "source_key": "sp_playlist_weekly",
+    "unit": "playlists",
+    "platforms": [
+      "spotify",
+      "sp"
+    ],
+    "member_cadence": "weekly",
+    "id_prefix": null
+  },
+  {
+    "source_key": "sp_track_artists",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "sz_chart",
+    "unit": "charts",
+    "platforms": [
+      "shazam"
+    ],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "track_isrc_crosswalk",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "wiki_pageviews",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  },
+  {
+    "source_key": "wiki_sitelinks",
+    "unit": null,
+    "platforms": [],
+    "member_cadence": null,
+    "id_prefix": null
+  }
+]

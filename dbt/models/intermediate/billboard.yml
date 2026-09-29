@@ -1,0 +1,92 @@
+version: 2
+models:
+- name: int_billboard_song__daily
+  description: Hot 100 entries matched by folded title and primary credit to one movement
+    group. Every chart entry stays visible. Open mart_chart_history for unmatched
+    text.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: chart_week
+    data_type: date
+    description: Published Hot 100 date. Open mart_chart_history for the printed entry.
+    constraints:
+    - type: not_null
+  - name: chart_position
+    data_type: integer
+    description: Printed position from 1 to 100.
+    constraints:
+    - type: not_null
+  - name: track_title
+    data_type: varchar
+    description: Unchanged chart title, including unmatched entries.
+  - name: artist_name
+    data_type: varchar
+    description: Unchanged chart credit, including unmatched entries.
+  - name: song_key
+    data_type: text
+    description: Movement representative when exactly one group matches. Null means
+      unmatched or ambiguous.
+  - name: billboard_match_method
+    data_type: text
+    description: folded, credit_primary, run_together, group, ambiguous, or unmatched.
+      Open billboard_match_rules for enabled methods.
+    constraints:
+    - type: not_null
+  - name: confidence
+    data_type: double precision
+    description: Conservative method confidence, capped by movement-group confidence.
+      Null for an unmatched entry.
+  - name: billboard_match_rule
+    data_type: text
+    description: Text rule from billboard_match_rules, including matches resolved through
+      a movement group. Null for an unmatched entry. Use this rule for precision checks.
+  - name: matched_by_group
+    data_type: boolean
+    description: True when the match relies on a group with several strict song keys.
+    constraints:
+    - type: not_null
+  - name: candidate_groups
+    data_type: integer
+    description: Distinct matching movement groups. More than one refuses the match.
+    constraints:
+    - type: not_null
+  - name: weeks_on_chart
+    data_type: integer
+    description: Provider lifetime weeks on the chart. Null when the source omits
+      it.
+  - name: is_debut
+    data_type: boolean
+    description: First observed group week with provider weeks equal to one and a
+      complete preceding weekly chart with no earlier candidate for this group.
+      An ambiguous earlier candidate leaves the debut unknown. Open mart_chart_history
+      to inspect the printed entries.
+  - name: week_complete
+    data_type: boolean
+    description: One source dump contains all 100 positions for this week.
+    constraints:
+    - type: not_null
+  - name: source_keys
+    data_type: text
+    description: JSON source keys from the chart and matching movement group. Open
+      rights_registry for permissions.
+    constraints:
+    - type: not_null
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - chart_week
+        - chart_position
+- name: int_song_group_evidence__daily
+  description: List, chart and counter observations used to choose a movement representative.
+    Billboard does not affect that choice. Open int_song_cluster__daily for membership.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: song_key
+    data_type: text
+  - name: evidence_count
+    data_type: bigint

@@ -1,0 +1,13 @@
+version: 2
+seeds:
+- name: shazam_markets
+  description: Shazam country slugs and ISO codes for tracked markets. Worldwide charts have no country. Add a mapping here before collecting a new country.
+  config:
+    column_types:
+      slug: text
+      country: text
+  columns:
+  - name: slug
+    data_tests: [unique, not_null]
+  - name: country
+    data_tests: [unique, not_null]

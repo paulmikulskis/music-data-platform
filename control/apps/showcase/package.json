@@ -1,0 +1,41 @@
+{
+  "name": "@mdp/showcase",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "next typegen && tsc --noEmit",
+    "typecheck:browser": "tsc -p test/browser/tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:browser": "tsx --tsconfig ../control-api/tsconfig.json test/browser/run.ts",
+    "density": "pnpm test:browser"
+  },
+  "dependencies": {
+    "@mdp/contracts": "workspace:*",
+    "@mdp/data-sdk": "workspace:*",
+    "@mdp/showcase-auth": "workspace:*",
+    "@orpc/client": "catalog:",
+    "@orpc/contract": "catalog:",
+    "motion": "^13.4.4",
+    "next": "16.3.6",
+    "postgres": "^3.4.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "0.0.1",
+    "sharp": "0.34.5",
+    "simple-icons": "16.32.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.3.6",
+    "vitest": "^3.2.4"
+  }
+}

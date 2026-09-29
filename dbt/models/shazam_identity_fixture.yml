@@ -1,0 +1,576 @@
+version: 2
+unit_tests:
+- name: apple_successor_requires_unique_adjacent_replacement
+  model: int_song_apple_successors__daily
+  config: &id001
+    tags:
+    - song_fixture
+  overrides: &id002
+    vars:
+      cycle_opened_at: '2026-09-26 12:00:00'
+      dry_run: true
+  given:
+  - input: ref('mart_shazam_chart_daily')
+    rows:
+    - apple_song_id: equal-old
+      chart: equal
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture equal
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: equal-new
+      chart: equal
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture equal
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: fold-old
+      chart: fold
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture fold
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: fold-new
+      chart: fold
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: '  fixture   fold '
+      artist_text: fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: credit-old
+      chart: credit
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture credit
+      artist_text: Fixture act
+      apple_primary_artist_id: null
+    - apple_song_id: credit-new
+      chart: credit
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture credit
+      artist_text: Fixture act
+      apple_primary_artist_id: null
+    - apple_song_id: artist-old
+      chart: artist
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture artist
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: artist-new
+      chart: artist
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture artist
+      artist_text: Fixture act
+      apple_primary_artist_id: other
+    - apple_song_id: guest-old
+      chart: guest
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture guest
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: guest-new
+      chart: guest
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture guest
+      artist_text: Fixture act, Fixture guest
+      apple_primary_artist_id: act
+    - apple_song_id: suffix-old
+      chart: suffix
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture suffix
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: suffix-new
+      chart: suffix
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture suffix (live)
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: gap-old
+      chart: gap
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture gap
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: gap-new
+      chart: gap
+      chart_date: '2026-09-27'
+      position: 12
+      title_text: Fixture gap
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: rank-old
+      chart: rank
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture rank
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: rank-new
+      chart: rank
+      chart_date: '2026-09-26'
+      position: 16
+      title_text: Fixture rank
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: code-old
+      chart: code
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture code
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+      isrc: USAAA2600001
+    - apple_song_id: code-new
+      chart: code
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture code
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+      isrc: USAAA2600002
+    - apple_song_id: conflict-old
+      chart: conflict
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture conflict
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+      isrc: USAAA2600001
+    - apple_song_id: conflict-new
+      chart: conflict
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture conflict
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: overlap-old
+      chart: overlap
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture overlap
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: overlap-new
+      chart: overlap
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture overlap
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: overlap-old
+      chart: overlap
+      chart_date: '2026-09-26'
+      position: 20
+      title_text: Fixture overlap
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: return-old
+      chart: return
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture return
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: return-new
+      chart: return
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture return
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: return-new
+      chart: return
+      chart_date: '2026-09-24'
+      position: 12
+      title_text: Fixture return
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: ambiguous-new-old
+      chart: ambiguous-new
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture ambiguous-new
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: ambiguous-new-new
+      chart: ambiguous-new
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture ambiguous-new
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: ambiguous-new-extra
+      chart: ambiguous-new
+      chart_date: '2026-09-26'
+      position: 11
+      title_text: Fixture ambiguous-new
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: ambiguous-old-old
+      chart: ambiguous-old
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture ambiguous-old
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: ambiguous-old-new
+      chart: ambiguous-old
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture ambiguous-old
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: ambiguous-old-extra
+      chart: ambiguous-old
+      chart_date: '2026-09-25'
+      position: 11
+      title_text: Fixture ambiguous-old
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: internal-code-old
+      chart: internal-code
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture internal-code
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+      isrc: USAAA2600001
+    - apple_song_id: internal-code-new
+      chart: internal-code
+      chart_date: '2026-09-26'
+      position: 12
+      title_text: Fixture internal-code
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+    - apple_song_id: internal-code-old
+      chart: another-chart
+      chart_date: '2026-09-25'
+      position: 10
+      title_text: Fixture internal-code
+      artist_text: Fixture act
+      apple_primary_artist_id: act
+      isrc: USAAA2600002
+  - input: ref('int_song_key__daily')
+    rows:
+    - platform: apple
+      platform_track_id: ambiguous-new-extra
+      song_key: apple:ambiguous-new-extra
+      isrc: null
+    - platform: apple
+      platform_track_id: ambiguous-new-new
+      song_key: apple:ambiguous-new-new
+      isrc: null
+    - platform: apple
+      platform_track_id: ambiguous-new-old
+      song_key: apple:ambiguous-new-old
+      isrc: null
+    - platform: apple
+      platform_track_id: ambiguous-old-extra
+      song_key: apple:ambiguous-old-extra
+      isrc: null
+    - platform: apple
+      platform_track_id: ambiguous-old-new
+      song_key: apple:ambiguous-old-new
+      isrc: null
+    - platform: apple
+      platform_track_id: ambiguous-old-old
+      song_key: apple:ambiguous-old-old
+      isrc: null
+    - platform: apple
+      platform_track_id: artist-new
+      song_key: apple:artist-new
+      isrc: null
+    - platform: apple
+      platform_track_id: artist-old
+      song_key: apple:artist-old
+      isrc: null
+    - platform: apple
+      platform_track_id: code-new
+      song_key: apple:code-new
+      isrc: null
+    - platform: apple
+      platform_track_id: code-old
+      song_key: apple:code-old
+      isrc: null
+    - platform: apple
+      platform_track_id: conflict-new
+      song_key: apple:conflict-new
+      isrc: USAAA2600002
+    - platform: apple
+      platform_track_id: conflict-old
+      song_key: apple:conflict-old
+      isrc: null
+    - platform: apple
+      platform_track_id: credit-new
+      song_key: apple:credit-new
+      isrc: null
+    - platform: apple
+      platform_track_id: credit-old
+      song_key: apple:credit-old
+      isrc: null
+    - platform: apple
+      platform_track_id: equal-new
+      song_key: apple:equal-new
+      isrc: null
+    - platform: apple
+      platform_track_id: equal-old
+      song_key: apple:equal-old
+      isrc: null
+    - platform: apple
+      platform_track_id: fold-new
+      song_key: apple:fold-new
+      isrc: null
+    - platform: apple
+      platform_track_id: fold-old
+      song_key: apple:fold-old
+      isrc: null
+    - platform: apple
+      platform_track_id: gap-new
+      song_key: apple:gap-new
+      isrc: null
+    - platform: apple
+      platform_track_id: gap-old
+      song_key: apple:gap-old
+      isrc: null
+    - platform: apple
+      platform_track_id: guest-new
+      song_key: apple:guest-new
+      isrc: null
+    - platform: apple
+      platform_track_id: guest-old
+      song_key: apple:guest-old
+      isrc: null
+    - platform: apple
+      platform_track_id: internal-code-new
+      song_key: apple:internal-code-new
+      isrc: null
+    - platform: apple
+      platform_track_id: internal-code-old
+      song_key: apple:internal-code-old
+      isrc: null
+    - platform: apple
+      platform_track_id: overlap-new
+      song_key: apple:overlap-new
+      isrc: null
+    - platform: apple
+      platform_track_id: overlap-old
+      song_key: apple:overlap-old
+      isrc: null
+    - platform: apple
+      platform_track_id: rank-new
+      song_key: apple:rank-new
+      isrc: null
+    - platform: apple
+      platform_track_id: rank-old
+      song_key: apple:rank-old
+      isrc: null
+    - platform: apple
+      platform_track_id: return-new
+      song_key: apple:return-new
+      isrc: null
+    - platform: apple
+      platform_track_id: return-old
+      song_key: apple:return-old
+      isrc: null
+    - platform: apple
+      platform_track_id: suffix-new
+      song_key: apple:suffix-new
+      isrc: null
+    - platform: apple
+      platform_track_id: suffix-old
+      song_key: apple:suffix-old
+      isrc: null
+  - input: ref('movement_parameters')
+    rows:
+    - name: apple_successor_position_fraction
+      value: 0.2
+  expect:
+    rows:
+    - predecessor_id: equal-old
+      successor_id: equal-new
+      switch_day: '2026-09-26'
+    - predecessor_id: fold-old
+      successor_id: fold-new
+      switch_day: '2026-09-26'
+    - predecessor_id: credit-old
+      successor_id: credit-new
+      switch_day: '2026-09-26'
+- name: shazam_markets_use_iso_and_exclude_worldwide
+  model: mart_shazam_chart_daily
+  config: *id001
+  overrides:
+    vars:
+      cycle_opened_at: '2026-09-26 12:00:00'
+      dry_run: true
+    macros:
+      mdp_annotate: select * from annotated
+  given:
+  - input: ref('stg_shazam__chart_entries')
+    rows:
+    - chart: fixture-0
+      chart_type: top-200
+      country: united-kingdom
+      chart_date: '2026-09-26'
+      position: 1
+      apple_song_id: '0'
+      observed_at: '2026-09-26 12:00:00'
+      _source_key: sz_chart
+    - chart: fixture-1
+      chart_type: top-200
+      country: UNITED-STATES
+      chart_date: '2026-09-26'
+      position: 1
+      apple_song_id: '1'
+      observed_at: '2026-09-26 12:00:00'
+      _source_key: sz_chart
+    - chart: fixture-2
+      chart_type: top-200
+      country: GB
+      chart_date: '2026-09-26'
+      position: 1
+      apple_song_id: '2'
+      observed_at: '2026-09-26 12:00:00'
+      _source_key: sz_chart
+    - chart: fixture-3
+      chart_type: top-200
+      country: world
+      chart_date: '2026-09-26'
+      position: 1
+      apple_song_id: '3'
+      observed_at: '2026-09-26 12:00:00'
+      _source_key: sz_chart
+    - chart: fixture-4
+      chart_type: top-200
+      country: GLOBAL
+      chart_date: '2026-09-26'
+      position: 1
+      apple_song_id: '4'
+      observed_at: '2026-09-26 12:00:00'
+      _source_key: sz_chart
+    - chart: fixture-5
+      chart_type: top-200
+      country: unknown-place
+      chart_date: '2026-09-26'
+      position: 1
+      apple_song_id: '5'
+      observed_at: '2026-09-26 12:00:00'
+      _source_key: sz_chart
+  - input: ref('int_track_identity__daily')
+    rows: []
+  - input: ref('shazam_markets')
+    rows:
+    - slug: united-kingdom
+      country: GB
+    - slug: united-states
+      country: US
+  - input: ref('rights_registry')
+    rows:
+    - source_key: sz_chart
+      learning_eligible: false
+      resale_permitted: false
+  expect:
+    rows:
+    - chart: fixture-0
+      country: GB
+    - chart: fixture-1
+      country: US
+    - chart: fixture-2
+      country: GB
+    - chart: fixture-3
+      country: null
+    - chart: fixture-4
+      country: null
+    - chart: fixture-5
+      country: null
+- name: apple_successor_flag_off
+  model: int_song_cluster__daily
+  config: *id001
+  overrides: *id002
+  given:
+  - input: ref('int_song_cluster_inputs__daily')
+    rows: []
+  - input: ref('int_song_key__daily')
+    rows:
+    - song_key: a
+      resolved: false
+      source_keys: '["sz_chart"]'
+    - song_key: b
+      resolved: false
+      source_keys: '["sz_chart"]'
+  - input: ref('int_song_cluster_edges__daily')
+    rows:
+    - left_key: a
+      right_key: b
+      method: apple_id_successor
+      basis: chart_replacement
+  - input: ref('song_cluster_rules')
+    rows:
+    - method: apple_id_successor
+      enabled: false
+      confidence: 1.0
+  - input: ref('int_song_group_evidence__daily')
+    rows:
+    - song_key: a
+      evidence_count: 2
+    - song_key: b
+      evidence_count: 1
+  expect:
+    rows:
+    - song_key: a
+      cluster_key: a
+      cluster_methods: '[]'
+    - song_key: b
+      cluster_key: b
+      cluster_methods: '[]'
+- name: apple_successor_flag_on
+  model: int_song_cluster__daily
+  config: *id001
+  overrides: *id002
+  given:
+  - input: ref('int_song_cluster_inputs__daily')
+    rows: []
+  - input: ref('int_song_key__daily')
+    rows:
+    - song_key: a
+      resolved: false
+      source_keys: '["sz_chart"]'
+    - song_key: b
+      resolved: false
+      source_keys: '["sz_chart"]'
+  - input: ref('int_song_cluster_edges__daily')
+    rows:
+    - left_key: a
+      right_key: b
+      method: apple_id_successor
+      basis: chart_replacement
+  - input: ref('song_cluster_rules')
+    rows:
+    - method: apple_id_successor
+      enabled: true
+      confidence: 1.0
+  - input: ref('int_song_group_evidence__daily')
+    rows:
+    - song_key: a
+      evidence_count: 2
+    - song_key: b
+      evidence_count: 1
+  expect:
+    rows:
+    - song_key: a
+      cluster_key: a
+      cluster_methods: '["apple_id_successor"]'
+    - song_key: b
+      cluster_key: a
+      cluster_methods: '["apple_id_successor"]'

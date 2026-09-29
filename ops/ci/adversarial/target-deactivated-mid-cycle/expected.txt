@@ -1,0 +1,2 @@
+PASSED functions/tests/adversarial_runtime.py::test_deactivation_frozen_revision
+DEACTIVATION current revision retained; next revision excludes target

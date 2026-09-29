@@ -1,0 +1,50 @@
+name: adversarial
+on:
+  workflow_dispatch:
+    inputs:
+      image:
+        description: Optional prebuilt Postgres image tag (avoids extension build)
+        required: false
+        type: string
+  pull_request:
+jobs:
+  adversarial:
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    timeout-minutes: 90
+    env:
+      MDP_CI_IMAGE: ${{ inputs.image }}
+      # Heap acceptance is sufficient here; pg_lake gates have separate evidence.
+      # Build the documented heap fallback; an explicit prebuilt image remains optional.
+      WITH_PG_LAKE: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: control/pnpm-lock.yaml
+      - name: Install PostgreSQL 17 clients and tmux
+        run: |
+          sudo install -d /etc/apt/keyrings
+          curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/keyrings/postgresql.asc >/dev/null
+          source /etc/os-release
+          echo "deb [signed-by=/etc/apt/keyrings/postgresql.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list >/dev/null
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client-17 tmux
+          echo /usr/lib/postgresql/17/bin >> "$GITHUB_PATH"
+      - run: pnpm --dir control install --frozen-lockfile
+      - run: uv sync --project functions && uv sync --project dbt
+      - name: Verify harness failure handling
+        run: uv run --project functions pytest ops/ci/adversarial/test_runner.py -q
+      - name: Boot disposable stack and replay all 37 adversarial cases
+        run: bash ops/ci/adversarial/ci-bootstrap.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: adversarial-evidence
+          path: ops/evidence/adversarial/

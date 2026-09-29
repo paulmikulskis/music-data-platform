@@ -1,0 +1,4 @@
+{
+  "kind": "pytest",
+  "target": "adversarial_runtime.py::test_restart_pending_loads_and_repairs"
+}

@@ -1,0 +1,4414 @@
+{
+  "window": {
+    "since": "2025-01-01T00:00:00.000Z",
+    "until": "2025-01-02T04:55:00.000Z",
+    "queried_at": "2025-01-02T05:00:00.000Z"
+  },
+  "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+  "runs": [
+    {
+      "run_id": "bdfad1fa-3b79-51fa-a4d2-fee6752a0424",
+      "admitted_at": "2025-01-01T00:25:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "30ad9811-c16c-5282-9b5c-dd32d29a2c4b",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T00:30:00.000Z",
+          "ended_at": "2025-01-01T00:50:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:0429f480-6e37-5b8a-a98a-1673dea5df37",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "d8fa1ef1-05f5-5639-a69d-fbba8e99fc9f",
+      "admitted_at": "2025-01-01T00:35:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "30ad9811-c16c-5282-9b5c-dd32d29a2c4b",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T00:40:00.000Z",
+          "ended_at": "2025-01-01T00:45:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:0429f480-6e37-5b8a-a98a-1673dea5df37",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "2e3c7b09-42f5-512f-94f6-c4cc6973fa7c",
+      "admitted_at": "2025-01-01T01:20:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "3131cdc3-3cd6-500f-8229-6074b7723c3e",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T01:30:00.000Z",
+          "ended_at": "2025-01-01T01:45:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:b9789e62-8a96-5c84-ae1c-a6ac760a5210",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "cc092680-1dd4-5894-a28d-5a411e00319b",
+      "admitted_at": "2025-01-01T01:25:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "3131cdc3-3cd6-500f-8229-6074b7723c3e",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T01:35:00.000Z",
+          "ended_at": "2025-01-01T01:40:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:b9789e62-8a96-5c84-ae1c-a6ac760a5210",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "feb4ddf2-bf74-506b-9b5a-4e6c4cf47bae",
+      "admitted_at": "2025-01-01T02:15:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "c909682a-6df5-5719-94a8-d5acb267c04b",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T02:20:00.000Z",
+          "ended_at": "2025-01-01T02:40:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:b7a0737a-ed26-5fcb-a93f-dc5d9020dd8d",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "befd12b3-0db0-5b2c-ae6a-d0b0d71a672a",
+      "admitted_at": "2025-01-01T02:25:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "c909682a-6df5-5719-94a8-d5acb267c04b",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T02:30:00.000Z",
+          "ended_at": "2025-01-01T02:35:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:b7a0737a-ed26-5fcb-a93f-dc5d9020dd8d",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "7b1ea8da-b677-5b34-92d4-75788167d2ca",
+      "admitted_at": "2025-01-01T03:10:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "b24fdc6e-9c1b-5aac-a69a-21a88ff066ca",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T03:20:00.000Z",
+          "ended_at": "2025-01-01T03:35:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:71bbe7b9-cd6c-5f17-87a5-36f46e4568f7",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "57817e67-bc94-59ab-ba06-17f7db468cff",
+      "admitted_at": "2025-01-01T03:15:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "b24fdc6e-9c1b-5aac-a69a-21a88ff066ca",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T03:25:00.000Z",
+          "ended_at": "2025-01-01T03:30:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:71bbe7b9-cd6c-5f17-87a5-36f46e4568f7",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "36f26bda-592f-56f2-ae4b-46089f050cf7",
+      "admitted_at": "2025-01-01T03:45:00.000Z",
+      "source_key": "am_playlist",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "cd831ae3-d516-5cf9-b39f-8454f60afbd7",
+      "admitted_at": "2025-01-01T03:50:00.000Z",
+      "source_key": "sp_playlist",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "368c88ed-601e-5d46-bd28-e83bbc95a846",
+      "admitted_at": "2025-01-01T03:55:00.000Z",
+      "source_key": "am_playlist",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "3e310909-dd5d-58b3-953b-348f7e01bcaf",
+      "admitted_at": "2025-01-01T04:00:00.000Z",
+      "source_key": "am_playlist",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "c4828084-8483-57fc-a635-7e246c11ded0",
+      "admitted_at": "2025-01-01T04:05:00.000Z",
+      "source_key": "sp_playlist",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "2f776536-b9c7-5de9-ba60-7c6cb71e4285",
+      "admitted_at": "2025-01-01T04:10:00.000Z",
+      "source_key": "am_playlist",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "149f676e-984a-56d4-af6d-ba8a24f7f14e",
+      "admitted_at": "2025-01-01T04:15:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": "9cd88db6-2419-5b4c-b2fd-e31a6bac31f8",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "b46c5551-4f10-5553-b75b-2e6cc3573603",
+      "admitted_at": "2025-01-01T04:20:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "f5403186-dec5-5175-8af7-c89794c6c4a7",
+      "admitted_at": "2025-01-01T04:25:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "9163bebd-484c-594d-abd1-de7c8d9e1460",
+      "admitted_at": "2025-01-01T04:30:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "57e1551b-cc83-5034-adae-4dbd8b11318b",
+      "admitted_at": "2025-01-01T04:35:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "5da35281-0c47-5cc7-915f-eaa83394d185",
+      "admitted_at": "2025-01-01T04:40:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "a142f792-7bf5-56d5-82c0-beb762850a1d",
+      "admitted_at": "2025-01-01T04:45:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "21d4b445-431d-5c99-a319-fc6b670ba81b",
+      "admitted_at": "2025-01-01T04:50:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "84034ecb-84d7-549e-967b-b9ab5b8628f2",
+      "admitted_at": "2025-01-01T04:55:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "83208d48-b271-55f0-8ec4-afa08b439308",
+      "admitted_at": "2025-01-01T05:00:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "905e83ec-7304-5eaa-a1f9-a486eb3b4b88",
+      "admitted_at": "2025-01-01T05:05:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "3b71d796-8570-5c7d-88da-91ea2afb0e3c",
+      "admitted_at": "2025-01-01T05:10:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "5f31eb83-bdda-585e-9272-bdb9a957a16b",
+      "admitted_at": "2025-01-01T05:15:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "e197b2f8-a2cd-5a24-a56c-a2463bf182c3",
+      "admitted_at": "2025-01-01T05:20:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "0a415f41-236a-5e8f-9d58-03700d25aa11",
+      "admitted_at": "2025-01-01T05:25:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "42166a54-5d5d-54e0-b0e3-6aeaf577c8e1",
+      "admitted_at": "2025-01-01T05:30:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "f695fd3c-e9bb-5e5a-b21e-f7492850e696",
+      "admitted_at": "2025-01-01T05:35:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "4b697a33-3342-5c45-80d1-4888530d6baf",
+      "admitted_at": "2025-01-01T05:40:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "f5a8f42b-fe27-55d1-b3ad-5768aec2e33b",
+      "admitted_at": "2025-01-01T05:45:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "dd54d53f-6be2-5b40-9513-f2464bf63b14",
+      "admitted_at": "2025-01-01T05:50:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "1788bc29-a3db-586c-bf5d-f61a38c0694e",
+      "admitted_at": "2025-01-01T05:55:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "b99afe82-873a-50a5-9f26-5c61584b2961",
+      "admitted_at": "2025-01-01T06:00:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "eb9666d0-b70b-533b-ba10-e2620f351604",
+      "admitted_at": "2025-01-01T06:05:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "e6fa0215-3192-5433-85c6-214a28a8ca15",
+      "admitted_at": "2025-01-01T06:10:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "efcfca1b-3b00-5853-98f9-7c5026566e2c",
+      "admitted_at": "2025-01-01T06:15:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "d1cd2526-a8a8-549b-bb9b-0e47f75163f1",
+      "admitted_at": "2025-01-01T06:20:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "5e8d3f2c-ae72-5b0e-86c5-0d317afd602a",
+      "admitted_at": "2025-01-01T06:25:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "ae6d0a5a-ea48-539b-bd22-634de46857f9",
+      "admitted_at": "2025-01-01T06:30:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "264d587f-cf37-5de7-909c-adf10f397802",
+      "admitted_at": "2025-01-01T06:35:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "8ccf4175-58a7-5a42-a761-bd4497db8898",
+      "admitted_at": "2025-01-01T06:40:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "08f02503-07ae-5e78-8c10-3847459a1bdd",
+      "admitted_at": "2025-01-01T06:45:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "2fa06389-ef5c-5e2e-b1f3-3e2fbfa5ec8d",
+      "admitted_at": "2025-01-01T06:50:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "17d6ca29-39a7-5281-9308-3d1a5defc873",
+      "admitted_at": "2025-01-01T06:55:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "4a01fc29-e511-5f0c-b6a6-273d8d1a201b",
+      "admitted_at": "2025-01-01T07:00:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "ea76fa2c-39f4-5521-ae40-8af024ad3a62",
+      "admitted_at": "2025-01-01T07:05:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "ea92e7e8-26ce-592a-99d1-5b1e9bac637f",
+      "admitted_at": "2025-01-01T07:10:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "3c6d2f03-109f-5322-8080-003a1dd66656",
+      "admitted_at": "2025-01-01T07:15:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "d2e7a67a-46e4-578c-b919-a2b3b794be06",
+      "admitted_at": "2025-01-01T07:20:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "3c69e7b9-de9b-5529-9114-deb3459c7818",
+      "admitted_at": "2025-01-01T07:25:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "b028f1c0-270c-50c7-a2f7-87adce735ace",
+      "admitted_at": "2025-01-01T07:30:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "e3be1f3c-a893-5e03-b2f3-1aea735bd106",
+      "admitted_at": "2025-01-01T07:35:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "9f65e7a3-e60d-5050-b369-5fc0c456e844",
+      "admitted_at": "2025-01-01T07:40:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "d18f532b-ddb1-5108-8abe-ba2ecd1ccba6",
+      "admitted_at": "2025-01-01T07:45:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "31d5246b-b7cb-5f40-b24d-b8a46c47eb06",
+      "admitted_at": "2025-01-01T07:50:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "e130b84b-fc58-554b-bc9f-8c426ed3a1fb",
+      "admitted_at": "2025-01-01T07:55:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "e0091cc8-2892-5001-9547-d4458502737a",
+      "admitted_at": "2025-01-01T08:00:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "aa6100fd-b2c3-51fb-8f8a-5e176fe7cca1",
+      "admitted_at": "2025-01-01T08:05:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "08d351c3-22b6-56ae-ac09-9b1398abe567",
+      "admitted_at": "2025-01-01T08:10:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "2ab580ed-f520-56dd-9050-7a976b46c24c",
+      "admitted_at": "2025-01-01T08:15:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "7907f66d-2648-5d69-8fd9-27c4b33ad954",
+      "admitted_at": "2025-01-01T08:20:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "3658820b-bda8-5936-931f-c11a266595bc",
+      "admitted_at": "2025-01-01T08:25:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "6ebbb60c-3190-5ece-832e-bae0340cfdec",
+      "admitted_at": "2025-01-01T08:30:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "2a2bfce8-aa9f-5037-9081-2f67b782e05b",
+      "admitted_at": "2025-01-01T08:35:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "340df154-4c06-5af6-9b07-bb3327685dca",
+      "admitted_at": "2025-01-01T08:40:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "71031000-d547-5a0c-9967-1519ea48a7fc",
+      "admitted_at": "2025-01-01T08:45:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "a0b40822-1a29-5f26-adbd-69e084f5cb06",
+      "admitted_at": "2025-01-01T08:50:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "6284692d-80cd-5537-b057-577af2ecceb7",
+      "admitted_at": "2025-01-01T08:55:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "350dfb23-983d-59df-a3fb-8da79e927b52",
+      "admitted_at": "2025-01-01T09:00:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "6e37e11d-3886-5dc4-bb5c-5e8f162c4bd1",
+      "admitted_at": "2025-01-01T09:05:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "c014a46c-bea2-5973-9fd9-f32837089275",
+      "admitted_at": "2025-01-01T09:10:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": null,
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "d184e8b2-078e-55c2-bda6-268a75de29ca",
+      "admitted_at": "2025-01-01T09:35:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "d9643b12-0d2d-520f-8c89-495ef2553ea9",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T09:45:00.000Z",
+          "ended_at": "2025-01-01T10:00:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:9ce6946c-e5a7-597a-afe7-f14db8c7d9c4",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "80740971-c0b4-5dc0-8669-d6e0dd41c23e",
+      "admitted_at": "2025-01-01T09:40:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "d9643b12-0d2d-520f-8c89-495ef2553ea9",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T09:50:00.000Z",
+          "ended_at": "2025-01-01T09:55:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:9ce6946c-e5a7-597a-afe7-f14db8c7d9c4",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "aced2f49-9766-57a5-b864-8eca0805760b",
+      "admitted_at": "2025-01-01T10:10:00.000Z",
+      "source_key": "bc_daily_list",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "1b5e05cc-f232-52d9-9f31-c8d13854b7f5",
+      "admitted_at": "2025-01-01T10:15:00.000Z",
+      "source_key": "am_playlist_weekly",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T10:35:00.000Z",
+          "ended_at": "2025-01-01T12:25:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:418421ce-33ab-552f-abc3-a7f282efcb9a",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": 2,
+            "eligible": 0,
+            "succeeded": 0,
+            "skipped": 2,
+            "unit": "playlist",
+            "evidence_at": "2025-01-01T10:15:00.000Z"
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 2,
+        "unit": "playlist",
+        "evidence_at": "2025-01-01T10:15:00.000Z"
+      }
+    },
+    {
+      "run_id": "3c70d428-8950-5423-8b95-05a471753433",
+      "admitted_at": "2025-01-01T10:20:00.000Z",
+      "source_key": "am_playlist",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T10:30:00.000Z",
+          "ended_at": "2025-01-01T13:40:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:418421ce-33ab-552f-abc3-a7f282efcb9a",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": 2,
+            "eligible": 2,
+            "succeeded": 2,
+            "skipped": 2,
+            "unit": "playlist",
+            "evidence_at": "2025-01-01T10:20:00.000Z"
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 2,
+        "succeeded": 2,
+        "skipped": 2,
+        "unit": "playlist",
+        "evidence_at": "2025-01-01T10:20:00.000Z"
+      }
+    },
+    {
+      "run_id": "903080be-8d95-5bc6-8e64-fec4d091827d",
+      "admitted_at": "2025-01-01T10:25:00.000Z",
+      "source_key": "apple_song_duration",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T10:40:00.000Z",
+          "ended_at": "2025-01-01T13:50:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:418421ce-33ab-552f-abc3-a7f282efcb9a",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": 2,
+            "eligible": 2,
+            "succeeded": 2,
+            "skipped": 0,
+            "unit": null,
+            "evidence_at": "2025-01-01T10:25:00.000Z"
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 2,
+        "succeeded": 2,
+        "skipped": 0,
+        "unit": null,
+        "evidence_at": "2025-01-01T10:25:00.000Z"
+      }
+    },
+    {
+      "run_id": "95d39459-e5dc-50e9-ac7c-d152cd3696d4",
+      "admitted_at": "2025-01-01T10:45:00.000Z",
+      "source_key": "bc_daily_list_weekly",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "582d6cd3-07e5-5d0e-b381-153a2c05adbe",
+      "admitted_at": "2025-01-01T10:55:00.000Z",
+      "source_key": "bc_discover",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "7f6808f5-1876-5871-b835-1c04996cd537",
+      "admitted_at": "2025-01-01T11:05:00.000Z",
+      "source_key": "bc_discover_weekly",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "2fc4c8c4-a66b-53a6-a34f-11ee1690d7ec",
+      "admitted_at": "2025-01-01T11:10:00.000Z",
+      "source_key": "bc_fan_playlist",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "86290eed-91a7-5c5b-8e62-e5681a216fdc",
+      "admitted_at": "2025-01-01T11:15:00.000Z",
+      "source_key": "bc_fan_playlist_weekly",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "9b48f631-4dbc-5832-984a-c54993470b51",
+      "admitted_at": "2025-01-01T11:20:00.000Z",
+      "source_key": "bc_radio",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "1cf83c90-47e9-5039-8f10-5498f54991fd",
+      "admitted_at": "2025-01-01T11:25:00.000Z",
+      "source_key": "bc_radio_weekly",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "82451a38-fa94-5194-b338-210b3109cdff",
+      "admitted_at": "2025-01-01T11:30:00.000Z",
+      "source_key": "bc_tralbum",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 0,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "44b4c327-479e-5900-a7bb-2af736d0310c",
+      "admitted_at": "2025-01-01T11:35:00.000Z",
+      "source_key": "kexp_plays",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "fcc3fd4c-bd0c-5971-a44d-e9dba782289e",
+      "admitted_at": "2025-01-01T11:40:00.000Z",
+      "source_key": "lb_fresh_releases",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "4a659e5d-f1b3-5f33-9a8a-e9da624faef2",
+      "admitted_at": "2025-01-01T11:45:00.000Z",
+      "source_key": "sc_curator_playlists",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "curator",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "1163d350-84db-5a41-b0b1-82a80a609368",
+      "admitted_at": "2025-01-01T11:50:00.000Z",
+      "source_key": "sc_curator_playlists_weekly",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "curator",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "f5bbf8d8-9523-5e7d-905f-6010ab176131",
+      "admitted_at": "2025-01-01T11:55:00.000Z",
+      "source_key": "sc_hubs",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "e5bda4f0-7e31-5013-962c-774b114e0014",
+      "admitted_at": "2025-01-01T12:00:00.000Z",
+      "source_key": "sc_playlist",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "9b72d2ca-053a-50d8-8bf6-6157b25628ce",
+      "admitted_at": "2025-01-01T12:05:00.000Z",
+      "source_key": "sc_playlist_weekly",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 0,
+        "succeeded": 0,
+        "skipped": 0,
+        "unit": "playlist",
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "20762835-c95a-5945-965f-894e48f810bc",
+      "admitted_at": "2025-01-01T12:15:00.000Z",
+      "source_key": "sp_playlist",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T12:20:00.000Z",
+          "ended_at": "2025-01-01T13:45:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:418421ce-33ab-552f-abc3-a7f282efcb9a",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": 2,
+            "eligible": 2,
+            "succeeded": 2,
+            "skipped": 2,
+            "unit": "playlist",
+            "evidence_at": "2025-01-01T12:15:00.000Z"
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 2,
+        "succeeded": 2,
+        "skipped": 2,
+        "unit": "playlist",
+        "evidence_at": "2025-01-01T12:15:00.000Z"
+      }
+    },
+    {
+      "run_id": "226dfff1-6b3c-5a78-bdf3-09e8b85f3f41",
+      "admitted_at": "2025-01-01T12:35:00.000Z",
+      "source_key": "sp_playlist_weekly",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T12:40:00.000Z",
+          "ended_at": "2025-01-01T13:25:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:418421ce-33ab-552f-abc3-a7f282efcb9a",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": 2,
+            "eligible": 2,
+            "succeeded": 2,
+            "skipped": 2,
+            "unit": "playlist",
+            "evidence_at": "2025-01-01T12:35:00.000Z"
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 2,
+        "succeeded": 2,
+        "skipped": 2,
+        "unit": "playlist",
+        "evidence_at": "2025-01-01T12:35:00.000Z"
+      }
+    },
+    {
+      "run_id": "4ffe970b-8eeb-5f4e-9ea7-e88ea6b199cd",
+      "admitted_at": "2025-01-01T12:50:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "61e068b4-a1a6-53a2-8d99-24e2589c1ff5",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T13:00:00.000Z",
+          "ended_at": "2025-01-01T13:15:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:73bf9aa0-e229-5433-a842-22180a429a81",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "fe49b647-91a4-5f35-9724-051c39f5639b",
+      "admitted_at": "2025-01-01T12:55:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "61e068b4-a1a6-53a2-8d99-24e2589c1ff5",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T13:05:00.000Z",
+          "ended_at": "2025-01-01T13:10:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:73bf9aa0-e229-5433-a842-22180a429a81",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "3357fdfb-76ab-512e-886f-bbe083670172",
+      "admitted_at": "2025-01-01T13:30:00.000Z",
+      "source_key": "sz_chart",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T13:35:00.000Z",
+          "ended_at": "2025-01-01T13:55:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:418421ce-33ab-552f-abc3-a7f282efcb9a",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": 2,
+            "eligible": 2,
+            "succeeded": 2,
+            "skipped": 0,
+            "unit": "chart",
+            "evidence_at": "2025-01-01T13:30:00.000Z"
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": 2,
+        "eligible": 2,
+        "succeeded": 2,
+        "skipped": 0,
+        "unit": "chart",
+        "evidence_at": "2025-01-01T13:30:00.000Z"
+      }
+    },
+    {
+      "run_id": "a65c6e4b-2277-5a9e-9eb0-d01a134f1bc0",
+      "admitted_at": "2025-01-01T14:20:00.000Z",
+      "source_key": "jev_instrument_family",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "0e9509fa-099e-5a14-81a0-a767fa4b1940",
+      "admitted_at": "2025-01-01T14:30:00.000Z",
+      "source_key": "sp_track_artists",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T14:40:00.000Z",
+          "ended_at": "2025-01-01T15:05:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:418421ce-33ab-552f-abc3-a7f282efcb9a",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "e1732d46-7c34-5c4a-a745-b0feb992ae19",
+      "admitted_at": "2025-01-01T14:55:00.000Z",
+      "source_key": "mb_artist_catalog",
+      "kind": "invoke",
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T15:00:00.000Z",
+          "ended_at": "2025-01-01T15:15:00.000Z",
+          "status": "failed",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:418421ce-33ab-552f-abc3-a7f282efcb9a",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": null
+        },
+        {
+          "attempt_no": 2,
+          "started_at": "2025-01-01T15:20:00.000Z",
+          "ended_at": "2025-01-01T16:05:00.000Z",
+          "status": "failed",
+          "trigger": "retry/restore",
+          "trigger_evidence": {
+            "dbt_run_id": "core:2adac6c0-5f33-50ca-8594-d2c19b84e648",
+            "reason_category": "other",
+            "runner": "core"
+          },
+          "targets": null
+        },
+        {
+          "attempt_no": 3,
+          "started_at": "2025-01-01T16:25:00.000Z",
+          "ended_at": "2025-01-01T16:30:00.000Z",
+          "status": "failed",
+          "trigger": "retry/restore",
+          "trigger_evidence": {
+            "dbt_run_id": "core:71814eac-6d99-5e16-9f8e-4488612ef351",
+            "reason_category": "other",
+            "runner": "core"
+          },
+          "targets": null
+        },
+        {
+          "attempt_no": 4,
+          "started_at": "2025-01-01T21:10:00.000Z",
+          "ended_at": "2025-01-01T21:20:00.000Z",
+          "status": "succeeded",
+          "trigger": "retry/restore",
+          "trigger_evidence": {
+            "dbt_run_id": "core:810c1f42-92ea-5a87-9276-2a1cc43f00da",
+            "reason_category": "other",
+            "runner": "core"
+          },
+          "targets": null
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "0dc2d855-9e73-5dc3-8af1-ae69f663e684",
+      "admitted_at": "2025-01-01T15:45:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "1bde7832-3618-5479-a4b9-3772d645dc55",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T15:55:00.000Z",
+          "ended_at": "2025-01-01T16:10:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:e817d029-5669-5773-bf90-f6e32fea4730",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "5d1d9f70-37e1-572d-b5b5-89130bb84a17",
+      "admitted_at": "2025-01-01T15:50:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "1bde7832-3618-5479-a4b9-3772d645dc55",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T16:00:00.000Z",
+          "ended_at": "2025-01-01T16:15:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:e817d029-5669-5773-bf90-f6e32fea4730",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "356c7e24-9edb-52a0-8295-12263d6fd0ab",
+      "admitted_at": "2025-01-01T16:55:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "561f157d-bd27-568f-b5f3-bdb8d636e4ac",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T17:05:00.000Z",
+          "ended_at": "2025-01-01T17:20:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:9be628ba-ee18-5d3b-978d-365c0e95d124",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "56a55ffc-ba39-5b89-987c-c35d195d1b01",
+      "admitted_at": "2025-01-01T17:00:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "561f157d-bd27-568f-b5f3-bdb8d636e4ac",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T17:10:00.000Z",
+          "ended_at": "2025-01-01T17:15:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:9be628ba-ee18-5d3b-978d-365c0e95d124",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "c2f2949b-5905-5f30-826a-8612c730f0ab",
+      "admitted_at": "2025-01-01T17:50:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "2fd9b840-94cc-5431-bdce-5d3ad952c0ac",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T18:00:00.000Z",
+          "ended_at": "2025-01-01T18:15:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:369628cd-3a2c-5a9d-9e3b-5b4661d91ae7",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "b84c8488-1b1f-5380-8a22-c6e4c1c9fe30",
+      "admitted_at": "2025-01-01T17:55:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "2fd9b840-94cc-5431-bdce-5d3ad952c0ac",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T18:05:00.000Z",
+          "ended_at": "2025-01-01T18:10:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:369628cd-3a2c-5a9d-9e3b-5b4661d91ae7",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "956877ea-a5c3-5910-95a6-d5d4ff8b1bf6",
+      "admitted_at": "2025-01-01T18:45:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "421349b0-9511-5d4e-a929-215c540defef",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T18:55:00.000Z",
+          "ended_at": "2025-01-01T19:10:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:9971e865-6128-5c28-af37-73b7abbb99f9",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "4a3ea863-31a9-5743-a00f-9070337a3e96",
+      "admitted_at": "2025-01-01T18:50:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "421349b0-9511-5d4e-a929-215c540defef",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T19:00:00.000Z",
+          "ended_at": "2025-01-01T19:05:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:9971e865-6128-5c28-af37-73b7abbb99f9",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "fb7176f5-20a4-5d20-9e6f-0d75ad77c103",
+      "admitted_at": "2025-01-01T19:40:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "38465699-97ee-5e3a-86a0-abf7022e174e",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T19:50:00.000Z",
+          "ended_at": "2025-01-01T20:00:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:ba02d2a7-99a4-5ee6-b839-920af0947715",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "c852c52e-dd26-5473-9844-aae2a776702d",
+      "admitted_at": "2025-01-01T19:45:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "38465699-97ee-5e3a-86a0-abf7022e174e",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T19:55:00.000Z",
+          "ended_at": "2025-01-01T20:05:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:ba02d2a7-99a4-5ee6-b839-920af0947715",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "a238994c-2965-51e3-8329-86054976ab3e",
+      "admitted_at": "2025-01-01T20:35:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "4d4e1b71-a989-557c-aca6-14ada1addbf2",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T20:45:00.000Z",
+          "ended_at": "2025-01-01T21:00:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:db08b656-acfc-57e8-872d-a2140f7fc83c",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "a0786b2c-d115-52cb-a316-86f9b0ad5563",
+      "admitted_at": "2025-01-01T20:40:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "4d4e1b71-a989-557c-aca6-14ada1addbf2",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T20:50:00.000Z",
+          "ended_at": "2025-01-01T20:55:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:db08b656-acfc-57e8-872d-a2140f7fc83c",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "6d5879f0-82cd-5aa7-ae94-a21afda8ea5e",
+      "admitted_at": "2025-01-01T21:55:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "7b9c5a24-ebaa-575e-b9e7-5396cdfbbe15",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T22:05:00.000Z",
+          "ended_at": "2025-01-01T22:20:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:205d6b81-f879-5caa-8bd9-24840b8d0029",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "6c8f68ba-32c2-5ec0-8205-6d00f178be38",
+      "admitted_at": "2025-01-01T22:00:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "7b9c5a24-ebaa-575e-b9e7-5396cdfbbe15",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T22:10:00.000Z",
+          "ended_at": "2025-01-01T22:15:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:205d6b81-f879-5caa-8bd9-24840b8d0029",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "c7f0b40a-43f9-5c22-a199-91b67e8828f2",
+      "admitted_at": "2025-01-01T22:50:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "613142f8-e2f3-56f7-a2df-23d61c10af0a",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T23:00:00.000Z",
+          "ended_at": "2025-01-01T23:15:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:5c031125-36d5-5bc1-9ddb-dcfc9f405c04",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "c4c1a0b9-f372-5e12-b752-9afa671f2b97",
+      "admitted_at": "2025-01-01T22:55:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "613142f8-e2f3-56f7-a2df-23d61c10af0a",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T23:05:00.000Z",
+          "ended_at": "2025-01-01T23:10:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:5c031125-36d5-5bc1-9ddb-dcfc9f405c04",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "c7d35b5c-257e-5292-8278-64d433cd6899",
+      "admitted_at": "2025-01-01T23:45:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "33a5b6d7-a4cf-543f-be8b-017b31196ad3",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-01T23:55:00.000Z",
+          "ended_at": "2025-01-02T00:05:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:67216126-b40e-570d-a500-7d83e8f8e348",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "738a9029-b220-5775-bf45-9b687ddeaa74",
+      "admitted_at": "2025-01-01T23:50:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "33a5b6d7-a4cf-543f-be8b-017b31196ad3",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T00:00:00.000Z",
+          "ended_at": "2025-01-02T00:10:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:67216126-b40e-570d-a500-7d83e8f8e348",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "e303e321-5517-5d83-a88e-d0fe87313a2d",
+      "admitted_at": "2025-01-02T00:40:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "f5a452da-94ea-5e8a-8d8e-ed4021ab2325",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T00:45:00.000Z",
+          "ended_at": "2025-01-02T01:05:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:fa07dc16-cdab-5b5c-9459-0df2360a947b",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "fe4a03ec-8b40-5323-bd4b-12de20e3838a",
+      "admitted_at": "2025-01-02T00:50:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "f5a452da-94ea-5e8a-8d8e-ed4021ab2325",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T00:55:00.000Z",
+          "ended_at": "2025-01-02T01:00:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:fa07dc16-cdab-5b5c-9459-0df2360a947b",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "10f8b51e-61fa-58bc-bbc0-0397d6376f8d",
+      "admitted_at": "2025-01-02T01:35:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "4eb65a79-2f99-5f15-9beb-4e3da03bb716",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T01:45:00.000Z",
+          "ended_at": "2025-01-02T02:00:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:caf854be-130e-54b6-bfab-b1b210325f9b",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "3bd431b7-3eed-5555-bb00-e43448c3ed0b",
+      "admitted_at": "2025-01-02T01:40:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "4eb65a79-2f99-5f15-9beb-4e3da03bb716",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T01:50:00.000Z",
+          "ended_at": "2025-01-02T01:55:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:caf854be-130e-54b6-bfab-b1b210325f9b",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "29d985e1-bd3e-589f-b784-f1823381b141",
+      "admitted_at": "2025-01-02T02:30:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "877e8446-f60a-5ad1-adff-135b9c4079f0",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T02:40:00.000Z",
+          "ended_at": "2025-01-02T02:55:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:51801e2c-9ef4-56d6-a47c-ca844b56f6e7",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "0458a180-3ad5-5626-bb21-3bca5f0347e2",
+      "admitted_at": "2025-01-02T02:35:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "877e8446-f60a-5ad1-adff-135b9c4079f0",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T02:45:00.000Z",
+          "ended_at": "2025-01-02T02:50:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:51801e2c-9ef4-56d6-a47c-ca844b56f6e7",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "da5b2c9f-1317-5389-9d9e-b6f630afcb1e",
+      "admitted_at": "2025-01-02T03:25:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "e493f951-abad-5021-97a5-6ad9b436e5d3",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T03:35:00.000Z",
+          "ended_at": "2025-01-02T03:50:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:5bea2495-f13b-5d9f-8d5a-dd59dd5c7e28",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "fc0fffe7-8e86-5215-910d-50b86c53bf8d",
+      "admitted_at": "2025-01-02T03:30:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "e493f951-abad-5021-97a5-6ad9b436e5d3",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T03:40:00.000Z",
+          "ended_at": "2025-01-02T03:45:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:5bea2495-f13b-5d9f-8d5a-dd59dd5c7e28",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "79023460-17be-5787-b697-b4477c7b3d7d",
+      "admitted_at": "2025-01-02T04:20:00.000Z",
+      "source_key": "mb_resolve",
+      "kind": "invoke",
+      "cycle_id": "7dfb8a72-ead6-5e49-be1a-51c85898e14b",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T04:30:00.000Z",
+          "ended_at": "2025-01-02T04:45:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:a2896625-58b8-5644-baa8-29ce61bfa168",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "2",
+        "rows_landed": "2"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    },
+    {
+      "run_id": "bf5b455e-0c40-5e89-a803-593ec4cd4bf6",
+      "admitted_at": "2025-01-02T04:25:00.000Z",
+      "source_key": "track_isrc_crosswalk",
+      "kind": "invoke",
+      "cycle_id": "7dfb8a72-ead6-5e49-be1a-51c85898e14b",
+      "scope": "global",
+      "warehouse_id": "1e8f3aae-8ad8-5c80-9c2a-77e8871a622d",
+      "status": "succeeded",
+      "attempts": [
+        {
+          "attempt_no": 1,
+          "started_at": "2025-01-02T04:35:00.000Z",
+          "ended_at": "2025-01-02T04:40:00.000Z",
+          "status": "succeeded",
+          "trigger": "scheduled",
+          "trigger_evidence": {
+            "dbt_run_id": "core:a2896625-58b8-5644-baa8-29ce61bfa168",
+            "reason_category": "scheduled",
+            "runner": "core"
+          },
+          "targets": {
+            "frozen_membership": null,
+            "eligible": null,
+            "succeeded": null,
+            "skipped": null,
+            "unit": null,
+            "evidence_at": null
+          }
+        }
+      ],
+      "outputs": {
+        "dump_count": "0",
+        "rows_landed": "0"
+      },
+      "targets": {
+        "frozen_membership": null,
+        "eligible": null,
+        "succeeded": null,
+        "skipped": null,
+        "unit": null,
+        "evidence_at": null
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "source_key": "am_playlist",
+      "succeeded": null,
+      "unit": "playlist",
+      "evidence_at": "2025-01-01T10:20:00.000Z"
+    },
+    {
+      "source_key": "am_playlist_weekly",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": "2025-01-01T10:15:00.000Z"
+    },
+    {
+      "source_key": "apple_song_duration",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": "2025-01-01T10:25:00.000Z"
+    },
+    {
+      "source_key": "bc_daily_list",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "bc_daily_list_weekly",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "bc_discover",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "bc_discover_weekly",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "bc_fan_playlist",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "bc_fan_playlist_weekly",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "bc_radio",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "bc_radio_weekly",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "bc_tralbum",
+      "succeeded": 0,
+      "unit": null,
+      "evidence_at": null
+    },
+    {
+      "source_key": "jev_instrument_family",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": null
+    },
+    {
+      "source_key": "kexp_plays",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": null
+    },
+    {
+      "source_key": "lb_fresh_releases",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": null
+    },
+    {
+      "source_key": "mb_artist_catalog",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": null
+    },
+    {
+      "source_key": "mb_resolve",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": null
+    },
+    {
+      "source_key": "sc_curator_playlists",
+      "succeeded": 0,
+      "unit": "curator",
+      "evidence_at": null
+    },
+    {
+      "source_key": "sc_curator_playlists_weekly",
+      "succeeded": 0,
+      "unit": "curator",
+      "evidence_at": null
+    },
+    {
+      "source_key": "sc_hubs",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": null
+    },
+    {
+      "source_key": "sc_playlist",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "sc_playlist_weekly",
+      "succeeded": 0,
+      "unit": "playlist",
+      "evidence_at": null
+    },
+    {
+      "source_key": "sp_playlist",
+      "succeeded": null,
+      "unit": "playlist",
+      "evidence_at": "2025-01-01T12:15:00.000Z"
+    },
+    {
+      "source_key": "sp_playlist_weekly",
+      "succeeded": 2,
+      "unit": "playlist",
+      "evidence_at": "2025-01-01T12:35:00.000Z"
+    },
+    {
+      "source_key": "sp_track_artists",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": null
+    },
+    {
+      "source_key": "sz_chart",
+      "succeeded": 2,
+      "unit": "chart",
+      "evidence_at": "2025-01-01T13:30:00.000Z"
+    },
+    {
+      "source_key": "track_isrc_crosswalk",
+      "succeeded": null,
+      "unit": null,
+      "evidence_at": null
+    }
+  ],
+  "closes": [
+    {
+      "cycle_id": "30ad9811-c16c-5282-9b5c-dd32d29a2c4b",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T00:20:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "3131cdc3-3cd6-500f-8229-6074b7723c3e",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T01:15:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "c909682a-6df5-5719-94a8-d5acb267c04b",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T02:10:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "b24fdc6e-9c1b-5aac-a69a-21a88ff066ca",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T03:05:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "d9643b12-0d2d-520f-8c89-495ef2553ea9",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T09:30:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "61e068b4-a1a6-53a2-8d99-24e2589c1ff5",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T12:45:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "6f958748-dae6-5d72-825d-f08542a62809",
+      "cadence": "daily",
+      "close_no": "2",
+      "closed_at": "2025-01-01T14:00:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "1bde7832-3618-5479-a4b9-3772d645dc55",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T15:40:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "561f157d-bd27-568f-b5f3-bdb8d636e4ac",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T16:50:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "2fd9b840-94cc-5431-bdce-5d3ad952c0ac",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T17:45:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "421349b0-9511-5d4e-a929-215c540defef",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T18:40:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "38465699-97ee-5e3a-86a0-abf7022e174e",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T19:35:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "4d4e1b71-a989-557c-aca6-14ada1addbf2",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T20:30:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "7b9c5a24-ebaa-575e-b9e7-5396cdfbbe15",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T21:50:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "613142f8-e2f3-56f7-a2df-23d61c10af0a",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T22:45:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "33a5b6d7-a4cf-543f-be8b-017b31196ad3",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-01T23:40:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "f5a452da-94ea-5e8a-8d8e-ed4021ab2325",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-02T00:35:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "4eb65a79-2f99-5f15-9beb-4e3da03bb716",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-02T01:30:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "877e8446-f60a-5ad1-adff-135b9c4079f0",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-02T02:25:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "e493f951-abad-5021-97a5-6ad9b436e5d3",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-02T03:20:00.000Z",
+      "status": "closed"
+    },
+    {
+      "cycle_id": "7dfb8a72-ead6-5e49-be1a-51c85898e14b",
+      "cadence": "hourly",
+      "close_no": "2",
+      "closed_at": "2025-01-02T04:15:00.000Z",
+      "status": "closed"
+    }
+  ],
+  "alerts": [
+    {
+      "run_id": "20762835-c95a-5945-965f-894e48f810bc",
+      "attempt_no": 1,
+      "opened_at": "2025-01-01T13:45:00.000Z",
+      "class": "partial_coverage",
+      "summary": "partial coverage.",
+      "next_step": "Open the failed targets and receipts, repair the failing inputs, then retry the cycle.",
+      "resolved_at": null
+    },
+    {
+      "run_id": "42dc966b-be1e-5939-83c2-4ecd789680fd",
+      "attempt_no": null,
+      "opened_at": "2025-01-01T15:10:00.000Z",
+      "class": "cadence_failed",
+      "summary": "The cadence run failed.",
+      "next_step": "Open the cadence failed recovery guide, follow its checks, then retry the affected run from Ops.",
+      "resolved_at": "2025-01-01T21:30:00.000Z"
+    },
+    {
+      "run_id": "e1732d46-7c34-5c4a-a745-b0feb992ae19",
+      "attempt_no": 4,
+      "opened_at": "2025-01-01T21:15:00.000Z",
+      "class": "schema_drift",
+      "summary": "The output schema changed.",
+      "next_step": "Open the function schema changes, compare added and changed columns, then acknowledge the fingerprint if the output is expected.",
+      "resolved_at": "2025-01-01T21:25:00.000Z"
+    }
+  ],
+  "runner": {
+    "state": "idle",
+    "busy": false,
+    "sessions": [],
+    "next_scheduled_at": "2025-01-02T05:05:00.000Z",
+    "next_step": "Refresh the view. Open /ops for the next scheduled run."
+  },
+  "next_due": "2025-01-02T05:05:00.000Z",
+  "next_step": "Open /runs to inspect a reading."
+}

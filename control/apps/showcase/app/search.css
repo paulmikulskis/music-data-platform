@@ -1,0 +1,272 @@
+/* Library results keep one short title beside each face or cover. */
+.search-launcher {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
+.search-sheet {
+  width: min(680px, 100%);
+}
+.search-sheet input {
+  width: 100%;
+  font: inherit;
+  font-size: 18px;
+  color: var(--fg);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 4px;
+  outline-offset: 3px;
+}
+.search-status {
+  font-size: 13px;
+  color: var(--fg-muted);
+  margin: 16px 0;
+  min-height: 20px;
+}
+.search-status button,
+.search-status a {
+  text-decoration: underline;
+}
+.search-results {
+  max-height: 340px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.search-result {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-height: 84px;
+  padding: 12px 2px;
+  border-bottom: 1px solid var(--border);
+}
+.search-result:focus-within {
+  background: var(--bg-raised);
+}
+.search-face {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  flex: none;
+  background: var(--bg-raised);
+  overflow: hidden;
+  border-radius: 3px;
+}
+.search-face.round {
+  border-radius: 50%;
+}
+.search-face > * {
+  grid-area: 1 / 1;
+}
+.search-face > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 180ms var(--ease-default);
+}
+.search-face[data-art="loaded"] > img {
+  opacity: 1;
+}
+.search-face > span > img {
+  width: 25px;
+  height: 25px;
+}
+.search-label {
+  min-width: 0;
+  flex: 1;
+}
+.search-label strong {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search-label small {
+  display: block;
+  color: var(--fg-muted);
+  font-size: 11px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  font-size: 12px;
+  max-width: 86px;
+  flex: none;
+}
+.search-actions .call-it {
+  margin: 0;
+}
+.search-actions a,
+.search-actions button {
+  min-height: 24px;
+}
+@media (max-width: 700px) {
+  .search-results {
+    max-height: 320px;
+  }
+  .search-result {
+    gap: 10px;
+  }
+  .search-face {
+    width: 48px;
+    height: 48px;
+  }
+  .search-sheet input {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .search-sheet[open] {
+    animation: none;
+  }
+}
+.search-actions .call-button,
+.search-actions .call-stamp {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: auto;
+  min-height: 28px;
+  font-size: 11px;
+}
+.search-paging {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+}
+.search-paging button {
+  min-height: 44px;
+}
+.search-paging button:disabled {
+  opacity: 0.35;
+}
+/* A Library result's own sheet: a playlist, chart, artist or source, with songs that open. */
+.library-item h2 {
+  font-size: 34px;
+  margin: 22px 0 6px;
+  overflow-wrap: anywhere;
+}
+.library-item .library-sub {
+  margin: 0 0 14px;
+  font-size: 13px;
+}
+.library-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 14px 0;
+}
+.library-facts strong {
+  display: block;
+  font: 34px/1.1 var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+}
+.library-label {
+  margin: 20px 0 6px;
+}
+.library-songs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.library-songs li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 14px;
+}
+.library-songs a {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.library-songs a:hover {
+  color: var(--accent-3);
+}
+.library-songs small {
+  flex: none;
+  color: var(--muted);
+  font-size: 11px;
+}
+.library-state button {
+  text-decoration: underline;
+  min-height: 44px;
+}
+.library-item .city-map {
+  margin: 10px 0;
+}
+/* The plain proof summary: the exact entries first, the operator console one quiet link away. */
+.proof-room {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.proof-room h1 {
+  margin: 14px 0 22px;
+}
+.proof-items {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.proof-items li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 9px 13px;
+  font-size: 13px;
+}
+.proof-items small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.proof-more {
+  color: var(--fg-muted);
+}
+.proof-line {
+  color: var(--fg-muted);
+  font-size: 13px;
+}
+.proof-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 28px;
+}
+@media (max-width: 700px) {
+  .proof-room h1 {
+    font-size: 42px;
+  }
+  .proof-items small {
+    display: none;
+  }
+}

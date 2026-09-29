@@ -1,0 +1,20 @@
+{
+  "name": "@mdp/control",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "typecheck": "pnpm -r typecheck && tsc --noEmit -p tsconfig.scripts.json",
+    "test": "vitest run",
+    "mdp": "tsx packages/mdp-cli/src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4",
+    "zod": "catalog:"
+  },
+  "type": "module"
+}

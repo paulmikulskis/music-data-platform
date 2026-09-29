@@ -1,0 +1,14 @@
+{
+  "path": "/v1/repair",
+  "url": "/v1/repair",
+  "method": "post",
+  "status": 200,
+  "request": {
+    "dump_id": "be1d2397-4f48-4e84-b6b3-bd0667dec873",
+    "target_table": "raw.account_snapshots"
+  },
+  "response": {
+    "status": "pending",
+    "message": "repair queued"
+  }
+}

@@ -1,0 +1,75 @@
+version: 2
+models:
+- name: int_song_cluster__daily
+  description: One row per strict song key, enforced by the unique and not-null tests.
+    Provisional movement groups leave identity keys strict. Resolved
+    recordings lead, then the key with most observed list, chart and stream facts;
+    equal counts use ascending song key. Open the cluster audit before changing a
+    rule.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: song_key
+    data_type: text
+    description: Strict song key. Open int_song_key__daily for identity.
+    constraints:
+    - type: not_null
+  - name: cluster_key
+    data_type: text
+    description: Representative key used only to group movement. Open member_song_keys
+      for the copies.
+    constraints:
+    - type: not_null
+  - name: cluster_methods
+    data_type: text
+    description: JSON array of merge rules used anywhere in this group. Open cluster_confidence
+      for the weakest rule.
+    constraints:
+    - type: not_null
+  - name: cluster_confidence
+    data_type: double precision
+    description: Measured precision, using the lowest rule Wilson 95% lower bound in this group.
+      Singleton groups have one because no merge occurs. Open the cluster audit for sample counts.
+    constraints:
+    - type: not_null
+  - name: member_song_keys
+    data_type: text
+    description: Sorted JSON array of strict song keys. Open int_song_key__daily to
+      inspect each copy.
+    constraints:
+    - type: not_null
+  - name: source_keys
+    data_type: text
+    description: Union of member and matching source keys. Open the rights registry
+      for permissions.
+    constraints:
+    - type: not_null
+  data_tests:
+  - logical_unique:
+      arguments:
+        columns:
+        - song_key
+- name: int_song_cluster_inputs__daily
+  description: Track metadata and manifest-visible crosswalk candidates for movement.
+    Exact Apple catalog durations fill null playlist durations only. Existing values
+    stay unchanged. A crosswalk must match current track fields. Open int_song_key__daily
+    for strict identity.
+- name: int_song_cluster_edges__daily
+  description: Candidate key pairs, with a separate rule and basis for each merge.
+    Flags are applied by int_song_cluster__daily. Open song_cluster_rules for switches.
+- name: int_cluster_shazam__daily
+  description: One chart observation per movement group and day. First appearances
+    are recalculated across all copies. Open int_song_shazam__daily for member facts.
+- name: int_cluster_day__daily
+  description: Movement-only daily facts. Charts count once and stream rates sum disjoint
+    track keys. Open mart_song_day for strict song facts.
+- name: int_cluster_entries__daily
+  description: Movement entries with group keys. A Shazam copy switch is not an arrival.
+    Open the source row in locator.
+- name: int_cluster_age__daily
+  description: Movement age uses the oldest known member age and the most established
+    known member stage. Unknown stage members keep the group unknown unless a member
+    is established. Open int_song_age__daily for each member.
+- name: int_song_apple_successors__daily
+  description: Unique Apple id replacements on adjacent Shazam chart days with matching titles and full credits, compatible artist ids and no conflicting ISRC. Open song_cluster_rules before enabling movement grouping.

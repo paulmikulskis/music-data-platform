@@ -1,0 +1,93 @@
+.link-out {
+  min-width: 0;
+  max-width: 100%;
+  font-size: 13px;
+}
+.link-out summary,
+.link-out > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+}
+.link-out summary {
+  list-style: none;
+  color: var(--fg-muted);
+}
+.link-out summary::-webkit-details-marker {
+  display: none;
+}
+.link-out[open],
+.console-link {
+  flex-basis: 100%;
+}
+.link-preview {
+  width: 320px;
+  max-width: 100%;
+  margin: 8px 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  overflow: hidden;
+  font-family: var(--font-body);
+}
+.link-preview svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: var(--fg);
+}
+.preview-drawing {
+  fill: none;
+  stroke: var(--accent-1);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.preview-target {
+  fill: var(--accent-1);
+}
+.link-preview figcaption {
+  display: grid;
+  gap: 4px;
+  padding: 9px 12px;
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.preview-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--fg-muted);
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.preview-dot.answered {
+  background: var(--fg);
+}
+.link-access,
+.link-fallback {
+  max-width: 320px;
+  color: var(--fg-muted);
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+.stack-sheet .sheet-links {
+  align-items: start;
+}
+.stack-sheet .service-facts > summary {
+  min-height: 44px;
+  align-content: center;
+  cursor: pointer;
+}
+.trace-viewer.with-peek .hover-card {
+  display: none;
+}
+.trace-peek > details > summary {
+  min-height: 44px;
+  align-content: center;
+  cursor: pointer;
+}
